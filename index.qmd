@@ -1,0 +1,80 @@
+---
+title: "Scientific Programming Essentials"
+subtitle: "Master of Environmental Data Science (MEDS)"
+description: "Summer 2024"
+title-block-banner: false
+toc: false
+---
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "70%" 
+#| fig-alt: "Close up montage of the blue point, thinking hard about different ways to calculate an exact slope. In gray text behind them are equations for slope, tangents, delta x, crumpled papers. Finally in the third illustration in the montage, the blue point is holding their arms up in victory with a lightbulb above them and the word 'LIMITS.'"
+knitr::include_graphics("images/horst-brainstorm-montage.png")
+```
+
+::: {.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+## Course Description
+
+This course teaches key scientific programming skills and demonstrates the application of these techniques to environmental data analysis and problem solving. Topics include structured programming and algorithm development, flow control, simple and advanced data input-output and representation, functions and objects, documentation, testing and debugging. The course will be taught using a combination of the R and Python programming languages.
+
+
+## Teaching Team
+
+<br>
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.center-text .body-text-l}
+**Instructor**
+:::
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "45%" 
+knitr::include_graphics("images/ruth.png")
+```
+
+::: {.center-text}
+[**Ruth Oliver**]{.teal-text}  
+**Email:** [rutholiver@ucsb.edu](mailto::rutholiver@ucsb.edu)  
+**Learn more:** [ryoliver-lab.github.io](https://ryoliver-lab.github.io/)  
+:::
+
+:::
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.center-text .body-text-l}
+**TA**
+:::
+
+```{r}
+#| eval: true 
+#| echo: false
+#| fig-align: "center"
+#| out-width: "45%" 
+knitr::include_graphics("images/tbd.png")
+```
+
+::: {.center-text}
+[**TBD**]{.teal-text}  
+**Email:** tbd   
+**Learn more:** tbd
+:::
+
+:::
+:::
+
+## Acknowledgements
+
+EDS 221 was originally developed and taught by [Allison Horst](https://allisonhorst.github.io/). This new website houses materials which are *heavily* reused, adapted from, and inspired by Allison's original work.

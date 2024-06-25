@@ -67,7 +67,7 @@ knitr::include_graphics("images/tbd.png")
 ```
 
 ::: {.center-text}
-[**TBD**]{.teal-text}  
+[**Anna Pede**]{.teal-text}  
 **Email:** tbd   
 **Learn more:** tbd
 :::

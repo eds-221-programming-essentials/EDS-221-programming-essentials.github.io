@@ -4,14 +4,14 @@
     "href": "course-materials/day1.html#class-materials",
     "title": "Intro to programming",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nBasic algebra review, units and unit conversions, exponents, logarithms\nMeet our R tools, basic operations, our first R function\n\n\nday 1 / afternoon\nFunctions (interpreting & evaluating), reading graphs, slope\nR projects, storing objects, creating vectors and sequences"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nCourse introduction, programming in EDS, meet our tools\nDon’t fear the Terminal - continuing with some commands, navigation, and more git\n\n\nday 1 / afternoon\nProject oriented workflows, file paths, naming things; good habits from the tidyverse style guide\nMeet {here}, project organization, adding data import to our workflow"
   },
   {
     "objectID": "course-materials/day1.html#end-of-day-practice",
     "href": "course-materials/day1.html#end-of-day-practice",
     "title": "Intro to programming",
     "section": "End-of-day practice",
-    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
+    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Project organization, data import, file paths"
   },
   {
     "objectID": "course-materials/day1.html#additional-resources",
@@ -116,7 +116,7 @@
     "href": "index.html#course-description",
     "title": "Scientific Programming Essentials",
     "section": "Course Description",
-    "text": "Course Description\nThis course teaches key scientific programming skills and demonstrates the application of these techniques to environmental data analysis and problem solving. Topics include structured programming and algorithm development, flow control, simple and advanced data input-output and representation, functions and objects, documentation, testing and debugging. The course will be taught using a combination of the R and Python programming languages."
+    "text": "Course Description\nThis course teaches key scientific programming skills and demonstrates the application of these techniques to environmental data analysis and problem solving. Topics include structured programming and algorithm development, flow control, simple and advanced data input-output and representation, functions and objects, documentation, testing and debugging. The course will be taught using a combination of the R and Python programming languages.\nBy the end of EDS 221, students should be able to:\n\nUnderstand, create, and work with different data structures (e.g. vectors, data frames, lists) and types (e.g. numeric, character, factor, logical, date-times)\nDesign, implement, test, and document functions, including functions with iteration, conditionals, messages, and warnings in R\nUse basic (non-collaborative) project-oriented workflos with reproducible code (R scripts, Quarto documents, Jupyter notebooks) and version control (git/GitHub basics)\nPerform basic data wrangling and visualization with real world environmental data and tidyverse packages (in R)\nEmploy troubleshooting and debugging strategies including tools, mindsets, strategies, and resources"
   },
   {
     "objectID": "index.html#teaching-team",

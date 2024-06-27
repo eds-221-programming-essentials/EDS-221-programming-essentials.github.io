@@ -23,6 +23,18 @@ knitr::include_graphics("images/horst-language-critters.png")
 
 This course teaches key scientific programming skills and demonstrates the application of these techniques to environmental data analysis and problem solving. Topics include structured programming and algorithm development, flow control, simple and advanced data input-output and representation, functions and objects, documentation, testing and debugging. The course will be taught using a combination of the R and Python programming languages.
 
+By the end of EDS 221, students should be able to:
+
+- **Understand, create, and work with different data structures** (e.g. vectors, data frames, lists) **and types** (e.g. numeric, character, factor, logical, date-times)
+
+- **Design, implement, test, and document functions**, including functions with iteration, conditionals, messages, and warnings in R
+
+- **Use basic** (non-collaborative) **project-oriented workflos with reproducible code** (R scripts, Quarto documents, Jupyter notebooks) **and version control** (git/GitHub basics)
+
+- **Perform basic data wrangling and visualization** with real world environmental data and tidyverse packages (in R)
+
+- **Employ troubleshooting and debugging strategies** including tools, mindsets, strategies, and resources
+
 
 ## Teaching Team
 

@@ -25,14 +25,14 @@
     "href": "course-materials/day2.html#class-materials",
     "title": "Data representations",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nBasic algebra review, units and unit conversions, exponents, logarithms\nMeet our R tools, basic operations, our first R function\n\n\nday 1 / afternoon\nFunctions (interpreting & evaluating), reading graphs, slope\nR projects, storing objects, creating vectors and sequences"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 2 / morning\nData representations and types\nCreating and indexing with different data types in R and Python\n\n\nday 2 / afternoon\nCommon data types and structures in EDS\nData in R: accessing / updating elements & casting continued"
   },
   {
     "objectID": "course-materials/day2.html#end-of-day-practice",
     "href": "course-materials/day2.html#end-of-day-practice",
     "title": "Data representations",
     "section": "End-of-day practice",
-    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
+    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 2 Practice: Exploring data types, indexing, importing, and plotting"
   },
   {
     "objectID": "course-materials/day2.html#additional-resources",

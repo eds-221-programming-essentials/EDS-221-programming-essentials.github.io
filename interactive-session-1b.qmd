@@ -12,15 +12,49 @@ editor_options:
 
 ## File path practice
 
-- We'll run through each line in the `toolik_airtemp_summary.Rmd` to understand where it's pointing, what it's doing, and add a few more tools to our coding toolkit (`readr::read_csv()`, `janitor::clean_names()`, `%>%`)
+- We'll run through each line in the `toolik_airtemp_summary.qmd` to understand where it's pointing, what it's doing, and add a few more tools to our coding toolkit (`readr::read_csv()`, `janitor::clean_names()`, `%>%`)
 
-- Similarly, we'll create from scratch & work through one more example to read in another dataset while learning more wrangling skills. Our second example will be to: 
+- Similarly, we'll create from scratch & work through one more example. We will: 
 
   - Read in the chlorophyll data
   - Explore the imported data
   - Clean up the dataset names
   - Create a plot of chlorophyll concentration at varying measurement depth, do some customization
   - Export the graph to /figs
+  
+::: {.callout-tip collapse=true}
+## Solution
+```{r}
+#| eval: false
+#| echo: true
+
+# read in data
+toolik_chlorophyll <- read_csv(here::here("data", "data-raw", "toolik_chlorophyll.csv"))
+
+# get data overview
+skimr::skim(toolik_chlorophyll)
+
+dim(toolik_chlorophyll)
+names(toolik_chlorophyll)
+
+# clean names
+toolik_chlorophyll <- toolik_chlorophyll %>% clean_names() 
+
+# make plot
+toolik_chlorophyll_plot <- ggplot(data = toolik_chlorophyll, 
+                                  aes(x = depth, y = as.numeric(active_chl_a_ug_l))) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = "Toolik Station Chlorophyll a concentration",
+       x = "Depth (m)",
+       y = "Chlorophyll a concentration (micrograms per liter)")
+
+toolik_chlorophyll_plot
+
+# save plot
+ggsave(here::here("figs", "toolik_chlorophyll_plot.png"), height = 6, width = 7)
+```
+:::  
 
 
 ## Data sources 

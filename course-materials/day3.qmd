@@ -1,0 +1,40 @@
+---
+title: "Conditionals and logical operators"
+subtitle: "Day 3"
+description: "Wednesday August 14^th^, 2024"
+---
+
+```{r}
+#| eval: true
+#| echo: false
+#| out-width: "80%"
+#| fig-align: "center"
+knitr::include_graphics("images/horst-across.png")
+```
+
+:::{.gray-text .center-text}
+*Artwork by [Allison Horst](https://allisonhorst.com/)*
+:::
+
+<!-- ## Pre-class prep -->
+
+<!-- No pre-class prep before our first day of class! -->
+
+## Class materials
+
+| {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
+|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
+| day 1 / morning   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/day1.1-slides.qmd){target="_blank"} | [Meet our R tools, basic operations, our first R function](interactive-sessions/interactive-session-1a.qmd) |
+| day 1 / afternoon | [Functions (interpreting & evaluating), reading graphs, slope](slides/day1.2-slides.qmd){target="_blank"} | [R projects, storing objects, creating vectors and sequences](interactive-sessions/interactive-session-1b.qmd) |
+: {.hover .bordered tbl-colwidths="[20,40,40]"} 
+
+## End-of-day practice
+
+Complete the following tasks / activities before heading home for the day!
+
+- [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Problems, gut checks, R Projects, and a function](eod-practice/eod-day1.qmd)
+
+## Additional Resources
+
+TBD
+

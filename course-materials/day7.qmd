@@ -24,15 +24,15 @@ knitr::include_graphics("images/horst-lubridate.png")
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 1 / morning   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/day1.1-slides.qmd){target="_blank"} | [Meet our R tools, basic operations, our first R function](interactive-sessions/interactive-session-1a.qmd) |
-| day 1 / afternoon | [Functions (interpreting & evaluating), reading graphs, slope](slides/day1.2-slides.qmd){target="_blank"} | [R projects, storing objects, creating vectors and sequences](interactive-sessions/interactive-session-1b.qmd) |
+| day 7 / morning   | [Data wrangling continued - more tidying, relational data & types of joins ](https://docs.google.com/presentation/d/1nQTiyoL-vX-G6rWCp5soJKO2yxE48hVnUNX5Bpddc_c/present?usp=sharing){target="_blank"} | [Data wrangling continued: joins](interactive-sessions/interactive-session-7.qmd){target="_blank"} |
+| day 7 / afternoon | [Data wrangling continued - working with dates & times, wrangling strings](https://docs.google.com/presentation/d/1S23fUMX_VN40EEg-W3VcvtVLElhYfMH81oIjWdiBGcc/present?usp=sharing){target="_blank"} | [Data wrangling continued: dates, times, strings](interactive-sessions/interactive-session-7.qmd){target="_blank"} |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Problems, gut checks, R Projects, and a function](eod-practice/eod-day1.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 7 Practice:** Wrangling continued: joins, strings, dates](eod-practice/eod-day7.qmd){target="_blank"}
 
 ## Additional Resources
 

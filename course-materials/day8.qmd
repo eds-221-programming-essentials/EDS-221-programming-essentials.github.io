@@ -24,17 +24,18 @@ knitr::include_graphics("images/horst-ggplot2.png")
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 1 / morning   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/day1.1-slides.qmd){target="_blank"} | [Meet our R tools, basic operations, our first R function](interactive-sessions/interactive-session-1a.qmd) |
-| day 1 / afternoon | [Functions (interpreting & evaluating), reading graphs, slope](slides/day1.2-slides.qmd){target="_blank"} | [R projects, storing objects, creating vectors and sequences](interactive-sessions/interactive-session-1b.qmd) |
+| day 8 / morning   | [The grammar of graphics & basic graph considerations](https://docs.google.com/presentation/d/1MzyYCAzae8IU43UYc9ERgGdGUQ0mttlDgZQO8tG4oTA/present?usp=sharing){target="_blank"} | [Data visualization in `ggplot2`](interactive-sessions/interactive-session-8.qmd){target="_blank"} |
+| day 8 / afternoon | [Data visualization basics - responsible, clear, awesome](https://docs.google.com/presentation/d/1d_2RmcxTxRZ3T-2Jj4SGJEsAK9IR4yY8i-2y1zualzY/present?usp=sharing){target="_blank"} | [Data viz continued](interactive-sessions/interactive-session-8.qmd){target="_blank"} |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Problems, gut checks, R Projects, and a function](eod-practice/eod-day1.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 8 Practice:** Data visualization](eod-practice/eod-day8.qmd){target="_blank"}
 
 ## Additional Resources
 
-TBD
-
+- [Ced Scherer's `ggplot2` tutorial](https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/){target="_blank"}
+- [Yan Holtz' From Data to Viz](https://www.data-to-viz.com/){target="_blank"}
+- [R Graph Gallery](https://r-graph-gallery.com/){target="_blank"}

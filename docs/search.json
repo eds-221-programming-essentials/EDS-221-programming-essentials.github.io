@@ -46,14 +46,14 @@
     "href": "course-materials/day7.html#class-materials",
     "title": "Data wrangling",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nBasic algebra review, units and unit conversions, exponents, logarithms\nMeet our R tools, basic operations, our first R function\n\n\nday 1 / afternoon\nFunctions (interpreting & evaluating), reading graphs, slope\nR projects, storing objects, creating vectors and sequences"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 7 / morning\nData wrangling continued - more tidying, relational data & types of joins\nData wrangling continued: joins\n\n\nday 7 / afternoon\nData wrangling continued - working with dates & times, wrangling strings\nData wrangling continued: dates, times, strings"
   },
   {
     "objectID": "course-materials/day7.html#end-of-day-practice",
     "href": "course-materials/day7.html#end-of-day-practice",
     "title": "Data wrangling",
     "section": "End-of-day practice",
-    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
+    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 7 Practice: Wrangling continued: joins, strings, dates"
   },
   {
     "objectID": "course-materials/day7.html#additional-resources",
@@ -67,14 +67,14 @@
     "href": "course-materials/day4.html#class-materials",
     "title": "Introduction to functions",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nBasic algebra review, units and unit conversions, exponents, logarithms\nMeet our R tools, basic operations, our first R function\n\n\nday 1 / afternoon\nFunctions (interpreting & evaluating), reading graphs, slope\nR projects, storing objects, creating vectors and sequences"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 4 / morning\nIntroduction to writing functions in R & Python\nFunctions 101: basics\n\n\nday 4 / afternoon\nFunctions continued: planning, adding useful messages, more advanced functions and outputs\nFunctions 102: beyond basics"
   },
   {
     "objectID": "course-materials/day4.html#end-of-day-practice",
     "href": "course-materials/day4.html#end-of-day-practice",
     "title": "Introduction to functions",
     "section": "End-of-day practice",
-    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
+    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 4 Practice: Intro to functions"
   },
   {
     "objectID": "course-materials/day4.html#additional-resources",
@@ -88,21 +88,21 @@
     "href": "course-materials/day8.html#class-materials",
     "title": "Grammar of graphics",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nBasic algebra review, units and unit conversions, exponents, logarithms\nMeet our R tools, basic operations, our first R function\n\n\nday 1 / afternoon\nFunctions (interpreting & evaluating), reading graphs, slope\nR projects, storing objects, creating vectors and sequences"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 8 / morning\nThe grammar of graphics & basic graph considerations\nData visualization in ggplot2\n\n\nday 8 / afternoon\nData visualization basics - responsible, clear, awesome\nData viz continued"
   },
   {
     "objectID": "course-materials/day8.html#end-of-day-practice",
     "href": "course-materials/day8.html#end-of-day-practice",
     "title": "Grammar of graphics",
     "section": "End-of-day practice",
-    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
+    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 8 Practice: Data visualization"
   },
   {
     "objectID": "course-materials/day8.html#additional-resources",
     "href": "course-materials/day8.html#additional-resources",
     "title": "Grammar of graphics",
     "section": "Additional Resources",
-    "text": "Additional Resources\nTBD"
+    "text": "Additional Resources\n\nCed Scherer’s ggplot2 tutorial\nYan Holtz’ From Data to Viz\nR Graph Gallery"
   },
   {
     "objectID": "about.html",
@@ -137,14 +137,14 @@
     "href": "course-materials/day10.html#class-materials",
     "title": "Collaboration tools",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nBasic algebra review, units and unit conversions, exponents, logarithms\nMeet our R tools, basic operations, our first R function\n\n\nday 1 / afternoon\nFunctions (interpreting & evaluating), reading graphs, slope\nR projects, storing objects, creating vectors and sequences"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 10 / morning\n\nR packages revisited, tables in R, a taste of git collaboration\n\n\nday 10 / afternoon\nCourse wrap-up"
   },
   {
     "objectID": "course-materials/day10.html#end-of-day-practice",
     "href": "course-materials/day10.html#end-of-day-practice",
     "title": "Collaboration tools",
     "section": "End-of-day practice",
-    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
+    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 10 Morning Practice: GitHub collaboration\n Day 10 Afternoon Practice: Data import, exploration, & visualization"
   },
   {
     "objectID": "course-materials/day10.html#additional-resources",
@@ -158,14 +158,14 @@
     "href": "course-materials/day9.html#class-materials",
     "title": "Troubleshooting",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nBasic algebra review, units and unit conversions, exponents, logarithms\nMeet our R tools, basic operations, our first R function\n\n\nday 1 / afternoon\nFunctions (interpreting & evaluating), reading graphs, slope\nR projects, storing objects, creating vectors and sequences"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 9 / morning\nTroubleshooting 101\nTeach Me How to Google Workshop (with Sam Csik)\n\n\nday 9 / afternoon\nkable tables & alt-text\nMore wrangling tools and practice, kable tables"
   },
   {
     "objectID": "course-materials/day9.html#end-of-day-practice",
     "href": "course-materials/day9.html#end-of-day-practice",
     "title": "Troubleshooting",
     "section": "End-of-day practice",
-    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
+    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 9 Practice: Troubleshooting, reprex, & working with data continued"
   },
   {
     "objectID": "course-materials/day9.html#additional-resources",
@@ -179,14 +179,14 @@
     "href": "course-materials/day5.html#class-materials",
     "title": "Testing, documentation, and sharing",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nBasic algebra review, units and unit conversions, exponents, logarithms\nMeet our R tools, basic operations, our first R function\n\n\nday 1 / afternoon\nFunctions (interpreting & evaluating), reading graphs, slope\nR projects, storing objects, creating vectors and sequences"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 5 / morning\nFunctions continued: testing, documentation, sharing\nFunctions 103: testing & documenting, making your first package\n\n\nday 5 / afternoon\nFinding & using external packages\nFind & explore packages, documentation, accessing from repos"
   },
   {
     "objectID": "course-materials/day5.html#end-of-day-practice",
     "href": "course-materials/day5.html#end-of-day-practice",
     "title": "Testing, documentation, and sharing",
     "section": "End-of-day practice",
-    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
+    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 5 Practice: Loops revisited, functions continued, testing & sourcing scripts, working on your R package"
   },
   {
     "objectID": "course-materials/day5.html#additional-resources",
@@ -200,14 +200,14 @@
     "href": "course-materials/day6.html#class-materials",
     "title": "Tidy data",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nBasic algebra review, units and unit conversions, exponents, logarithms\nMeet our R tools, basic operations, our first R function\n\n\nday 1 / afternoon\nFunctions (interpreting & evaluating), reading graphs, slope\nR projects, storing objects, creating vectors and sequences"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 6 / morning\nTidy data: what, why, how?\nTidying data (pivot, separate) basics with tidyr and pandas\n\n\nday 6 / afternoon\nData tidying and wrangling continued: dplyr and pandas\nData wrangling continued - dplyr and pandas"
   },
   {
     "objectID": "course-materials/day6.html#end-of-day-practice",
     "href": "course-materials/day6.html#end-of-day-practice",
     "title": "Tidy data",
     "section": "End-of-day practice",
-    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
+    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 6 Practice: Tidying & subsetting with tidyr and dplyr"
   },
   {
     "objectID": "course-materials/day6.html#additional-resources",
@@ -221,14 +221,14 @@
     "href": "course-materials/day3.html#class-materials",
     "title": "Conditionals and logical operators",
     "section": "Class materials",
-    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 1 / morning\nBasic algebra review, units and unit conversions, exponents, logarithms\nMeet our R tools, basic operations, our first R function\n\n\nday 1 / afternoon\nFunctions (interpreting & evaluating), reading graphs, slope\nR projects, storing objects, creating vectors and sequences"
+    "text": "Class materials\n\n\n\n\n\n\n\n\n Session\n Lecture slides\n Interactive session\n\n\n\n\nday 3 / morning\nConditionals and logical operations, intro to for loops\nRefresh logical operations, write basics for loops in R\n\n\nday 3 / afternoon\nLoops continued - and functions to help\nFor loops with conditions, apply() functions, and across()"
   },
   {
     "objectID": "course-materials/day3.html#end-of-day-practice",
     "href": "course-materials/day3.html#end-of-day-practice",
     "title": "Conditionals and logical operators",
     "section": "End-of-day practice",
-    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 1 Practice: Problems, gut checks, R Projects, and a function"
+    "text": "End-of-day practice\nComplete the following tasks / activities before heading home for the day!\n\n Day 3 Practice: Conditionals & for loops"
   },
   {
     "objectID": "course-materials/day3.html#additional-resources",

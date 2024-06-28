@@ -24,15 +24,15 @@ knitr::include_graphics("images/horst-across.png")
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 1 / morning   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/day1.1-slides.qmd){target="_blank"} | [Meet our R tools, basic operations, our first R function](interactive-sessions/interactive-session-1a.qmd) |
-| day 1 / afternoon | [Functions (interpreting & evaluating), reading graphs, slope](slides/day1.2-slides.qmd){target="_blank"} | [R projects, storing objects, creating vectors and sequences](interactive-sessions/interactive-session-1b.qmd) |
+| day 3 / morning   | [Conditionals and logical operations, intro to for loops](https://docs.google.com/presentation/d/1TCBHls1pKjFw4S1N7fjalcl_km9CnSPj7j1xqDSwbik/present?usp=sharing){target="_blank"} | [Refresh logical operations, write basics for loops in R](interactive-sessions/interactive-session-3.qmd){target="_blank"} |
+| day 3 / afternoon | [Loops continued - and functions to help](https://docs.google.com/presentation/d/16SHVrCijddMrATuAnTPY9oVhlaqU1j3ispxkEG7k34Y/present?usp=sharing){target="_blank"} | [For loops with conditions, `apply()` functions, and `across()`](interactive-sessions/interactive-session-3.qmd){target="_blank"} |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Problems, gut checks, R Projects, and a function](eod-practice/eod-day1.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 3 Practice:** Conditionals & for loops](eod-practice/eod-day3.qmd){target="_blank"}
 
 ## Additional Resources
 

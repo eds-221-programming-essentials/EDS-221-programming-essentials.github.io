@@ -24,15 +24,15 @@ knitr::include_graphics("images/horst-bugs.png")
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 1 / morning   | [Basic algebra review, units and unit conversions, exponents, logarithms](slides/day1.1-slides.qmd){target="_blank"} | [Meet our R tools, basic operations, our first R function](interactive-sessions/interactive-session-1a.qmd) |
-| day 1 / afternoon | [Functions (interpreting & evaluating), reading graphs, slope](slides/day1.2-slides.qmd){target="_blank"} | [R projects, storing objects, creating vectors and sequences](interactive-sessions/interactive-session-1b.qmd) |
+| day 5 / morning   | [Functions continued: testing, documentation, sharing](https://docs.google.com/presentation/d/1alf4uUi5GQU_uwcIdAgtmUDF9lh6OcahXiKOw0jxZXs/present?usp=sharing){target="_blank"} | [Functions 103: testing & documenting, making your first package](interactive-sessions/interactive-session-5.qmd){target="_blank"} |
+| day 5 / afternoon | [Finding & using external packages](https://docs.google.com/presentation/d/1nPYkZXxVYHy9SoY584dAc2ivnic3tGCZ8aWTy3KBbjE/present?usp=sharing){target="_blank"} | [Find & explore packages, documentation, accessing from repos](interactive-sessions/interactive-session-5.qmd){target="_blank"} |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 
 ## End-of-day practice
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Problems, gut checks, R Projects, and a function](eod-practice/eod-day1.qmd)
+- [{{< fa pencil title="A pencil" >}} **Day 5 Practice:** Loops revisited, functions continued, testing & sourcing scripts, working on your R package](eod-practice/eod-day5.qmd){target="_blank"}
 
 ## Additional Resources
 

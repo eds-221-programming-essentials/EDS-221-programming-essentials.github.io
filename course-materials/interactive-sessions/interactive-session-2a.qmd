@@ -241,3 +241,104 @@ fruit[2,1] <- "pineapple"
 fruit
 ```
 
+# Part 3: Making & indexing data in Python
+
+```{python}
+import numpy as np
+import pandas as pd
+```
+
+## Vectors and matrices in Python
+
+```{python}
+teddy = [1,2,8]
+teddy_vec = np.array(teddy)
+
+teddy_vec
+type(teddy_vec)
+```
+
+A **list** is mutable - you can change it directly! 
+```{python}
+teddy[1] = 1000
+
+# See that element 1 is updated directly! 
+teddy
+```
+
+A **tuple** is immutable - you'll get yelled at if you try to change it! 
+```{python}
+khora = (1, 5, 12)
+type(khora)
+
+# khora[1] = 16 # Nope. 
+```
+
+A more involved list (note: you can also use list() to create lists in python).
+```{python}
+waffle = [["cat", "dog", "penguin"], 2, "a burrito", [1,2,5]]
+
+waffle
+
+# Access an element from the list waffle:
+waffle[0] # Default just returns that piece (not as a list)
+```
+
+We can reassign pieces of a list: 
+```{python}
+waffle[1] = "AN EXTRAVAGANZA"
+
+waffle
+```
+
+## Make a pandas DataFrame in python
+
+### First, a dictionary example:
+
+```{python}
+fox = {'sound': ["screech", "squeal", "bark"], 'age': [2, 6, 10]}
+
+fox['sound']
+
+fox['age']
+```
+
+
+
+```{python}
+cows = {'name': ["moo", "spots", "happy"], 'location': ["pasture", "prairie", "barn"], 'height': [5.7, 5.4, 4.9]}
+
+cows_df = pd.DataFrame(cows)
+
+# Take a look
+cows_df
+
+# Get a column
+cows_df['name']
+
+# Get an element using df.at[]
+cows_df.at[1, 'name']
+```
+
+### Side-by-side: R data frame & Pandas DataFrame
+
+```{r}
+home_sales <- data.frame(
+  state = c("CA", "NV", "OR"),
+  sales = c(38000, 4670, 2750)
+)
+
+home_sales
+```
+
+```{python}
+home_sales = {'state': ["CA", "NV", "OR"], 'sales': [38000, 4670, 2750]}
+
+home_sales = pd.DataFrame(home_sales)
+
+home_sales
+```
+
+
+## End (for now...)
+

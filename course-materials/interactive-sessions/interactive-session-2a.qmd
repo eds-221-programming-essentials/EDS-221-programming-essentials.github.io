@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(reticulate)
 library(palmerpenguins)
+use_python("/opt/anaconda3/bin/python", required = T)
 ```
 
 # Part 1: Setup

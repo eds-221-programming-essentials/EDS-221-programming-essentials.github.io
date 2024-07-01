@@ -495,5 +495,61 @@
     "title": "Day 5 Activities",
     "section": "END Day 5 activities",
     "text": "END Day 5 activities"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day4.html",
+    "href": "course-materials/eod-practice/eod-day4.html",
+    "title": "Day 4 Activities",
+    "section": "",
+    "text": "Create a repo on GitHub named eds221-day4-activities\nClone to create a version-controlled R Project\nCreate some subfolder infrastructure (docs, data)\nAdd a new Quarto file, save as loops_and_functions.qmd in docs"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day4.html#part-0.-setup",
+    "href": "course-materials/eod-practice/eod-day4.html#part-0.-setup",
+    "title": "Day 4 Activities",
+    "section": "",
+    "text": "Create a repo on GitHub named eds221-day4-activities\nClone to create a version-controlled R Project\nCreate some subfolder infrastructure (docs, data)\nAdd a new Quarto file, save as loops_and_functions.qmd in docs"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day4.html#part-1.-for-loops-revisited",
+    "href": "course-materials/eod-practice/eod-day4.html#part-1.-for-loops-revisited",
+    "title": "Day 4 Activities",
+    "section": "Part 1. For loops revisited",
+    "text": "Part 1. For loops revisited\n\nTask 1\nCreate two sequences, one called weekdays that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called transects that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:\n\n\n\n\n\n\n\n\n\n\n\n\n\nMonday - Transect A\nMonday - Transect B\nMonday - Transect C\n\n\nTuesday - Transect A\nTuesday - Transect B\nTuesday - Transect C\n\n\nWednesday - Transect A\nWednesday - Transect B\nWednesday - Transect C\n\n\nThursday - Transect A\nThursday - Transect B\nThursday - Transect C\n\n\nFriday - Transect A\nFriday - Transect B\nFriday - Transect C\n\n\nSaturday - Transect A\nSaturday - Transect B\nSaturday - Transect C\n\n\nSunday - Transect A\nSunday - Transect B\nSunday - Transect C"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day4.html#part-2.-functions-introduced",
+    "href": "course-materials/eod-practice/eod-day4.html#part-2.-functions-introduced",
+    "title": "Day 4 Activities",
+    "section": "Part 2. Functions introduced",
+    "text": "Part 2. Functions introduced\n\nTask 2\nWrite a function called force that calculates a force (in Newtons), given inputs of mass (in kg) and acceleration (in \\(\\frac{m}{s^2}\\) (recall: \\(F = ma\\)), and returns a statement “The resulting force is ___ Newtons.”\n\n\n\nTask 3\nThe length:weight relationship for fish is: \\(W=aL^b\\), where where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values (shown below for several fish from Peyton et al. 2016).\n\n\n\n\n\n\nsci_name\ncommon_name\na_est\nb_est\n\n\n\n\nChanos chanos\nMilkfish\n0.0905\n2.52\n\n\nSphyraena barracuda\nGreat barracuda\n0.0181\n3.27\n\n\nCaranx ignobilis\nGiant trevally\n0.0353\n3.05\n\n\n\n\n\n\n\n\nRecreate the table above as a data frame stored as fish_parms. Then, write a function called fish_weight that allows a user to only enter the common name (argument fish_name) and total length (argument tot_length) (in centimeters) of a fish, to return the expected fish weight in grams. Test it out for different species and lengths.\nNow, try creating a vector of lengths (e.g. 0 to 100, by increments of 1) and ensuring that your function will calculate the fish weight over a range of lengths for the given species (try this for milkfish, storing the output weights as milkfish_weights.\n\n\nTask 4\nWave power (more accurately wave energy flux) in deep water is approximated by:\n\\[P_{deep}=0.5 H^2 T\\] where \\(P\\) is power in \\(\\frac{kW}{m}\\) (potential power per wave meter), \\(H\\) is wave height in meters (more specifically, the significant wave height), and \\(T\\) is the wave period in seconds. Learn more here.\nWrite a function called wave_power that calculates potential ocean wave power given inputs of wave height and period.\nUse your wave_power function to approximate wave power for a period of 8 seconds, over a range of wave heights from 0 to 3 meters by increments of 0.2 meters.\n\n\nTask 5 (OPTIONAL)\nThe wave energy equation changes based on ocean depth. Along the coast of Brenville, which has a very sharp shelf as the wave approaches the coast, wave energy is approximated using the deep ocean equation (the one you used above) for depths &gt; 12 meters, and a shallow equation for depths &lt;= 12 meters. The Brenville team estimates shallow wave power by:\n\\[P_{shallow}=0.81 H^2 T\\]\nCreate a function that requires inputs of water depth, wave height and period, then returns the approximated wave power using the correct equation for the depth entered. It should also include a message (hint: use message() just like you would use warning!) that lets the user know if the shallow or deep water equation was used.\n\n\n\nCitations\nPeyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day6.html",
+    "href": "course-materials/eod-practice/eod-day6.html",
+    "title": "Day 6 Activities",
+    "section": "",
+    "text": "Take ~15 minutes to read Broman & Woo’s evergreen paper Data organization in spreadsheets. As you read, think about data that you have created or had to work with that did not follow these guidelines. Make notes of examples to share from several - how did you input data previously? How would you change the way you input data?\nQuestions:\n\nWhat are major / most common ways you have seen these guidelines ignored?\nWhat is your experience working with or creating data in spreadsheets that don’t follow these guidelines?"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day6.html#task-1-read-broman-woos-data-organization-in-spreadsheets",
+    "href": "course-materials/eod-practice/eod-day6.html#task-1-read-broman-woos-data-organization-in-spreadsheets",
+    "title": "Day 6 Activities",
+    "section": "",
+    "text": "Take ~15 minutes to read Broman & Woo’s evergreen paper Data organization in spreadsheets. As you read, think about data that you have created or had to work with that did not follow these guidelines. Make notes of examples to share from several - how did you input data previously? How would you change the way you input data?\nQuestions:\n\nWhat are major / most common ways you have seen these guidelines ignored?\nWhat is your experience working with or creating data in spreadsheets that don’t follow these guidelines?"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day6.html#task-2-sbc-lobsters",
+    "href": "course-materials/eod-practice/eod-day6.html#task-2-sbc-lobsters",
+    "title": "Day 6 Activities",
+    "section": "Task 2: SBC Lobsters",
+    "text": "Task 2: SBC Lobsters\nData source: Santa Barbara Coastal LTER, D. Reed, and R. Miller. 2021. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012 ver 6. Environmental Data Initiative. https://doi.org/10.6073/pasta/0bcdc7e8b22b8f2c1801085e8ca24d59\n\nGetting started\n\nCreate a new GitHub repo called eds221-day6-activities\nClone to create a version controlled R project\nAdd subfolders data and docs\nDownload the California Spiny lobster abundance data from this SBC LTER data package. Familiarize yourself with the metadata. Save the CSV containing lobster abundance data in your data subfolder.\nIn docs, create a new .Rmd or .qmd saved with file prefix lobster_exploration\nWithin your notebook, write organized and well-annotated code to do the following:\n\nRead in and take a look at the data in the data/Lobster_Abundance_All_Years_20210412.csv file. Take note of values that can be considered NA (see metadata) and update your import line to convert those to NA values\nConvert column names to lower snake case\nConvert the data from frequency to case format using dplyr::uncount() on the existing count column. What did this do? Add annotation in your code explaining dplyr::uncount()\n\n\nHere’s code to read in your data, just to get your started:\n\nlobsters &lt;- read_csv(here(\"data\",\"Lobster_Abundance_All_Years_20210412.csv\"), na = c(\"-99999\", \"\")) %&gt;% \n  clean_names() %&gt;% \n  uncount(count)\n\n\n\nFind counts and mean sizes by site & year\n\nCreate a summary table that finds the total counts (see: n()), and mean carapace lengths of lobsters observed in the dataset by site and year.\nCreate a ggplot graph of the number of total lobsters observed (y-axis) by year (x-axis) in the study, grouped (either aesthetically or by faceting) by site\n\n\n\nFind the proportion of legal lobsters at each site for 2020\nThe legal lobster size (carapace length) in California is 79.76 mm.\n\nCreate a subset that only contains lobster data from 2020 (note: this should be from the original data you read in, not the summary table you created above)\nWrite code (you can decide how to do this - there are a number of ways) to find the counts of lobsters observed at each site (only using site as the grouping factor) that are above and below the legal limit. Hint: You may want to add a new column legal that contains “yes” or “no” based on the size of the observed lobster (see dplyr::case_when() for a really nice way to do this), then use group_by() %&gt;% summarize(n()) or dplyr::count() to get counts by group within variables\nCreate a stacked column graph that shows the proportion of legal and non-legal lobsters at each site. **Hint: create a stacked column graph with geom_col(), then add the argument position = \"fill\" to convert from a graph of absolute counts to proportions.\n\nWhich two sites had the largest proportion of legal lobsters in 2020? Explore the metadata to come up with a hypothesis about why that might be."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day6.html#task-3-random-lobster-wrangling",
+    "href": "course-materials/eod-practice/eod-day6.html#task-3-random-lobster-wrangling",
+    "title": "Day 6 Activities",
+    "section": "Task 3: Random lobster wrangling",
+    "text": "Task 3: Random lobster wrangling\nStarting with the original lobsters data that you read in as lobsters, complete the following (separately - these are not expected to be done in sequence or anything). You can store each of the outputs as ex_a, ex_b, etc. for the purposes of this task.\n\nfilter() practice\n\nCreate and store a subset that only contains lobsters from sites “IVEE”, “CARP” and “NAPL”. Check your output data frame to ensure that only those three sites exist.\nCreate a subset that only contains lobsters observed in August.\nCreate a subset with lobsters at Arroyo Quemado (AQUE) OR with a carapace length greater than 70 mm.\nCreate a subset that does NOT include observations from Naples Reef (NAPL)\n\n\n\ngroup_by() %&gt;% summarize() practice\n\nFind the mean and standard deviation of lobster carapace length, grouped by site.\nFind the maximum carapace length by site and month.\n\n\n\nmutate() practice\n\nAdd a new column that contains lobster carapace length converted to centimeters. Check output.\nUpdate the site column to all lowercase. Check output.\nConvert the area column to a character (not sure why you’d want to do this, but try it anyway). Check output.\n\n\n\ncase_when() practice\n\nUse case_when() to add a new column called size_bin that contains “small” if carapace size is &lt;= 70 mm, or “large” if it is greater than 70 mm. Check output.\nUse case_when() to add a new column called designation that contains “MPA” if the site is “IVEE” or “NAPL”, and “not MPA” for all other outcomes."
   }
 ]

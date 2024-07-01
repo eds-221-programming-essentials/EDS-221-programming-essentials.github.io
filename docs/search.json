@@ -362,5 +362,33 @@
     "title": "Day 3 Activities",
     "section": "END Day 3 activities",
     "text": "END Day 3 activities"
+  },
+  {
+    "objectID": "eod-day4.html",
+    "href": "eod-day4.html",
+    "title": "Day 4 Activities",
+    "section": "",
+    "text": "Create a repo on GitHub named eds221-day4-activities\nClone to create a version-controlled R Project\nCreate some subfolder infrastructure (docs, data)\nAdd a new Quarto file, save as loops_and_functions.qmd in docs"
+  },
+  {
+    "objectID": "eod-day4.html#part-0.-setup",
+    "href": "eod-day4.html#part-0.-setup",
+    "title": "Day 4 Activities",
+    "section": "",
+    "text": "Create a repo on GitHub named eds221-day4-activities\nClone to create a version-controlled R Project\nCreate some subfolder infrastructure (docs, data)\nAdd a new Quarto file, save as loops_and_functions.qmd in docs"
+  },
+  {
+    "objectID": "eod-day4.html#part-1.-for-loops-revisited",
+    "href": "eod-day4.html#part-1.-for-loops-revisited",
+    "title": "Day 4 Activities",
+    "section": "Part 1. For loops revisited",
+    "text": "Part 1. For loops revisited\n\nTask 1\nCreate two sequences, one called weekdays that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called transects that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:\n\n\n\n\n\n\n\n\n\n\n\n\n\nMonday - Transect A\nMonday - Transect B\nMonday - Transect C\n\n\nTuesday - Transect A\nTuesday - Transect B\nTuesday - Transect C\n\n\nWednesday - Transect A\nWednesday - Transect B\nWednesday - Transect C\n\n\nThursday - Transect A\nThursday - Transect B\nThursday - Transect C\n\n\nFriday - Transect A\nFriday - Transect B\nFriday - Transect C\n\n\nSaturday - Transect A\nSaturday - Transect B\nSaturday - Transect C\n\n\nSunday - Transect A\nSunday - Transect B\nSunday - Transect C"
+  },
+  {
+    "objectID": "eod-day4.html#part-2.-functions-introduced",
+    "href": "eod-day4.html#part-2.-functions-introduced",
+    "title": "Day 4 Activities",
+    "section": "Part 2. Functions introduced",
+    "text": "Part 2. Functions introduced\n\nTask 2\nWrite a function called force that calculates a force (in Newtons), given inputs of mass (in kg) and acceleration (in \\(\\frac{m}{s^2}\\) (recall: \\(F = ma\\)), and returns a statement “The resulting force is ___ Newtons.”\n\n\n\nTask 3\nThe length:weight relationship for fish is: \\(W=aL^b\\), where where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values (shown below for several fish from Peyton et al. 2016).\n\n\n\n\n\n\nsci_name\ncommon_name\na_est\nb_est\n\n\n\n\nChanos chanos\nMilkfish\n0.0905\n2.52\n\n\nSphyraena barracuda\nGreat barracuda\n0.0181\n3.27\n\n\nCaranx ignobilis\nGiant trevally\n0.0353\n3.05\n\n\n\n\n\n\n\n\nRecreate the table above as a data frame stored as fish_parms. Then, write a function called fish_weight that allows a user to only enter the common name (argument fish_name) and total length (argument tot_length) (in centimeters) of a fish, to return the expected fish weight in grams. Test it out for different species and lengths.\nNow, try creating a vector of lengths (e.g. 0 to 100, by increments of 1) and ensuring that your function will calculate the fish weight over a range of lengths for the given species (try this for milkfish, storing the output weights as milkfish_weights.\n\n\nTask 4\nWave power (more accurately wave energy flux) in deep water is approximated by:\n\\[P_{deep}=0.5 H^2 T\\] where \\(P\\) is power in \\(\\frac{kW}{m}\\) (potential power per wave meter), \\(H\\) is wave height in meters (more specifically, the significant wave height), and \\(T\\) is the wave period in seconds. Learn more here.\nWrite a function called wave_power that calculates potential ocean wave power given inputs of wave height and period.\nUse your wave_power function to approximate wave power for a period of 8 seconds, over a range of wave heights from 0 to 3 meters by increments of 0.2 meters.\n\n\nTask 5 (OPTIONAL)\nThe wave energy equation changes based on ocean depth. Along the coast of Brenville, which has a very sharp shelf as the wave approaches the coast, wave energy is approximated using the deep ocean equation (the one you used above) for depths &gt; 12 meters, and a shallow equation for depths &lt;= 12 meters. The Brenville team estimates shallow wave power by:\n\\[P_{shallow}=0.81 H^2 T\\]\nCreate a function that requires inputs of water depth, wave height and period, then returns the approximated wave power using the correct equation for the depth entered. It should also include a message (hint: use message() just like you would use warning!) that lets the user know if the shallow or deep water equation was used.\n\n\n\nCitations\nPeyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957."
   }
 ]

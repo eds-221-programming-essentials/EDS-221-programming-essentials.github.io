@@ -143,7 +143,7 @@ Explore this [data package](https://portal.edirepository.org/nis/mapbrowse?packa
 6. Read in the data as `toolik_biochem`. Remember, you'll want to specify here how `NA` values are stored. Pipe directly into `janitor::clean_names()` following your import code to get all column names into lower snake case.
 
 ```{r, include = FALSE}
-toolik_biochem <- read_csv(here("activities", "2011_Kling_Akchem.csv"), na = ".") %>% clean_names()
+toolik_biochem <- read_csv(here("course-materials", "eod-practice", "data", "2011_Kling_Akchem.csv"), na = ".") %>% clean_names()
 ```
 
 7. Create a subset of the data that contains only observations from the "Toolik Inlet" site, and that only contains the variables (columns) for pH, dissolved organic carbon (DOC), and total dissolved nitrogen (TDN) (**hint:** see `dplyr::select()`). Store this subset as `inlet_biochem`. Make sure to look at the subset you've created. 

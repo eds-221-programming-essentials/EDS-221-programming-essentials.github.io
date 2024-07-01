@@ -60,7 +60,7 @@ Try changing the value of burritos to 1.5. What is returned when the `if` statem
 
 This is important: for a solely "if" statement, there is no "else" option. So nothing happens if the condition isn't met.
 
-In Python: 
+<!-- In Python: 
 
 ```{python}
 burrito = 2.4
@@ -69,6 +69,7 @@ if burrito > 2:
   print("I love burritos!")
   
 ```
+-->
 
 #### An example with strings:
 
@@ -109,7 +110,7 @@ if (pika > 60) {
 } else
   print("normal pika")
 ```
-In Python: 
+<!-- In Python: 
 
 ```{python}
 pika = 89.1
@@ -119,6 +120,7 @@ if pika > 60:
 else:
   print("normal pika")
 ```
+-->
 
 #### An example with strings: 
 
@@ -149,7 +151,7 @@ if (marmot < 0.5) {
   print("a large marmot!")
 
 ```
-
+<!--
 ```{python}
 marmot = 2.8
 
@@ -160,7 +162,7 @@ elif 0.5 <= marmot < 3:
 else: 
   print("a large marmot!")
 ```
-
+-->
 ### `switch` statements
 
 A slightly more efficient tool is the `switch()` function, which allows you to "select one of a list of alternatives." See `?switch` for more information. This can be particularly useful for switching between different character strings, based on a condition or user selection. 
@@ -205,7 +207,7 @@ for (pupster in dog_names) {
 }
 ```
 
-In Python: 
+<!--In Python: 
 
 ```{python}
 dog_names = ["Teddy", "Khora", "Banjo", "Waffle"]
@@ -213,7 +215,7 @@ dog_names = ["Teddy", "Khora", "Banjo", "Waffle"]
 for i in dog_names: 
   print("My dog's name is " + i)
 ```
-
+-->
 ### Another basic for loop example: 
 
 Let's check out another little example. Here, we create a sequence that ranges from 0 to 3 by increments of 0.5. Then, for each element in that vector, we add 2 to it, then move on to the next element. 

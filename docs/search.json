@@ -327,5 +327,40 @@
     "title": "Day 2 Activities",
     "section": "End Day 2 activities",
     "text": "End Day 2 activities"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html",
+    "href": "course-materials/eod-practice/eod-day3.html",
+    "title": "Day 3 Activities",
+    "section": "",
+    "text": "Create a repo on GitHub named eds212-day3-activities\nClone to create a version-controlled R Project\nCreate some subfolder infrastructure (docs, data)"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#part-0.-setup",
+    "href": "course-materials/eod-practice/eod-day3.html#part-0.-setup",
+    "title": "Day 3 Activities",
+    "section": "",
+    "text": "Create a repo on GitHub named eds212-day3-activities\nClone to create a version-controlled R Project\nCreate some subfolder infrastructure (docs, data)"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#part-1.-conditional-statements-for-loops",
+    "href": "course-materials/eod-practice/eod-day3.html#part-1.-conditional-statements-for-loops",
+    "title": "Day 3 Activities",
+    "section": "Part 1. Conditional statements & for loops",
+    "text": "Part 1. Conditional statements & for loops\nCreate a new Quarto document in your docs folder, saved as conditionals_loops.qmd. Complete all tasks for Part 1 in this .qmd.\nComplete each of the following in a separate code chunk.\n\nConditional statements\n\nTask 1\nCreate an object called pm2_5 with a value of 48 (representing Particulate Matter 2.5, an indicator for air quality, in \\(\\frac{\\mu g}{m^3}\\) (see more about PM2.5 here).\nWrite an if - else if - else statement that returns “Low to moderate risk” if pm2_5 (for Particulate Matter 2.5) is less than 100, “Unhealthy for sensitive groups” if PM 2.5 is 100 &lt;= pm2_5 &lt; 150, and “Health risk present” if PM 2.5 is &gt;= 150.\nTest by changing the value of your pm2_5 object and re-running your statement to check.\n\n\nTask 2\nStore the string “blue whale” as an object called species. Write an if statement that returns “You found a whale!” if the string “whale” is detected in species, otherwise return nothing. Test by changing the species string & re-running to see output.\n\n\n\nTask 3\nStore the base price of a burrito as base_burrito with a value of 6.50. Store main_ingredient with a starting string of “veggie.” Write a statement that will return the price of a burrito based on what a user specifies as “main_ingredient” (either “veggie”, “chicken” or “steak”) given the following:\n\nA veggie burrito is the cost of a base burrito\nA chicken burrito costs 3.00 more than a base burrito\nA steak burrito costs 3.25 more than a base burrito\n\n\n\n\nFor loops\nComplete each of the following in a separate code chunk.\n\nTask 4\nCreate a new vector called fish that contains the values 8, 10, 12, 23 representing counts of different fish types in a fish tank (goldfish, tetras, guppies, and mollies, respectively). Write a for loop that iterates through fish, and returns what proportion of total fish in the tank are that species. Assume that these counts represent all fish in the tank.\n\n\nTask 5\nThere is an existing vector in R called month.name that contains all month names (just ry running month.name in the Console to check it out). Write a for loop that iterates over all months in month.name and prints “January is month 1,” “February is month 2”, etc.\nHint: you can index values in the month.name vector just like you would any other vector (e.g., try running month.name[5])."
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#part-2.-real-data",
+    "href": "course-materials/eod-practice/eod-day3.html#part-2.-real-data",
+    "title": "Day 3 Activities",
+    "section": "Part 2. Real data",
+    "text": "Part 2. Real data\nYou will complete Part 3 in a separate .qmd.\nExplore this data package from EDI, which contains a “Data file describing the biogeochemistry of samples collected at various sites near Toolik Lake, North Slope of Alaska”. Familiarize yourself with the metadata (particularly, View full metadata &gt; expand ‘Data entities’ to learn more about the variables in the dataset).\nCitation: Kling, G. 2016. Biogeochemistry data set for soil waters, streams, and lakes near Toolik on the North Slope of Alaska, 2011. ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/362c8eeac5cad9a45288cf1b0d617ba7\n\nDownload the CSV containing the Toolik biogeochemistry data\nTake a look at it - how are missing values stored? Keep that in mind.\nDrop the CSV into your data folder of your project\nCreate a new Quarto document, save in docs as toolik_chem.qmd\nAttach the tidyverse, here, and janitor packages in your setup code chunk\nRead in the data as toolik_biochem. Remember, you’ll want to specify here how NA values are stored. Pipe directly into janitor::clean_names() following your import code to get all column names into lower snake case.\nCreate a subset of the data that contains only observations from the “Toolik Inlet” site, and that only contains the variables (columns) for pH, dissolved organic carbon (DOC), and total dissolved nitrogen (TDN) (hint: see dplyr::select()). Store this subset as inlet_biochem. Make sure to look at the subset you’ve created.\nFind the mean value of each column in inlet_biochem 3 different ways:\n\n\nWrite a for loop from scratch to calculate the mean for each\nUse one other method (e.g. apply, across, or purrr::map_df) to find the mean for each column.\n\n\nSave, stage, commit, pull, push!"
+  },
+  {
+    "objectID": "course-materials/eod-practice/eod-day3.html#end-day-3-activities",
+    "href": "course-materials/eod-practice/eod-day3.html#end-day-3-activities",
+    "title": "Day 3 Activities",
+    "section": "END Day 3 activities",
+    "text": "END Day 3 activities"
   }
 ]

@@ -17,7 +17,7 @@ library(palmerpenguins)
 
 - Create a repo on GitHub called `eds221-day2-comp`
 - Clone to make a version-controlled R Project
-- Create a new Quartoyes Markdown, saved in the root as `r-data-types`
+- Create a new Quarto Markdown, saved in the root as `r-data-types`
 - Create a new Jupyter Notebook, saved in the root as `py-data-types`
 
 # Part 2: Making & indexing data in R

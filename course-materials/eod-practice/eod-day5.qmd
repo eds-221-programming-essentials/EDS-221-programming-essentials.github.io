@@ -1,5 +1,5 @@
 ---
-title: "Day 5 Task & activities"
+title: "Day 5 Task & Activities"
 subtitle: "Loops revisited, functions continued, testing, sourcing scripts, working on your R package"
 ---
 

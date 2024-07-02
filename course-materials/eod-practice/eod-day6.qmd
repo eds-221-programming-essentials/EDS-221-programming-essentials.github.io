@@ -1,5 +1,5 @@
 ---
-title: "Day 6 Task & activities"
+title: "Day 6 Task & Activities"
 subtitle: "Tidying & subsetting with `tidyr` and `dplyr`"
 ---
 

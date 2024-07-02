@@ -13,14 +13,13 @@ library(reticulate)
 library(palmerpenguins)
 ```
 
-# Part 1: Setup
+### 1. Setup
 
 - Create a repo on GitHub called `eds221-day2-comp`
 - Clone to make a version-controlled R Project
-- Create a new Quarto Markdown, saved in the root as `r-data-types`
-- Create a new Jupyter Notebook, saved in the root as `py-data-types`
+- Create a new Quarto Document, saved in the root as `r-py-data-types`
 
-# Part 2: Making & indexing data in R
+### 2. Making & indexing data in R
 
 ## Vectors!
 
@@ -241,7 +240,7 @@ fruit[2,1] <- "pineapple"
 fruit
 ```
 
-# Part 3: Making & indexing data in Python
+# 3. Making & indexing data in Python
 ```{r}
 #| eval: false
 py_install("numpy")
@@ -328,7 +327,7 @@ cows_df.at[1, 'name']
 ```
 
 ### Side-by-side: R data frame & Pandas DataFrame
-
+**In R:**
 ```{r}
 home_sales <- data.frame(
   state = c("CA", "NV", "OR"),
@@ -338,6 +337,7 @@ home_sales <- data.frame(
 home_sales
 ```
 
+**In Python:**
 ```{python}
 home_sales = {'state': ["CA", "NV", "OR"], 'sales': [38000, 4670, 2750]}
 
@@ -347,4 +347,6 @@ home_sales
 ```
 
 
-## End (for now...)
+::: {.center-text .body-text-xl .teal-text}
+End Interactive Session 2A
+:::

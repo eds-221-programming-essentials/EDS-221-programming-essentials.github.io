@@ -216,9 +216,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-1-setup" id="toc-part-1-setup" class="nav-link active" data-scroll-target="#part-1-setup">Part 1: Setup</a></li>
-  <li><a href="#part-2-making-indexing-data-in-r" id="toc-part-2-making-indexing-data-in-r" class="nav-link" data-scroll-target="#part-2-making-indexing-data-in-r">Part 2: Making &amp; indexing data in R</a>
-  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
+  <li><a href="#making-indexing-data-in-r" id="toc-making-indexing-data-in-r" class="nav-link" data-scroll-target="#making-indexing-data-in-r">2. Making &amp; indexing data in R</a></li>
   <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">Vectors!</a>
   <ul class="collapse">
   <li><a href="#making-vectors" id="toc-making-vectors" class="nav-link" data-scroll-target="#making-vectors">Making vectors</a></li>
@@ -240,8 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#access-elements-from-a-data-frame" id="toc-access-elements-from-a-data-frame" class="nav-link" data-scroll-target="#access-elements-from-a-data-frame">Access elements from a data frame</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#part-3-making-indexing-data-in-python" id="toc-part-3-making-indexing-data-in-python" class="nav-link" data-scroll-target="#part-3-making-indexing-data-in-python">Part 3: Making &amp; indexing data in Python</a>
+  <li><a href="#making-indexing-data-in-python" id="toc-making-indexing-data-in-python" class="nav-link" data-scroll-target="#making-indexing-data-in-python">3. Making &amp; indexing data in Python</a>
   <ul class="collapse">
   <li><a href="#vectors-and-matrices-in-python" id="toc-vectors-and-matrices-in-python" class="nav-link" data-scroll-target="#vectors-and-matrices-in-python">Vectors and matrices in Python</a></li>
   <li><a href="#make-a-pandas-dataframe-in-python" id="toc-make-a-pandas-dataframe-in-python" class="nav-link" data-scroll-target="#make-a-pandas-dataframe-in-python">Make a pandas DataFrame in python</a>
@@ -249,7 +247,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#first-a-dictionary-example" id="toc-first-a-dictionary-example" class="nav-link" data-scroll-target="#first-a-dictionary-example">First, a dictionary example:</a></li>
   <li><a href="#side-by-side-r-data-frame-pandas-dataframe" id="toc-side-by-side-r-data-frame-pandas-dataframe" class="nav-link" data-scroll-target="#side-by-side-r-data-frame-pandas-dataframe">Side-by-side: R data frame &amp; Pandas DataFrame</a></li>
   </ul></li>
-  <li><a href="#end-for-now" id="toc-end-for-now" class="nav-link" data-scroll-target="#end-for-now">End (for now…)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -261,17 +258,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="part-1-setup" class="level1">
-<h1>Part 1: Setup</h1>
+<section id="setup" class="level3">
+<h3 class="anchored" data-anchor-id="setup">1. Setup</h3>
 <ul>
 <li>Create a repo on GitHub called <code>eds221-day2-comp</code></li>
 <li>Clone to make a version-controlled R Project</li>
-<li>Create a new Quarto Markdown, saved in the root as <code>r-data-types</code></li>
-<li>Create a new Jupyter Notebook, saved in the root as <code>py-data-types</code></li>
+<li>Create a new Quarto Document, saved in the root as <code>r-py-data-types</code></li>
 </ul>
 </section>
-<section id="part-2-making-indexing-data-in-r" class="level1">
-<h1>Part 2: Making &amp; indexing data in R</h1>
+<section id="making-indexing-data-in-r" class="level3">
+<h3 class="anchored" data-anchor-id="making-indexing-data-in-r">2. Making &amp; indexing data in R</h3>
+</section>
 <section id="vectors" class="level2">
 <h2 class="anchored" data-anchor-id="vectors">Vectors!</h2>
 <section id="making-vectors" class="level3">
@@ -631,9 +628,8 @@ $price
 </div>
 </section>
 </section>
-</section>
-<section id="part-3-making-indexing-data-in-python" class="level1">
-<h1>Part 3: Making &amp; indexing data in Python</h1>
+<section id="making-indexing-data-in-python" class="level1">
+<h1>3. Making &amp; indexing data in Python</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">py_install</span>(<span class="st">"numpy"</span>)</span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="fu">py_install</span>(<span class="st">"pandas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -748,6 +744,7 @@ Name: name, dtype: object</code></pre>
 </section>
 <section id="side-by-side-r-data-frame-pandas-dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="side-by-side-r-data-frame-pandas-dataframe">Side-by-side: R data frame &amp; Pandas DataFrame</h3>
+<p><strong>In R:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a>home_sales <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">state =</span> <span class="fu">c</span>(<span class="st">"CA"</span>, <span class="st">"NV"</span>, <span class="st">"OR"</span>),</span>
@@ -762,6 +759,7 @@ Name: name, dtype: object</code></pre>
 3    OR  2750</code></pre>
 </div>
 </div>
+<p><strong>In Python:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb119"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a>home_sales <span class="op">=</span> {<span class="st">'state'</span>: [<span class="st">"CA"</span>, <span class="st">"NV"</span>, <span class="st">"OR"</span>], <span class="st">'sales'</span>: [<span class="dv">38000</span>, <span class="dv">4670</span>, <span class="dv">2750</span>]}</span>
 <span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -775,12 +773,12 @@ Name: name, dtype: object</code></pre>
 2    OR   2750</code></pre>
 </div>
 </div>
-</section>
-</section>
-<section id="end-for-now" class="level2">
-<h2 class="anchored" data-anchor-id="end-for-now">End (for now…)</h2>
+<div class="center-text body-text-xl teal-text">
+<p>End Interactive Session 2A</p>
+</div>
 
 
+</section>
 </section>
 </section>
 

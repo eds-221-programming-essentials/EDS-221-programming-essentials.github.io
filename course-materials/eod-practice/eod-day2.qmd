@@ -1,10 +1,6 @@
 ---
-title: "Day 2 Activities"
+title: "Day 2 Tasks & activities"
 subtitle: "Data types, indexing data, import & plot data"
-output: 
-  html_document:
-    toc: true
-    toc_float: true
 ---
 
 
@@ -15,16 +11,15 @@ library(here)
 library(janitor)
 ```
 
-## Part 1. Checking data types
-
+## 1. Checking data types
 ### Setup
 
 - Create a new repo on GitHub for today's activities
 - Clone to create a version controlled R Project 
 - Create subfolders called `docs`, `data`, and `figs`
-- Create a Quarto document, save in the `docs` subfolder as `r_data_types.qmd` 
+- Create a Quarto Document, save in the `docs` subfolder as `r_data_types.qmd` 
 
-### Create some data, check the classes, index!
+### Checking data types
 
 #### Vectors, lists & data frames
 
@@ -79,7 +74,7 @@ vec_2["location"]
 - What is the length of vec_2?
 - Access the 2nd element by name and store as `vec_2_e2`
 
-3. Create a data frame in R, index
+3. Create a data frame in R
 
 Write code to create a data frame called `df_1` that looks like this: 
 ```{r, echo = FALSE}
@@ -97,7 +92,7 @@ max_count <- max(df_1$count)
 - Find the maximum value of the `count()` column, store as `max_count`
 
 
-## Part 2. Wild data
+## 2. Wild data
 
 #### Set-up
 
@@ -109,7 +104,7 @@ max_count <- max(df_1$count)
 
 - What does each column contain? What are the units of each? What is the study overall about? 
 
-- Create a new Quarto document and save it in your `docs` folder. Attach the `tidyverse`, `here` and `janitor` packages in the setup chunk (you choose the file name)
+- Create a new Quarto Document and save it in your `docs` folder. Attach the `tidyverse`, `here` and `janitor` packages in the setup chunk (you choose the file name)
 
 - Set global options in the YAML so that messages and warnings do NOT show up in the rendered document
 
@@ -203,5 +198,7 @@ ggsave(here("course-materials","eod-practice", "output","cutthroat_size.png"))
 - Reopen your .qmd files for the activities you did today.
 - Render. Does it work? Done. 
 
-## End Day 2 activities
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 2)
+:::
 

@@ -1,11 +1,8 @@
 ---
-title: "Day 10 Interactive Sessions"
-subtitle: "Updating our R packages, kable tables, a first git collaboration"
-output: 
-  html_document:
-    css: comp_session_theme.css
-    toc: true
-    toc_float: true
+title: "Interactive Sessions 10"
+subtitle: "Updating our R packages, `{kable}` tables, and a first git collaboration"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -17,14 +14,14 @@ library(kableExtra)
 library(palmerpenguins)
 ```
 
-## 0. Setup
+## 1. Setup
 
 - Create new repo on GitHub named `eds221-day10-comp`
 - Clone to make a local version-controlled R Project
 
-## 1. Make a ggplot theme
+## 1. Make a `ggplot` theme
 
-- Add a new R Markdown document, saved in your project root as `my_ggplot_theme.Rmd`
+- Add a new Quarto document, saved in your project root as `my_ggplot_theme.qmd`
 - Attach the `tidyverse` and `palmerpenguins` packages
 - Create a plot from the data (whatever type you want)
 - Highly customize the `theme()` component (you can make it as bright / awful as you want - this is going to become a ggplot theme you can share with the world, so it's up to you)
@@ -46,7 +43,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 
 ```
 
-## 2. Updating our R package
+## 3. Updating our R package
 
 - In a new session (so your existing project stays open), reopen the R Project for your R package you created last week
 - Install and Restart your package (this should also attach your package)
@@ -78,7 +75,7 @@ theme_eighties <- function() {theme(title = element_text(size = 16, color = "pur
 ```
 
 - Save your script **using the same name as the function** in the `R` folder (e.g. this one would be `theme_eighties.R`)
-- Add a Roxygen skeleton (recall: click within your function > Code > Insert Roxygen skeleton), and update the title (note that there aren't any arguments / params)
+- Add a `Roxygen` skeleton (recall: click within your function > Code > Insert Roxygen skeleton), and update the title (note that there aren't any arguments / params)
 - `devtools::document()` to produce the R documentation for your new function
 - Install & restart
 - Try it out! Back in your *other* project, attach your package (which you just reinstalled), then make a plot that uses your custom theme from your package! 
@@ -97,7 +94,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 - Share your repo information (username/reponame) with your neighbor so they can install your package from GitHub! Recall: `devtools::install_github("username/reponame")`
 - Test your neighbors new & improved R package and try out their custom theme! 
 
-## 3.  Making some nice tables in R
+## 4.  Making some nice tables in R
 
 We've made a number of ggplot graphs, but we haven't made any tables. Let's learn one way! 
 
@@ -154,7 +151,7 @@ dt %>%
 
 See also: `DT`, `reactable`, `gt`, and more! 
 
-## 4. Git collaboration: both pushing to main
+## 5. Git collaboration: both pushing to main
 
 - Find a partner. Designate who is "Starter" and who is "Collaborator". 
 
@@ -208,5 +205,7 @@ See also: `DT`, `reactable`, `gt`, and more!
 - Add a title and some text for your issue, and submit
 - Once you both have submitted an issue to your shared repo, check your partner's issue, respond and close (resolve) the issue
 
-
+::: {.center-text .body-text-xl .teal-text}
+End Interactive Session 10
+:::
 

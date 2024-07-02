@@ -1,10 +1,6 @@
 ---
-title: "Long-term ice cover duration: North Temperate Lakes LTER"
-output: 
-  html_document:
-    css: activity_theme.css
-    toc: true
-    toc_float: true
+title: "Day 10 Afternoon Tasks & Activities"
+subtitle: "Long-term ice cover duration: North Temperate Lakes LTER"
 ---
 
 ```{r setup, include=FALSE}
@@ -23,7 +19,7 @@ The datasets are here to download:
 - [Madison Lake Area - ice duration data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.33.35)
 - [Madison, Wisconsin meteorological data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.20.32)
 
-## Your task: 
+## 1. Your task 
 
 - Download both datasets
 
@@ -51,8 +47,9 @@ The datasets are here to download:
   
   - Explore thaw dates since 1970. Create a subset of the ice cover duration data since 1970 (ok to include 1970), then convert the `ice_off` column to a `Date`. Use `lubridate::yday()` to pull the numeric *day of the year* from that Date. Create an exploratory plot of the ice off day (numeric day-of-the-year) from 1970 - present. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe. 
   
-### End task
-  
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 10 Morning)
+:::
   
 ```{r}
 icecover <- read_csv(here("course-materials", "eod-practice", "data", "ntl33_v7.csv"), na = "-999")

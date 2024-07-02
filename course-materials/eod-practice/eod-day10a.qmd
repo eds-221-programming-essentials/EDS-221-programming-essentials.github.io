@@ -1,10 +1,6 @@
 ---
-title: "Fiddler crabs and Bergmann's rule"
-output: 
-  html_document:
-    css: activity_theme.css
-    toc: true
-    toc_float: true
+title: "Day 10 Morning Tasks & Activities"
+subtitle: "Fiddler crabs and Bergmann's rule"
 ---
 
 ```{r setup, include=FALSE}
@@ -20,7 +16,7 @@ library(lterdatasampler)
 
 ![Yellow fiddler crab waving it's large claw. From Wikipedia.](https://upload.wikimedia.org/wikipedia/commons/0/08/Uca_perplexa_male_waving.gif)
 
-## Setup: 
+## 1.Setup: 
 
 - Partner up, then decide who is Partner 1 & who is Partner 2 for this activity
 - **You should be working together on all of this activity, even though it is split up into "Partner 1" and "Partner 2" sections**
@@ -100,7 +96,6 @@ fiddler_summary %>%
 - Move back over into your `main` local branch
 - Pull down changes
 
-## Done with morning task
 
 ```{r, include = FALSE}
 meansize_airtemp <- fiddler_crab %>% 
@@ -112,5 +107,6 @@ ggplot(data = meansize_airtemp, aes(x = mean_water, y = mean_size)) +
   geom_point()
 ```
 
-
-
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 10 Morning)
+:::

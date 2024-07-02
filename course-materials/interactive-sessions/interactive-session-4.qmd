@@ -1,11 +1,8 @@
 ---
-title: "Day 4 Interactive Session Materials"
+title: "Interactive Session 4"
 subtitle: "Functions - introduction, basics, examples"
-output: 
-  html_document:
-    css: comp_session_theme.css
-    toc: true
-    toc_float: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -15,7 +12,7 @@ library(reticulate)
 library(palmerpenguins)
 ```
 
-## Part 1: Learning from existing functions
+## 1. Learning from existing functions
 
 ### Function documentation
 
@@ -39,7 +36,7 @@ What are the different pieces in the documentation?
 
 To see function documentation in Python, run `help(functionname)`. This will bring up a new window with information about the function (press `q` to escape). For example, try running `help(min)` in the Python interpreter. 
 
-## Part 2: Basic pieces of a function
+## 2. Basic pieces of a function
 
 ### Components of a function
 
@@ -51,11 +48,11 @@ From [Chapter 19 - Functions](https://r4ds.had.co.nz/functions.html) in R for Da
 
 - You place the code you have developed in body of the function."
 
-## Part 3: Getting started - function examples in R & Python
+## 3. Getting started - function examples in R & Python
 
 #### Example 1 (from lecture slides)
 
-The bird-dog sum example in R: 
+The bird-dog sum example **in R**: 
 
 ```{r}
 birddog_sum <- function(bird, dog) {
@@ -67,7 +64,7 @@ birddog_sum <- function(bird, dog) {
 birddog_sum(bird = 2, dog = 5)
 ```
 
-The bird-dog sum example in Python: 
+The bird-dog sum example **in Python**: 
 
 ```{python}
 def birddog_sum(bird, dog):
@@ -84,7 +81,7 @@ Note the similarities and differences in syntax between R and Python functions.
 
 Make a function called `double_it` that doubles any value input value. 
 
-In R: 
+**In R:** 
 
 ```{r}
 # Create the function: 
@@ -99,7 +96,7 @@ double_it(24)
 double_it(c(1, 0.5, -200))
 ```
 
-In Python: 
+**In Python:** 
 
 ```{python}
 import numpy as np
@@ -126,7 +123,7 @@ double_it(w) # Note this behavior - lists & tuples are operated on differently t
 
 Write a function that returns the statement "I am ___ years old!", where the blank is entered by the user as argument `age`. 
 
-In R: 
+**In R:** 
 ```{r}
 exclaim_age <- function(age) {
   print(paste("I am", age, "years old!"))
@@ -135,7 +132,7 @@ exclaim_age <- function(age) {
 exclaim_age(age = 10)
 ```
 
-In Python: 
+**In Python:** 
 
 ```{python}
 def exclaim_age(age):
@@ -148,13 +145,15 @@ exclaim_age(age = 2)
 
 What's the difference between `print()` and `return()?`. The `print()` function just makes something visible to us. It does not get stored for later use. If we want an output to be stored for use, we use `return()`. 
 
-#### What? 
+::: {.callout-tip collapse=true}
+## What? 
 
-Yeah the difference can be kind of tricky, because it sometimes *seems* like when we use `print()` it has stored something. Let's check out an example that highlights the difference. 
+Yeah the difference can be kind of tricky, because it sometimes *seems* like when we use `print()` it has stored something. Let's check out an example that highlights the difference.
+:::
 
 #### Example 4
 
-A Python example: 
+A **Python** example: 
 
 ```{python}
 def find_max(val_1, val_2):
@@ -183,7 +182,7 @@ def find_max(val_1, val_2):
 ```
 
 
-## Part 4: Functions with conditionals
+## 4. Functions with conditionals
 
 Similar to for loops, we can have conditionals within functions - this means that *what* the function does with arguments will change based on what those argument values are. 
 
@@ -193,7 +192,7 @@ Returning to an example that we saw previously, let's say we want to make a func
 
 Write a function with two arguments: `animal` and `age`, which converts the animal's age from human to animal years. 
 
-In R: 
+**In R:** 
 
 ```{r}
 animal_age <- function(animal, age) {
@@ -215,11 +214,15 @@ animal_age(animal = "cow", age = 12)
 # animal_age(animal = "dog", age = "yellow")
 ```
 
+::: {.callout-tip collapse=false}
+## Critical thinking
+
 **What if the input isn't dog or goat?** Remember this question - we'll return to it later on. 
 
 **A question to keep in mind:** it's easy enough to manually code in the animal species and conversion factor since we only have two animals. Would we want to manually write this out if we had 20 species? 50 species? 
+:::
 
-In Python: 
+**In Python:** 
 ```{python}
 def animal_age(animal, age):
   if (animal == "dog"):
@@ -267,7 +270,7 @@ dog_menu(name = "Khora")
 ```
 Aha - now we can see that we don't have to write out every value in our function! We can pull elements directly from a table to switch parameters based on user selection / inputs!
 
-## Part 5: Functions meet for loops
+## 5. Functions meet for loops
 
 Sometimes, we'll want to iterate over different elements of a data structure (e.g. data frame columns), applying a function we write to each of them. We've learned a couple of coder-friendly tools to loop over columns (e.g. `apply`, `purrr::map()`), but let's write one from scratch first. 
 
@@ -289,7 +292,11 @@ df_means <- function(df) {
 df_means(df = mtcars)
 ```
 
-**Question:** Why only the single square brackets to refer to the column names here? Try it! What is returned when we use `colnames(mtcars[2])` versus `colnames(mtcars[[2]])`?
+::: {.callout-tip collapse=false}
+## Critical thinking
+
+Why only the single square brackets to refer to the column names here? Try it! What is returned when we use `colnames(mtcars[2])` versus `colnames(mtcars[[2]])`?
+:::
 
 So, will this actually work on other data frames? Let's make one! 
 
@@ -306,7 +313,7 @@ df_means(df = the_fish)
 ```
 
 
-## Part 6: Adding helpful error and warning messages
+## 6. Adding helpful error and warning messages
 
 We now know a bit about writing functions. But we also want them to be as *helpful* as possible - meaning that we need to create useful error messages, documentation and tests. We'll start by adding some `stop()` statements to create error messages. 
 
@@ -403,7 +410,7 @@ calc_windpower <- function(rho, radius, windspeed) {
 
 Now test your function with different inputs. Are your messages working? 
 
-## Part 7: A few more interesting functions
+## 7. A few more interesting functions
 
 ### Pulling values from a data frame example
 
@@ -576,7 +583,7 @@ ggplot(data = out_df_long, aes(x = time, y = population)) +
 ```
 
 
-## Part 8: Testing functions with `{testthat}`
+## 8. Testing functions with `{testthat}`
 
 As we develop algorithms, we'll change our code. We want a way to automatically check our function to make sure it's behaving as expected. The `testthat` package "tries to make testing as fun as possible."
 
@@ -603,9 +610,14 @@ mean_range(df = mtcars)
 
 OK great. But we're doing some work on this code, and we don't want to have to try a bunch of different things manually each time we change it to see how it breaks. Instead, we'll write some **automated tests** for this function that help us avoid that (tomorrow!).
 
-## End.
+::: {.center-text .body-text-xl .teal-text}
+End Interactive Session 4
+:::
 
-Extra examples: 
+
+::: {.callout-tip collapse=true}
+
+## Extra examples 
 
 What's the output of this nested for loop? 
 ```{r}
@@ -690,6 +702,4 @@ for (i in seq_along(odds)) {
 
 
 ```
-
-
-
+:::

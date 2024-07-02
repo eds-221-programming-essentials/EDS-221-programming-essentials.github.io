@@ -1,11 +1,6 @@
 ---
-title: "Day 3 Activities"
+title: "Day 3 Task & activities"
 subtitle: "Conditionals & for loops"
-output: 
-  html_document:
-    css: activity_theme.css
-    toc: true
-    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -15,15 +10,15 @@ library(here)
 library(janitor)
 ```
 
-## Part 0. Setup
+## 1. Setup
 
 - Create a repo on GitHub named `eds212-day3-activities`
 - Clone to create a version-controlled R Project
 - Create some subfolder infrastructure (docs, data)
 
-## Part 1. Conditional statements & for loops
+## 2. Conditional statements & for loops
 
-*Create a new Quarto document in your docs folder, saved as `conditionals_loops.qmd`. Complete all tasks for Part 1 in this .qmd.*
+Create a new Quarto document in your docs folder, saved as `conditionals_loops.qmd`. Complete all tasks for Part 2 in this .qmd.
 
 *Complete each of the following in a separate code chunk.*
 
@@ -127,13 +122,17 @@ for (i in seq_along(month.name)) {
 }
 ```
 
-## Part 2. Real data
+## 3. Real data
 
 *You will complete Part 3 in a separate .qmd.*
 
 Explore this [data package](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-arc.10341.5) from EDI, which contains a "Data file describing the biogeochemistry of samples collected at various sites near Toolik Lake, North Slope of Alaska". Familiarize yourself with the metadata (particularly, View full metadata > expand 'Data entities' to learn more about the variables in the dataset). 
 
-**Citation:** Kling, G. 2016. Biogeochemistry data set for soil waters, streams, and lakes near Toolik on the North Slope of Alaska, 2011. ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/362c8eeac5cad9a45288cf1b0d617ba7 
+::: {.callout-note}
+## Citation
+
+Kling, G. 2016. Biogeochemistry data set for soil waters, streams, and lakes near Toolik on the North Slope of Alaska, 2011. ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/362c8eeac5cad9a45288cf1b0d617ba7 
+:::
 
 1. Download the CSV containing the Toolik biogeochemistry data
 2. Take a look at it - how are missing values stored? Keep that in mind. 
@@ -174,7 +173,8 @@ apply(X = inlet_biochem, MARGIN = 2, FUN = mean, na.rm = TRUE)
 ```
 ### Save, stage, commit, pull, push!
 
-## END Day 3 activities
-
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 3)
+:::
 
 

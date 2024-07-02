@@ -1,11 +1,8 @@
 ---
-title: "Day 3 Interactive Session Materials"
+title: "Interactive Session 3"
 subtitle: "Conditionals and intro to for loops"
-output: 
-  html_document:
-    css: comp_session_theme.css
-    toc: true
-    toc_float: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -15,9 +12,9 @@ library(reticulate)
 library(palmerpenguins)
 ```
 
-## Part 1: Boolean operator review
+## 1. Boolean operator review
 
-In [EDS 212](https://allisonhorst.github.io/EDS_212_essential-math/), we learned about Boolean operations and logic - the land of TRUE and FALSE. Boolean operations are ubiquitous in scientific programming. Whether looking for string pattern matches, comparing values, or filtering data frames, Boolean operators show up *all* the time - and even if we aren't writing them explicitly, are working behind the scenes. 
+In [EDS 212](https://eds-212-essential-math.github.io/), we learned about Boolean operations and logic - the land of TRUE and FALSE. Boolean operations are ubiquitous in scientific programming. Whether looking for string pattern matches, comparing values, or filtering data frames, Boolean operators show up *all* the time - and even if we aren't writing them explicitly, are working behind the scenes. 
 
 Let's refresh some basic Boolean (logical) operators for programming: 
 
@@ -34,7 +31,7 @@ pinyon_pine != 25 # Not equal to?
 
 ```
 
-## Part 2: Conditionals
+## 2. Conditionals
 
 We write conditionals to tell a computer what do to based on whether or not some conditions that we set are satisfied. For example, we may want to use conditionals to: 
 
@@ -46,7 +43,7 @@ We write conditionals to tell a computer what do to based on whether or not some
 
 The fundamental conditional statement is an `if` statement, which we can read as "If this condition is met, then do this."
 
-An example in R:
+**An example in R:**
 
 ```{r}
 burrito <- 2.4 # Assign an object value
@@ -60,7 +57,7 @@ Try changing the value of burritos to 1.5. What is returned when the `if` statem
 
 This is important: for a solely "if" statement, there is no "else" option. So nothing happens if the condition isn't met.
 
-In Python: 
+**In Python:** 
 
 ```{python}
 burrito = 2.4
@@ -71,7 +68,7 @@ if burrito > 2:
 ```
 
 
-#### An example with strings:
+### An example with strings:
 
 Here, we're using a new function from the `stringr` package: `stringr::str_detect()`. First, let's learn something about how `str_detect()` works (see `?str_detect()` for more information).
 
@@ -100,7 +97,7 @@ Try updating the phrase or string pattern in the code above to test different va
 
 In the examples above, there was a lonely "if" statement, which returned something if the condition was met, but otherwise returned nothing. Usually, we'll want our code to return something *else* if our condition is *not* met. In that case, we can write an `if-else` statement. Here are a couple of examples: 
 
-In R: 
+**In R:** 
 
 ```{r}
 pika <- 89.1
@@ -111,7 +108,7 @@ if (pika > 60) {
   print("normal pika")
 ```
 
-In Python:
+**In Python:**
 ```{python}
 pika = 89.1
 
@@ -122,7 +119,7 @@ else:
 ```
 
 
-#### An example with strings: 
+### An example with strings: 
 
 ```{r}
 food <- "I love enchiladas!"
@@ -138,7 +135,7 @@ if (str_detect(food, "burritos")) {
 
 Sometimes there aren't just two outcomes! In that case, you can specify different options using the `if-else if-else` structure. Several examples are shown below.
 
-In R: 
+**In R:** 
 
 ```{r}
 marmot <- 2.8
@@ -152,7 +149,7 @@ if (marmot < 0.5) {
 
 ```
 
-In Python:
+**In Python:**
 ```{python}
 marmot = 2.8
 
@@ -168,7 +165,7 @@ else:
 
 A slightly more efficient tool is the `switch()` function, which allows you to "select one of a list of alternatives." See `?switch` for more information. This can be particularly useful for switching between different character strings, based on a condition or user selection. 
 
-In R: 
+**In R:** 
 
 ```{r}
 species = "mouse"
@@ -183,7 +180,7 @@ switch(species,
 
 As we get into Week 2 of EDS 221, we'll learn other functions that make conditionals a bit more read and writable. For example, the `dplyr::case_when()` function is very helpful for writing vectorized if-else statements! 
 
-## Part 3. Introduction to for loops
+## 3. Introduction to for loops
 
 A general guideline from RStudio Chief Scientist Hadley Wickham is that if we copy something more than twice, we should write a function or a loop. Avoiding redundancy in code can make it more readable, reproducible and efficient. 
 
@@ -193,7 +190,7 @@ We write a for loop to iterate through different elements of a data structure (e
 
 Let's start with a very basic for loop: for each element in a vector, do something to it and return the new thing. Here, we start with a vector of puppy names. Starting with the first name "Teddy", we enter the loop and add "My dog's name is" to the beginning of the string. Then we move on to the next name in the vector, continuing until we have applied the updated text to all puppy names.
 
-In R: 
+**In R:** 
 
 ```{r}
 dog_names <- c("Teddy", "Khora", "Banjo", "Waffle")
@@ -208,7 +205,7 @@ for (pupster in dog_names) {
 }
 ```
 
-
+**In Python:**
 ```{python}
 dog_names = ["Teddy", "Khora", "Banjo", "Waffle"]
 
@@ -220,8 +217,7 @@ for i in dog_names:
 
 Let's check out another little example. Here, we create a sequence that ranges from 0 to 3 by increments of 0.5. Then, for each element in that vector, we add 2 to it, then move on to the next element. 
 
-In R: 
-
+**In R:** 
 ```{r}
 mass <- seq(from = 0, to = 3, by = 0.5)
 
@@ -256,7 +252,7 @@ for (i in seq_along(tree_height)) {
 }
 ```
 
-## Part 4. For loops with conditional statements
+## 4. For loops with conditional statements
 
 Earlier in this session, we learned how to write a conditional `if` or `if-else` statement. Sometimes we'll want to change what a for loop does based on a conditional - so we'll have a conditional statement *within* a for loop. Let's take a look and talk through an example: 
 
@@ -303,9 +299,12 @@ for (i in seq_along(species)) {
 
 ```
 
-**Reminder:** Keep this idea in mind when we learn `dplyr::case_when()`! 
+::: {.callout-tip collapse=false}
+## Reminder
+Keep this idea in mind when we learn `dplyr::case_when()`!
+:::
 
-## Part 5. Storing outputs of a for loop
+## 5. Storing outputs of a for loop
 
 So far, we've returned outputs of a for loop, but we haven't *stored* the outputs of a for loop as a new object in our environment. 
 
@@ -351,7 +350,10 @@ for (i in seq_along(tigers)) {
 
 ```
 
-**Note:** Don't make your life harder for no reason. What's the easiest way to fine the `big_cats` values as calculated above? 
+::: {.callout-tip collapse=false}
+## Critical thinking
+Don't make your life harder for no reason. What's the easiest way to fine the `big_cats` values as calculated above? 
+:::
 
 ### For loops across columns of a data frame
 
@@ -392,7 +394,7 @@ for (i in seq_along(penguins)) {
 
 ```
 
-## Part 6. Functional programming - some sugar in R
+## 6. Functional programming - some sugar in R
 
 For loops are a critical skill for any data scientist to understand. However, you may not end up writing many of them from scratch. That's because there exist a number of useful tools (functions) to make iteration easier for us. Here, we'll briefly learn about two: 
 
@@ -413,7 +415,11 @@ For example, let's say we want to find the mean value of all *columns* in the `m
 apply(X = mtcars, MARGIN = 2, FUN = mean)
 ```
 
+::: {.callout-tip collapse=false}
+## Critical thinking
+
 Take a moment to break down what each argument does in the `apply()` function above. Keep this in mind - we can also write *our own function* that we'd want to apply to each element! 
+:::
 
 There are also variations on `apply`, like `lapply` and `sapply`, that are worth looking into for specific use cases. 
 
@@ -444,4 +450,7 @@ map(.x = mtcars, .f = mean)
 map_df(.x = mtcars, .f = mean)
 ```
 
+::: {.center-text .body-text-xl .teal-text}
+End Interactive Session 3
+:::
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 4 Activities</title>
+<title>Day 4 Task &amp; activities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -191,7 +191,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 4 Activities</h1>
+      <h1 class="title">Day 4 Task &amp; activities</h1>
             <p class="subtitle lead">Intro to functions</p>
                       </div>
   </div>
@@ -213,18 +213,17 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-0.-setup" id="toc-part-0.-setup" class="nav-link active" data-scroll-target="#part-0.-setup">Part 0. Setup</a></li>
-  <li><a href="#part-1.-for-loops-revisited" id="toc-part-1.-for-loops-revisited" class="nav-link" data-scroll-target="#part-1.-for-loops-revisited">Part 1. For loops revisited</a>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
+  <li><a href="#for-loops-revisited" id="toc-for-loops-revisited" class="nav-link" data-scroll-target="#for-loops-revisited">2. For loops revisited</a>
   <ul class="collapse">
   <li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1">Task 1</a></li>
   </ul></li>
-  <li><a href="#part-2.-functions-introduced" id="toc-part-2.-functions-introduced" class="nav-link" data-scroll-target="#part-2.-functions-introduced">Part 2. Functions introduced</a>
+  <li><a href="#functions-introduced" id="toc-functions-introduced" class="nav-link" data-scroll-target="#functions-introduced">3. Functions introduced</a>
   <ul class="collapse">
   <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
   <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
   <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4">Task 4</a></li>
   <li><a href="#task-5-optional" id="toc-task-5-optional" class="nav-link" data-scroll-target="#task-5-optional">Task 5 (OPTIONAL)</a></li>
-  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -236,8 +235,8 @@ window.Quarto = {
 
 
 
-<section id="part-0.-setup" class="level2">
-<h2 class="anchored" data-anchor-id="part-0.-setup">Part 0. Setup</h2>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
 <ul>
 <li>Create a repo on GitHub named <code>eds221-day4-activities</code></li>
 <li>Clone to create a version-controlled R Project</li>
@@ -245,15 +244,14 @@ window.Quarto = {
 <li>Add a new Quarto file, save as <code>loops_and_functions.qmd</code> in <code>docs</code></li>
 </ul>
 </section>
-<section id="part-1.-for-loops-revisited" class="level2">
-<h2 class="anchored" data-anchor-id="part-1.-for-loops-revisited">Part 1. For loops revisited</h2>
+<section id="for-loops-revisited" class="level2">
+<h2 class="anchored" data-anchor-id="for-loops-revisited">2. For loops revisited</h2>
 <section id="task-1" class="level3">
 <h3 class="anchored" data-anchor-id="task-1">Task 1</h3>
 <p>Create two sequences, one called <code>weekdays</code> that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called <code>transects</code> that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -303,11 +301,10 @@ window.Quarto = {
 
 </div>
 </div>
-</div>
 </section>
 </section>
-<section id="part-2.-functions-introduced" class="level2">
-<h2 class="anchored" data-anchor-id="part-2.-functions-introduced">Part 2. Functions introduced</h2>
+<section id="functions-introduced" class="level2">
+<h2 class="anchored" data-anchor-id="functions-introduced">3. Functions introduced</h2>
 <section id="task-2" class="level3">
 <h3 class="anchored" data-anchor-id="task-2">Task 2</h3>
 <p>Write a function called <code>force</code> that calculates a force (in Newtons), given inputs of mass (in kg) and acceleration (in <span class="math inline">\(\frac{m}{s^2}\)</span> (recall: <span class="math inline">\(F = ma\)</span>), and returns a statement “The resulting force is ___ Newtons.”</p>
@@ -326,8 +323,7 @@ Write a function called `name_column` that, given a data frame name and a number
 <p>The length:weight relationship for fish is: <span class="math inline">\(W=aL^b\)</span>, where where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values (shown below for several fish from Peyton et al.&nbsp;2016).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div>
-<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">sci_name</th>
@@ -359,7 +355,6 @@ Write a function called `name_column` that, given a data frame name and a number
 </table>
 
 
-</div>
 </div>
 </div>
 <p>Recreate the table above as a data frame stored as <code>fish_parms</code>. Then, write a function called <code>fish_weight</code> that allows a user to only enter the <em>common name</em> (argument <code>fish_name</code>) and <em>total length</em> (argument <code>tot_length</code>) (in centimeters) of a fish, to return the expected fish weight in grams. Test it out for different species and lengths.</p>
@@ -606,10 +601,22 @@ my_test <- bacteria_fun(pop_0 = 5000, t_max = 20)
 
 
 --->
-</section>
-<section id="citations" class="level3">
-<h3 class="anchored" data-anchor-id="citations">Citations</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Citation
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957.</p>
+</div>
+</div>
+<div class="center-text body-text-xl teal-text">
+<p>End Activity Session (Day 4)</p>
+</div>
 
 
 </section>

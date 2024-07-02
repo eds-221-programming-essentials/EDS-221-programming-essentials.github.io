@@ -1,11 +1,6 @@
 ---
-title: "Day 4 Activities"
+title: "Day 4 Task & activities"
 subtitle: "Intro to functions"
-output: 
-  html_document:
-    css: activity_theme.css
-    toc: true
-    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -16,14 +11,14 @@ library(janitor)
 library(kableExtra)
 ```
 
-## Part 0. Setup
+## 1. Setup
 
 - Create a repo on GitHub named `eds221-day4-activities`
 - Clone to create a version-controlled R Project
 - Create some subfolder infrastructure (docs, data)
 - Add a new Quarto file, save as `loops_and_functions.qmd` in `docs`
 
-## Part 1. For loops revisited
+## 2. For loops revisited
 
 ### Task 1
 
@@ -49,7 +44,7 @@ study_matrix %>%
   kable_styling()
 ```
 
-## Part 2. Functions introduced
+## 3. Functions introduced
 
 ### Task 2
 
@@ -228,9 +223,13 @@ my_test <- bacteria_fun(pop_0 = 5000, t_max = 20)
 --->
 
 
-
-### Citations
+::: {.callout-note}
+## Citation
 
 Peyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957. 
+:::
 
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 4)
+:::
 

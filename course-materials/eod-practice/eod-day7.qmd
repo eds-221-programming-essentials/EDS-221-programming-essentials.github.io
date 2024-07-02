@@ -1,11 +1,6 @@
 ---
 title: "Day 7 Tasks & activities"
 subtitle: "Wrangling continued: joins, strings, dates"
-output: 
-  html_document:
-    css: activity_theme.css
-    toc: true
-    toc_float: true
 ---
 
 ```{r setup, include=FALSE}

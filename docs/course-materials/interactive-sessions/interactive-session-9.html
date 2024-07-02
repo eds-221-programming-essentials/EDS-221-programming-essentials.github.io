@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 9 Interactive Session Materials</title>
+<title>Interactive Session 9</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -196,8 +196,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 9 Interactive Session Materials</h1>
-            <p class="subtitle lead">reprex, tables and a ggtheme package</p>
+      <h1 class="title">Interactive Session 9</h1>
+            <p class="subtitle lead"><code>{reprex}</code>, tables, and a <code>ggtheme</code> package</p>
                       </div>
   </div>
     
@@ -218,15 +218,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-0-setup" id="toc-part-0-setup" class="nav-link active" data-scroll-target="#part-0-setup">Part 0: Setup</a></li>
-  <li><a href="#making-a-reproducible-example-reprex" id="toc-making-a-reproducible-example-reprex" class="nav-link" data-scroll-target="#making-a-reproducible-example-reprex">1. Making a reproducible example ({reprex})</a></li>
-  <li><a href="#a-few-new-wrangling-tools-dplyracross-janitorget_dupes" id="toc-a-few-new-wrangling-tools-dplyracross-janitorget_dupes" class="nav-link" data-scroll-target="#a-few-new-wrangling-tools-dplyracross-janitorget_dupes">2. A few new wrangling tools (<code>dplyr::across()</code>, <code>janitor::get_dupes()</code>)</a>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
+  <li><a href="#making-a-reproducible-example-reprex" id="toc-making-a-reproducible-example-reprex" class="nav-link" data-scroll-target="#making-a-reproducible-example-reprex">2. Making a reproducible example (<code>{reprex}</code>)</a></li>
+  <li><a href="#a-few-new-wrangling-tools-dplyracross-janitorget_dupes" id="toc-a-few-new-wrangling-tools-dplyracross-janitorget_dupes" class="nav-link" data-scroll-target="#a-few-new-wrangling-tools-dplyracross-janitorget_dupes">3. A few new wrangling tools (<code>dplyr::across()</code>, <code>janitor::get_dupes()</code>)</a>
   <ul class="collapse">
   <li><a href="#janitorget_dupes-to-check-for-duplicates" id="toc-janitorget_dupes-to-check-for-duplicates" class="nav-link" data-scroll-target="#janitorget_dupes-to-check-for-duplicates">janitor::get_dupes() to check for duplicates</a></li>
-  <li><a href="#dplyracross---operations-across-columns" id="toc-dplyracross---operations-across-columns" class="nav-link" data-scroll-target="#dplyracross---operations-across-columns">dplyr::across() - operations across columns</a></li>
+  <li><a href="#dplyracross---operations-across-columns" id="toc-dplyracross---operations-across-columns" class="nav-link" data-scroll-target="#dplyracross---operations-across-columns"><code>dplyr::across()</code> - operations across columns</a></li>
   </ul></li>
-  <li><a href="#tables-with-kable-and-kableextra" id="toc-tables-with-kable-and-kableextra" class="nav-link" data-scroll-target="#tables-with-kable-and-kableextra">3. Tables with {kable} and {kableExtra}</a></li>
-  <li><a href="#a-package-for-your-ggplot-theme" id="toc-a-package-for-your-ggplot-theme" class="nav-link" data-scroll-target="#a-package-for-your-ggplot-theme">4. A package for your ggplot theme</a>
+  <li><a href="#tables-with-kable-and-kableextra" id="toc-tables-with-kable-and-kableextra" class="nav-link" data-scroll-target="#tables-with-kable-and-kableextra">4. Tables with <code>{kable}</code> and <code>{kableExtra}</code></a></li>
+  <li><a href="#a-package-for-your-ggplot-theme" id="toc-a-package-for-your-ggplot-theme" class="nav-link" data-scroll-target="#a-package-for-your-ggplot-theme">5. A package for your <code>ggplot</code> theme</a>
   <ul class="collapse">
   <li><a href="#creating-a-package" id="toc-creating-a-package" class="nav-link" data-scroll-target="#creating-a-package">Creating a package</a></li>
   </ul></li>
@@ -240,17 +240,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<section id="part-0-setup" class="level2">
-<h2 class="anchored" data-anchor-id="part-0-setup">Part 0: Setup</h2>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
 <ul>
-<li>Create a new version-controlled R Project called <code>eds221-m2021-day9-interactive</code> from Terminal / git bash</li>
+<li>Create a new version-controlled R Project called <code>eds221-m2021-day9-interactive</code></li>
 <li>Install the <code>kableExtra</code> package</li>
 <li>Create a new R Markdown document in the project</li>
 <li>Attach the following packages in the setup chunk:
@@ -261,9 +254,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="making-a-reproducible-example-reprex" class="level2">
-<h2 class="anchored" data-anchor-id="making-a-reproducible-example-reprex">1. Making a reproducible example ({reprex})</h2>
+<h2 class="anchored" data-anchor-id="making-a-reproducible-example-reprex">2. Making a reproducible example (<code>{reprex}</code>)</h2>
 <p>Making a minimum viable example is often the best way to troubleshoot problematic code when you can’t figure out a solution quickly – and is <em>definitely</em> the best way to share an example of something you’re struggling with so you’re most likely to get help. If people can’t run or play with your code, it’s much less likely they’ll be able to offer a solution.</p>
-<p>You probably already have {reprex} (part of the tidyverse). Copy code to clipboard and run <code>reprex()</code> to make one!</p>
+<p>You probably already have <code>{reprex}</code> (part of the tidyverse). Copy code to clipboard and run <code>reprex()</code> to make one!</p>
 <p>Some guidelines:</p>
 <ul>
 <li>Ruthlessly simplify</li>
@@ -280,38 +273,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="a-few-new-wrangling-tools-dplyracross-janitorget_dupes" class="level2">
-<h2 class="anchored" data-anchor-id="a-few-new-wrangling-tools-dplyracross-janitorget_dupes">2. A few new wrangling tools (<code>dplyr::across()</code>, <code>janitor::get_dupes()</code>)</h2>
+<h2 class="anchored" data-anchor-id="a-few-new-wrangling-tools-dplyracross-janitorget_dupes">3. A few new wrangling tools (<code>dplyr::across()</code>, <code>janitor::get_dupes()</code>)</h2>
 <section id="janitorget_dupes-to-check-for-duplicates" class="level3">
 <h3 class="anchored" data-anchor-id="janitorget_dupes-to-check-for-duplicates">janitor::get_dupes() to check for duplicates</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dupes <span class="ot">&lt;-</span> <span class="fu">get_dupes</span>(starwars) <span class="co"># Across all variables (exact match across all columns?)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dupes <span class="ot">&lt;-</span> <span class="fu">get_dupes</span>(starwars) <span class="co"># Across all variables (exact match across all columns?)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>No variable names specified - using all columns.</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>No duplicate combinations found of: name, height, mass, hair_color, skin_color, eye_color, birth_year, sex, gender, ... and 5 other variables</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for duplicate values in the `2000` column</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dupes_2 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_dupes</span>(homeworld)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for duplicates in the homeworld and species column</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>dupes_3 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_dupes</span>(homeworld, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for duplicate values in the `2000` column</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dupes_2 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_dupes</span>(homeworld)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for duplicates in the homeworld and species column</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>dupes_3 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_dupes</span>(homeworld, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="dplyracross---operations-across-columns" class="level3">
-<h3 class="anchored" data-anchor-id="dplyracross---operations-across-columns">dplyr::across() - operations across columns</h3>
+<h3 class="anchored" data-anchor-id="dplyracross---operations-across-columns"><code>dplyr::across()</code> - operations across columns</h3>
 <p>Mutate across multiple columns:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), tolower))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), tolower))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can use it within <code>group_by() + summarize()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(homeworld) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(homeworld) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: There was 1 warning in `summarise()`.
 ℹ In argument: `across(where(is.numeric), mean, na.rm = TRUE)`.
@@ -329,30 +322,29 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </div>
 <p>Another example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(drat<span class="sc">:</span>qsec, mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(drat<span class="sc">:</span>qsec, mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="tables-with-kable-and-kableextra" class="level2">
-<h2 class="anchored" data-anchor-id="tables-with-kable-and-kableextra">3. Tables with {kable} and {kableExtra}</h2>
+<h2 class="anchored" data-anchor-id="tables-with-kable-and-kableextra">4. Tables with <code>{kable}</code> and <code>{kableExtra}</code></h2>
 <p>We can produce finalized tables in R Markdown in a number of ways - see a bunch of them in David Keyes’ post <a href="https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/"><em>How to make beautiful tables in R.</em></a></p>
 <p>We’ll just use one tool: <code>kable</code> + <code>kableExtra</code> to make nice html tables.</p>
 <p>Try it out of the box (knit to see the table):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, island) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Island"</span>, <span class="st">"Body mass (g)"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">"striped"</span>, <span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, island) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Island"</span>, <span class="st">"Body mass (g)"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">"striped"</span>, <span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`summarise()` has grouped output by 'species'. You can override using the
 `.groups` argument.</code></pre>
 </div>
 <div class="cell-output-display">
-<div>
-<table class="table table-striped table-sm small" data-quarto-postprocess="true">
+<table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
@@ -392,10 +384,9 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 
 </div>
 </div>
-</div>
 </section>
 <section id="a-package-for-your-ggplot-theme" class="level2">
-<h2 class="anchored" data-anchor-id="a-package-for-your-ggplot-theme">4. A package for your ggplot theme</h2>
+<h2 class="anchored" data-anchor-id="a-package-for-your-ggplot-theme">5. A package for your <code>ggplot</code> theme</h2>
 <section id="creating-a-package" class="level3">
 <h3 class="anchored" data-anchor-id="creating-a-package">Creating a package</h3>
 <ol type="a">
@@ -419,7 +410,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <ol start="6" type="a">
 <li><p>Put your cursor anywhere in the function code within your R script. In the top menu of RStudio, select Code &gt; Insert Roxygen skeleton. The information added is important - it specifies the params (arguments of the function) and more that will appear in the documentation, which we’ll create next. Save the .R file, which now contains your function and the Roxygen information.</p></li>
 <li><p>Document the function by running <code>devtools::document()</code> in the Console. This will create a new .Rd file in the man/ folder, containing important documentation information about your function.</p></li>
-<li><p>Press <code>Build &gt; Install and Restart</code>. In the Console, run ?function_name, replacing function_name there instead. It will bring up the documentation, and let you know your function exists! Now go ahead and try to <em>use</em> your function by making a graph in the Console.</p></li>
+<li><p>Press <code>Build &gt; Install and Restart</code>. In the Console, run <code>?function_name</code>, replacing function_name there instead. It will bring up the documentation, and let you know your function exists! Now go ahead and try to <em>use</em> your function by making a graph in the Console.</p></li>
 </ol>
 <pre><code>library(tidyverse)
 
@@ -429,6 +420,9 @@ ggplot(data = msleep, aes(x = sleep_total, y = sleep_rem)) +
 <ol type="i">
 <li>Once you confirm it’s working, push your changes back to your repo on GitHub. Share your repo “username/reponame” with your neighbor so they can install your package from GitHub (recall: using <code>remotes::install_github("username/reponame")</code>). Install your neighbor’s theming package, check which functions exist by running <code>help(package = "packagename")</code> in the Console, then make a ggplot graph that uses your <em>neighbor’s</em> ggplot theme. Done!</li>
 </ol>
+<div class="center-text body-text-xl teal-text">
+<p>End Interactive Session 9</p>
+</div>
 
 
 </section>

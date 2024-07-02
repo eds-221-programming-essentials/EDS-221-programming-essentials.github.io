@@ -1,14 +1,12 @@
 ---
-title: "Day 9 Interactive Session Materials"
-subtitle: "reprex, tables and a ggtheme package"
-output: 
-  html_document:
-    css: comp_session_theme.css
-    toc: true
-    toc_float: true
+title: "Interactive Session 9"
+subtitle: "`{reprex}`, tables, and a `ggtheme` package"
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, warning = FALSE, message = FALSE}
+#| include: false
 library(tidyverse)
 library(palmerpenguins)
 library(lubridate)
@@ -16,20 +14,20 @@ library(kableExtra)
 library(janitor)
 ```
 
-## Part 0: Setup
+## 1. Setup
 
-- Create a new version-controlled R Project called `eds221-m2021-day9-interactive` from Terminal / git bash
+- Create a new version-controlled R Project called `eds221-m2021-day9-interactive` 
 - Install the `kableExtra` package
 - Create a new R Markdown document in the project
 - Attach the following packages in the setup chunk: 
     - `tidyverse`
     - `kableExtra`
     
-## 1. Making a reproducible example ({reprex})
+## 2. Making a reproducible example (`{reprex}`)
 
 Making a minimum viable example is often the best way to troubleshoot problematic code when you can't figure out a solution quickly -- and is *definitely* the best way to share an example of something you're struggling with so you're most likely to get help. If people can't run or play with your code, it's much less likely they'll be able to offer a solution. 
 
-You probably already have {reprex} (part of the tidyverse). Copy code to clipboard and run `reprex()` to make one! 
+You probably already have `{reprex}` (part of the tidyverse). Copy code to clipboard and run `reprex()` to make one! 
 
 Some guidelines:
  
@@ -46,7 +44,7 @@ See more:
 - https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html
 
 
-## 2. A few new wrangling tools (`dplyr::across()`, `janitor::get_dupes()`)
+## 3. A few new wrangling tools (`dplyr::across()`, `janitor::get_dupes()`)
 
 ### janitor::get_dupes() to check for duplicates
 
@@ -62,7 +60,7 @@ dupes_3 <- starwars %>%
   get_dupes(homeworld, species)
 ```
 
-### dplyr::across() - operations across columns
+### `dplyr::across()` - operations across columns
 
 Mutate across multiple columns: 
 ```{r, results = 'hide'}
@@ -85,7 +83,7 @@ mtcars %>%
 ```
 
 
-## 3. Tables with {kable} and {kableExtra}
+## 4. Tables with `{kable}` and `{kableExtra}`
 
 We can produce finalized tables in R Markdown in a number of ways - see a bunch of them in David Keyes' post [*How to make beautiful tables in R.*](https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/)
 
@@ -100,7 +98,7 @@ penguins %>%
   kable_styling(bootstrap_options = "striped", full_width = FALSE)
 ```
 
-## 4. A package for your ggplot theme
+## 5. A package for your `ggplot` theme
 
 ### Creating a package
 
@@ -134,7 +132,7 @@ f. Put your cursor anywhere in the function code within your R script. In the to
 
 g. Document the function by running `devtools::document()` in the Console. This will create a new .Rd file in the man/ folder, containing important documentation information about your function. 
 
-h. Press `Build > Install and Restart`. In the Console, run ?function_name, replacing function_name there instead. It will bring up the documentation, and let you know your function exists! Now go ahead and try to *use* your function by making a graph in the Console. 
+h. Press `Build > Install and Restart`. In the Console, run `?function_name`, replacing function_name there instead. It will bring up the documentation, and let you know your function exists! Now go ahead and try to *use* your function by making a graph in the Console. 
 
 ```
 library(tidyverse)
@@ -146,4 +144,7 @@ ggplot(data = msleep, aes(x = sleep_total, y = sleep_rem)) +
 
 i. Once you confirm it's working, push your changes back to your repo on GitHub. Share your repo "username/reponame" with your neighbor so they can install your package from GitHub (recall: using `remotes::install_github("username/reponame")`). Install your neighbor's theming package, check which functions exist by running `help(package = "packagename")` in the Console, then make a ggplot graph that uses your *neighbor's* ggplot theme. Done!
 
+::: {.center-text .body-text-xl .teal-text}
+End Interactive Session 9
+:::
 

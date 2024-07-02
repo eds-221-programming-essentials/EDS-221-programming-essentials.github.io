@@ -1,11 +1,6 @@
 ---
-title: "Day 8 Activities"
+title: "Day 8 Tasks & Activities"
 subtitle: "Data visualization"
-output: 
-  html_document:
-    css: activity_theme.css
-    toc: true
-    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -16,7 +11,7 @@ library(janitor)
 library(kableExtra)
 ```
 
-## Setup
+## 1. Setup
 
 - Create a new repo on GitHub called `eds221-day8-activities`
 - Clone to make a version controlled R Project
@@ -77,7 +72,6 @@ Once you've decided on what to plot, create the best graph that you can to commu
 
 **Once you're done, drop your best graph (as a .png or .jpg) into the course Slack channel.** 
 
-
-## Done with Day 8 tasks
-
-
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 8)
+:::

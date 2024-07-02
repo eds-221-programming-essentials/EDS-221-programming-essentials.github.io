@@ -1,11 +1,6 @@
 ---
 title: "Day 6 Task & activities"
 subtitle: "Tidying & subsetting with `tidyr` and `dplyr`"
-output: 
-  html_document:
-    css: activity_theme.css
-    toc: true
-    toc_float: true
 ---
 
 ```{r setup, include=FALSE}

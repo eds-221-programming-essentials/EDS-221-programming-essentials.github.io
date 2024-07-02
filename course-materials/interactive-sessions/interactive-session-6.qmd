@@ -1,6 +1,6 @@
 ---
 title: "Day 6 Interactive Session Materials"
-subtitle: "Data wrangling: tidying with {tidyr}, {dplyr} and {pandas}"
+subtitle: "Data wrangling: tidying with `tidyr`, `dplyr` and `pandas`"
 output: 
   html_document:
     css: comp_session_theme.css
@@ -83,10 +83,10 @@ wb_metadata <- read_csv(here("course-materials", "interactive-sessions", "data",
 ### In Python: 
 ```{python, echo = FALSE}
 # Read in data
-wb_indicators = pd.read_csv('course-materials/interactive-sessions/data/wb_indicators.csv', na_values = ["..",""])
+wb_indicators = pd.read_csv('data/wb_indicators.csv', na_values = ["..",""])
 
 # Read in metadata about indicators
-wb_metadata = pd.read_csv('course-materials/interactive-sessions/data/wb_indicators_metadata.csv')
+wb_metadata = pd.read_csv('data/wb_indicators_metadata.csv')
 ```
 
 ```{python, eval = FALSE}

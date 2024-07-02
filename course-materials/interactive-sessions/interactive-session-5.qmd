@@ -495,7 +495,7 @@ End Interactive Session 5
 :::
 
 ::: {.callout-tip collapse=true}
-
+## Extra examples
 Extra unit test example (from lecture):
 
 ```{r, error=TRUE}

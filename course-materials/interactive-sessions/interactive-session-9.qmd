@@ -23,7 +23,7 @@ library(janitor)
     - `tidyverse`
     - `kableExtra`
     
-## 2. Making a reproducible example (`{reprex}`)
+## 2. Making a reproducible example: `{reprex}`
 
 Making a minimum viable example is often the best way to troubleshoot problematic code when you can't figure out a solution quickly -- and is *definitely* the best way to share an example of something you're struggling with so you're most likely to get help. If people can't run or play with your code, it's much less likely they'll be able to offer a solution. 
 
@@ -44,7 +44,7 @@ See more:
 - https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html
 
 
-## 3. A few new wrangling tools (`dplyr::across()`, `janitor::get_dupes()`)
+## 3. A few new wrangling tools: `dplyr::across()` & `janitor::get_dupes()`
 
 ### janitor::get_dupes() to check for duplicates
 

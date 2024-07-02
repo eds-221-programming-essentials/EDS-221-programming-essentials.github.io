@@ -9,29 +9,29 @@ website:
       - href: index.qmd
         text: home
       - text: syllabus
-        href: https://docs.google.com/document/d/13wWvGrbbH0INB4JHi27EE845Nq3Tlh4SOIfebd2u3Ng/edit?usp=sharing
+        href: https://docs.google.com/document/d/13wWvGrbbH0INB4JHi27EE845Nq3Tlh4SOIfebd2u3Ng/view?usp=sharing
         target: _blank
       - text: daily materials
         menu: 
-          - text: day 1
+          - text: day 1 (8/12)
             href: course-materials/day1.qmd
-          - text: day 2
+          - text: day 2 (8/13)
             href: course-materials/day2.qmd
-          - text: day 3
+          - text: day 3 (8/14)
             href: course-materials/day3.qmd
-          - text: day 4
+          - text: day 4 (8/15)
             href: course-materials/day4.qmd
-          - text: day 5
+          - text: day 5 (8/16)
             href: course-materials/day5.qmd
-          - text: day 6
+          - text: day 6 (8/19)
             href: course-materials/day6.qmd
-          - text: day 7
+          - text: day 7 (8/20)
             href: course-materials/day7.qmd
-          - text: day 8
+          - text: day 8 (8/21)
             href: course-materials/day8.qmd
-          - text: day 9
+          - text: day 9 (8/22)
             href: course-materials/day9.qmd
-          - text: day 10
+          - text: day 10 (8/23)
             href: course-materials/day10.qmd
       - icon: github
         href: https://github.com/EDS-221

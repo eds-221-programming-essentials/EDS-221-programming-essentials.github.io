@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://docs.google.com/document/d/13wWvGrbbH0INB4JHi27EE845Nq3Tlh4SOIfebd2u3Ng/edit?usp=sharing" target="_blank"> 
+    <a class="nav-link" href="https://docs.google.com/document/d/13wWvGrbbH0INB4JHi27EE845Nq3Tlh4SOIfebd2u3Ng/view?usp=sharing" target="_blank"> 
 <span class="menu-text">syllabus</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -140,43 +140,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-daily-materials">    
         <li>
     <a class="dropdown-item" href="../../course-materials/day1.html">
- <span class="dropdown-text">day 1</span></a>
+ <span class="dropdown-text">day 1 (8/12)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day2.html">
- <span class="dropdown-text">day 2</span></a>
+ <span class="dropdown-text">day 2 (8/13)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day3.html">
- <span class="dropdown-text">day 3</span></a>
+ <span class="dropdown-text">day 3 (8/14)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day4.html">
- <span class="dropdown-text">day 4</span></a>
+ <span class="dropdown-text">day 4 (8/15)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day5.html">
- <span class="dropdown-text">day 5</span></a>
+ <span class="dropdown-text">day 5 (8/16)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day6.html">
- <span class="dropdown-text">day 6</span></a>
+ <span class="dropdown-text">day 6 (8/19)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day7.html">
- <span class="dropdown-text">day 7</span></a>
+ <span class="dropdown-text">day 7 (8/20)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day8.html">
- <span class="dropdown-text">day 8</span></a>
+ <span class="dropdown-text">day 8 (8/21)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day9.html">
- <span class="dropdown-text">day 9</span></a>
+ <span class="dropdown-text">day 9 (8/22)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../course-materials/day10.html">
- <span class="dropdown-text">day 10</span></a>
+ <span class="dropdown-text">day 10 (8/23)</span></a>
   </li>  
     </ul>
   </li>
@@ -219,8 +219,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
-  <li><a href="#making-a-reproducible-example-reprex" id="toc-making-a-reproducible-example-reprex" class="nav-link" data-scroll-target="#making-a-reproducible-example-reprex">2. Making a reproducible example (<code>{reprex}</code>)</a></li>
-  <li><a href="#a-few-new-wrangling-tools-dplyracross-janitorget_dupes" id="toc-a-few-new-wrangling-tools-dplyracross-janitorget_dupes" class="nav-link" data-scroll-target="#a-few-new-wrangling-tools-dplyracross-janitorget_dupes">3. A few new wrangling tools (<code>dplyr::across()</code>, <code>janitor::get_dupes()</code>)</a>
+  <li><a href="#making-a-reproducible-example-reprex" id="toc-making-a-reproducible-example-reprex" class="nav-link" data-scroll-target="#making-a-reproducible-example-reprex">2. Making a reproducible example: <code>{reprex}</code></a></li>
+  <li><a href="#a-few-new-wrangling-tools-dplyracross-janitorget_dupes" id="toc-a-few-new-wrangling-tools-dplyracross-janitorget_dupes" class="nav-link" data-scroll-target="#a-few-new-wrangling-tools-dplyracross-janitorget_dupes">3. A few new wrangling tools: <code>dplyr::across()</code> &amp; <code>janitor::get_dupes()</code></a>
   <ul class="collapse">
   <li><a href="#janitorget_dupes-to-check-for-duplicates" id="toc-janitorget_dupes-to-check-for-duplicates" class="nav-link" data-scroll-target="#janitorget_dupes-to-check-for-duplicates">janitor::get_dupes() to check for duplicates</a></li>
   <li><a href="#dplyracross---operations-across-columns" id="toc-dplyracross---operations-across-columns" class="nav-link" data-scroll-target="#dplyracross---operations-across-columns"><code>dplyr::across()</code> - operations across columns</a></li>
@@ -254,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="making-a-reproducible-example-reprex" class="level2">
-<h2 class="anchored" data-anchor-id="making-a-reproducible-example-reprex">2. Making a reproducible example (<code>{reprex}</code>)</h2>
+<h2 class="anchored" data-anchor-id="making-a-reproducible-example-reprex">2. Making a reproducible example: <code>{reprex}</code></h2>
 <p>Making a minimum viable example is often the best way to troubleshoot problematic code when you can’t figure out a solution quickly – and is <em>definitely</em> the best way to share an example of something you’re struggling with so you’re most likely to get help. If people can’t run or play with your code, it’s much less likely they’ll be able to offer a solution.</p>
 <p>You probably already have <code>{reprex}</code> (part of the tidyverse). Copy code to clipboard and run <code>reprex()</code> to make one!</p>
 <p>Some guidelines:</p>
@@ -273,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="a-few-new-wrangling-tools-dplyracross-janitorget_dupes" class="level2">
-<h2 class="anchored" data-anchor-id="a-few-new-wrangling-tools-dplyracross-janitorget_dupes">3. A few new wrangling tools (<code>dplyr::across()</code>, <code>janitor::get_dupes()</code>)</h2>
+<h2 class="anchored" data-anchor-id="a-few-new-wrangling-tools-dplyracross-janitorget_dupes">3. A few new wrangling tools: <code>dplyr::across()</code> &amp; <code>janitor::get_dupes()</code></h2>
 <section id="janitorget_dupes-to-check-for-duplicates" class="level3">
 <h3 class="anchored" data-anchor-id="janitorget_dupes-to-check-for-duplicates">janitor::get_dupes() to check for duplicates</h3>
 <div class="cell">

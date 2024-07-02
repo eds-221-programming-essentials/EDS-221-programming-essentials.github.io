@@ -19,7 +19,7 @@ The datasets are here to download:
 - [Madison Lake Area - ice duration data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.33.35)
 - [Madison, Wisconsin meteorological data](https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-ntl.20.32)
 
-## 1. Your task 
+## Your task 
 
 - Download both datasets
 

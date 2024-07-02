@@ -68,5 +68,5 @@ All datasets are collected and provided by scientists with the [Toolik Station L
 **Toolik fish: toolik_fish.csv** Budy, P., C. Luecke, and M. McDonald. 2020. Fish captures in lakes of the Arctic LTER region Toolik Field Station Alaska from 1986 to present. ver 6. Environmental Data Initiative. https://doi.org/10.6073/pasta/d0a9358f783339821b82510eb8c61b45 (Accessed 2021-08-08).
 
 ::: {.center-text .body-text-xl .teal-text}
-End Interactive Session 2A
+End Interactive Session 1B
 :::

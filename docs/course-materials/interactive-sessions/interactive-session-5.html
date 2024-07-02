@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 5 Interactive Session Materials</title>
+<title>Interactive Session 5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -243,7 +243,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 5 Interactive Session Materials</h1>
+      <h1 class="title">Interactive Session 5</h1>
             <p class="subtitle lead">Functions continued: testing, sourcing, documentation, sharing</p>
                       </div>
   </div>
@@ -265,29 +265,28 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#part-0-warm-up---for-loops-revisited-leslie-matrix" id="toc-part-0-warm-up---for-loops-revisited-leslie-matrix" class="nav-link" data-scroll-target="#part-0-warm-up---for-loops-revisited-leslie-matrix">Part 0: Warm up - For loops revisited (Leslie Matrix)</a>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
+  <li><a href="#warm-up---for-loops-revisited-leslie-matrix" id="toc-warm-up---for-loops-revisited-leslie-matrix" class="nav-link" data-scroll-target="#warm-up---for-loops-revisited-leslie-matrix">2. Warm up - For loops revisited (Leslie Matrix)</a>
   <ul class="collapse">
   <li><a href="#create-the-matrix" id="toc-create-the-matrix" class="nav-link" data-scroll-target="#create-the-matrix">Create the matrix</a></li>
   </ul></li>
-  <li><a href="#part-1-testing-functions-with-testthat" id="toc-part-1-testing-functions-with-testthat" class="nav-link" data-scroll-target="#part-1-testing-functions-with-testthat">Part 1: Testing functions with <code>{testthat}</code></a>
+  <li><a href="#testing-functions-with-testthat" id="toc-testing-functions-with-testthat" class="nav-link" data-scroll-target="#testing-functions-with-testthat">3. Testing functions with <code>{testthat}</code></a>
   <ul class="collapse">
   <li><a href="#write-the-function" id="toc-write-the-function" class="nav-link" data-scroll-target="#write-the-function">Write the function</a></li>
   <li><a href="#create-some-tests-with-testthat" id="toc-create-some-tests-with-testthat" class="nav-link" data-scroll-target="#create-some-tests-with-testthat">Create some tests with <code>testthat</code></a></li>
   </ul></li>
-  <li><a href="#part-2-sourcing-functions" id="toc-part-2-sourcing-functions" class="nav-link" data-scroll-target="#part-2-sourcing-functions">Part 2: Sourcing functions</a>
+  <li><a href="#sourcing-functions" id="toc-sourcing-functions" class="nav-link" data-scroll-target="#sourcing-functions">3. Sourcing functions</a>
   <ul class="collapse">
   <li><a href="#a-real-sourcing-example-cork-oak-growth" id="toc-a-real-sourcing-example-cork-oak-growth" class="nav-link" data-scroll-target="#a-real-sourcing-example-cork-oak-growth">A real sourcing example: cork oak growth</a></li>
   </ul></li>
-  <li><a href="#part-3-function-documentation" id="toc-part-3-function-documentation" class="nav-link" data-scroll-target="#part-3-function-documentation">Part 3: Function documentation</a></li>
-  <li><a href="#part-4-making-an-r-package" id="toc-part-4-making-an-r-package" class="nav-link" data-scroll-target="#part-4-making-an-r-package">Part 4: Making an R package</a></li>
-  <li><a href="#part-5.-finding-vetting-and-using-other-packages" id="toc-part-5.-finding-vetting-and-using-other-packages" class="nav-link" data-scroll-target="#part-5.-finding-vetting-and-using-other-packages">Part 5. Finding, vetting and using other packages</a>
+  <li><a href="#function-documentation" id="toc-function-documentation" class="nav-link" data-scroll-target="#function-documentation">4. Function documentation</a></li>
+  <li><a href="#making-an-r-package" id="toc-making-an-r-package" class="nav-link" data-scroll-target="#making-an-r-package">5. Making an R package</a></li>
+  <li><a href="#finding-vetting-and-using-other-packages" id="toc-finding-vetting-and-using-other-packages" class="nav-link" data-scroll-target="#finding-vetting-and-using-other-packages">6. Finding, vetting and using other packages</a>
   <ul class="collapse">
   <li><a href="#finding-packages" id="toc-finding-packages" class="nav-link" data-scroll-target="#finding-packages">Finding packages</a></li>
   <li><a href="#exploring-vetting-packages" id="toc-exploring-vetting-packages" class="nav-link" data-scroll-target="#exploring-vetting-packages">Exploring / vetting packages</a></li>
   <li><a href="#using-and-citing-packages" id="toc-using-and-citing-packages" class="nav-link" data-scroll-target="#using-and-citing-packages">Using and citing packages</a></li>
   </ul></li>
-  <li><a href="#end" id="toc-end" class="nav-link" data-scroll-target="#end">END</a></li>
   </ul>
 </nav>
     </div>
@@ -299,13 +298,13 @@ window.Quarto = {
 
 
 <section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
 <ul>
-<li>Fork then clone <a href="https://github.com/allisonhorst/eds221-day5-comp">this repo</a> to create a version-controlled R Project for Day 5</li>
+<li>Fork then clone <a href="https://github.com/eds-221-programming-essentials/eds221-day5-comp">this repo</a> to create a version-controlled R Project for Day 5</li>
 </ul>
 </section>
-<section id="part-0-warm-up---for-loops-revisited-leslie-matrix" class="level2">
-<h2 class="anchored" data-anchor-id="part-0-warm-up---for-loops-revisited-leslie-matrix">Part 0: Warm up - For loops revisited (Leslie Matrix)</h2>
+<section id="warm-up---for-loops-revisited-leslie-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="warm-up---for-loops-revisited-leslie-matrix">2. Warm up - For loops revisited (Leslie Matrix)</h2>
 <p>Open the <code>leslie_projection.Rmd</code> file in docs/. All code shown below for Part 0 is in that file. You should be able to run it out-of-the-box. In EDS 212, we learned about Leslie matrices for projecting populations based on mortality and reproduction for different organism life stages. Let’s return to one example we checked out.</p>
 <p>A population of fish we’re interested in has four life stages: eggs (E), fry (F), juvenile (J), breeding adult (A). You are told that annually:</p>
 <ul>
@@ -367,8 +366,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="part-1-testing-functions-with-testthat" class="level2">
-<h2 class="anchored" data-anchor-id="part-1-testing-functions-with-testthat">Part 1: Testing functions with <code>{testthat}</code></h2>
+<section id="testing-functions-with-testthat" class="level2">
+<h2 class="anchored" data-anchor-id="testing-functions-with-testthat">3. Testing functions with <code>{testthat}</code></h2>
 <ul>
 <li>Create a new R Markdown file in your existing project (in docs/) saved as <code>fun_testing.Rmd</code></li>
 <li>Install the <code>testthat</code> package (<code>install.packages("testthat")</code>)</li>
@@ -376,7 +375,19 @@ window.Quarto = {
 <li>Install the <code>remotes</code> packages (<code>install.packages("remotes")</code>)</li>
 </ul>
 <p>As we develop algorithms, we’ll change our code. We want a way to automatically check our work to make sure it’s behaving as expected. The <a href="https://testthat.r-lib.org/index.html"><code>testthat</code></a> package “tries to make testing as fun as possible.”</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><strong>Unit test:</strong> A unit test is an automated check of a piece (“unit”) of your code</p>
+</div>
+</div>
 <p>Let’s consider an example. We’re writing a function to find the mean value of each column, then return the lowest and highest mean calculated (in that order). We would expect:</p>
 <ul>
 <li>The outcome to be a numeric vector of length 2</li>
@@ -440,8 +451,8 @@ window.Quarto = {
 <p>That test fails. This is just a little flavor of what unit tests do.</p>
 </section>
 </section>
-<section id="part-2-sourcing-functions" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-sourcing-functions">Part 2: Sourcing functions</h2>
+<section id="sourcing-functions" class="level2">
+<h2 class="anchored" data-anchor-id="sourcing-functions">3. Sourcing functions</h2>
 <p>When you’re writing functions (or working with someone else’s functions), often they’re not stored in the actual script or notebook you’re working in. If that’s the case, you can still use them by <strong>sourcing</strong> a function.</p>
 <p>Let’s make a function that’s stored in a script, save it in our project working directory, and use it in an R Markdown document.</p>
 <ul>
@@ -459,7 +470,19 @@ window.Quarto = {
 </div>
 <p>Save the script with a descriptive name, e.g.&nbsp;<code>food_cart_functions.R</code> (this could, in theory, contain multiple functions). Atop our .Rmd (in the setup chunk), we’ll <strong>source</strong> the script so we have access to its functions. Mine will look like this:</p>
 <p><code>source("food_cart_functions.R")</code></p>
-<p><strong>Note:</strong> you may have your scripts in a subfolder (e.g.&nbsp;R/ or something) - you can use <code>here::here()</code> within the <code>source()</code> function to point to the right place within your R Project as needed.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may have your scripts in a subfolder (e.g.&nbsp;R/ or something) - you can use <code>here::here()</code> within the <code>source()</code> function to point to the right place within your R Project as needed.</p>
+</div>
+</div>
 <p>Now, add a code chunk in your R Markdown document that uses the <code>name_cart()</code> function you’ve created. It works over here, too!</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">name_cart</span>(<span class="at">food =</span> <span class="st">"strawberry"</span>, <span class="at">animal =</span> <span class="st">"marmot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -470,13 +493,25 @@ window.Quarto = {
 <p>This gives us a valuable tool for organizing things within a project. Often, you’ll have a separate folder called <code>R</code> where you have your scripts / functions, and those are sourced as needed for use in your notebook or by another script you’re working on.</p>
 <section id="a-real-sourcing-example-cork-oak-growth" class="level3">
 <h3 class="anchored" data-anchor-id="a-real-sourcing-example-cork-oak-growth">A real sourcing example: cork oak growth</h3>
-<p><strong>Citation:</strong> Mariola Sánchez-González, Margarida Tomé, Gregorio Montero. Modelling height and diameter growth of dominant cork oak trees in Spain. Annals of Forest Science, Springer Nature (since 2011)/EDP Science (until 2010), 2005, 62 (7), pp.633-643.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Citation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mariola Sánchez-González, Margarida Tomé, Gregorio Montero. Modelling height and diameter growth of dominant cork oak trees in Spain. Annals of Forest Science, Springer Nature (since 2011)/EDP Science (until 2010), 2005, 62 (7), pp.633-643.</p>
+</div>
+</div>
 <p>In the <code>src/</code> folder there is a script <code>cork_oak_growth.R</code> that contains one function <code>height_t2</code> that estimates the height of a cork oak tree at some age (time 2), given a prior height of the tree, the age when that height was recorded (years), and the age you’re trying to estimate the new height for (these ages are t1 and t2, respectively, in the model).</p>
 <p>Create a new .Rmd. Source the script by running <code>source(here::here("path", "to", "script.R"))</code> in your setup chunk. Ensure that you can use the function in your .Rmd whenever you want to.</p>
 </section>
 </section>
-<section id="part-3-function-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="part-3-function-documentation">Part 3: Function documentation</h2>
+<section id="function-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="function-documentation">4. Function documentation</h2>
 <p>Documentation is a really important part of data science. Remember: “past you doesn’t respond to emails” (Wickham). I’ll also add that present you will forget things immediately, and future you is a grump. So make sure, for your sake and the sake of your collaborators, you <strong>document</strong> your functions (along with any useful annotation throughout your work) to make them easier for you to use later on.</p>
 <p>It’s important to note here that documentation can mean different things.</p>
 <p>Informally, this can mean adding relevant comments to your script so that you know:</p>
@@ -574,8 +609,8 @@ window.Quarto = {
 <p>Now, this might seem weird because it’s not obvious how that odd formatting of the Roxygen Skeleton actually helps. Why not just make them normal comments, and it words that a human can easily read?</p>
 <p>The answer is: because this structure and syntax will make it possible for us to store our documentation as part of an R package containing our function. And that’s what we want to do next…</p>
 </section>
-<section id="part-4-making-an-r-package" class="level2">
-<h2 class="anchored" data-anchor-id="part-4-making-an-r-package">Part 4: Making an R package</h2>
+<section id="making-an-r-package" class="level2">
+<h2 class="anchored" data-anchor-id="making-an-r-package">5. Making an R package</h2>
 <p>Let’s put a bunch of what we’ve been working on together into an R package that you can use, <em>and</em> share with others so they can use your amazing function!</p>
 <p>Step-by-step:</p>
 <ol type="1">
@@ -641,11 +676,23 @@ window.Quarto = {
 <p>Once your package is in a public repo on GitHub, anyone can install its contents by running:</p>
 <pre><code>`remotes::install_github("username/reponame")`</code></pre>
 <p>For example, if my package is in a repo called <code>tacopika</code>, then someone could install that package of mine using:</p>
-<pre><code>`remotes::install_github("allisonhorst/tacopika")`</code></pre>
-<p><strong>Note:</strong> you can check all functions in a package by running <code>lsf.str("package:packagename")</code> in the console. For example, after installing the package <code>tacopika</code> above, running <code>lsf.str("package:tacopika")</code> in the Console will return all functions in it.</p>
+<pre><code>`remotes::install_github("ryoliver/tacopika")`</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can check all functions in a package by running <code>lsf.str("package:packagename")</code> in the console. For example, after installing the package <code>tacopika</code> above, running <code>lsf.str("package:tacopika")</code> in the Console will return all functions in it.</p>
+</div>
+</div>
 </section>
-<section id="part-5.-finding-vetting-and-using-other-packages" class="level2">
-<h2 class="anchored" data-anchor-id="part-5.-finding-vetting-and-using-other-packages">Part 5. Finding, vetting and using other packages</h2>
+<section id="finding-vetting-and-using-other-packages" class="level2">
+<h2 class="anchored" data-anchor-id="finding-vetting-and-using-other-packages">6. Finding, vetting and using other packages</h2>
 <p>Now that you’ve made your own package, let’s dive into packages that <em>other</em> developers have made so that we do more data science and less reinventing the wheel with code to do common useful things.</p>
 <p>Let’s spend a bit of time learning how to search for, choose, investigate put to use some R &amp; Python Packages.</p>
 <section id="finding-packages" class="level3">
@@ -692,7 +739,19 @@ window.Quarto = {
 <li>From CRAN (using <code>install.packages("packagename")</code>)</li>
 <li>From GitHub (using <code>devtools::install_github("username/packagename")</code> or <code>remotes::install_github("username/packagename"</code>)</li>
 </ul>
-<p><strong>Note:</strong> There are other ways to get R packages. For example, <a href="https://www.bioconductor.org/">Bioconductor</a> provides “open source software for bioinformatics” and is home to a lot of great software &amp; packages for genomics work. See the Bioconductor <a href="https://www.bioconductor.org/install/">installation page</a> for information about how to install their packages &amp; tools.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There are other ways to get R packages. For example, <a href="https://www.bioconductor.org/">Bioconductor</a> provides “open source software for bioinformatics” and is home to a lot of great software &amp; packages for genomics work. See the Bioconductor <a href="https://www.bioconductor.org/install/">installation page</a> for information about how to install their packages &amp; tools.</p>
+</div>
+</div>
 <p>What about Python packages? We haven’t dealt with this at all, since <em>most</em> of the packages we need are installed with Anaconda. What id we need something different?</p>
 <p>Follow along to make sure you can install packages with pip:</p>
 <ul>
@@ -740,10 +799,21 @@ A BibTeX entry for LaTeX users is
 Select the citation you want to insert. For example, data used in this example are from the <code>palmerpenguins</code> R package <span class="citation" data-cites="horst2020a">(<a href="#ref-horst2020a" role="doc-biblioref">Horst, Presmanes Hill, and Gorman 2020</a>)</span>.</p>
 <p>Click on the citation text for a preview of how it’ll show up in the final document!</p>
 <p>Learn more about citations in R Markdown: <a href="https://blog.rstudio.com/2020/11/09/rstudio-1-4-preview-citations/" class="uri">https://blog.rstudio.com/2020/11/09/rstudio-1-4-preview-citations/</a></p>
-</section>
-</section>
-<section id="end" class="level2">
-<h2 class="anchored" data-anchor-id="end">END</h2>
+<div class="center-text body-text-xl teal-text">
+<p>End Interactive Session 5</p>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Extra unit test example (from lecture):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>fish_mass <span class="ot">&lt;-</span> <span class="cf">function</span>(alpha, beta, fish_length) {</span>
@@ -780,9 +850,13 @@ Select the citation you want to insert. For example, data used in this example a
 <span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(dist)</span>
 <span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</div>
+</div>
+</div>
 
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

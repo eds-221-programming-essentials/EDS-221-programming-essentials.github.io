@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 5 Activities</title>
+<title>Day 5 Task &amp; activities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -189,7 +189,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 5 Activities</h1>
+      <h1 class="title">Day 5 Task &amp; activities</h1>
             <p class="subtitle lead">Loops revisited, functions continued, testing, sourcing scripts, working on your R package</p>
                       </div>
   </div>
@@ -211,11 +211,19 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#task-1-make-a-function-source-in-an-r-markdown-doc" id="toc-task-1-make-a-function-source-in-an-r-markdown-doc" class="nav-link" data-scroll-target="#task-1-make-a-function-source-in-an-r-markdown-doc">Task 1: Make a function, source in an R Markdown doc</a></li>
-  <li><a href="#task-2-wild-data" id="toc-task-2-wild-data" class="nav-link" data-scroll-target="#task-2-wild-data">Task 2: Wild data</a></li>
-  <li><a href="#task-3-add-to-your-r-package" id="toc-task-3-add-to-your-r-package" class="nav-link" data-scroll-target="#task-3-add-to-your-r-package">Task 3: Add to your R package</a></li>
-  <li><a href="#end-day-5-activities" id="toc-end-day-5-activities" class="nav-link" data-scroll-target="#end-day-5-activities">END Day 5 activities</a></li>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
+  <li><a href="#make-a-function-source-in-an-r-markdown-doc" id="toc-make-a-function-source-in-an-r-markdown-doc" class="nav-link" data-scroll-target="#make-a-function-source-in-an-r-markdown-doc">2. Make a function, source in an R Markdown doc</a>
+  <ul class="collapse">
+  <li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1">Task 1</a></li>
+  </ul></li>
+  <li><a href="#wild-data" id="toc-wild-data" class="nav-link" data-scroll-target="#wild-data">3. Wild data</a>
+  <ul class="collapse">
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
+  </ul></li>
+  <li><a href="#add-to-your-r-package" id="toc-add-to-your-r-package" class="nav-link" data-scroll-target="#add-to-your-r-package">4. Add to your R package</a>
+  <ul class="collapse">
+  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -227,16 +235,30 @@ window.Quarto = {
 
 
 <section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
 <ul>
 <li>Create a new repo on GitHub called <code>eds221-day5-activities</code></li>
 <li>Clone to create a version-controlled R Project</li>
 <li>Create subfolders: <code>docs</code>, <code>src</code>, <code>data</code>, <code>figs</code></li>
 </ul>
 </section>
-<section id="task-1-make-a-function-source-in-an-r-markdown-doc" class="level2">
-<h2 class="anchored" data-anchor-id="task-1-make-a-function-source-in-an-r-markdown-doc">Task 1: Make a function, source in an R Markdown doc</h2>
-<p><strong>Citation:</strong> <a href="https://files.nc.gov/ncdeq/Water%20Quality/Surface%20Water%20Protection/SPU/SPU%20-%20BMP%20Manual%20Documents/BMPMan-Ch03-SWCalcs-20090616-DWQ-SPU.pdf">NCDENR Stormwater BMP Manual</a></p>
+<section id="make-a-function-source-in-an-r-markdown-doc" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-function-source-in-an-r-markdown-doc">2. Make a function, source in an R Markdown doc</h2>
+<section id="task-1" class="level3">
+<h3 class="anchored" data-anchor-id="task-1">Task 1</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Citation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://files.nc.gov/ncdeq/Water%20Quality/Surface%20Water%20Protection/SPU/SPU%20-%20BMP%20Manual%20Documents/BMPMan-Ch03-SWCalcs-20090616-DWQ-SPU.pdf">NCDENR Stormwater BMP Manual</a></p>
+</div>
+</div>
 <p>One established way to calculate the volume of stormwater expected for a watershed (necessary to design best management practices &amp; systems) is the <em>Simple Method</em>, which involves two steps. First, the runoff coefficient <span class="math inline">\(R_v\)</span> (storm runoff / storm rainfall) is calculated from: <span class="math display">\[R_v = 0.05 + 0.9 * I_A\]</span></p>
 <p>Where <span class="math inline">\(R_v\)</span> is the runoff coefficient (unitless), and <span class="math inline">\(I_A\)</span> is the fraction of the watershed that is considered “impervious” (unitless). The volume of stormwater that needs to be handled, <span class="math inline">\(V\)</span> in cubic feet, is then calculated by: <span class="math display">\[V=3630 * R_D * R_v * A\]</span> where <span class="math inline">\(R_D\)</span> is the “<em>design storm rainfall depth</em>” in inches, usually set to 1.0 or 1.5, <span class="math inline">\(R_v\)</span> is the runoff coefficient calculated above, and <span class="math inline">\(A\)</span> is the watershed area in acres.</p>
 <p><strong>YOUR TASK:</strong></p>
@@ -252,10 +274,13 @@ window.Quarto = {
 <li><p>Bind your sequence of impervious fractions together with the resulting runoff volume calculated into a data frame</p></li>
 <li><p>Create a ggplot graph that has both dots and connecting lines (i.e., you’ll layer <code>geom_point()</code> and <code>geom_line()</code>. Update axis labels. Export a png of your graph to the <code>figs</code> folder using <code>ggsave</code>.</p></li>
 </ul>
-<p><em>Done with Task 1</em></p>
+<p><strong>Done with Task 1</strong></p>
 </section>
-<section id="task-2-wild-data" class="level2">
-<h2 class="anchored" data-anchor-id="task-2-wild-data">Task 2: Wild data</h2>
+</section>
+<section id="wild-data" class="level2">
+<h2 class="anchored" data-anchor-id="wild-data">3. Wild data</h2>
+<section id="task-2" class="level3">
+<h3 class="anchored" data-anchor-id="task-2">Task 2</h3>
 <p>For Task 2, you will work with the <code>us_tilapia_imports.csv</code>. It exists in your <code>eds221-day5-comp</code> project - copy that file into your <code>data</code> folder for your day 5 activities project. The data are from the USDA Economic Research Service, and contain annual total volumes (in thousands of pounds) of tilapia imports to the United States from different countries.</p>
 <p><strong>You can decide if you want to do this all in separate steps, or piped together in sequence, or some combination.</strong> Make sure if you pipe things together, you check the output at every step.</p>
 <ul>
@@ -272,8 +297,11 @@ window.Quarto = {
 </ul>
 <p><strong>Done with Task 2.</strong></p>
 </section>
-<section id="task-3-add-to-your-r-package" class="level2">
-<h2 class="anchored" data-anchor-id="task-3-add-to-your-r-package">Task 3: Add to your R package</h2>
+</section>
+<section id="add-to-your-r-package" class="level2">
+<h2 class="anchored" data-anchor-id="add-to-your-r-package">4. Add to your R package</h2>
+<section id="task-3" class="level3">
+<h3 class="anchored" data-anchor-id="task-3">Task 3</h3>
 <p>For Task 3, reopen your R package you started today, and add two new functions. They can do whatever you want as long as:</p>
 <ul>
 <li>They have at least two required arguments</li>
@@ -284,11 +312,12 @@ window.Quarto = {
 <li>Push your changes back to your repo on GitHub</li>
 <li>Share the link with someone (they’ll need to reinstall your package from GitHub using <code>install_github("username/reponame")</code>)</li>
 </ul>
+<div class="center-text body-text-xl teal-text">
+<p>End Activity Session (Day 5)</p>
+</div>
+
+
 </section>
-<section id="end-day-5-activities" class="level2">
-<h2 class="anchored" data-anchor-id="end-day-5-activities">END Day 5 activities</h2>
-
-
 </section>
 
 </main> <!-- /main -->

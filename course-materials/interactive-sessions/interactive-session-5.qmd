@@ -1,11 +1,8 @@
 ---
-title: "Day 5 Interactive Session Materials"
+title: "Interactive Session 5"
 subtitle: "Functions continued: testing, sourcing, documentation, sharing"
-output: 
-  html_document:
-    css: comp_session_theme.css
-    toc: true
-    toc_float: true
+editor_options: 
+  chunk_output_type: console
 bibliography: references.bib
 ---
 
@@ -19,11 +16,11 @@ library(palmerpenguins)
 source("food_cart_functions.R")
 ```
 
-## Setup
+## 1. Setup
 
--   Fork then clone [this repo](https://github.com/allisonhorst/eds221-day5-comp) to create a version-controlled R Project for Day 5
+-   Fork then clone [this repo](https://github.com/eds-221-programming-essentials/eds221-day5-comp) to create a version-controlled R Project for Day 5
 
-## Part 0: Warm up - For loops revisited (Leslie Matrix)
+## 2. Warm up - For loops revisited (Leslie Matrix)
 
 Open the `leslie_projection.Rmd` file in docs/. All code shown below for Part 0 is in that file. You should be able to run it out-of-the-box. In EDS 212, we learned about Leslie matrices for projecting populations based on mortality and reproduction for different organism life stages. Let's return to one example we checked out. 
 
@@ -75,7 +72,7 @@ ggplot(data = proj_df, aes(x = time_yr, y = stage_population)) +
 
 ```
 
-## Part 1: Testing functions with `{testthat}`
+## 3. Testing functions with `{testthat}`
 
 -   Create a new R Markdown file in your existing project (in docs/) saved as `fun_testing.Rmd`
 -   Install the `testthat` package (`install.packages("testthat")`)
@@ -84,7 +81,11 @@ ggplot(data = proj_df, aes(x = time_yr, y = stage_population)) +
 
 As we develop algorithms, we'll change our code. We want a way to automatically check our work to make sure it's behaving as expected. The [`testthat`](https://testthat.r-lib.org/index.html) package "tries to make testing as fun as possible."
 
+::: {.callout-note}
+## Definition
+
 **Unit test:** A unit test is an automated check of a piece ("unit") of your code
+:::
 
 Let's consider an example. We're writing a function to find the mean value of each column, then return the lowest and highest mean calculated (in that order). We would expect:
 
@@ -150,7 +151,7 @@ expect_true(mean_range(mtcars)[1] > mean_range(mtcars)[2])
 
 That test fails. This is just a little flavor of what unit tests do.
 
-## Part 2: Sourcing functions
+## 3. Sourcing functions
 
 When you're writing functions (or working with someone else's functions), often they're not stored in the actual script or notebook you're working in. If that's the case, you can still use them by **sourcing** a function.
 
@@ -174,7 +175,10 @@ Save the script with a descriptive name, e.g. `food_cart_functions.R` (this coul
 
 `source("food_cart_functions.R")`
 
-**Note:** you may have your scripts in a subfolder (e.g. R/ or something) - you can use `here::here()` within the `source()` function to point to the right place within your R Project as needed.
+::: {.callout-note}
+## Note
+You may have your scripts in a subfolder (e.g. R/ or something) - you can use `here::here()` within the `source()` function to point to the right place within your R Project as needed.
+:::
 
 Now, add a code chunk in your R Markdown document that uses the `name_cart()` function you've created. It works over here, too!
 
@@ -186,13 +190,17 @@ This gives us a valuable tool for organizing things within a project. Often, you
 
 ### A real sourcing example: cork oak growth
 
-**Citation:** Mariola Sánchez-González, Margarida Tomé, Gregorio Montero. Modelling height and diameter growth of dominant cork oak trees in Spain. Annals of Forest Science, Springer Nature (since 2011)/EDP Science (until 2010), 2005, 62 (7), pp.633-643.
+::: {.callout-note}
+## Citation
+
+Mariola Sánchez-González, Margarida Tomé, Gregorio Montero. Modelling height and diameter growth of dominant cork oak trees in Spain. Annals of Forest Science, Springer Nature (since 2011)/EDP Science (until 2010), 2005, 62 (7), pp.633-643.
+:::
 
 In the `src/` folder there is a script `cork_oak_growth.R` that contains one function `height_t2` that estimates the height of a cork oak tree at some age (time 2), given a prior height of the tree, the age when that height was recorded (years), and the age you're trying to estimate the new height for (these ages are t1 and t2, respectively, in the model). 
 
 Create a new .Rmd. Source the script by running `source(here::here("path", "to", "script.R"))` in your setup chunk. Ensure that you can use the function in your .Rmd whenever you want to. 
 
-## Part 3: Function documentation
+## 4. Function documentation
 
 Documentation is a really important part of data science. Remember: "past you doesn't respond to emails" (Wickham). I'll also add that present you will forget things immediately, and future you is a grump. So make sure, for your sake and the sake of your collaborators, you **document** your functions (along with any useful annotation throughout your work) to make them easier for you to use later on.
 
@@ -298,7 +306,7 @@ Now, this might seem weird because it's not obvious how that odd formatting of t
 
 The answer is: because this structure and syntax will make it possible for us to store our documentation as part of an R package containing our function. And that's what we want to do next...
 
-## Part 4: Making an R package
+## 5. Making an R package
 
 Let's put a bunch of what we've been working on together into an R package that you can use, *and* share with others so they can use your amazing function!
 
@@ -377,11 +385,15 @@ Once your package is in a public repo on GitHub, anyone can install its contents
 
 For example, if my package is in a repo called `tacopika`, then someone could install that package of mine using:
 
-    `remotes::install_github("allisonhorst/tacopika")`
+    `remotes::install_github("ryoliver/tacopika")`
 
-**Note:** you can check all functions in a package by running `lsf.str("package:packagename")` in the console. For example, after installing the package `tacopika` above, running `lsf.str("package:tacopika")` in the Console will return all functions in it. 
+::: {.callout-note}
+## Note
 
-## Part 5. Finding, vetting and using other packages
+You can check all functions in a package by running `lsf.str("package:packagename")` in the console. For example, after installing the package `tacopika` above, running `lsf.str("package:tacopika")` in the Console will return all functions in it.
+:::
+
+## 6. Finding, vetting and using other packages
 
 Now that you've made your own package, let's dive into packages that *other* developers have made so that we do more data science and less reinventing the wheel with code to do common useful things.
 
@@ -430,7 +442,10 @@ We've seen the two main ways you'll install R packages:
 -   From CRAN (using `install.packages("packagename")`)
 -   From GitHub (using `devtools::install_github("username/packagename")` or `remotes::install_github("username/packagename"`)
 
-**Note:** There are other ways to get R packages. For example, [Bioconductor](https://www.bioconductor.org/) provides "open source software for bioinformatics" and is home to a lot of great software & packages for genomics work. See the Bioconductor [installation page](https://www.bioconductor.org/install/) for information about how to install their packages & tools.
+::: {.callout-note}
+## Note
+There are other ways to get R packages. For example, [Bioconductor](https://www.bioconductor.org/) provides "open source software for bioinformatics" and is home to a lot of great software & packages for genomics work. See the Bioconductor [installation page](https://www.bioconductor.org/install/) for information about how to install their packages & tools.
+:::
 
 What about Python packages? We haven't dealt with this at all, since *most* of the packages we need are installed with Anaconda. What id we need something different?
 
@@ -475,7 +490,11 @@ Click on the citation text for a preview of how it'll show up in the final docum
 
 Learn more about citations in R Markdown: <https://blog.rstudio.com/2020/11/09/rstudio-1-4-preview-citations/>
 
-## END
+::: {.center-text .body-text-xl .teal-text}
+End Interactive Session 5
+:::
+
+::: {.callout-tip collapse=true}
 
 Extra unit test example (from lecture):
 
@@ -513,5 +532,4 @@ distance <- function(rate, time) {
   return(dist)
 }
 ```
-
-
+:::

@@ -1,11 +1,6 @@
 ---
-title: "Day 5 Activities"
+title: "Day 5 Task & activities"
 subtitle: "Loops revisited, functions continued, testing, sourcing scripts, working on your R package"
-output: 
-  html_document:
-    css: activity_theme.css
-    toc: true
-    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -14,15 +9,20 @@ library(tidyverse)
 library(here)
 ```
 
-## Setup
+## 1. Setup
 
 - Create a new repo on GitHub called `eds221-day5-activities`
 - Clone to create a version-controlled R Project
 - Create subfolders: `docs`, `src`, `data`, `figs`
 
-## Task 1: Make a function, source in an R Markdown doc
+## 2. Make a function, source in an R Markdown doc
 
-**Citation:** [NCDENR Stormwater BMP Manual](https://files.nc.gov/ncdeq/Water%20Quality/Surface%20Water%20Protection/SPU/SPU%20-%20BMP%20Manual%20Documents/BMPMan-Ch03-SWCalcs-20090616-DWQ-SPU.pdf)
+### Task 1
+
+::: {.callout-note}
+## Citation
+[NCDENR Stormwater BMP Manual](https://files.nc.gov/ncdeq/Water%20Quality/Surface%20Water%20Protection/SPU/SPU%20-%20BMP%20Manual%20Documents/BMPMan-Ch03-SWCalcs-20090616-DWQ-SPU.pdf)
+:::
 
 One established way to calculate the volume of stormwater expected for a watershed (necessary to design best management practices & systems) is the *Simple Method*, which involves two steps. First, the runoff coefficient $R_v$ (storm runoff / storm rainfall) is calculated from: $$R_v = 0.05 + 0.9 * I_A$$ 
 
@@ -94,9 +94,11 @@ ggplot(data = runoff_df, aes(x = impervious_sequence, y = val)) +
 
 ```
 
-*Done with Task 1*
+**Done with Task 1**
 
-## Task 2: Wild data
+## 3. Wild data
+
+### Task 2
 
 For Task 2, you will work with the `us_tilapia_imports.csv`. It exists in your `eds221-day5-comp` project - copy that file into your `data` folder for your day 5 activities project. The data are from the USDA Economic Research Service, and contain annual total volumes (in thousands of pounds) of tilapia imports to the United States from different countries. 
 
@@ -147,7 +149,9 @@ ggplot(data = limited_us_tilapia, aes(x = year, y = tilapia_volume_kpounds)) +
 
 **Done with Task 2.**
 
-## Task 3: Add to your R package
+## 4. Add to your R package
+
+### Task 3
 
 For Task 3, reopen your R package you started today, and add two new functions. They can do whatever you want as long as: 
 
@@ -159,6 +163,7 @@ Once you've added your functions, make sure to `devtools::document()`, Install a
 - Push your changes back to your repo on GitHub
 - Share the link with someone (they'll need to reinstall your package from GitHub using `install_github("username/reponame")`)
 
-## END Day 5 activities
-
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 5)
+:::
 

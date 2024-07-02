@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 6 Interactive Session Materials</title>
+<title>Interactive Session 6</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -194,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 6 Interactive Session Materials</h1>
+      <h1 class="title">Interactive Session 6</h1>
             <p class="subtitle lead">Data wrangling: tidying with <code>tidyr</code>, <code>dplyr</code> and <code>pandas</code></p>
                       </div>
   </div>
@@ -216,70 +216,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-0-setup" id="toc-part-0-setup" class="nav-link active" data-scroll-target="#part-0-setup">Part 0: Setup</a>
+  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a>
   <ul class="collapse">
-  <li><a href="#session-key" id="toc-session-key" class="nav-link" data-scroll-target="#session-key">Session key</a></li>
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a>
-  <ul class="collapse">
-  <li><a href="#in-your-.rmd-attach-r-packages" id="toc-in-your-.rmd-attach-r-packages" class="nav-link" data-scroll-target="#in-your-.rmd-attach-r-packages">In your .Rmd, attach R packages:</a></li>
-  <li><a href="#in-your-.ipynb-attach-python-packages" id="toc-in-your-.ipynb-attach-python-packages" class="nav-link" data-scroll-target="#in-your-.ipynb-attach-python-packages">In your .ipynb, attach Python packages:</a></li>
+  <li><a href="#attach-r-packages" id="toc-attach-r-packages" class="nav-link" data-scroll-target="#attach-r-packages">Attach R packages:</a></li>
+  <li><a href="#attach-python-packages" id="toc-attach-python-packages" class="nav-link" data-scroll-target="#attach-python-packages">Attach Python packages:</a></li>
   <li><a href="#data-source" id="toc-data-source" class="nav-link" data-scroll-target="#data-source">Data source</a></li>
   </ul></li>
   <li><a href="#part-1.-read-in-the-two-data-files" id="toc-part-1.-read-in-the-two-data-files" class="nav-link" data-scroll-target="#part-1.-read-in-the-two-data-files">Part 1. Read in the two data files</a>
   <ul class="collapse">
-  <li><a href="#in-r" id="toc-in-r" class="nav-link" data-scroll-target="#in-r">In R:</a></li>
-  <li><a href="#in-python" id="toc-in-python" class="nav-link" data-scroll-target="#in-python">In Python:</a></li>
-  </ul></li>
+  <li><a href="#in-r" id="toc-in-r" class="nav-link" data-scroll-target="#in-r"><strong>In R:</strong></a></li>
+  <li><a href="#in-python" id="toc-in-python" class="nav-link" data-scroll-target="#in-python"><strong>In Python:</strong></a></li>
   <li><a href="#take-a-look" id="toc-take-a-look" class="nav-link" data-scroll-target="#take-a-look">Take a look</a></li>
   </ul></li>
-  <li><a href="#part-1-reshaping-and-tidying-basics" id="toc-part-1-reshaping-and-tidying-basics" class="nav-link" data-scroll-target="#part-1-reshaping-and-tidying-basics">Part 1: reshaping and tidying basics</a>
+  <li><a href="#reshaping-and-tidying-basics" id="toc-reshaping-and-tidying-basics" class="nav-link" data-scroll-target="#reshaping-and-tidying-basics">2. Reshaping and tidying basics</a>
   <ul class="collapse">
-  <li><a href="#wide-to-long" id="toc-wide-to-long" class="nav-link" data-scroll-target="#wide-to-long">Wide-to-long</a>
-  <ul class="collapse">
-  <li><a href="#in-r-tidyrpivot_longer" id="toc-in-r-tidyrpivot_longer" class="nav-link" data-scroll-target="#in-r-tidyrpivot_longer">In R: <code>tidyr::pivot_longer()</code></a></li>
-  <li><a href="#in-python-pandas-melt" id="toc-in-python-pandas-melt" class="nav-link" data-scroll-target="#in-python-pandas-melt">In Python (pandas): <code>melt()</code></a></li>
+  <li><a href="#wide-to-long" id="toc-wide-to-long" class="nav-link" data-scroll-target="#wide-to-long">Wide-to-long</a></li>
+  <li><a href="#cleaning-that-year-column-up" id="toc-cleaning-that-year-column-up" class="nav-link" data-scroll-target="#cleaning-that-year-column-up">Cleaning that year column up…</a></li>
+  <li><a href="#convert-indicators-to-variables-long-to-wide" id="toc-convert-indicators-to-variables-long-to-wide" class="nav-link" data-scroll-target="#convert-indicators-to-variables-long-to-wide">Convert indicators to variables (long to wide)</a></li>
+  <li><a href="#renaming-columns" id="toc-renaming-columns" class="nav-link" data-scroll-target="#renaming-columns">Renaming columns</a></li>
   </ul></li>
-  <li><a href="#cleaning-that-year-column-up" id="toc-cleaning-that-year-column-up" class="nav-link" data-scroll-target="#cleaning-that-year-column-up">Cleaning that year column up…</a>
+  <li><a href="#more-data-wrangling-with-dplyr" id="toc-more-data-wrangling-with-dplyr" class="nav-link" data-scroll-target="#more-data-wrangling-with-dplyr">3. More data wrangling with <code>dplyr</code></a>
   <ul class="collapse">
-  <li><a href="#in-r-tidyrseparate" id="toc-in-r-tidyrseparate" class="nav-link" data-scroll-target="#in-r-tidyrseparate">In R: <code>tidyr::separate()</code></a></li>
-  <li><a href="#in-pandas-str.split" id="toc-in-pandas-str.split" class="nav-link" data-scroll-target="#in-pandas-str.split">In pandas: <code>str.split()</code></a></li>
-  </ul></li>
-  <li><a href="#convert-indicators-to-variables-long-to-wide" id="toc-convert-indicators-to-variables-long-to-wide" class="nav-link" data-scroll-target="#convert-indicators-to-variables-long-to-wide">Convert indicators to variables (long to wide)</a>
-  <ul class="collapse">
-  <li><a href="#in-r-tidyrpivot_wider" id="toc-in-r-tidyrpivot_wider" class="nav-link" data-scroll-target="#in-r-tidyrpivot_wider">In R: <code>tidyr::pivot_wider()</code></a></li>
-  <li><a href="#in-python-1" id="toc-in-python-1" class="nav-link" data-scroll-target="#in-python-1">In python:</a></li>
-  </ul></li>
-  <li><a href="#renaming-columns" id="toc-renaming-columns" class="nav-link" data-scroll-target="#renaming-columns">Renaming columns</a>
-  <ul class="collapse">
-  <li><a href="#renaming-in-python-with-df.rename" id="toc-renaming-in-python-with-df.rename" class="nav-link" data-scroll-target="#renaming-in-python-with-df.rename">Renaming in python with df.rename():</a></li>
-  </ul></li>
-  <li><a href="#end-wrangling-session-1" id="toc-end-wrangling-session-1" class="nav-link" data-scroll-target="#end-wrangling-session-1">End wrangling session 1</a></li>
-  </ul></li>
-  <li><a href="#part-2-more-data-wrangling-with-dplyr" id="toc-part-2-more-data-wrangling-with-dplyr" class="nav-link" data-scroll-target="#part-2-more-data-wrangling-with-dplyr">Part 2: More data wrangling with <code>dplyr</code></a>
-  <ul class="collapse">
-  <li><a href="#dplyrfilter" id="toc-dplyrfilter" class="nav-link" data-scroll-target="#dplyrfilter"><code>dplyr::filter()</code></a>
-  <ul class="collapse">
-  <li><a href="#this-example-in-python" id="toc-this-example-in-python" class="nav-link" data-scroll-target="#this-example-in-python">This example in python:</a></li>
-  <li><a href="#this-example-in-python-1" id="toc-this-example-in-python-1" class="nav-link" data-scroll-target="#this-example-in-python-1">This example in python:</a></li>
-  </ul></li>
-  <li><a href="#dplyrselect" id="toc-dplyrselect" class="nav-link" data-scroll-target="#dplyrselect"><code>dplyr::select()</code></a>
-  <ul class="collapse">
-  <li><a href="#some-examples-of-selecting-excluding-columns-in-python" id="toc-some-examples-of-selecting-excluding-columns-in-python" class="nav-link" data-scroll-target="#some-examples-of-selecting-excluding-columns-in-python">Some examples of selecting / excluding columns in python:</a></li>
-  </ul></li>
+  <li><a href="#dplyrfilter" id="toc-dplyrfilter" class="nav-link" data-scroll-target="#dplyrfilter"><code>dplyr::filter()</code></a></li>
+  <li><a href="#this-example-in-python" id="toc-this-example-in-python" class="nav-link" data-scroll-target="#this-example-in-python">This example in <strong>Python</strong>:</a></li>
+  <li><a href="#this-example-in-python-1" id="toc-this-example-in-python-1" class="nav-link" data-scroll-target="#this-example-in-python-1">This example in <strong>Python</strong>:</a></li>
+  <li><a href="#dplyrselect" id="toc-dplyrselect" class="nav-link" data-scroll-target="#dplyrselect"><code>dplyr::select()</code></a></li>
   <li><a href="#dplyrrename" id="toc-dplyrrename" class="nav-link" data-scroll-target="#dplyrrename"><code>dplyr::rename()</code></a></li>
-  <li><a href="#dplyrmutate" id="toc-dplyrmutate" class="nav-link" data-scroll-target="#dplyrmutate"><code>dplyr::mutate()</code></a>
-  <ul class="collapse">
-  <li><a href="#this-example-with-df.assign-in-python" id="toc-this-example-with-df.assign-in-python" class="nav-link" data-scroll-target="#this-example-with-df.assign-in-python">This example with df.assign() in python:</a></li>
+  <li><a href="#dplyrmutate" id="toc-dplyrmutate" class="nav-link" data-scroll-target="#dplyrmutate"><code>dplyr::mutate()</code></a></li>
+  <li><a href="#dplyrgroup_by-summarize" id="toc-dplyrgroup_by-summarize" class="nav-link" data-scroll-target="#dplyrgroup_by-summarize"><code>dplyr::group_by() %&gt;% summarize()</code></a></li>
   </ul></li>
-  <li><a href="#dplyrgroup_by-summarize" id="toc-dplyrgroup_by-summarize" class="nav-link" data-scroll-target="#dplyrgroup_by-summarize"><code>dplyr::group_by() %&gt;% summarize()</code></a>
-  <ul class="collapse">
-  <li><a href="#this-example-group_by-summarize-in-python-with-df.groupby.agg" id="toc-this-example-group_by-summarize-in-python-with-df.groupby.agg" class="nav-link" data-scroll-target="#this-example-group_by-summarize-in-python-with-df.groupby.agg">This example (group_by summarize) in python with df.groupby.agg:</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#part-3-putting-things-together" id="toc-part-3-putting-things-together" class="nav-link" data-scroll-target="#part-3-putting-things-together">Part 3: Putting things together</a>
-  <ul class="collapse">
-  <li><a href="#end-day-6-interactive-session" id="toc-end-day-6-interactive-session" class="nav-link" data-scroll-target="#end-day-6-interactive-session">End Day 6 Interactive Session</a></li>
-  </ul></li>
+  <li><a href="#putting-things-together" id="toc-putting-things-together" class="nav-link" data-scroll-target="#putting-things-together">4. Putting things together</a></li>
   </ul>
 </nav>
     </div>
@@ -290,32 +256,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="part-0-setup" class="level1">
-<h1>Part 0: Setup</h1>
-<section id="session-key" class="level2">
-<h2 class="anchored" data-anchor-id="session-key">Session key</h2>
-<p><strong>Note:</strong> Both R and Python code are shown below in one place for simplicity. You will be running the R code in R Markdown, and the Python code in Jupyter Notebooks. The individual keys (.Rmd and .ipynb) are in the session repo.</p>
-</section>
 <section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
+<!--
+## Session key
+**Note:** Both R and Python code are shown below in one place for simplicity. You will be running the R code in R Markdown, and the Python code in Jupyter Notebooks. The individual keys (.Rmd and .ipynb) are in the session repo. 
+-->
 <ul>
-<li>Fork and clone <a href="https://github.com/allisonhorst/eds221-m2021-day6-interactive">this repo containing the Day 6 materials</a></li>
+<li>Fork and clone <a href="https://github.com/eds-221-programming-essentials/eds221-day6-comp">this repo containing the Day 6 materials</a></li>
 <li>Open the project in RStudio
 <ul>
 <li>Familiarize yourself with the package structure</li>
 <li>Create a new .Rmd, save as ‘day6-wrangling-tidyverse.Rmd’</li>
 <li>In the setup chunk, attach the <code>tidyverse</code>, <code>here</code>, and <code>janitor</code> packages</li>
 </ul></li>
-<li>Open Anaconda, launch Jupyter Notebooks
-<ul>
-<li>Create a new Jupyter Notebook</li>
-<li>Save <em>in your new R Project</em> root as ‘day6-wrangling-pandas.ipynb’</li>
-<li>In a new code chunk, import <code>pandas</code> with <code>import pandas as pd</code></li>
-</ul></li>
 </ul>
-<p>We’ll be switching back and forth between R Markdown and Jupyter Notebooks today to do some basic data wrangling in <code>dplyr</code> and <code>pandas</code>. Remember: <strong>Cmd + Tab</strong> to switch between applications.</p>
-<section id="in-your-.rmd-attach-r-packages" class="level3">
-<h3 class="anchored" data-anchor-id="in-your-.rmd-attach-r-packages">In your .Rmd, attach R packages:</h3>
+<!--
+- Open Anaconda, launch Jupyter Notebooks
+    - Create a new Jupyter Notebook
+    - Save *in your new R Project* root as 'day6-wrangling-pandas.ipynb'
+    - In a new code chunk, import `pandas` with `import pandas as pd`
+
+We'll be switching back and forth between R Markdown and Jupyter Notebooks today to do some basic data wrangling in `dplyr` and `pandas`. Remember: **Cmd + Tab** to switch between applications.
+-->
+<!--
+### In your .Rmd, attach R packages:
+-->
+<section id="attach-r-packages" class="level3">
+<h3 class="anchored" data-anchor-id="attach-r-packages">Attach R packages:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="at">message =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -323,9 +291,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<!--
+### In your .ipynb, attach Python packages:
+-->
 </section>
-<section id="in-your-.ipynb-attach-python-packages" class="level3">
-<h3 class="anchored" data-anchor-id="in-your-.ipynb-attach-python-packages">In your .ipynb, attach Python packages:</h3>
+<section id="attach-python-packages" class="level3">
+<h3 class="anchored" data-anchor-id="attach-python-packages">Attach Python packages:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Don't forget pandas</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: if ModuleNotFoundError: No module named 'pandas', install pandas! </span></span>
@@ -349,32 +320,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>wb_indicators_metadata.csv</code>: a CSV containing metadata information for the development indicators</li>
 </ul>
 <section id="in-r" class="level3">
-<h3 class="anchored" data-anchor-id="in-r">In R:</h3>
+<h3 class="anchored" data-anchor-id="in-r"><strong>In R:</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>wb_indicators <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"wb_indicators.csv"</span>), <span class="at">na =</span> <span class="fu">c</span>(<span class="st">".."</span>, <span class="st">""</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>wb_metadata <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"wb_indicators_metadata.csv"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="in-python" class="level3">
-<h3 class="anchored" data-anchor-id="in-python">In Python:</h3>
+<h3 class="anchored" data-anchor-id="in-python"><strong>In Python:</strong></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>wb_indicators <span class="op">=</span> pd.read_csv(<span class="st">'data/wb_indicators.csv'</span>, na_values <span class="op">=</span> c(<span class="st">".."</span>, <span class="st">""</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>wb_metadata <span class="op">=</span> pd.read_csv(<span class="st">'data/wb_indicators_metadata.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-</section>
-<section id="take-a-look" class="level2">
-<h2 class="anchored" data-anchor-id="take-a-look">Take a look</h2>
+<section id="take-a-look" class="level3">
+<h3 class="anchored" data-anchor-id="take-a-look">Take a look</h3>
 <p><strong>ALWAYS ALWAYS ALWAYS</strong> look at what you’ve done.</p>
 </section>
 </section>
-<section id="part-1-reshaping-and-tidying-basics" class="level1">
-<h1>Part 1: reshaping and tidying basics</h1>
-<section id="wide-to-long" class="level2">
-<h2 class="anchored" data-anchor-id="wide-to-long">Wide-to-long</h2>
+<section id="reshaping-and-tidying-basics" class="level2">
+<h2 class="anchored" data-anchor-id="reshaping-and-tidying-basics">2. Reshaping and tidying basics</h2>
+<section id="wide-to-long" class="level3">
+<h3 class="anchored" data-anchor-id="wide-to-long">Wide-to-long</h3>
 <p>We see that years - a single variable - is spread out over multiple columns. We’ll want to reshape this data frame from wide-to-long format so that year is only in a single column to make it Tidy.</p>
-<section id="in-r-tidyrpivot_longer" class="level3">
-<h3 class="anchored" data-anchor-id="in-r-tidyrpivot_longer">In R: <code>tidyr::pivot_longer()</code></h3>
+<section id="in-r-tidyrpivot_longer" class="level4">
+<h4 class="anchored" data-anchor-id="in-r-tidyrpivot_longer"><strong>In R:</strong> <code>tidyr::pivot_longer()</code></h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wb_indicators_long <span class="ot">&lt;-</span> wb_indicators <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="st">'2001 [YR2001]'</span><span class="sc">:</span><span class="st">'2020 [YR2020]'</span>, <span class="co"># Which columns to squish</span></span>
@@ -385,8 +355,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># View(wb_indicators_long) # Why do I comment this out or run it in the Console? </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="in-python-pandas-melt" class="level3">
-<h3 class="anchored" data-anchor-id="in-python-pandas-melt">In Python (pandas): <code>melt()</code></h3>
+<section id="in-python-pandas-melt" class="level4">
+<h4 class="anchored" data-anchor-id="in-python-pandas-melt"><strong>In Python (pandas):</strong> <code>melt()</code></h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>wb_indicators_long <span class="op">=</span> wb_indicators.melt(id_vars <span class="op">=</span> [<span class="st">'Country Name'</span>, <span class="st">'Country Code'</span>, <span class="st">'Series Name'</span>, <span class="st">'Series Code'</span>],</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                                       var_name <span class="op">=</span> <span class="st">'year'</span>,</span>
@@ -418,12 +388,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="cleaning-that-year-column-up" class="level2">
-<h2 class="anchored" data-anchor-id="cleaning-that-year-column-up">Cleaning that year column up…</h2>
+<section id="cleaning-that-year-column-up" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-that-year-column-up">Cleaning that year column up…</h3>
 <p>We can see that the year is stored in a weird format (e.g.&nbsp;<code>2018 [YR2018]</code>) that’s going to make our life difficult if we want to, for example, use year as a number to plot changes in the indicator values over time.</p>
 <p>Let’s <strong>separate</strong> the information in the <code>year</code> column so that we can just keep the nice 4-digit year as a number.</p>
-<section id="in-r-tidyrseparate" class="level3">
-<h3 class="anchored" data-anchor-id="in-r-tidyrseparate">In R: <code>tidyr::separate()</code></h3>
+<section id="in-r-tidyrseparate" class="level4">
+<h4 class="anchored" data-anchor-id="in-r-tidyrseparate"><strong>In R:</strong> <code>tidyr::separate()</code></h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>wb_data_clean <span class="ot">&lt;-</span> wb_indicators_long <span class="sc">%&gt;%</span> </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate</span>(<span class="at">col =</span> year, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">"year"</span>, <span class="st">"year_chr"</span>), <span class="at">sep =</span> <span class="st">" "</span>) <span class="sc">%&gt;%</span> </span>
@@ -443,8 +413,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="in-pandas-str.split" class="level3">
-<h3 class="anchored" data-anchor-id="in-pandas-str.split">In pandas: <code>str.split()</code></h3>
+<section id="in-pandas-str.split" class="level4">
+<h4 class="anchored" data-anchor-id="in-pandas-str.split"><strong>In pandas:</strong> <code>str.split()</code></h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>wb_indicators_long[[<span class="st">'year'</span>,<span class="st">'year_chr'</span>]] <span class="op">=</span> wb_indicators_long.year.<span class="bu">str</span>.split(expand<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -462,12 +432,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="convert-indicators-to-variables-long-to-wide" class="level2">
-<h2 class="anchored" data-anchor-id="convert-indicators-to-variables-long-to-wide">Convert indicators to variables (long to wide)</h2>
+<section id="convert-indicators-to-variables-long-to-wide" class="level3">
+<h3 class="anchored" data-anchor-id="convert-indicators-to-variables-long-to-wide">Convert indicators to variables (long to wide)</h3>
 <p>Our data <em>still</em> aren’t quite tidy! Why?</p>
 <p>Notice that we have multiple variables that were measured (our different indicators) all in a single column. This is a scenario where there are multiple variables in a single column. To be <strong>Tidy</strong>, we want each variable to live in just <em>one</em> column.</p>
-<section id="in-r-tidyrpivot_wider" class="level3">
-<h3 class="anchored" data-anchor-id="in-r-tidyrpivot_wider">In R: <code>tidyr::pivot_wider()</code></h3>
+<section id="in-r-tidyrpivot_wider" class="level4">
+<h4 class="anchored" data-anchor-id="in-r-tidyrpivot_wider"><strong>In R:</strong> <code>tidyr::pivot_wider()</code></h4>
 <p>That means we’re going to need to widen this data. We’ll do that using <code>tidyr::pivot_wider()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>wb_data_tidy <span class="ot">&lt;-</span> wb_data_clean <span class="sc">%&gt;%</span> </span>
@@ -494,8 +464,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="in-python-1" class="level3">
-<h3 class="anchored" data-anchor-id="in-python-1">In python:</h3>
+<section id="in-python-1" class="level4">
+<h4 class="anchored" data-anchor-id="in-python-1"><strong>In Python:</strong></h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>wb_data_tidy <span class="op">=</span> wb_data_clean.pivot_table(index <span class="op">=</span> [<span class="st">'Country Name'</span>, <span class="st">'year'</span>],</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>                                        columns <span class="op">=</span> <span class="st">'Series Name'</span>,</span>
@@ -531,8 +501,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="renaming-columns" class="level2">
-<h2 class="anchored" data-anchor-id="renaming-columns">Renaming columns</h2>
+<section id="renaming-columns" class="level3">
+<h3 class="anchored" data-anchor-id="renaming-columns">Renaming columns</h3>
 <p>Our column names are now a nightmare. We can reassign all names as follows (in this order):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(wb_data_tidy) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"country"</span>, <span class="st">"year"</span>, <span class="st">"access_clean_fuels_pp"</span>, <span class="st">"access_electricity_pp"</span>, <span class="st">"co2_emissions_kt"</span>, <span class="st">"fossil_fuel_cons_pt"</span>, <span class="st">"water_stress"</span>)</span>
@@ -552,8 +522,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Or, we’ll learn how to use <code>dplyr::rename()</code> soon…</p>
-<section id="renaming-in-python-with-df.rename" class="level3">
-<h3 class="anchored" data-anchor-id="renaming-in-python-with-df.rename">Renaming in python with df.rename():</h3>
+<section id="renaming-in-python-with-df.rename" class="level4">
+<h4 class="anchored" data-anchor-id="renaming-in-python-with-df.rename">Renaming in <strong>Python</strong> with df.rename():</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>wb_data_tidy <span class="op">=</span> wb_data_tidy.rename(columns <span class="op">=</span> {<span class="st">'Country Name'</span>: <span class="st">'country'</span>, <span class="st">'Access to clean fuels and technologies for cooking (</span><span class="sc">% o</span><span class="st">f population)'</span>: <span class="st">'access_fuels_pp'</span>,</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a> <span class="st">'Access to electricity (</span><span class="sc">% o</span><span class="st">f population)'</span>: <span class="st">'access_electricity_pp'</span>,</span>
@@ -575,14 +545,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="end-wrangling-session-1" class="level2">
-<h2 class="anchored" data-anchor-id="end-wrangling-session-1">End wrangling session 1</h2>
 </section>
-</section>
-<section id="part-2-more-data-wrangling-with-dplyr" class="level1">
-<h1>Part 2: More data wrangling with <code>dplyr</code></h1>
-<section id="dplyrfilter" class="level2">
-<h2 class="anchored" data-anchor-id="dplyrfilter"><code>dplyr::filter()</code></h2>
+<section id="more-data-wrangling-with-dplyr" class="level2">
+<h2 class="anchored" data-anchor-id="more-data-wrangling-with-dplyr">3. More data wrangling with <code>dplyr</code></h2>
+<section id="dplyrfilter" class="level3">
+<h3 class="anchored" data-anchor-id="dplyrfilter"><code>dplyr::filter()</code></h3>
 <p>Use <code>dplyr::filter()</code> to keep or exclude rows based on your conditions.</p>
 <p><strong>Some examples:</strong></p>
 <p>I only want to keep observations from the dataset above for “United States”:</p>
@@ -604,8 +571,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 # ℹ 2 more variables: fossil_fuel_cons_pt &lt;dbl&gt;, water_stress &lt;dbl&gt;</code></pre>
 </div>
 </div>
+</section>
 <section id="this-example-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="this-example-in-python">This example in python:</h3>
+<h3 class="anchored" data-anchor-id="this-example-in-python">This example in <strong>Python</strong>:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>wb_data_tidy[(wb_data_tidy[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">"United States"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -621,7 +589,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="this-example-in-python-1" class="level3">
-<h3 class="anchored" data-anchor-id="this-example-in-python-1">This example in python:</h3>
+<h3 class="anchored" data-anchor-id="this-example-in-python-1">This example in <strong>Python</strong>:</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>wb_data_tidy[(wb_data_tidy[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">"United States"</span>) <span class="op">|</span> (wb_data_tidy[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">"Mexico"</span>) <span class="op">|</span> (wb_data_tidy[<span class="st">'country'</span>] <span class="op">==</span> <span class="st">"Brazil"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -636,9 +604,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2010</span>, co2_emissions_kt <span class="sc">&gt;</span> <span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-</section>
-<section id="dplyrselect" class="level2">
-<h2 class="anchored" data-anchor-id="dplyrselect"><code>dplyr::select()</code></h2>
+<section id="dplyrselect" class="level3">
+<h3 class="anchored" data-anchor-id="dplyrselect"><code>dplyr::select()</code></h3>
 <p>Select (or exclude) columns using <code>dplyr::select()</code>. Put a minus sign (-) in front of a column name or position to exclude it.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>nicaragua_co2 <span class="ot">&lt;-</span> wb_data_tidy <span class="sc">%&gt;%</span> </span>
@@ -650,8 +617,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>wb_subset <span class="ot">&lt;-</span> wb_data_tidy <span class="sc">%&gt;%</span> </span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(water_stress, access_electricity_pp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="some-examples-of-selecting-excluding-columns-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="some-examples-of-selecting-excluding-columns-in-python">Some examples of selecting / excluding columns in python:</h3>
+<section id="some-examples-of-selecting-excluding-columns-in-python" class="level4">
+<h4 class="anchored" data-anchor-id="some-examples-of-selecting-excluding-columns-in-python">Some examples of selecting / excluding columns in python:</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Keep columns country, year, and co2_emissions_kt</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>wb_data_tidy[[<span class="st">'country'</span>,<span class="st">'year'</span>,<span class="st">'co2_emissions_kt'</span>]]</span>
@@ -661,16 +628,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="dplyrrename" class="level2">
-<h2 class="anchored" data-anchor-id="dplyrrename"><code>dplyr::rename()</code></h2>
+<section id="dplyrrename" class="level3">
+<h3 class="anchored" data-anchor-id="dplyrrename"><code>dplyr::rename()</code></h3>
 <p>Use <code>dplyr::rename()</code> to rename one or more columns, in the order <code>new_name = old_name</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>wb_newnames <span class="ot">&lt;-</span> wb_data_tidy <span class="sc">%&gt;%</span> </span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">elec =</span> access_electricity_pp, <span class="at">co2 =</span> co2_emissions_kt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="dplyrmutate" class="level2">
-<h2 class="anchored" data-anchor-id="dplyrmutate"><code>dplyr::mutate()</code></h2>
+<section id="dplyrmutate" class="level3">
+<h3 class="anchored" data-anchor-id="dplyrmutate"><code>dplyr::mutate()</code></h3>
 <p>Use <code>dplyr::mutate()</code> to add a new column, or transform an existing one.</p>
 <p>Example: to change the class of a variable (careful - this overwrites the existing column!)</p>
 <div class="cell">
@@ -708,15 +675,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 #   co2_tons &lt;dbl&gt;</code></pre>
 </div>
 </div>
-<section id="this-example-with-df.assign-in-python" class="level3">
-<h3 class="anchored" data-anchor-id="this-example-with-df.assign-in-python">This example with df.assign() in python:</h3>
+<section id="this-example-with-df.assign-in-python" class="level4">
+<h4 class="anchored" data-anchor-id="this-example-with-df.assign-in-python">This example with df.assign() in <strong>Python</strong>:</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>co2_tons <span class="op">=</span> wb_data_tidy.assign(co2_t <span class="op">=</span> wb_data_tidy[<span class="st">'co2_emissions_kt'</span>] <span class="op">*</span> <span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="dplyrgroup_by-summarize" class="level2">
-<h2 class="anchored" data-anchor-id="dplyrgroup_by-summarize"><code>dplyr::group_by() %&gt;% summarize()</code></h2>
+<section id="dplyrgroup_by-summarize" class="level3">
+<h3 class="anchored" data-anchor-id="dplyrgroup_by-summarize"><code>dplyr::group_by() %&gt;% summarize()</code></h3>
 <p>To perform one or more functions on data by <em>group</em>, returning a nice summary table, use <code>group_by</code> + <code>summarize()</code>.</p>
 <p>Example: find the total reported co2 emissions (kt) for 2001 - 2020 from each country:</p>
 <div class="cell">
@@ -724,8 +691,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span> </span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_co2_kt =</span> <span class="fu">sum</span>(co2_emissions_kt, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="this-example-group_by-summarize-in-python-with-df.groupby.agg" class="level3">
-<h3 class="anchored" data-anchor-id="this-example-group_by-summarize-in-python-with-df.groupby.agg">This example (group_by summarize) in python with df.groupby.agg:</h3>
+<section id="this-example-group_by-summarize-in-python-with-df.groupby.agg" class="level4">
+<h4 class="anchored" data-anchor-id="this-example-group_by-summarize-in-python-with-df.groupby.agg">This example (<code>group_by()</code> <code>summarize()</code>) in python with <code>df.groupby.agg</code>:</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>co2_sum <span class="op">=</span> wb_data_tidy.groupby(<span class="st">'country'</span>)[<span class="st">'co2_emissions_kt'</span>].agg([<span class="st">'sum'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -750,8 +717,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 </section>
-<section id="part-3-putting-things-together" class="level1">
-<h1>Part 3: Putting things together</h1>
+<section id="putting-things-together" class="level2">
+<h2 class="anchored" data-anchor-id="putting-things-together">4. Putting things together</h2>
 <p>We’ve learned a bunch of different useful functions for data wrangling in the {tidyverse}. But this may still feel a bit tedious.</p>
 <p>Often, for readability and efficiency, we may want to string together different steps into a sequence. We can do that using the pipe operator (<code>%&gt;%</code> in the tidyverse, or <code>|&gt;</code> is the sparkly new native pipe in R).</p>
 <p>Let’s take our raw data that we initially read in:</p>
@@ -799,12 +766,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb51-18"><a href="#cb51-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb51-19"><a href="#cb51-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Recall you can get the names of columns easily using names(df)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Some questions:</strong> How long should a piped sequence be before I store the output and start a new piped sequence? Can a piped sequence be too long? Can I always pipe into everything?</p>
-<section id="end-day-6-interactive-session" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="end-day-6-interactive-session">End Day 6 Interactive Session</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Critical thinking
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>How long should a piped sequence be before I store the output and start a new piped sequence? Can a piped sequence be too long? Can I always pipe into everything?</p>
+</div>
+</div>
+</div>
+<div class="center-text body-text-xl teal-text">
+<p>End Interactive Session 6</p>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -1,5 +1,5 @@
 ---
-title: "Day 7 Activities"
+title: "Day 7 Tasks & activities"
 subtitle: "Wrangling continued: joins, strings, dates"
 output: 
   html_document:
@@ -16,7 +16,7 @@ library(janitor)
 library(kableExtra)
 ```
 
-## Setup
+## 1. Setup
 
 - Create a new repo on GitHub called `eds221-day7-activities`
 - Clone to make a version controlled R Project
@@ -159,6 +159,8 @@ alarm_report_update <- alarm_report %>%
   
 ```
 
-## End
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 7)
+:::
 
 

@@ -1,14 +1,12 @@
 ---
-title: "Day 7 Interactive Session Materials"
+title: "Interactive Session 7"
 subtitle: "Data wrangling continued: joins, easier dates, & working with strings"
-output: 
-  html_document:
-    css: comp_session_theme.css
-    toc: true
-    toc_float: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, warning = FALSE, message = FALSE}
+#| include: false
 library(tidyverse)
 library(palmerpenguins)
 library(lubridate)
@@ -16,7 +14,7 @@ library(kableExtra)
 
 ```
 
-# Part 0: Setup
+## 1. Setup
 
 - Create a new version-controlled R Project called `eds221-m2021-day7-interactive`
 - Create a new R Markdown document in the project
@@ -25,7 +23,7 @@ library(kableExtra)
     - `palmerpenguins`
     - `lubridate`
     
-# Part 1: Data wrangling refresher
+## 2. Data wrangling refresher
 
 **Refresher 1:** Starting with the `penguins` dataset in the `palmerpenguins` package, write a single piped sequence in which you: 
 
@@ -41,9 +39,9 @@ library(kableExtra)
 3. Group the data by `sex`
 4. Find the mean (`mean()`), standard deviation (`sd`) and sample size (`n`) of flipper_length_mm for male and female Adelie penguins, returned in a nice summary table
 
-# Part 2: Wrangling continued - joins of different flavors
+## 3. Wrangling continued - joins of different flavors
 
-## Mutating joins
+### Mutating joins
 
 Let's create some data to practice and clarify different types of joins. 
 
@@ -53,9 +51,6 @@ Let's create some data to practice and clarify different types of joins.
 - With your cursor in a code chunk, go up to Addins > Datapasta > as tribble
 - Assign the code to object name `animals`
 - Similarly, copy and datapasta the second table, storing as `sites`
-
-
-
 
 
 ```{r, include = FALSE}
@@ -91,7 +86,7 @@ sites %>%
   kable_styling()
 ```
 
-### dplyr::full_join()
+#### `dplyr::full_join()`
 
 The `dplyr::full_join()` function adds columns from the second df to the first df. It is the safest join - nothing is excluded. When in doubt, **full join**. 
 
@@ -101,7 +96,7 @@ full_join_example <- full_join(animals, sites)
 full_join_example
 ```
 
-### dplyr::left_join()
+#### `dplyr::left_join()`
 
 The `dplyr::left_join(x,y)` function keeps everything in x, and only joins from y (by matching key) if they have a match in x. Otherwise they're dropped.
 
@@ -111,7 +106,7 @@ left_join_example <- left_join(animals, sites)
 left_join_example
 ```
 
-### dplyr::right_join()
+#### `dplyr::right_join()`
 
 Opposite of a `left_join()`.
 
@@ -121,7 +116,7 @@ right_join_example <- right_join(animals, sites)
 right_join_example
 ```
 
-### `dplyr::inner_join()`
+#### `dplyr::inner_join()`
 
 Rows are only kept if the key matches in both x and y (intersection). 
 
@@ -131,7 +126,7 @@ inner_join_example <- inner_join(animals, sites)
 inner_join_example
 ```
 
-## Filtering joins
+### Filtering joins
 
 We'll just look at two filtering join functions (from dplyr documentation): 
 
@@ -150,9 +145,9 @@ anti_join_example <- anti_join(animals, sites)
 anti_join_example
 ```
 
-# Part 3: easier dates and times with {lubridate}
+## 4. Easier dates and times with `{lubridate}`
 
-## Witness some lubridate magic: 
+### Witness some lubridate magic: 
 
 ```{r}
 my_date <- "03-15-1998"
@@ -176,7 +171,7 @@ lubridate::ymd(my_date)
 
 ISO 8601 for everyone! 
 
-## Wait can it fail? 
+### Wait can it fail? 
 
 Yup. What happens if we give lubridate something that doesn't make sense? 
 ```{r}
@@ -198,7 +193,7 @@ In other words, parsing dates can fail in multiple ways:
 
 KNOW YOUR DATA. 
 
-## It even makes it relatively easy to deal with times & time zones
+### It even makes it relatively easy to deal with times & time zones
 
 See the Olson Names: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones 
 
@@ -226,7 +221,7 @@ minute(my_time)
 second(my_time)
 ```
 
-### More time examples:
+#### More time examples:
 
 ```{r}
 # Get your system time
@@ -238,7 +233,7 @@ comp_time <- Sys.time()
 with_tz(comp_time, "Europe/Belgrade")
 ```
 
-## Pulling pieces
+### Pulling pieces
 
 You can also get information about your dates using nice built-in lubridate functions. 
 
@@ -264,7 +259,7 @@ year(teddy_bday)
 month(teddy_bday)
 ```
 
-## Date pieces as new columns
+### Date pieces as new columns
 
 This can be useful if you want to group your day in different ways for analyses or exploration. Use lubridate functions, in combination with mutate(), to add new columns containing separate pieces of the date, e.g. year, month, day in three separate columns). 
 
@@ -287,7 +282,7 @@ urchin_counts_ymd
 
 # And then we could use group_by() to find different summary values by group, for example.
 ```
-### Find durations of times
+#### Find durations of times
 
 ```{r}
 day_1 <- lubridate::ymd("2020-01-06")
@@ -306,9 +301,9 @@ time_length(time_interval, "year")
 
 
 
-# Wrangling strings with `stringr`
+## 5. Wrangling strings with `stringr`
 
-## Use `str_detect()` to detect a string pattern
+### Use `str_detect()` to detect a string pattern
 
 Returns TRUE or FALSE based on whether the pattern is or is not detected. 
 ```{r}
@@ -344,7 +339,7 @@ skywalkers <- starwars %>%
 
 skywalkers
 ```
-## Use `str_replace()` to replace a string pattern with something else
+### Use `str_replace()` to replace a string pattern with something else
 
 ```{r}
 firewalkers <- starwars %>% 
@@ -357,7 +352,7 @@ You can imagine this may be really helpful if there is a repeated spelling error
 
 Note: this is very different from text mining and analysis, which involves analyzing textual information to gain insights about patterns, trends, and sentiments - look forward to that in EDS 242! 
 
-## Use  `str_trim()` or `str_squish()` to remove excess white space
+### Use  `str_trim()` or `str_squish()` to remove excess white space
 
 ```{r}
 feedback <- c(" I ate     some   nachos", "Wednesday morning   ")
@@ -369,7 +364,7 @@ str_squish(feedback)
 str_trim(feedback)
 ```
 
-## Convert cases
+### Convert cases
 
 ```{r}
 str_to_lower(feedback)
@@ -379,13 +374,14 @@ str_to_upper(feedback)
 str_to_title(feedback)
 ```
 
-## Count matches in a string
+### Count matches in a string
 
 ```{r}
 str_count(feedback, pattern = "nachos")
 ```
 
 
-## End {-}
-
+::: {.center-text .body-text-xl .teal-text}
+End Interactive Session 7
+:::
 

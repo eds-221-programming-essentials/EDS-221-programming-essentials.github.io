@@ -1,5 +1,5 @@
 ---
-title: "Day 6 Activities"
+title: "Day 6 Task & activities"
 subtitle: "Tidying & subsetting with `tidyr` and `dplyr`"
 output: 
   html_document:
@@ -15,7 +15,8 @@ library(here)
 library(janitor)
 ```
 
-## Task 1: Read Broman & Woo's *Data organization in spreadsheets*
+## Data organization
+### Task 1: Read Broman & Woo's *Data organization in spreadsheets*
 
 Take ~15 minutes to read Broman & Woo's evergreen paper [Data organization in spreadsheets](https://www.tandfonline.com/doi/full/10.1080/00031305.2017.1375989). As you read, think about data that you have created or had to work with that did *not* follow these guidelines. Make notes of examples to share from several - how did you input data previously? How would you change the way you input data? 
 
@@ -25,9 +26,13 @@ Questions:
 
 - What is your experience working with or creating data in spreadsheets that don't follow these guidelines?
 
-## Task 2: SBC Lobsters
+## Data tidying & subsetting
+### Task 2: SBC Lobsters
 
-**Data source:** Santa Barbara Coastal LTER, D. Reed, and R. Miller. 2021. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012 ver 6. Environmental Data Initiative. https://doi.org/10.6073/pasta/0bcdc7e8b22b8f2c1801085e8ca24d59
+::: {.callout-note}
+## Data source 
+Santa Barbara Coastal LTER, D. Reed, and R. Miller. 2021. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012 ver 6. Environmental Data Initiative. https://doi.org/10.6073/pasta/0bcdc7e8b22b8f2c1801085e8ca24d59
+:::
 
 ### Getting started
 
@@ -105,7 +110,7 @@ Which two sites had the largest proportion of legal lobsters in 2020? Explore th
 
 Starting with the original lobsters data that you read in as `lobsters`, complete the following (separately - these are not expected to be done in sequence or anything). You can store each of the outputs as `ex_a`, `ex_b`, etc. for the purposes of this task. 
 
-### filter() practice
+### `filter()` practice
 
 a. Create and store a subset that only contains lobsters from sites "IVEE", "CARP" and "NAPL". Check your output data frame to ensure that only those three sites exist. 
 ```{r, include = FALSE}
@@ -137,7 +142,7 @@ no_naples <- lobsters %>%
   filter(!site == "NAPL")
 ```
 
-### group_by() %>% summarize() practice
+### `group_by() %>% summarize()` practice
 
 e. Find the mean and standard deviation of lobster carapace length, grouped by site.
 ```{r, include = FALSE}
@@ -156,7 +161,7 @@ ex_f <- lobsters %>%
 ex_f
 ```
 
-### mutate() practice
+### `mutate()` practice
 
 g. Add a new column that contains lobster carapace length converted to centimeters. Check output. 
 ```{r, include = FALSE}
@@ -176,7 +181,7 @@ ex_i <- lobsters %>%
   mutate(area = as.character(area))
 ```
 
-### case_when() practice
+### `case_when()` practice
 
 j. Use `case_when()` to add a new column called `size_bin` that contains "small" if carapace size is <= 70 mm, or "large" if it is greater than 70 mm. Check output. 
 ```{r, include = FALSE}
@@ -192,4 +197,6 @@ ex_k <- lobsters %>%
                                  TRUE ~ "not MPA"))
 ```
 
-
+::: {.center-text .body-text-xl .teal-text}
+End Activity Session (Day 6)
+:::

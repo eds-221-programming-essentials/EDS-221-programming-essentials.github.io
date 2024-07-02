@@ -1,36 +1,38 @@
 ---
-title: "Day 6 Interactive Session Materials"
+title: "Interactive Session 6"
 subtitle: "Data wrangling: tidying with `tidyr`, `dplyr` and `pandas`"
-output: 
-  html_document:
-    css: comp_session_theme.css
-    toc: true
-    toc_float: true
+editor_options: 
+  chunk_output_type: console
 bibliography: references.bib
 ---
 
-# Part 0: Setup
+## 1. Setup
 
+<!--
 ## Session key
-
 **Note:** Both R and Python code are shown below in one place for simplicity. You will be running the R code in R Markdown, and the Python code in Jupyter Notebooks. The individual keys (.Rmd and .ipynb) are in the session repo. 
+-->
 
-## Setup
-
-- Fork and clone [this repo containing the Day 6 materials](https://github.com/allisonhorst/eds221-m2021-day6-interactive)
+- Fork and clone [this repo containing the Day 6 materials](https://github.com/eds-221-programming-essentials/eds221-day6-comp)
 - Open the project in RStudio
     - Familiarize yourself with the package structure
     - Create a new .Rmd, save as 'day6-wrangling-tidyverse.Rmd'
     - In the setup chunk, attach the `tidyverse`, `here`, and `janitor` packages
-    
+
+<!--
 - Open Anaconda, launch Jupyter Notebooks
     - Create a new Jupyter Notebook
     - Save *in your new R Project* root as 'day6-wrangling-pandas.ipynb'
     - In a new code chunk, import `pandas` with `import pandas as pd`
 
-We'll be switching back and forth between R Markdown and Jupyter Notebooks today to do some basic data wrangling in `dplyr` and `pandas`. Remember: **Cmd + Tab** to switch between applications. 
+We'll be switching back and forth between R Markdown and Jupyter Notebooks today to do some basic data wrangling in `dplyr` and `pandas`. Remember: **Cmd + Tab** to switch between applications.
+-->
 
+<!--
 ### In your .Rmd, attach R packages:
+-->
+
+### Attach R packages:
 ```{r setup, include=TRUE, message=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
@@ -43,8 +45,11 @@ library(janitor)
 library(reticulate)
 ```
 
-
+<!--
 ### In your .ipynb, attach Python packages:
+-->
+
+### Attach Python packages:
 ```{python}
 # Don't forget pandas
 # Note: if ModuleNotFoundError: No module named 'pandas', install pandas! 
@@ -65,7 +70,7 @@ The data files we'll use today are in the `data` subfolder of the project. They 
 - `wb_indicators.csv`: a CSV containing data for select development indicators for countries in the World Bank database, from 2001 - 2020
 - `wb_indicators_metadata.csv`: a CSV containing metadata information for the development indicators
 
-### In R: 
+### **In R:** 
 ```{r, eval = FALSE}
 wb_indicators <- read_csv(here("data", "wb_indicators.csv"), na = c("..", ""))
 wb_metadata <- read_csv(here("data", "wb_indicators_metadata.csv"))
@@ -73,14 +78,14 @@ wb_metadata <- read_csv(here("data", "wb_indicators_metadata.csv"))
 
 
 ```{r, echo = FALSE}
-# ALLISON WEBSITE VERSION
+# INSTRUCTOR VERSION
 # Read in the World Bank Indicators
 wb_indicators <- read_csv(here("course-materials", "interactive-sessions", "data", "wb_indicators.csv"), na = c("..", ""))
 
 wb_metadata <- read_csv(here("course-materials", "interactive-sessions", "data", "wb_indicators_metadata.csv"))
 ```
 
-### In Python: 
+### **In Python:** 
 ```{python, echo = FALSE}
 # Read in data
 wb_indicators = pd.read_csv('data/wb_indicators.csv', na_values = ["..",""])
@@ -95,19 +100,19 @@ wb_metadata = pd.read_csv('data/wb_indicators_metadata.csv')
 ```
 
 
-## Take a look
+### Take a look
 
 **ALWAYS ALWAYS ALWAYS** look at what you've done. 
 
 
-# Part 1: reshaping and tidying basics
+## 2. Reshaping and tidying basics
 
 
-## Wide-to-long
+### Wide-to-long
 
 We see that years - a single variable - is spread out over multiple columns. We'll want to reshape this data frame from wide-to-long format so that year is only in a single column to make it Tidy. 
 
-### In R: `tidyr::pivot_longer()`
+#### **In R:** `tidyr::pivot_longer()`
 ```{r}
 wb_indicators_long <- wb_indicators %>% 
   pivot_longer(cols = '2001 [YR2001]':'2020 [YR2020]', # Which columns to squish
@@ -118,7 +123,7 @@ wb_indicators_long <- wb_indicators %>%
 # View(wb_indicators_long) # Why do I comment this out or run it in the Console? 
 ```
 
-### In Python (pandas): `melt()`
+#### **In Python (pandas):** `melt()`
 
 ```{python}
 wb_indicators_long = wb_indicators.melt(id_vars = ['Country Name', 'Country Code', 'Series Name', 'Series Code'],
@@ -132,13 +137,13 @@ wb_indicators_long.head
 wb_indicators_long.shape
 ```
 
-## Cleaning that year column up...
+### Cleaning that year column up...
 
 We can see that the year is stored in a weird format (e.g. `2018 [YR2018]`) that's going to make our life difficult if we want to, for example, use year as a number to plot changes in the indicator values over time. 
 
 Let's **separate** the information in the `year` column so that we can just keep the nice 4-digit year as a number. 
 
-### In R: `tidyr::separate()`
+#### **In R:** `tidyr::separate()`
 
 ```{r}
 wb_data_clean <- wb_indicators_long %>% 
@@ -148,7 +153,7 @@ wb_data_clean <- wb_indicators_long %>%
 head(wb_data_clean)
 ```
 
-### In pandas: `str.split()`
+#### **In pandas:** `str.split()`
 ```{python}
 wb_indicators_long[['year','year_chr']] = wb_indicators_long.year.str.split(expand=True)
 
@@ -161,13 +166,13 @@ list(wb_data_clean)
 ```
 
 
-## Convert indicators to variables (long to wide)
+### Convert indicators to variables (long to wide)
 
 Our data *still* aren't quite tidy! Why? 
 
 Notice that we have multiple variables that were measured (our different indicators) all in a single column. This is a scenario where there are multiple variables in a single column. To be **Tidy**, we want each variable to live in just *one* column. 
 
-### In R: `tidyr::pivot_wider()`
+#### **In R:** `tidyr::pivot_wider()`
 
 That means we're going to need to widen this data. We'll do that using `tidyr::pivot_wider()`. 
 ```{r}
@@ -178,7 +183,7 @@ wb_data_tidy <- wb_data_clean %>%
 head(wb_data_tidy)
 ```
 
-### In python: 
+#### **In Python:** 
 
 ```{python}
 wb_data_tidy = wb_data_clean.pivot_table(index = ['Country Name', 'year'],
@@ -194,7 +199,7 @@ wb_data_tidy.head() # I feel better.
 wb_data_tidy.head()
 ```
 
-## Renaming columns
+### Renaming columns
 
 Our column names are now a nightmare. We can reassign all names as follows (in this order): 
 
@@ -206,7 +211,7 @@ head(wb_data_tidy)
 
 Or, we'll learn how to use `dplyr::rename()` soon...
 
-### Renaming in python with df.rename(): 
+#### Renaming in **Python** with df.rename(): 
 
 ```{python}
 wb_data_tidy = wb_data_tidy.rename(columns = {'Country Name': 'country', 'Access to clean fuels and technologies for cooking (% of population)': 'access_fuels_pp',
@@ -218,11 +223,10 @@ wb_data_tidy = wb_data_tidy.rename(columns = {'Country Name': 'country', 'Access
 wb_data_tidy.head()
 ```
 
-## End wrangling session 1
 
-# Part 2: More data wrangling with `dplyr`
+## 3. More data wrangling with `dplyr`
 
-## `dplyr::filter()`
+### `dplyr::filter()`
 
 Use `dplyr::filter()` to keep or exclude rows based on your conditions. 
 
@@ -236,7 +240,7 @@ us_wb <- wb_data_tidy %>%
 head(us_wb)
 ```
 
-### This example in python: 
+### This example in **Python**: 
 ```{python, eval = FALSE}
 wb_data_tidy[(wb_data_tidy['country'] == "United States")]
 ```
@@ -251,7 +255,7 @@ us_mx_bz <- wb_data_tidy %>%
 unique(us_mx_bz$country)
 ```
 
-### This example in python: 
+### This example in **Python**: 
 ```{python, eval = FALSE}
 wb_data_tidy[(wb_data_tidy['country'] == "United States") | (wb_data_tidy['country'] == "Mexico") | (wb_data_tidy['country'] == "Brazil")]
 ```
@@ -270,7 +274,7 @@ co2_2010_over10k <- wb_data_tidy %>%
   filter(year == 2010, co2_emissions_kt > 10000)
 ```
 
-## `dplyr::select()`
+### `dplyr::select()`
 
 Select (or exclude) columns using `dplyr::select()`. Put a minus sign (-) in front of a column name or position to exclude it. 
 
@@ -287,7 +291,7 @@ wb_subset <- wb_data_tidy %>%
   select(-c(water_stress, access_electricity_pp))
 ```
 
-### Some examples of selecting / excluding columns in python: 
+#### Some examples of selecting / excluding columns in python: 
 ```{python, eval = FALSE}
 # Keep columns country, year, and co2_emissions_kt
 wb_data_tidy[['country','year','co2_emissions_kt']]
@@ -297,7 +301,7 @@ wb_data_tidy.drop('access_fuels_pp', axis = 1) # axis = 1 here indicates drop CO
 ```
 
 
-## `dplyr::rename()`
+### `dplyr::rename()`
 
 Use `dplyr::rename()` to rename one or more columns, in the order `new_name = old_name`. 
 
@@ -306,7 +310,7 @@ wb_newnames <- wb_data_tidy %>%
   rename(elec = access_electricity_pp, co2 = co2_emissions_kt)
 ```
 
-## `dplyr::mutate()`
+### `dplyr::mutate()`
 
 Use `dplyr::mutate()` to add a new column, or transform an existing one. 
 
@@ -330,13 +334,13 @@ wb_co2_tons <- wb_data_tidy %>%
 head(wb_co2_tons)
 ```
 
-### This example with df.assign() in python: 
+#### This example with df.assign() in **Python**: 
 ```{python, eval = FALSE}
 co2_tons = wb_data_tidy.assign(co2_t = wb_data_tidy['co2_emissions_kt'] * 1000)
 ```
 
 
-## `dplyr::group_by() %>% summarize()`
+### `dplyr::group_by() %>% summarize()`
 
 To perform one or more functions on data by *group*, returning a nice summary table, use `group_by` + `summarize()`. 
 
@@ -349,7 +353,7 @@ co2_total <- wb_data_tidy %>%
 ```
 
 
-### This example (group_by summarize) in python with df.groupby.agg:
+#### This example (`group_by()` `summarize()`) in python with `df.groupby.agg`:
 ```{python, eval = FALSE}
 co2_sum = wb_data_tidy.groupby('country')['co2_emissions_kt'].agg(['sum'])
 ```
@@ -368,7 +372,7 @@ ggplot(data = co2_annual, aes(x = year, y = annual_total_co2_kt)) +
 # Always look. What is happening here? Always always always look at your data. 
 ```
 
-# Part 3: Putting things together
+## 4. Putting things together
 
 We've learned a bunch of different useful functions for data wrangling in the {tidyverse}. But this may still feel a bit tedious. 
 
@@ -404,9 +408,13 @@ wb_tidy <- wb_indicators %>%
 # Recall you can get the names of columns easily using names(df)
 ```
 
-**Some questions:** How long should a piped sequence be before I store the output and start a new piped sequence? Can a piped sequence be too long? Can I always pipe into everything? 
+::: {.callout-tip collapse=false}
+## Critical thinking
+How long should a piped sequence be before I store the output and start a new piped sequence? Can a piped sequence be too long? Can I always pipe into everything? 
+:::
 
-## End Day 6 Interactive Session {-}
-
+::: {.center-text .body-text-xl .teal-text}
+End Interactive Session 6
+:::
 
 

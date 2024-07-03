@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -251,7 +251,8 @@ window.Quarto = {
 <p>Create two sequences, one called <code>weekdays</code> that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called <code>transects</code> that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<div>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -301,6 +302,7 @@ window.Quarto = {
 
 </div>
 </div>
+</div>
 </section>
 </section>
 <section id="functions-introduced" class="level2">
@@ -323,7 +325,8 @@ Write a function called `name_column` that, given a data frame name and a number
 <p>The length:weight relationship for fish is: <span class="math inline">\(W=aL^b\)</span>, where where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values (shown below for several fish from Peyton et al.&nbsp;2016).</p>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<div>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">sci_name</th>
@@ -355,6 +358,7 @@ Write a function called `name_column` that, given a data frame name and a number
 </table>
 
 
+</div>
 </div>
 </div>
 <p>Recreate the table above as a data frame stored as <code>fish_parms</code>. Then, write a function called <code>fish_weight</code> that allows a user to only enter the <em>common name</em> (argument <code>fish_name</code>) and <em>total length</em> (argument <code>tot_length</code>) (in centimeters) of a fish, to return the expected fish weight in grams. Test it out for different species and lengths.</p>

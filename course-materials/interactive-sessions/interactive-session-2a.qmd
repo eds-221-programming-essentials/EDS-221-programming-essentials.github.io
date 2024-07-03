@@ -11,6 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(reticulate)
 library(palmerpenguins)
+
+use_python("/opt/anaconda3/bin/python")
 ```
 
 ### 1. Setup
@@ -241,10 +243,6 @@ fruit
 ```
 
 # 3. Making & indexing data in Python
-
-```{r}
-use_python("/opt/anaconda3/bin/python")
-```
 
 ```{r}
 #| eval: false

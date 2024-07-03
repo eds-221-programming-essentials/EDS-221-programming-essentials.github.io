@@ -28,4 +28,4 @@ Found something that doesn't look quite right? Feel free to file an [issue](http
 
 ## Acknowledgements
 
-EDS 221 (along with all materials) was originally developed and taught by [Allison Horst](https://github.com/allisonhorst). This new website houses materials which are heavily reused, adapted from, and inspired by Allison’s original work.
+EDS 221 (along with all [materials](https://allisonhorst.github.io/EDS_221_programming-essentials/)) was originally developed and taught by [Allison Horst](https://github.com/allisonhorst). This new website houses materials which are heavily reused, adapted from, and inspired by Allison’s original work.

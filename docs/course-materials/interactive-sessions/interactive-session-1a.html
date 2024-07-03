@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Untitled</title>
+<title>Interactive Session 1A</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -159,13 +193,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
-      <h1 class="title">Untitled</h1>
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Interactive Session 1A</h1>
+            <p class="subtitle lead">Don’t fear the Terminal</p>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page">
+  <div class="quarto-title-meta column-page-left">
 
       
     
@@ -176,18 +211,298 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#commonly-used-and-very-helpful-bash-commands" id="toc-commonly-used-and-very-helpful-bash-commands" class="nav-link active" data-scroll-target="#commonly-used-and-very-helpful-bash-commands">1. Commonly used (and very helpful) bash commands</a></li>
+  <li><a href="#general-command-syntax" id="toc-general-command-syntax" class="nav-link" data-scroll-target="#general-command-syntax">2. General command syntax</a></li>
+  <li><a href="#some-useful-keyboard-shortcuts" id="toc-some-useful-keyboard-shortcuts" class="nav-link" data-scroll-target="#some-useful-keyboard-shortcuts">3. Some useful keyboard shortcuts</a></li>
+  <li><a href="#practice-using-some-common-bash-commands" id="toc-practice-using-some-common-bash-commands" class="nav-link" data-scroll-target="#practice-using-some-common-bash-commands">4. Practice using some common bash commands</a></li>
+  <li><a href="#git-via-a-shell" id="toc-git-via-a-shell" class="nav-link" data-scroll-target="#git-via-a-shell">5. Git via a shell</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
 
 
 
 
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Source materials
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These materials are modified from the following source:</p>
+<p>S. Jeanette Clark, Matthew B. Jones, Samantha Csik, Carmen Galaz García, Bryce Mecum, Natasha Haycock-ChavezDaphne Virlar-Knight. 2022. Scalable and Computationally Reproducible Approaches to Arctic Research.</p>
+<p>https://learning.nceas.ucsb.edu/2022-09-arctic/</p>
+</div>
+</div>
+<section id="commonly-used-and-very-helpful-bash-commands" class="level2">
+<h2 class="anchored" data-anchor-id="commonly-used-and-very-helpful-bash-commands">1. Commonly used (and very helpful) bash commands</h2>
+<p>Below are just a few bash commands that you’re likely to use. Some may be extended with options (more on that in the next section) or even piped together (i.e.&nbsp;where the output of one command gets sent to the next command, using the <code>|</code> operator). You can also find some nice bash cheat sheets online, like <a href="https://github.com/RehanSaeed/Bash-Cheat-Sheet">this one</a>. Alternatively, the <a href="https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html">Bash Reference Manual</a> has <em>all</em> the content you need, albeit a bit dense.</p>
+<table class="table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>bash command</th>
+<th>what it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pwd</code></td>
+<td>print your current working directory</td>
+</tr>
+<tr class="even">
+<td><code>cd</code></td>
+<td>change directory</td>
+</tr>
+<tr class="odd">
+<td><code>ls</code></td>
+<td>list contents of a directory</td>
+</tr>
+<tr class="even">
+<td><code>tree</code></td>
+<td>display the contents of a directory in the form of a tree structure (not installed by default)</td>
+</tr>
+<tr class="odd">
+<td><code>echo</code></td>
+<td>print text that is passed in as an argument</td>
+</tr>
+<tr class="even">
+<td><code>mv</code></td>
+<td>move or rename a file</td>
+</tr>
+<tr class="odd">
+<td><code>cp</code></td>
+<td>copy a file(s) or directory(ies)</td>
+</tr>
+<tr class="even">
+<td><code>touch</code></td>
+<td>create a new empty file</td>
+</tr>
+<tr class="odd">
+<td><code>mkdir</code></td>
+<td>create a new directory</td>
+</tr>
+<tr class="even">
+<td><code>rm</code>/<code>rmdir</code></td>
+<td>remove a file/ empty directory (be careful – there is no “trash” folder!)</td>
+</tr>
+<tr class="odd">
+<td><code>grep</code></td>
+<td>searches a given file(s) for lines containing a match to a given pattern list</td>
+</tr>
+<tr class="even">
+<td><code>awk</code></td>
+<td>a text processing language that can be used in shell scripts or at a shell prompt for actions like pattern matching, printing specified fields, etc.</td>
+</tr>
+<tr class="odd">
+<td><code>sed</code></td>
+<td>stands for <strong>S</strong>tream <strong>Ed</strong>itor; a versatile command for editing files</td>
+</tr>
+<tr class="even">
+<td><code>cut</code></td>
+<td>extract a specific portion of text in a file</td>
+</tr>
+<tr class="odd">
+<td><code>join</code></td>
+<td>join two files based on a key field present in both</td>
+</tr>
+<tr class="even">
+<td><code>top</code>, <code>htop</code></td>
+<td>view running processes in a Linux system (press <code>Q</code> to quit)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="general-command-syntax" class="level2">
+<h2 class="anchored" data-anchor-id="general-command-syntax">2. General command syntax</h2>
+<p>Bash commands are typically are written as: <code>command [options] [arguments]</code> where the command must be an executable on your PATH and where <a href="https://tldp.org/LDP/abs/html/options.html">options</a> (settings that change the shell and/or script behavior) take one of two forms: <strong>short form</strong> (e.g.&nbsp;<code>command -option-abbrev</code>) or <strong>long form</strong> (e.g.&nbsp;<code>command --option-name</code> or <code>command -o option-name</code>). An example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the `ls` command lists the files in a directory</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> file/path/to/directory</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># adding on the `-a` or `--all` option lists all files (including hidden files) in a directory</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-a</span> file/path/to/directory <span class="co"># short form</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">--all</span> file/path/to/directory <span class="co"># long form</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="at">-o</span> all file/path/to/directory <span class="co"># long form</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="some-useful-keyboard-shortcuts" class="level2">
+<h2 class="anchored" data-anchor-id="some-useful-keyboard-shortcuts">3. Some useful keyboard shortcuts</h2>
+<p>It can sometimes feel messy working on the command line. These keyboard shortcuts can make it a little easier:</p>
+<ul>
+<li><code>Ctrl</code> + <code>L</code>: clear your terminal window</li>
+<li><code>Ctrl</code> + <code>U</code>: delete the current line</li>
+<li><code>Ctrl</code> + <code>C</code>: abort a command</li>
+<li>up &amp; down arrow keys: recall previously executed commands in chronological order</li>
+<li>TAB key: autocompletion</li>
+</ul>
+</section>
+<section id="practice-using-some-common-bash-commands" class="level2">
+<h2 class="anchored" data-anchor-id="practice-using-some-common-bash-commands">4. Practice using some common bash commands</h2>
+<ol type="1">
+<li><p>Use the <code>pwd</code> command to print your current location, or working directory. You should be in your home directory on the server (e.g.&nbsp;<code>/home/yourusername</code>).</p></li>
+<li><p>Use the <code>ls</code> command to list the contents (any files or subdirectories) of your home directory</p></li>
+<li><p>Use the <code>mkdir</code> command to create a new directory named <code>bash_practice</code>:</p></li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> bash_practice</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>Use the <code>cd</code> command to move into your new <code>bash_practice</code> directory:</li>
+</ol>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># move from /home/yourusername to home/yourusername/bash_practice</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> bash_practice</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>To move <em>up</em> a directory level, use two dots, <code>..</code> :</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># move from /home/yourusername/bash_practice back to /home/yourusername</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To quickly navigate back to your home directory from wherever you may be on your computer, use a tilde, <code>~</code> :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># e.g. to move from from some subdirectory, /home/yourusername/Projects/project1/data, back to your home directory, home/yourusername</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ~</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or use .. to back out three subdirectories</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd ../../..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Add some <code>.txt</code> files (<code>file1.txt</code>, <code>file2.txt</code>, <code>file3.txt</code>) to your <code>bash_practice</code> subdirectory using the <code>touch</code> command (<strong>Note:</strong> be sure to <code>cd</code> into <code>bash_practice</code> if you’re not already there):</li>
+</ol>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add one file at a time</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> file1.txt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> file2.txt</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> file3.txt</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># or add all files simultanously like this:</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> file<span class="dt">{</span><span class="dv">1</span><span class="dt">..</span><span class="dv">3</span><span class="dt">}</span>.txt</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># or like this:</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> file1.txt file2.txt file3.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="6" type="1">
+<li>You can also add other file types (e.g.&nbsp;<code>.py</code>, <code>.csv</code>, etc.)</li>
+</ol>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> mypython.py mycsv.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li>Print out all the <code>.txt</code> files in <code>bash_practice</code> using a wildcard, <code>*</code>:</li>
+</ol>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">*</span>.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="8" type="1">
+<li>Count the number of <code>.txt</code> files in <code>bash_practice</code> by combining the <code>ls</code> and <code>wc</code> (word count) funtions using the pipe, <code>|</code>, operator:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># `wc` returns a word count (lines, words, chrs)</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the `-l` option only returns the number of lines</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># use a pipe, `|`, to send the output from `ls *.txt` to `wc -l`</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> <span class="pp">*</span>.txt <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="9" type="1">
+<li>Delete <code>mypython.py</code> using the <code>rm</code> command:</li>
+</ol>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> mypython.py </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="10" type="1">
+<li>Create a new directory inside <code>bash_practice</code> called <code>data</code> and move <code>mycsv.csv</code> into it.</li>
+</ol>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> data</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> mycsv.csv ~/bash_practice/data</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># add the --interactive option (-i for short) to prevent a file from being overwritten by accident (e.g. in case there's a file with the same name in the destination location)</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> <span class="at">-i</span> mycsv.csv ~/bash_practice/data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="11" type="1">
+<li>Use <code>mv</code> to rename <code>mycsv.csv</code> to <code>mydata.csv</code></li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mv</span> mycsv.csv mydata.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="12" type="1">
+<li>Add column headers <code>col1</code>, <code>col2</code>, <code>col3</code> to <code>mydata.csv</code> using <code>echo</code> + the <code>&gt;</code> operator</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"col1, col2, col3"</span> <span class="op">&gt;</span> mydata.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can check to see that <code>mydata.csv</code> was updated using <a href="https://www.nano-editor.org/">GNU nano</a>, a text editor for the command line that comes preinstalled on Linux machines (you can edit your file in nano as well). To do so, use the <code>nano</code> command followed by the file you want to open/edit:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nano</span> mydata.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To save and quit out of nano, use the <code>control</code> + <code>X</code> keyboard shortcut.</p>
+<p>You can also create and open a file in nano in just one line of code. For example, running <code>nano hello_world.sh</code> is the same as creating the file first using <code>touch hello_world.sh</code>, then opening it with nano using <code>nano hello_world.sh</code>.</p>
+</div>
+</div>
+<ol start="13" type="1">
+<li>Append a row of data to <code>mydata.csv</code> using <code>echo</code> + the <code>&gt;&gt;</code> operator</li>
+</ol>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using `&gt;` will overwrite the contents of an existing file; `&gt;&gt;` appends new information to an existing file</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="st">"1, 2, 3"</span> <span class="op">&gt;&gt;</span> mydata.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="git-via-a-shell" class="level2">
+<h2 class="anchored" data-anchor-id="git-via-a-shell">5. Git via a shell</h2>
+<p><a href="https://git-scm.com/">Git</a>, a popular version control system and command line tool can be accessed via a shell. While there are lots of graphical user interfaces (GUIs) that faciliatate version control with Git, they often only implement a small subset of Git’s most-used functionality. By interacting with Git via the command line, you have access to <em>all</em> Git commands. While all-things Git is outside the scope of this workshop, we will use some basic Git commands in the shell to clone GitHub (remote) repositories to the server and save/store our changes to files. A few important Git commands:</p>
+<table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Git command</th>
+<th>what it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>git clone</code></td>
+<td>create a copy (clone) of repository in a new directory in a different location</td>
+</tr>
+<tr class="even">
+<td><code>git add</code></td>
+<td>add a change in the working directory to the staging area</td>
+</tr>
+<tr class="odd">
+<td><code>git commit</code></td>
+<td>record a snapshot of a repository; the <code>-m</code> option adds a commit message</td>
+</tr>
+<tr class="even">
+<td><code>git push</code></td>
+<td>send commits from a local repository to a remote repository</td>
+</tr>
+<tr class="odd">
+<td><code>git fetch</code></td>
+<td>downloads contents (e.g.&nbsp;files, commits, refs) from a remote repo to a local repo</td>
+</tr>
+<tr class="even">
+<td><code>git pull</code></td>
+<td>fetches contents of a remote repo and merges changes into the local repo</td>
+</tr>
+</tbody>
+</table>
+<div class="center-text body-text-xl teal-text">
+<p>End Interactive Session 1A</p>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

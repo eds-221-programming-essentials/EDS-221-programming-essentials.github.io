@@ -1,4 +1,7 @@
 ---
-title: "Untitled"
+title: "Interactive Session 8"
+subtitle: "Data visualization with `{ggplot2}`
+editor_options: 
+  chunk_output_type: console
 ---
 

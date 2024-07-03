@@ -158,14 +158,14 @@
     "href": "course-materials/interactive-sessions/interactive-session-6.html",
     "title": "Interactive Session 6",
     "section": "",
-    "text": "Fork and clone this repo containing the Day 6 materials\nOpen the project in RStudio\n\nFamiliarize yourself with the package structure\nCreate a new .Rmd, save as ‘day6-wrangling-tidyverse.Rmd’\nIn the setup chunk, attach the tidyverse, here, and janitor packages\n\n\n\n\n\n\n\nknitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)\n\nlibrary(tidyverse)\nlibrary(here)\nlibrary(janitor)\n\n\n\n\n\n\n# Don't forget pandas\n# Note: if ModuleNotFoundError: No module named 'pandas', install pandas! \n# Install in Terminal: pip install pandas\nimport pandas as pd\n\n\n\n\nData for these examples are from:\n\nThe World Bank World Development Indicators"
+    "text": "Fork and clone this repo containing the Day 6 materials\nOpen the project in RStudio\n\nFamiliarize yourself with the package structure\nCreate a new .Rmd, save as ‘day6-wrangling-tidyverse.Rmd’\nIn the setup chunk, attach the tidyverse, here, and janitor packages\n\n\n\n\n\n\n\nknitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)\n\nlibrary(tidyverse)\nlibrary(here)\nlibrary(janitor)\n\n\n\n\n\n\nuse_python(\"/opt/anaconda3/bin/python\")\n\n\n# Don't forget pandas\n# Note: if ModuleNotFoundError: No module named 'pandas', install pandas! \n# Install in Terminal: pip install pandas\nimport pandas as pd\n\n\n\n\nData for these examples are from:\n\nThe World Bank World Development Indicators"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-6.html#setup",
     "href": "course-materials/interactive-sessions/interactive-session-6.html#setup",
     "title": "Interactive Session 6",
     "section": "",
-    "text": "Fork and clone this repo containing the Day 6 materials\nOpen the project in RStudio\n\nFamiliarize yourself with the package structure\nCreate a new .Rmd, save as ‘day6-wrangling-tidyverse.Rmd’\nIn the setup chunk, attach the tidyverse, here, and janitor packages\n\n\n\n\n\n\n\nknitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)\n\nlibrary(tidyverse)\nlibrary(here)\nlibrary(janitor)\n\n\n\n\n\n\n# Don't forget pandas\n# Note: if ModuleNotFoundError: No module named 'pandas', install pandas! \n# Install in Terminal: pip install pandas\nimport pandas as pd\n\n\n\n\nData for these examples are from:\n\nThe World Bank World Development Indicators"
+    "text": "Fork and clone this repo containing the Day 6 materials\nOpen the project in RStudio\n\nFamiliarize yourself with the package structure\nCreate a new .Rmd, save as ‘day6-wrangling-tidyverse.Rmd’\nIn the setup chunk, attach the tidyverse, here, and janitor packages\n\n\n\n\n\n\n\nknitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)\n\nlibrary(tidyverse)\nlibrary(here)\nlibrary(janitor)\n\n\n\n\n\n\nuse_python(\"/opt/anaconda3/bin/python\")\n\n\n# Don't forget pandas\n# Note: if ModuleNotFoundError: No module named 'pandas', install pandas! \n# Install in Terminal: pip install pandas\nimport pandas as pd\n\n\n\n\nData for these examples are from:\n\nThe World Bank World Development Indicators"
   },
   {
     "objectID": "course-materials/interactive-sessions/interactive-session-6.html#part-1.-read-in-the-two-data-files",

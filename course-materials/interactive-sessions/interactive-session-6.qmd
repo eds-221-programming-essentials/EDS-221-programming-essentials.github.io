@@ -50,6 +50,11 @@ library(reticulate)
 -->
 
 ### Attach Python packages:
+
+```{r}
+use_python("/opt/anaconda3/bin/python")
+```
+
 ```{python}
 # Don't forget pandas
 # Note: if ModuleNotFoundError: No module named 'pandas', install pandas! 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -328,7 +328,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<div>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">date</th>
@@ -380,6 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 </div>
+</div>
 <section id="lets-make-some-nice-looking-tables" class="level4">
 <h4 class="anchored" data-anchor-id="lets-make-some-nice-looking-tables">Let’s make some nice looking tables</h4>
 <p>With <code>kableExtra</code>:</p>
@@ -389,7 +391,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Date"</span>, <span class="st">"Site"</span>, <span class="st">"Species"</span>, <span class="st">"Distance (m)"</span>, <span class="st">"Behavior"</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">bootstrap_options =</span> <span class="st">"striped"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
+<div>
+<table class="table table-striped table-sm small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Date</th>
@@ -440,12 +443,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </div>
+</div>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paper theme</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>dt <span class="sc">%&gt;%</span> </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<div>
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">date</th>
@@ -497,6 +502,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </div>
 </div>
+</div>
 <p>Check out some other themes and try them out! https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html</p>
 <p>A bit more customization:</p>
 <div class="cell">
@@ -508,8 +514,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"One header"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">"Another header"</span> <span class="ot">=</span> <span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">height =</span> <span class="st">"100px"</span>, <span class="at">width =</span> <span class="st">"500px"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
+<div>
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:100px; overflow-x: scroll; width:500px; ">
-<table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
 <colgroup>
 <col style="width: 20%">
 <col style="width: 20%">
@@ -575,6 +582,7 @@ Another header
 </table>
 </div>
 
+</div>
 </div>
 </div>
 <p>See also: <code>DT</code>, <code>reactable</code>, <code>gt</code>, and more!</p>

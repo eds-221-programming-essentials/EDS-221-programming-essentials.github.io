@@ -11,17 +11,11 @@ library(here)
 
 ## 1. Setup
 
-### Get the data
- 
-We will send you the file you'll use, `stl_blood_lead.csv` (a comma-separated value file) in Slack.
+### Get the data and create a version-controlled R Project
 
-Before you move on, read more about the data [here](https://github.com/slu-soc1120/STL_HEALTH_Lead).
-  
-### Create a version-controlled R Project
-
-- Create a new version-controlled R Project named `stl-lead-yourinitials` (for example, mine would be `stl-lead-ah`). Remember: there are multiple ways to set up a version controlled project, either through RStudio or starting with a new repo on GitHub then cloning.
-- Add three subfolders to your R project: `data`, `docs` and `figs`
-- Copy the data you downloaded above into the `data` folder of your project
+- Fork and clone [this repo](https://github.com/eds-221-programming-essentials/eds-221-day1-activity)
+- Before you move on, read more about the data [here](https://github.com/slu-soc1120/STL_HEALTH_Lead)
+- Add two subfolders to your R project: `docs` and `figs`
 - Create and save a new Quarto document as `stl_lead_inequity.qmd` in the `docs` folder
 
 ## 2. Data import and exploration

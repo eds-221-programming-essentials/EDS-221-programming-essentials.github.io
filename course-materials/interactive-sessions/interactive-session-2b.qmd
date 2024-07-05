@@ -118,7 +118,7 @@ x[c(1, 2)] <- 2:3
 x
 ```
 
-You just need to make sure that the lengths of left and right hand side of the assinments match.
+You just need to make sure that the lengths of left and right hand side of the assignments match.
 ```{r}
 x[-1] <- 4:1
 x

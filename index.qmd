@@ -75,13 +75,13 @@ knitr::include_graphics("images/ruth.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "45%" 
-knitr::include_graphics("images/tbd.png")
+knitr::include_graphics("images/anna.png")
 ```
 
 ::: {.center-text}
 [**Anna Pede**]{.teal-text}  
-**Email:** test   
-**Learn more:** tbd
+**Email:** [acostolapede@ucsb.edu](mailto::acostolapede@ucsb.edu)   
+**Learn more:** [Bren profile](https://bren.ucsb.edu/people/anna-costola-pede)
 :::
 
 :::

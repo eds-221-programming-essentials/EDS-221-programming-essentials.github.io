@@ -1,7 +1,7 @@
 ---
 title: "Scientific Programming Essentials"
 subtitle: "Master of Environmental Data Science (MEDS)"
-description: "Summer 2024"
+description: "Summer 2025"
 title-block-banner: false
 toc: false
 ---
@@ -16,7 +16,7 @@ knitr::include_graphics("images/horst-language-critters.png")
 ```
 
 ::: {.gray-text .center-text}
-*Artwork by [Allison Horst](https://allisonhorst.com/)*
+*Artwork by [Allison Horst](https://allisonhorst.com/){target="_blank"}*
 :::
 
 ## Course Description
@@ -36,12 +36,12 @@ By the end of EDS 221, students should be able to:
 - **Employ troubleshooting and debugging strategies** including tools, mindsets, strategies, and resources
 
 
+
 ## Teaching Team
 
 <br>
 
 ::: {.grid}
-
 ::: {.g-col-12 .g-col-md-6}
 
 ::: {.center-text .body-text-l}
@@ -59,7 +59,7 @@ knitr::include_graphics("images/ruth.png")
 ::: {.center-text}
 [**Ruth Oliver**]{.teal-text}  
 **Email:** [rutholiver@ucsb.edu](mailto::rutholiver@ucsb.edu)  
-**Learn more:** [ryoliver-lab.github.io](https://ryoliver-lab.github.io/)  
+**Learn more:** [oliverlab.org](https://oliverlab.org/){target="_blank"}  
 :::
 
 :::
@@ -75,13 +75,13 @@ knitr::include_graphics("images/ruth.png")
 #| echo: false
 #| fig-align: "center"
 #| out-width: "45%" 
-knitr::include_graphics("images/anna.png")
+knitr::include_graphics("images/alessandra.png")
 ```
 
 ::: {.center-text}
-[**Anna Pede**]{.teal-text}  
-**Email:** [acostolapede@ucsb.edu](mailto::acostolapede@ucsb.edu)   
-**Learn more:** [Bren profile](https://bren.ucsb.edu/people/anna-costola-pede)
+[**Alessandra Vidal Meza**]{.teal-text}  
+**Email:** [avidalmeza@bren.ucsb.edu](mailto::avidalmeza@bren.ucsb.edu)   
+**Learn more:** [avidalmeza.github.io](https://avidalmeza.github.io/){target="_blank"}
 :::
 
 :::

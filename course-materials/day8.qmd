@@ -1,7 +1,7 @@
 ---
 title: "Grammar of graphics"
 subtitle: "Day 8"
-description: "Wednesday August 21^st^, 2024"
+description: "Wednesday August 20^th^, 2025"
 ---
 
 ```{r}

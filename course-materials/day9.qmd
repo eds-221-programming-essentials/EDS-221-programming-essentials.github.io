@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting"
 subtitle: "Day 9"
-description: "Thursday August 22^nd^, 2024"
+description: "Thursday August 21^st^, 2025"
 ---
 
 ```{r}

@@ -1,7 +1,7 @@
 ---
 title: "Conditionals and logical operators"
 subtitle: "Day 3"
-description: "Wednesday August 14^th^, 2024"
+description: "Wednesday August 13^th^, 2025"
 ---
 
 ```{r}

@@ -424,14 +424,14 @@
     "href": "course-materials/eod-practice/eod-day1.html",
     "title": "Day 1 Tasks & Activities",
     "section": "",
-    "text": "Fork and clone this repo\nBefore you move on, read more about the data here\nAdd two subfolders to your R project: docs and figs\nCreate and save a new Quarto document as stl_lead_inequity.qmd in the docs folder"
+    "text": "Fork, add your name to end of the repo name, and clone this repo\nBefore you move on, read more about the data here\nAdd two subfolders to your R project: docs and figs\nCreate and save a new Quarto document as stl_lead_inequity.qmd in the docs folder"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day1.html#setup",
     "href": "course-materials/eod-practice/eod-day1.html#setup",
     "title": "Day 1 Tasks & Activities",
     "section": "",
-    "text": "Fork and clone this repo\nBefore you move on, read more about the data here\nAdd two subfolders to your R project: docs and figs\nCreate and save a new Quarto document as stl_lead_inequity.qmd in the docs folder"
+    "text": "Fork, add your name to end of the repo name, and clone this repo\nBefore you move on, read more about the data here\nAdd two subfolders to your R project: docs and figs\nCreate and save a new Quarto document as stl_lead_inequity.qmd in the docs folder"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day1.html#data-import-and-exploration",
@@ -445,7 +445,7 @@
     "href": "course-materials/eod-practice/eod-day1.html#visualize-data",
     "title": "Day 1 Tasks & Activities",
     "section": "3. Visualize data",
-    "text": "3. Visualize data\n\nCreate a scatterplot\n\nIn a new code chunk, create a scatterplot graph of the percentage of children in each census tract with elevated blood lead levels (pctElevated) versus the percent of each census tract identifying as white.\nCustomize by updating several aesthetics (e.g. size, opacity (see alpha =), color, etc.)\nStore the scatterplot as stl_lead_plot\nHave the scatterplot returned in the knitted html - customize the size that it appears when knitted\nAlso save a .png of the scatterplot to figs, with dimensions of (6” x 5”) (width x height)\nIn text above or below the scatterplot, write 1 - 2 sentences describing the overall trend that you observe from your graph\n\n\n\nCreate a histogram\n\nCreate a histogram of only the pctElevated column in the data frame (remember, this will only take one variable - the frequency is calculated for you by geom_histogram)\nCustomize the fill, color, and size aesthetics - test some stuff! Feel free to make it awful.\nOnce you’ve played around with customization, export the histogram as a .jpg to the figs folder\nMake sure the histogram also shows up in your rendered html"
+    "text": "3. Visualize data\n\nCreate a scatterplot\n\nIn a new code chunk, create a scatterplot graph of the percentage of children in each census tract with elevated blood lead levels (pctElevated) versus the percent of each census tract identifying as white.\nCustomize by updating several aesthetics (e.g. size, opacity (see alpha =), color, etc.)\nStore the scatterplot as stl_lead_plot\nHave the scatterplot returned in the rendered html - customize the size that it appears when knitted\nAlso save a .png of the scatterplot to figs, with dimensions of (6” x 5”) (width x height)\nIn text above or below the scatterplot, write 1 - 2 sentences describing the overall trend that you observe from your graph\n\n\n\nCreate a histogram\n\nCreate a histogram of only the pctElevated column in the data frame (remember, this will only take one variable - the frequency is calculated for you by geom_histogram)\nCustomize the fill, color, and size aesthetics - test some stuff! Feel free to make it awful.\nOnce you’ve played around with customization, export the histogram as a .jpg to the figs folder\nMake sure the histogram also shows up in your rendered html"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day1.html#collaborate",

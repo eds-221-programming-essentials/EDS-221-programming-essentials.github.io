@@ -13,7 +13,7 @@ library(here)
 
 ### Get the data and create a version-controlled R Project
 
-- Fork and clone [this repo](https://github.com/eds-221-programming-essentials/eds-221-day1-activity)
+- Fork, add your name to end of the repo name, and clone [this repo](https://github.com/eds-221-programming-essentials/eds-221-day1-activity)
 - Before you move on, read more about the data [here](https://github.com/slu-soc1120/STL_HEALTH_Lead)
 - Add two subfolders to your R project: `docs` and `figs`
 - Create and save a new Quarto document as `stl_lead_inequity.qmd` in the `docs` folder
@@ -61,7 +61,7 @@ stl_lead_prop = stl_lead |>
 - In a new code chunk, create a scatterplot graph of the percentage of children in each census tract with elevated blood lead levels (`pctElevated`) versus the percent of each census tract identifying as white. 
 - Customize by updating several aesthetics (e.g. size, opacity (see `alpha = `), color, etc.)
 - Store the scatterplot as `stl_lead_plot`
-- Have the scatterplot returned in the knitted html - customize the size that it appears when knitted
+- Have the scatterplot returned in the rendered html - customize the size that it appears when knitted
 - Also save a .png of the scatterplot to `figs`, with dimensions of (6" x 5") (width x height)
 - In text above or below the scatterplot, write 1 - 2 sentences describing the overall trend that you observe from your graph
 

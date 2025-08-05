@@ -19,7 +19,7 @@ library(palmerpenguins)
 - Create new repo on GitHub named `eds221-day10-comp`
 - Clone to make a local version-controlled R Project
 
-## 1. Make a `ggplot` theme
+## 2. Make a `ggplot` theme
 
 - Add a new Quarto document, saved in your project root as `my_ggplot_theme.qmd`
 - Attach the `tidyverse` and `palmerpenguins` packages
@@ -43,7 +43,7 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 
 ```
 
-## 3. Updating our R package
+<!-- ## 3. Updating our R package
 
 - In a new session (so your existing project stays open), reopen the R Project for your R package you created last week
 - Install and Restart your package (this should also attach your package)
@@ -92,13 +92,13 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 
 - Stage, commit, & push changes back to your GitHub repo
 - Share your repo information (username/reponame) with your neighbor so they can install your package from GitHub! Recall: `devtools::install_github("username/reponame")`
-- Test your neighbors new & improved R package and try out their custom theme! 
+- Test your neighbors new & improved R package and try out their custom theme!  --> 
 
-## 4.  Making some nice tables in R
+## 3.  Making some nice tables in R
 
 We've made a number of ggplot graphs, but we haven't made any tables. Let's learn one way! 
 
-- Back in your `eds221-day10-comp` R Project, create a new R Markdown document
+- Back in your `eds221-day10-comp` R Project, create a new Quarto document
 - In the setup chunk, attach the `tidyverse` & `kableExtra` (note: there are a *bunch* of ways to make nice tables in R - see David Keyes' post on [*How to make beautiful tables in R*](https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/) for more options)
 - Copy the contents of the table below to the clipboard, the use the `datapasta` Add-in to create a tibble stored as `whale_sightings`
 
@@ -151,7 +151,7 @@ dt %>%
 
 See also: `DT`, `reactable`, `gt`, and more! 
 
-## 5. Git collaboration: both pushing to main
+## 4. Git collaboration: both pushing to main
 
 - Find a partner. Designate who is "Starter" and who is "Collaborator". 
 

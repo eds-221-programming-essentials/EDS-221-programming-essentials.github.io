@@ -40,6 +40,10 @@ names(toolik_chlorophyll)
 # clean names
 toolik_chlorophyll <- toolik_chlorophyll %>% clean_names() 
 
+na_if(toolik_chlorophyll$active_chl_a_ug_l, ".") 
+
+toolik_chlorophyll$active_chl_a_ug_l <- as.numeric(toolik_chlorophyll$active_chl_a_ug_l)
+
 # make plot
 toolik_chlorophyll_plot <- ggplot(data = toolik_chlorophyll, 
                                   aes(x = depth, y = as.numeric(active_chl_a_ug_l))) +

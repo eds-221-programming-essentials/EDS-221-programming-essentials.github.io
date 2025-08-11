@@ -1,5 +1,5 @@
 ---
-title: "Day 1 Tasks & Activities"
+title: "Day 1: Tasks & Activities"
 subtitle: "Project organization, data import, file paths"
 ---
 
@@ -25,7 +25,7 @@ library(here)
 In your .qmd: 
 
 - Attach the `tidyverse` and `janitor` packages in a new code chunk
-- Read in the `stl_blood_lead.csv` data as `stl_lead` and use janitor::clean_names to convert all variable names to lower snake case
+- Read in the `stl_blood_lead.csv` data as `stl_lead` and use `janitor::clean_names` to convert all variable names to lower snake case
 
 ```{r, include = FALSE}
 stl_lead <- read_csv(here::here("course-materials","eod-practice", "data","stl_blood_lead.csv")) |> # Note that their path will be here::here("data", "stl_blood_lead.csv) instead

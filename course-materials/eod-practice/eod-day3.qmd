@@ -1,5 +1,5 @@
 ---
-title: "Day 3 Task & Activities"
+title: "Day 3: Task & Activities"
 subtitle: "Conditionals & for loops"
 ---
 

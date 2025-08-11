@@ -1,5 +1,5 @@
 ---
-title: "Day 9 Tasks & Activities"
+title: "Day 9: Tasks & Activities"
 subtitle: "Troubleshooting, `{reprex}`, and working with data continued"
 ---
 

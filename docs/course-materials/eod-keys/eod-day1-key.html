@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 3: Task &amp; Activities</title>
+<title>Day 1: Tasks &amp; activities - KEY</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -70,35 +104,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -190,8 +195,8 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 3: Task &amp; Activities</h1>
-            <p class="subtitle lead">Conditionals &amp; for loops</p>
+      <h1 class="title">Day 1: Tasks &amp; activities - KEY</h1>
+            <p class="subtitle lead">Project organization, data import, file paths</p>
                       </div>
   </div>
     
@@ -212,16 +217,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
-  <li><a href="#conditional-statements-for-loops" id="toc-conditional-statements-for-loops" class="nav-link" data-scroll-target="#conditional-statements-for-loops">2. Conditional statements &amp; for loops</a>
-  <ul class="collapse">
-  <li><a href="#conditional-statements" id="toc-conditional-statements" class="nav-link" data-scroll-target="#conditional-statements">Conditional statements</a></li>
-  <li><a href="#for-loops" id="toc-for-loops" class="nav-link" data-scroll-target="#for-loops">For loops</a></li>
-  </ul></li>
-  <li><a href="#real-data" id="toc-real-data" class="nav-link" data-scroll-target="#real-data">3. Real data</a>
-  <ul class="collapse">
-  <li><a href="#save-stage-commit-pull-push" id="toc-save-stage-commit-pull-push" class="nav-link" data-scroll-target="#save-stage-commit-pull-push">Save, stage, commit, pull, push!</a></li>
-  </ul></li>
+  <li><a href="#data-import-and-exploration" id="toc-data-import-and-exploration" class="nav-link active" data-scroll-target="#data-import-and-exploration">Data import and exploration</a></li>
+  <li><a href="#visualize-data" id="toc-visualize-data" class="nav-link" data-scroll-target="#visualize-data">Visualize data</a></li>
   </ul>
 </nav>
     </div>
@@ -232,104 +229,215 @@ window.Quarto = {
 
 
 
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
-<ul>
-<li>Create a repo on GitHub named <code>eds212-day3-activities</code></li>
-<li>Clone to create a version-controlled R Project</li>
-<li>Create some subfolder infrastructure (docs, data)</li>
-</ul>
-</section>
-<section id="conditional-statements-for-loops" class="level2">
-<h2 class="anchored" data-anchor-id="conditional-statements-for-loops">2. Conditional statements &amp; for loops</h2>
-<p>Create a new Quarto document in your docs folder, saved as <code>conditionals_loops.qmd</code>. Complete all tasks for Part 2 in this .qmd.</p>
-<p><em>Complete each of the following in a separate code chunk.</em></p>
-<section id="conditional-statements" class="level3">
-<h3 class="anchored" data-anchor-id="conditional-statements">Conditional statements</h3>
-<section id="task-1" class="level4">
-<h4 class="anchored" data-anchor-id="task-1">Task 1</h4>
-<p>Create an object called <code>pm2_5</code> with a value of 48 (representing Particulate Matter 2.5, an indicator for air quality, in <span class="math inline">\(\frac{\mu g}{m^3}\)</span> (see more about PM2.5 <a href="https://www3.epa.gov/region1/airquality/pm-aq-standards.html">here</a>).</p>
-<p>Write an <code>if - else if - else</code> statement that returns “Low to moderate risk” if <code>pm2_5</code> (for Particulate Matter 2.5) is less than 100, “Unhealthy for sensitive groups” if PM 2.5 is 100 &lt;= pm2_5 &lt; 150, and “Health risk present” if PM 2.5 is &gt;= 150.</p>
-<p>Test by changing the value of your pm2_5 object and re-running your statement to check.</p>
-</section>
-<section id="task-2" class="level4">
-<h4 class="anchored" data-anchor-id="task-2">Task 2</h4>
-<p>Store the string “blue whale” as an object called <code>species</code>. Write an if statement that returns “You found a whale!” if the string “whale” is detected in species, otherwise return nothing. Test by changing the species string &amp; re-running to see output.</p>
-<!-- #### Task 3
-
-Create a vector stored as `max_airtemp_c` with a value of 24.1. Write an `if else` statement that will print "Temperature too high" if `max_airtemp_c` is greater than 27, or "Temperature OK" if temperature is less than or equal to 27. 
-
-
-
-
-
-
-
--->
-</section>
-<section id="task-3" class="level4">
-<h4 class="anchored" data-anchor-id="task-3">Task 3</h4>
-<p>Store the base price of a burrito as <code>base_burrito</code> with a value of 6.50. Store <code>main_ingredient</code> with a starting string of “veggie.” Write a statement that will return the price of a burrito based on what a user specifies as “main_ingredient” (either “veggie”, “chicken” or “steak”) given the following:</p>
-<ul>
-<li>A veggie burrito is the cost of a base burrito</li>
-<li>A chicken burrito costs 3.00 more than a base burrito</li>
-<li>A steak burrito costs 3.25 more than a base burrito</li>
-</ul>
-</section>
-</section>
-<section id="for-loops" class="level3">
-<h3 class="anchored" data-anchor-id="for-loops">For loops</h3>
-<p><em>Complete each of the following in a separate code chunk.</em></p>
-<section id="task-4" class="level4">
-<h4 class="anchored" data-anchor-id="task-4">Task 4</h4>
-<p>Create a new vector called <code>fish</code> that contains the values <code>8, 10, 12, 23</code> representing counts of different fish types in a fish tank (goldfish, tetras, guppies, and mollies, respectively). Write a for loop that iterates through <code>fish</code>, and returns what proportion of total fish in the tank are that species. Assume that these counts represent all fish in the tank.</p>
-</section>
-<section id="task-5" class="level4">
-<h4 class="anchored" data-anchor-id="task-5">Task 5</h4>
-<p>There is an existing vector in R called <code>month.name</code> that contains all month names (just ry running <code>month.name</code> in the Console to check it out). <strong>Write a for loop</strong> that iterates over all months in <code>month.name</code> and prints “January is month 1,” “February is month 2”, etc.</p>
-<p><strong>Hint:</strong> you can index values in the <code>month.name</code> vector just like you would any other vector (e.g., try running <code>month.name[5]</code>).</p>
-</section>
-</section>
-</section>
-<section id="real-data" class="level2">
-<h2 class="anchored" data-anchor-id="real-data">3. Real data</h2>
-<p><em>You will complete Part 3 in a separate .qmd.</em></p>
-<p>Explore this <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-arc.10341.5">data package</a> from EDI, which contains a “Data file describing the biogeochemistry of samples collected at various sites near Toolik Lake, North Slope of Alaska”. Familiarize yourself with the metadata (particularly, View full metadata &gt; expand ‘Data entities’ to learn more about the variables in the dataset).</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="data-import-and-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="data-import-and-exploration">Data import and exploration</h2>
+<ol type="1">
+<li>Attach the <code>tidyverse</code> and <code>janitor</code> packages in a new code chunk</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Citation
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Kling, G. 2016. Biogeochemistry data set for soil waters, streams, and lakes near Toolik on the North Slope of Alaska, 2011. ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/362c8eeac5cad9a45288cf1b0d617ba7</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<ol type="1">
-<li><p>Download the CSV containing the Toolik biogeochemistry data</p></li>
-<li><p>Take a look at it - how are missing values stored? Keep that in mind.</p></li>
-<li><p>Drop the CSV into your data folder of your project</p></li>
-<li><p>Create a new Quarto document, save in docs as <code>toolik_chem.qmd</code></p></li>
-<li><p>Attach the <code>tidyverse</code>, <code>here</code>, and <code>janitor</code> packages in your setup code chunk</p></li>
-<li><p>Read in the data as <code>toolik_biochem</code>. Remember, you’ll want to specify here how <code>NA</code> values are stored. Pipe directly into <code>janitor::clean_names()</code> following your import code to get all column names into lower snake case.</p></li>
-<li><p>Create a subset of the data that contains only observations from the “Toolik Inlet” site, and that only contains the variables (columns) for pH, dissolved organic carbon (DOC), and total dissolved nitrogen (TDN) (<strong>hint:</strong> see <code>dplyr::select()</code>). Store this subset as <code>inlet_biochem</code>. Make sure to look at the subset you’ve created.</p></li>
-<li><p>Find the mean value of each column in <code>inlet_biochem</code> 3 different ways:</p></li>
+</div>
+<ol start="2" type="1">
+<li>Read in the <code>stl_blood_lead.csv</code> data as <code>stl_lead</code> and use <code>janitor::clean_names</code> to convert all variable names to lower snake case</li>
 </ol>
-<ol type="a">
-<li>Write a for loop from scratch to calculate the mean for each</li>
-<li>Use <em>one other method</em> (e.g.&nbsp;<code>apply</code>, <code>across</code>, or <code>purrr::map_df</code>) to find the mean for each column.</li>
-</ol>
-<section id="save-stage-commit-pull-push" class="level3">
-<h3 class="anchored" data-anchor-id="save-stage-commit-pull-push">Save, stage, commit, pull, push!</h3>
-<div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 3)</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-
-
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>stl_lead <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"stl_blood_lead.csv"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  janitor<span class="sc">::</span><span class="fu">clean_names</span>() <span class="co"># Convert variable names to lower snake case</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Do some basic exploration of the dataset</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(stl_lead) <span class="co"># View summary statistics of each variable</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     geo_id             tract_ce       name_lsad          count_tested   
+ Min.   :2.951e+10   Min.   :101100   Length:106         Min.   :  23.0  
+ 1st Qu.:2.951e+10   1st Qu.:106425   Class :character   1st Qu.: 411.0  
+ Median :2.951e+10   Median :112350   Mode  :character   Median : 694.0  
+ Mean   :2.951e+10   Mean   :113386                      Mean   : 737.4  
+ 3rd Qu.:2.951e+10   3rd Qu.:119102                      3rd Qu.: 923.2  
+ Max.   :2.951e+10   Max.   :127600                      Max.   :2116.0  
+  pct_elevated      total_pop    total_pop_moe       white       
+ Min.   : 0.000   Min.   : 620   Min.   : 94.0   Min.   :   1.0  
+ 1st Qu.: 4.588   1st Qu.:2025   1st Qu.:249.5   1st Qu.:  88.5  
+ Median : 9.480   Median :2912   Median :333.5   Median :1290.0  
+ Mean   :10.164   Mean   :2999   Mean   :353.3   Mean   :1371.7  
+ 3rd Qu.:14.380   3rd Qu.:3784   3rd Qu.:439.5   3rd Qu.:2168.2  
+ Max.   :23.280   Max.   :7069   Max.   :832.0   Max.   :6128.0  
+   white_moe         black          black_moe      poverty_tot    
+ Min.   :  4.0   Min.   :  35.0   Min.   : 38.0   Min.   : 158.0  
+ 1st Qu.: 60.5   1st Qu.: 633.2   1st Qu.:183.2   1st Qu.: 408.5  
+ Median :212.5   Median :1334.5   Median :269.0   Median : 651.5  
+ Mean   :201.4   Mean   :1429.9   Mean   :288.4   Mean   : 786.9  
+ 3rd Qu.:299.8   3rd Qu.:2029.0   3rd Qu.:379.2   3rd Qu.: 955.8  
+ Max.   :751.0   Max.   :4572.0   Max.   :760.0   Max.   :2801.0  
+ poverty_tot_moe   poverty_u18     poverty_u18_moe 
+ Min.   :  65.0   Min.   :   0.0   Min.   :  3.00  
+ 1st Qu.: 160.2   1st Qu.:  66.5   1st Qu.: 61.25  
+ Median : 241.5   Median : 173.5   Median :120.50  
+ Mean   : 270.5   Mean   : 249.8   Mean   :140.08  
+ 3rd Qu.: 337.5   3rd Qu.: 341.8   3rd Qu.:194.75  
+ Max.   :1049.0   Max.   :1320.0   Max.   :595.00  </code></pre>
+</div>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Create a new data frame called <code>stl_lead_prop</code> that has one additional column called <code>prop_white</code> that returns the percent of each census tract identifying as white (variable <code>white</code> in the dataset divided by variable <code>totalPop</code>, times 100)</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>stl_lead_prop <span class="ot">&lt;-</span> stl_lead <span class="sc">|&gt;</span> <span class="co"># Call data for wrangling</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop_white =</span> (white <span class="sc">/</span> total_pop)<span class="sc">*</span><span class="dv">100</span>) <span class="co"># Create a new variable and populate</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 </section>
+<section id="visualize-data" class="level2">
+<h2 class="anchored" data-anchor-id="visualize-data">Visualize data</h2>
+<ol type="1">
+<li>Create a scatterplot graph of the percentage of children in each census tract with elevated blood lead levels versus the percent of each census tract identifying as white</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>stl_lead_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> stl_lead_prop, <span class="co"># Set data for plotting</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">aes</span>(<span class="at">x =</span> prop_white, <span class="at">y =</span> pct_elevated)) <span class="sc">+</span> <span class="co"># Assign x- and y-axis variables</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="co"># Create scatterplot</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>stl_lead_plot <span class="co"># View scatterplot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day1-key_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Save a <strong>.png</strong> of the scatterplot to <strong>figs</strong>, with dimensions of (6” x 5”) (width x height)</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(stl_lead_plot,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"figs"</span>, <span class="st">"stl_lead_plot.png"</span>), <span class="co"># Set filepath to save scatterplot</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">5</span>, <span class="at">units =</span> <span class="fu">c</span>(<span class="st">"in"</span>)) <span class="co"># Set dimensions with units</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Create a histogram of the percentage of children in each census tract with elevated blood lead levels</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>stl_lead_hist <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> stl_lead_prop, <span class="co"># Set data for plotting</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> pct_elevated)) <span class="sc">+</span> <span class="co"># Assign x-axis variable</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="co"># Create histogram</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>stl_lead_hist <span class="co"># View histogram</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day1-key_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Save a <strong>.jpg</strong> of the scatterplot to <strong>figs</strong></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(stl_lead_hist,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"figs"</span>, <span class="st">"stl_lead_hist.jpg"</span>)) <span class="co"># Set filepath to save histogram</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

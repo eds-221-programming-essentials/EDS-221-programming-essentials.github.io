@@ -1,5 +1,5 @@
 ---
-title: "Day 8 Tasks & Activities"
+title: "Day 8: Tasks & Activities"
 subtitle: "Data visualization"
 ---
 

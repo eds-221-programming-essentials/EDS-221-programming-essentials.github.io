@@ -1,5 +1,5 @@
 ---
-title: "Day 7 Tasks & Activities"
+title: "Day 7: Tasks & Activities"
 subtitle: "Wrangling continued: joins, strings, dates"
 ---
 

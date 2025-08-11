@@ -1,5 +1,5 @@
 ---
-title: "Day 10 Morning Tasks & Activities"
+title: "Day 10: Morning Tasks & Activities"
 subtitle: "Fiddler crabs and Bergmann's rule"
 ---
 

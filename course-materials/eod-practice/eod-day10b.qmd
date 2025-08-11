@@ -1,5 +1,5 @@
 ---
-title: "Day 10 Afternoon Tasks & Activities"
+title: "Day 10: Afternoon Tasks & Activities"
 subtitle: "Long-term ice cover duration: North Temperate Lakes LTER"
 ---
 

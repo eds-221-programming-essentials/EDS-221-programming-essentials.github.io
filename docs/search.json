@@ -345,77 +345,77 @@
   {
     "objectID": "course-materials/eod-practice/eod-day5.html",
     "href": "course-materials/eod-practice/eod-day5.html",
-    "title": "Day 5 Task & Activities",
+    "title": "Day 5: Task & Activities",
     "section": "",
     "text": "Create a new repo on GitHub called eds221-day5-activities\nClone to create a version-controlled R Project\nCreate subfolders: docs, src, data, figs"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day5.html#setup",
     "href": "course-materials/eod-practice/eod-day5.html#setup",
-    "title": "Day 5 Task & Activities",
+    "title": "Day 5: Task & Activities",
     "section": "",
     "text": "Create a new repo on GitHub called eds221-day5-activities\nClone to create a version-controlled R Project\nCreate subfolders: docs, src, data, figs"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day5.html#make-a-function-source-in-an-r-markdown-doc",
     "href": "course-materials/eod-practice/eod-day5.html#make-a-function-source-in-an-r-markdown-doc",
-    "title": "Day 5 Task & Activities",
+    "title": "Day 5: Task & Activities",
     "section": "2. Make a function, source in an R Markdown doc",
     "text": "2. Make a function, source in an R Markdown doc\n\nTask 1\n\n\n\n\n\n\nCitation\n\n\n\nNCDENR Stormwater BMP Manual\n\n\nOne established way to calculate the volume of stormwater expected for a watershed (necessary to design best management practices & systems) is the Simple Method, which involves two steps. First, the runoff coefficient \\(R_v\\) (storm runoff / storm rainfall) is calculated from: \\[R_v = 0.05 + 0.9 * I_A\\]\nWhere \\(R_v\\) is the runoff coefficient (unitless), and \\(I_A\\) is the fraction of the watershed that is considered “impervious” (unitless). The volume of stormwater that needs to be handled, \\(V\\) in cubic feet, is then calculated by: \\[V=3630 * R_D * R_v * A\\] where \\(R_D\\) is the “design storm rainfall depth” in inches, usually set to 1.0 or 1.5, \\(R_v\\) is the runoff coefficient calculated above, and \\(A\\) is the watershed area in acres.\nYOUR TASK:\n\nCreate a new R script in src, saved as storm_runoff.R\nIn the script, create a function called predict_runoff that estimates the storm runoff volume using inputs for the impervious fraction and watershed area (you can use a constant value of 1 for \\(R_D\\) here). In other words, your function should only require two arguments\nAdd documentation to your function using Roxygen comments for practice\nTry out your function in the Console to ensure that it works\nCreate a new R Markdown document in docs, saved as runoff_volumes.Rmd\nAttach the tidyverse and here packages\nSource your storm_runoff.R script so you are able to use the predict_runoff function in your .Rmd\nIn a code chunk in your runoff_volumes.Rmd, use your predict_runoff function to estimate stormwater volume for a watershed of 182 acres, over a range of estimates for the impervious fraction (from 0.6 to 0.8, by increments of 0.01). Note: you do not need to write a for loop here.\nBind your sequence of impervious fractions together with the resulting runoff volume calculated into a data frame\nCreate a ggplot graph that has both dots and connecting lines (i.e., you’ll layer geom_point() and geom_line(). Update axis labels. Export a png of your graph to the figs folder using ggsave.\n\nDone with Task 1"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day5.html#wild-data",
     "href": "course-materials/eod-practice/eod-day5.html#wild-data",
-    "title": "Day 5 Task & Activities",
+    "title": "Day 5: Task & Activities",
     "section": "3. Wild data",
     "text": "3. Wild data\n\nTask 2\nFor Task 2, you will work with the us_tilapia_imports.csv. It exists in your eds221-day5-comp project - copy that file into your data folder for your day 5 activities project. The data are from the USDA Economic Research Service, and contain annual total volumes (in thousands of pounds) of tilapia imports to the United States from different countries.\nYou can decide if you want to do this all in separate steps, or piped together in sequence, or some combination. Make sure if you pipe things together, you check the output at every step.\n\nCreate a new .Rmd in your docs folder called us_tilapia_imports.Rmd\nAttach the tidyverse, here and janitor packages\nRead in the data as us_tilapia_imports\nExplore the data. What are the classes of the columns? Remember some tools we’ve used: summary, names, dim, skim, etc.\nUse pivot_longer() to reshape the data into long format (currently, the variable “year” is spread across multiple columns). Remember to store the output so you will be able to use the reshaped data this creates.\nCheck the class of the year column. What is it, and why do you think that’s the case? Then, coerce the year column to numeric (e.g. using mutate() and as.numeric() in combination)\nUse dplyr::group_by() %&gt;% summarize() to find the total US tilapia imports by year, store as yearly_tilapia_tot\nCreate a ggplot line graph of total US tilapia imports for all years in yearly_tilapia_tot. Update axis labels (include units as necessary), then export your graph as a .png to figs.\nCreate a subset that only retains imports from Ecuador, Honduras, Costa Rica, and Mexico (you decide what to name this)\nCreate a ggplot graph of total US tilapia imports over time, for those four countries in the subset you created above, separated by country. Update axis labels, add a title, customize your color scheme, update the theme. Export a .jpg of your graph to figs.\n\nDone with Task 2."
   },
   {
     "objectID": "course-materials/eod-practice/eod-day5.html#add-to-your-r-package",
     "href": "course-materials/eod-practice/eod-day5.html#add-to-your-r-package",
-    "title": "Day 5 Task & Activities",
+    "title": "Day 5: Task & Activities",
     "section": "4. Add to your R package",
     "text": "4. Add to your R package\n\nTask 3\nFor Task 3, reopen your R package you started today, and add two new functions. They can do whatever you want as long as:\n\nThey have at least two required arguments\nYou add documentation for each function with a Roxygen skeleton\n\nOnce you’ve added your functions, make sure to devtools::document(), Install and Restart, and check to make sure your functions are working, and that you can see your documentation. Then:\n\nPush your changes back to your repo on GitHub\nShare the link with someone (they’ll need to reinstall your package from GitHub using install_github(\"username/reponame\"))\n\n\nEnd Activity Session (Day 5)"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day6.html",
     "href": "course-materials/eod-practice/eod-day6.html",
-    "title": "Day 6 Tasks & Activities",
+    "title": "Day 6: Tasks & Activities",
     "section": "",
     "text": "Take ~15 minutes to read Broman & Woo’s evergreen paper Data organization in spreadsheets. As you read, think about data that you have created or had to work with that did not follow these guidelines. Make notes of examples to share from several - how did you input data previously? How would you change the way you input data?\nQuestions:\n\nWhat are major / most common ways you have seen these guidelines ignored?\nWhat is your experience working with or creating data in spreadsheets that don’t follow these guidelines?"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day6.html#data-organization",
     "href": "course-materials/eod-practice/eod-day6.html#data-organization",
-    "title": "Day 6 Tasks & Activities",
+    "title": "Day 6: Tasks & Activities",
     "section": "",
     "text": "Take ~15 minutes to read Broman & Woo’s evergreen paper Data organization in spreadsheets. As you read, think about data that you have created or had to work with that did not follow these guidelines. Make notes of examples to share from several - how did you input data previously? How would you change the way you input data?\nQuestions:\n\nWhat are major / most common ways you have seen these guidelines ignored?\nWhat is your experience working with or creating data in spreadsheets that don’t follow these guidelines?"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day6.html#data-tidying-subsetting",
     "href": "course-materials/eod-practice/eod-day6.html#data-tidying-subsetting",
-    "title": "Day 6 Tasks & Activities",
+    "title": "Day 6: Tasks & Activities",
     "section": "Data tidying & subsetting",
     "text": "Data tidying & subsetting\n\nTask 2: SBC Lobsters\n\n\n\n\n\n\nData source\n\n\n\nSanta Barbara Coastal LTER, D. Reed, and R. Miller. 2021. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012 ver 6. Environmental Data Initiative. https://doi.org/10.6073/pasta/0bcdc7e8b22b8f2c1801085e8ca24d59\n\n\n\n\nGetting started\n\nCreate a new GitHub repo called eds221-day6-activities\nClone to create a version controlled R project\nAdd subfolders data and docs\nDownload the California Spiny lobster abundance data from this SBC LTER data package. Familiarize yourself with the metadata. Save the CSV containing lobster abundance data in your data subfolder.\nIn docs, create a new .Rmd or .qmd saved with file prefix lobster_exploration\nWithin your notebook, write organized and well-annotated code to do the following:\n\nRead in and take a look at the data in the data/Lobster_Abundance_All_Years_20210412.csv file. Take note of values that can be considered NA (see metadata) and update your import line to convert those to NA values\nConvert column names to lower snake case\nConvert the data from frequency to case format using dplyr::uncount() on the existing count column. What did this do? Add annotation in your code explaining dplyr::uncount()\n\n\nHere’s code to read in your data, just to get your started:\n\nlobsters &lt;- read_csv(here(\"data\",\"Lobster_Abundance_All_Years_20210412.csv\"), na = c(\"-99999\", \"\")) %&gt;% \n  clean_names() %&gt;% \n  uncount(count)\n\n\n\nFind counts and mean sizes by site & year\n\nCreate a summary table that finds the total counts (see: n()), and mean carapace lengths of lobsters observed in the dataset by site and year.\nCreate a ggplot graph of the number of total lobsters observed (y-axis) by year (x-axis) in the study, grouped (either aesthetically or by faceting) by site\n\n\n\nFind the proportion of legal lobsters at each site for 2020\nThe legal lobster size (carapace length) in California is 79.76 mm.\n\nCreate a subset that only contains lobster data from 2020 (note: this should be from the original data you read in, not the summary table you created above)\nWrite code (you can decide how to do this - there are a number of ways) to find the counts of lobsters observed at each site (only using site as the grouping factor) that are above and below the legal limit. Hint: You may want to add a new column legal that contains “yes” or “no” based on the size of the observed lobster (see dplyr::case_when() for a really nice way to do this), then use group_by() %&gt;% summarize(n()) or dplyr::count() to get counts by group within variables\nCreate a stacked column graph that shows the proportion of legal and non-legal lobsters at each site. **Hint: create a stacked column graph with geom_col(), then add the argument position = \"fill\" to convert from a graph of absolute counts to proportions.\n\nWhich two sites had the largest proportion of legal lobsters in 2020? Explore the metadata to come up with a hypothesis about why that might be."
   },
   {
     "objectID": "course-materials/eod-practice/eod-day6.html#task-3-random-lobster-wrangling",
     "href": "course-materials/eod-practice/eod-day6.html#task-3-random-lobster-wrangling",
-    "title": "Day 6 Tasks & Activities",
+    "title": "Day 6: Tasks & Activities",
     "section": "Task 3: Random lobster wrangling",
     "text": "Task 3: Random lobster wrangling\nStarting with the original lobsters data that you read in as lobsters, complete the following (separately - these are not expected to be done in sequence or anything). You can store each of the outputs as ex_a, ex_b, etc. for the purposes of this task.\n\nfilter() practice\n\nCreate and store a subset that only contains lobsters from sites “IVEE”, “CARP” and “NAPL”. Check your output data frame to ensure that only those three sites exist.\nCreate a subset that only contains lobsters observed in August.\nCreate a subset with lobsters at Arroyo Quemado (AQUE) OR with a carapace length greater than 70 mm.\nCreate a subset that does NOT include observations from Naples Reef (NAPL)\n\n\n\ngroup_by() %&gt;% summarize() practice\n\nFind the mean and standard deviation of lobster carapace length, grouped by site.\nFind the maximum carapace length by site and month.\n\n\n\nmutate() practice\n\nAdd a new column that contains lobster carapace length converted to centimeters. Check output.\nUpdate the site column to all lowercase. Check output.\nConvert the area column to a character (not sure why you’d want to do this, but try it anyway). Check output.\n\n\n\ncase_when() practice\n\nUse case_when() to add a new column called size_bin that contains “small” if carapace size is &lt;= 70 mm, or “large” if it is greater than 70 mm. Check output.\nUse case_when() to add a new column called designation that contains “MPA” if the site is “IVEE” or “NAPL”, and “not MPA” for all other outcomes.\n\n\nEnd Activity Session (Day 6)"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day10a.html",
     "href": "course-materials/eod-practice/eod-day10a.html",
-    "title": "Day 10 Morning Tasks & Activities",
+    "title": "Day 10: Morning Tasks & Activities",
     "section": "",
     "text": "Yellow fiddler crab waving it’s large claw. From Wikipedia."
   },
   {
     "objectID": "course-materials/eod-practice/eod-day10a.html#setup",
     "href": "course-materials/eod-practice/eod-day10a.html#setup",
-    "title": "Day 10 Morning Tasks & Activities",
+    "title": "Day 10: Morning Tasks & Activities",
     "section": "1.Setup:",
     "text": "1.Setup:\n\nPartner up, then decide who is Partner 1 & who is Partner 2 for this activity\nYou should be working together on all of this activity, even though it is split up into “Partner 1” and “Partner 2” sections\n\n\nPartner 1:\n\nCreate a new version-controlled R Project named fiddler-crab-sizes\nIn a new Quarto document, attach the lterdatasampler package\nRead through the documentation for the pie_crab data sample, and spend ~5 minutes talking with your partner about the data contains, the shape, variables, and why it was collected. See more information and examples with the data here.\nSave your document\nPush your changes back to GitHub (you don’t need to work in a branch for this step – push straight to main)\nAdd your partner as a collaborator to the repo\n\n\n\nPartner 2:\n\nAccept the invitation to collaborate (check your email) & clone the repo\nCreate a NEW BRANCH to work in\nIn the Quarto doc, create an exploratory (unfinalized) plot of fiddler crab carapace widths observed at the different latitudes\nPush your updates\nSubmit a Pull Request through GitHub\n\n\n\nPartner 1:\n\nMerge in the Pull Request\nPull changes into main\nSwitch over into a NEW BRANCH\nFinalize the figure. Add a figure caption using #| fig-cap: \"this is my caption\" in the code chunk where the graph is created. Update code chunk options (hint: execute: in YAML) so that only your finalized graph and figure caption show up in your knitted report (i.e., no code should show up)\nTo your document, add an unfinalized summary table containing the mean, standard deviation, and sample size of fiddler crab carapace widths by site (tip: use round(mean(), 2) to round a value to 2 decimal places)\nPush your changes\nSubmit a Pull Request in GitHub\n\n\n\nPartner 2:\n\nMerge in the Pull Request\nGo back to your main branch locally, and pull down changes\nCreate and checkout a NEW BRANCH\nFinalize the summary table a bit so that it looks more polished when rendered, including with updated column names (including units as relevant).\nPush your updates, submit a PR on GitHub\n\n\n\nPartner 1:\n\nMerge in the PR\nSwitch over to your main branch locally, pull in changes\nCreate and checkout a NEW BRANCH\nWork with your partner to write a short introduction to the figures in your knitted document (e.g. so that if it were shared as a short blog post, someone would understand what they were looking at)\nAdd any necessary citations for the data at the end of the document\nPush your changes and submit a PR on GitHub\n\n\n\nPartner 2:\n\nMerge in the PR\n\n\n\nBoth partners:\n\nMove back over into your main local branch\nPull down changes\n\n\nEnd Activity Session (Day 10 Morning)"
   },
@@ -457,35 +457,35 @@
   {
     "objectID": "course-materials/eod-practice/eod-day8.html",
     "href": "course-materials/eod-practice/eod-day8.html",
-    "title": "Day 8 Tasks & Activities",
+    "title": "Day 8: Tasks & Activities",
     "section": "",
     "text": "Fork and clone this repo\nClone to make a version controlled R Project\nAdd folders docs and figs"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day8.html#setup",
     "href": "course-materials/eod-practice/eod-day8.html#setup",
-    "title": "Day 8 Tasks & Activities",
+    "title": "Day 8: Tasks & Activities",
     "section": "",
     "text": "Fork and clone this repo\nClone to make a version controlled R Project\nAdd folders docs and figs"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day8.html#task-1-do-your-data-viz-worst",
     "href": "course-materials/eod-practice/eod-day8.html#task-1-do-your-data-viz-worst",
-    "title": "Day 8 Tasks & Activities",
+    "title": "Day 8: Tasks & Activities",
     "section": "Task 1: Do your data viz worst",
     "text": "Task 1: Do your data viz worst\nJust like it takes a lot of work to make a really wonderful graph, it takes effort to make a graph really awful. Put effort and creativity into this - you will learn a lot in the process if you do.\nUsing the ‘space_launches.csv’ data, create a new .qmd and create your worst possible graph by customizing (from the ggplot default) in at least 8 ways - more encouraged - to make it as terrible as possible. The data were previously shared for #TidyTuesday, and descriptions of dataset & variables can be found here. You can plot whatever variable(s) you choose, and make whatever graph type you want.\nOnce you’re done, drop your worst graph (as a .png or .jpg) into the course Slack channel.\nSome ideas:\n\nfonts\nbackground images\ncoord_*\npanel / plot / geom / text colors\npoint / line patterns and shapes\ngridline updates\ntickmark frequency\nangles\n\nHere’s some inspiration from a few Bren MESM students.\nBy Yani Pohl:\n\n\n\n\n\n\n\n\n\nBy Keene Morrow:"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day8.html#task-2-wrangling-practice-with-the-sf-greenhouse-gas-data",
     "href": "course-materials/eod-practice/eod-day8.html#task-2-wrangling-practice-with-the-sf-greenhouse-gas-data",
-    "title": "Day 8 Tasks & Activities",
+    "title": "Day 8: Tasks & Activities",
     "section": "Task 2: Wrangling practice with the SF Greenhouse Gas data",
     "text": "Task 2: Wrangling practice with the SF Greenhouse Gas data\n\nDownload the San_Francisco_Communitywide_Greenhouse_Gas_Inventory.csv file. Information about the data is available here.\nRead in the SF emissions dataset, then complete the following:\n\n\nCreate a summary table of total annual greenhouse gas emissions (only from Emissions_mtCO2e column) by sector_general\nCreate a summary table of total annual greenhouse gas emissions (only from Emissions_mtCO2e column) by year and commodity type\nCreate a subset of the data that only contains observations from 2005 on, only for observations where Sector_Detail2 contains the pattern “PG&E”, then limit to columns Calendar_Year, Sector_Detail2 and Emissions_mtCO2e."
   },
   {
     "objectID": "course-materials/eod-practice/eod-day8.html#task-3-do-your-data-viz-best",
     "href": "course-materials/eod-practice/eod-day8.html#task-3-do-your-data-viz-best",
-    "title": "Day 8 Tasks & Activities",
+    "title": "Day 8: Tasks & Activities",
     "section": "Task 3: Do your data viz best",
     "text": "Task 3: Do your data viz best\nCreate a finalized graph (as perfect as you can make it) using the San Francisco GHG emissions dataset. You get to choose what you want to visualize. You can pick which variables & observations you’re interested in. You may want to do some wrangling / summarizing first.\nOnce you’ve decided on what to plot, create the best graph that you can to communicate what’s going on with the data.\nOnce you’re done, drop your best graph (as a .png or .jpg) into the course Slack channel.\n\nEnd Activity Session (Day 8)"
   },
@@ -583,70 +583,70 @@
   {
     "objectID": "course-materials/eod-practice/eod-day9.html",
     "href": "course-materials/eod-practice/eod-day9.html",
-    "title": "Day 9 Tasks & Activities",
+    "title": "Day 9: Tasks & Activities",
     "section": "",
     "text": "Fork this repo\nIn your fork, under ‘Settings’, check the box next to Issues (this is so you’ll be able to submit issues to yourself containing reprex)\nClone to create a version-controlled R Project\nExplore the contents a bit to familiarize yourself with the structure"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day9.html#setup",
     "href": "course-materials/eod-practice/eod-day9.html#setup",
-    "title": "Day 9 Tasks & Activities",
+    "title": "Day 9: Tasks & Activities",
     "section": "",
     "text": "Fork this repo\nIn your fork, under ‘Settings’, check the box next to Issues (this is so you’ll be able to submit issues to yourself containing reprex)\nClone to create a version-controlled R Project\nExplore the contents a bit to familiarize yourself with the structure"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day9.html#task-1-sos---save-this-script",
     "href": "course-materials/eod-practice/eod-day9.html#task-1-sos---save-this-script",
-    "title": "Day 9 Tasks & Activities",
+    "title": "Day 9: Tasks & Activities",
     "section": "Task 1: SOS - Save this script",
     "text": "Task 1: SOS - Save this script\n\nOpen the busted_birds.Rmd file\nTry to knit it (R Markdown’s version of rendering). Not happening.\nMake a copy of the file (in the project root) called fixed_birds.Rmd\nWork through the code from the top line down, fixing errors where indicated and using the hints for what the code is actually trying to do.\n\n\n\n\n\n\n\nNote\n\n\n\nIt’s not enough to just get the code to run. You need to actually make sure it’s doing what you expect it to do by checking and understanding the outputs of each line."
   },
   {
     "objectID": "course-materials/eod-practice/eod-day9.html#task-2-help-a-friend-by-making-some-reprex",
     "href": "course-materials/eod-practice/eod-day9.html#task-2-help-a-friend-by-making-some-reprex",
-    "title": "Day 9 Tasks & Activities",
+    "title": "Day 9: Tasks & Activities",
     "section": "Task 2: Help a friend by making some reprex",
     "text": "Task 2: Help a friend by making some reprex\n\nOpen the reprex_practice.Rmd file\nThere are two separate code chunks in the .Rmd, neither run.\nFirst, try to figure out what the code in each chunk is trying to do.\nThen, determine where the code breaks (there is only one breaking point for each chunk)\nThen, for each create a reprex that provides a minimal out-of-the-box reproducible working example of the thing in the code that isn’t working. Create your reprex in a separate code chunk below each broken example. Use {reprex} to render your reproducible example for sharing on GitHub. Add your reprexes as issues to one of your neighbor’s GitHub repo for the day 9 activities to help them out! (you’ll need to ask what they’re username is so you can find their repo on GitHub at username/eds221-day9-activities)\n\n\nEnd Activity Session (Day 8)"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day10b.html",
     "href": "course-materials/eod-practice/eod-day10b.html",
-    "title": "Day 10 Afternoon Tasks & Activities",
+    "title": "Day 10: Afternoon Tasks & Activities",
     "section": "",
     "text": "In this activity, you’ll explore ice cover duration for lakes in the Madison Lake Area (long term data, 1853 - present), then further explore trends in mean air temperature from a second dataset.\nThe datasets are here to download:"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day10b.html#your-task",
     "href": "course-materials/eod-practice/eod-day10b.html#your-task",
-    "title": "Day 10 Afternoon Tasks & Activities",
+    "title": "Day 10: Afternoon Tasks & Activities",
     "section": "Your task",
     "text": "Your task\n\nDownload both datasets\nExplore the metadata for each to ensure you know what they contain, variables, units, etc. NOTE: How are missing values stored in the ice duration variable?\nCreate a new version-controlled R Project\nIn a single R Markdown (or Quarto) document:\n\nRead in both files (ice cover duration and meteorological data). Note that the ice cover data has some NA values stored as -999.\nCreate a visualization that compares ice duration across different lakes in the Madison Lake Area. Include both the actual ice duration values and some representation of summary statistics for each lake. Careful if you use a boxplot over a jitter or beeswarm - what values might be doubly represented? Can you find an argument that would help you remove those from the boxplot?\nFind the mean ice cover duration in Madison Lake Area by year (i.e., you’ll only be grouping by the year variable here). Understanding check: what are you finding the mean of here? Why are there multiple observations for each year?)\nCreate an exploratory visualization of mean ice cover duration by year for the Madison Lake Area. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe.\nFind the mean air temperature (using the daily average air temperature - adjusted) in Madison Lake Area by year using only observations from winter months (December, January, February)\nCreate an exploratory visualization of mean winter temperatures for the Madison Lake Area. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe.\nJoin the mean winter air temperatures to the mean ice cover duration data you found above\nCreate an exploratory scatterplot of mean winter temperatures versus mean ice duration. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe.\nExplore thaw dates since 1970. Create a subset of the ice cover duration data since 1970 (ok to include 1970), then convert the ice_off column to a Date. Use lubridate::yday() to pull the numeric day of the year from that Date. Create an exploratory plot of the ice off day (numeric day-of-the-year) from 1970 - present. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe.\n\n\n\nEnd Activity Session (Day 10 Morning)"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day3.html",
     "href": "course-materials/eod-practice/eod-day3.html",
-    "title": "Day 3 Task & Activities",
+    "title": "Day 3: Task & Activities",
     "section": "",
     "text": "Create a repo on GitHub named eds212-day3-activities\nClone to create a version-controlled R Project\nCreate some subfolder infrastructure (docs, data)"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day3.html#setup",
     "href": "course-materials/eod-practice/eod-day3.html#setup",
-    "title": "Day 3 Task & Activities",
+    "title": "Day 3: Task & Activities",
     "section": "",
     "text": "Create a repo on GitHub named eds212-day3-activities\nClone to create a version-controlled R Project\nCreate some subfolder infrastructure (docs, data)"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day3.html#conditional-statements-for-loops",
     "href": "course-materials/eod-practice/eod-day3.html#conditional-statements-for-loops",
-    "title": "Day 3 Task & Activities",
+    "title": "Day 3: Task & Activities",
     "section": "2. Conditional statements & for loops",
     "text": "2. Conditional statements & for loops\nCreate a new Quarto document in your docs folder, saved as conditionals_loops.qmd. Complete all tasks for Part 2 in this .qmd.\nComplete each of the following in a separate code chunk.\n\nConditional statements\n\nTask 1\nCreate an object called pm2_5 with a value of 48 (representing Particulate Matter 2.5, an indicator for air quality, in \\(\\frac{\\mu g}{m^3}\\) (see more about PM2.5 here).\nWrite an if - else if - else statement that returns “Low to moderate risk” if pm2_5 (for Particulate Matter 2.5) is less than 100, “Unhealthy for sensitive groups” if PM 2.5 is 100 &lt;= pm2_5 &lt; 150, and “Health risk present” if PM 2.5 is &gt;= 150.\nTest by changing the value of your pm2_5 object and re-running your statement to check.\n\n\nTask 2\nStore the string “blue whale” as an object called species. Write an if statement that returns “You found a whale!” if the string “whale” is detected in species, otherwise return nothing. Test by changing the species string & re-running to see output.\n\n\n\nTask 3\nStore the base price of a burrito as base_burrito with a value of 6.50. Store main_ingredient with a starting string of “veggie.” Write a statement that will return the price of a burrito based on what a user specifies as “main_ingredient” (either “veggie”, “chicken” or “steak”) given the following:\n\nA veggie burrito is the cost of a base burrito\nA chicken burrito costs 3.00 more than a base burrito\nA steak burrito costs 3.25 more than a base burrito\n\n\n\n\nFor loops\nComplete each of the following in a separate code chunk.\n\nTask 4\nCreate a new vector called fish that contains the values 8, 10, 12, 23 representing counts of different fish types in a fish tank (goldfish, tetras, guppies, and mollies, respectively). Write a for loop that iterates through fish, and returns what proportion of total fish in the tank are that species. Assume that these counts represent all fish in the tank.\n\n\nTask 5\nThere is an existing vector in R called month.name that contains all month names (just ry running month.name in the Console to check it out). Write a for loop that iterates over all months in month.name and prints “January is month 1,” “February is month 2”, etc.\nHint: you can index values in the month.name vector just like you would any other vector (e.g., try running month.name[5])."
   },
   {
     "objectID": "course-materials/eod-practice/eod-day3.html#real-data",
     "href": "course-materials/eod-practice/eod-day3.html#real-data",
-    "title": "Day 3 Task & Activities",
+    "title": "Day 3: Task & Activities",
     "section": "3. Real data",
     "text": "3. Real data\nYou will complete Part 3 in a separate .qmd.\nExplore this data package from EDI, which contains a “Data file describing the biogeochemistry of samples collected at various sites near Toolik Lake, North Slope of Alaska”. Familiarize yourself with the metadata (particularly, View full metadata &gt; expand ‘Data entities’ to learn more about the variables in the dataset).\n\n\n\n\n\n\nCitation\n\n\n\nKling, G. 2016. Biogeochemistry data set for soil waters, streams, and lakes near Toolik on the North Slope of Alaska, 2011. ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/362c8eeac5cad9a45288cf1b0d617ba7\n\n\n\nDownload the CSV containing the Toolik biogeochemistry data\nTake a look at it - how are missing values stored? Keep that in mind.\nDrop the CSV into your data folder of your project\nCreate a new Quarto document, save in docs as toolik_chem.qmd\nAttach the tidyverse, here, and janitor packages in your setup code chunk\nRead in the data as toolik_biochem. Remember, you’ll want to specify here how NA values are stored. Pipe directly into janitor::clean_names() following your import code to get all column names into lower snake case.\nCreate a subset of the data that contains only observations from the “Toolik Inlet” site, and that only contains the variables (columns) for pH, dissolved organic carbon (DOC), and total dissolved nitrogen (TDN) (hint: see dplyr::select()). Store this subset as inlet_biochem. Make sure to look at the subset you’ve created.\nFind the mean value of each column in inlet_biochem 3 different ways:\n\n\nWrite a for loop from scratch to calculate the mean for each\nUse one other method (e.g. apply, across, or purrr::map_df) to find the mean for each column.\n\n\nSave, stage, commit, pull, push!\n\nEnd Activity Session (Day 3)"
   },
@@ -674,65 +674,65 @@
   {
     "objectID": "course-materials/eod-practice/eod-day7.html",
     "href": "course-materials/eod-practice/eod-day7.html",
-    "title": "Day 7 Tasks & Activities",
+    "title": "Day 7: Tasks & Activities",
     "section": "",
     "text": "Create a new repo on GitHub called eds221-day7-activities\nClone to make a version controlled R Project\nAdd subfolders data, R and figs\nFamiliarize yourself with the contents, data files, and variables from this data package on EDI\nDownload the entire Zip Archive for the package\nCopy all 4 files to your data folder"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day7.html#setup",
     "href": "course-materials/eod-practice/eod-day7.html#setup",
-    "title": "Day 7 Tasks & Activities",
+    "title": "Day 7: Tasks & Activities",
     "section": "",
     "text": "Create a new repo on GitHub called eds221-day7-activities\nClone to make a version controlled R Project\nAdd subfolders data, R and figs\nFamiliarize yourself with the contents, data files, and variables from this data package on EDI\nDownload the entire Zip Archive for the package\nCopy all 4 files to your data folder"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day7.html#task-1-joins-on-birds",
     "href": "course-materials/eod-practice/eod-day7.html#task-1-joins-on-birds",
-    "title": "Day 7 Tasks & Activities",
+    "title": "Day 7: Tasks & Activities",
     "section": "Task 1: Joins on birds",
     "text": "Task 1: Joins on birds\nIn this section, you’ll test and explore a number of different joins.\n\nCreate a new .qmd in your R folder saved as bird_joins.qmd\nRead in the data sets and store the data frames as bird_observations, sites, surveys, and taxalist (it should be clear from the raw file names which is which)\nCreate a subset of bird_observations called birds_subset that only contains observations for birds with species id “BHCO” and “RWBL”, and from sites with site ID “LI-W” and “NU-C”\n\n\nLeft join practice\n\nUse left join(s) to update birds_subset so that it also includes sites and taxalist information. For each join, include an explicit argument saying which variable you are joining by (even if it will just assume the correct one for you). Store the updated data frame as birds_left. Make sure to look at the output - is what it contains consistent with what you expected it to contain?\n\n\n\nFull join practice\n\nFirst, answer: what do you expect a full_join() between birds_subset and sites to contain?\nWrite code to full_join the birds_subset and sites data into a new object called birds_full. Explicitly include the variable you’re joining by. Look at the output. Is it what you expected?"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day7.html#task-2-data-wrangling-and-visualization-with-birds",
     "href": "course-materials/eod-practice/eod-day7.html#task-2-data-wrangling-and-visualization-with-birds",
-    "title": "Day 7 Tasks & Activities",
+    "title": "Day 7: Tasks & Activities",
     "section": "Task 2: Data wrangling and visualization with birds",
     "text": "Task 2: Data wrangling and visualization with birds\nContinue in your same .qmd that you created for Task 1\n\nStarting with your birds object, rename the notes column to bird_obs_notes (so this doesn’t conflict with notes in the surveys dataset\nThen, create a subset that contains all observations in the birds dataset, joins the taxonomic, site and survey information to it, and is finally limited to only columns survey_date, common_name, park_name, and bird_count. You can decide the order that you want to create this in (e.g. limit the columns first, then join, or the other way around).\nUse lubridate::month() to add a new column called survey_month, containing only the month number. Then, convert the month number to a factor (again within mutate())\nLearn a new function on your own! Use dplyr::relocate() to move the new survey_month column to immediately after the survey_date column. You can do this in a separate code chunk, or pipe straight into it from your existing code.\nFind the total number of birds observed by park and month (i.e., you’ll group_by(park_name, survey_month))\nFilter to only include parks “Lindo”, “Orme”, “Palomino” and “Sonrisa”"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day7.html#task-3-practice-with-strings",
     "href": "course-materials/eod-practice/eod-day7.html#task-3-practice-with-strings",
-    "title": "Day 7 Tasks & Activities",
+    "title": "Day 7: Tasks & Activities",
     "section": "Task 3: Practice with strings",
-    "text": "Task 3: Practice with strings\n\nCreate a new .qmd in your R folder called string_practice.qmd\nCopy all contents of the html table below to your clipboard:\n\n\n\n\n\n\n\ndate\nbuilding\nalarm_message\n\n\n\n\n2020-03-14\nEngineering-North\n10:02am -- HVAC system down, facilities management alerted\n\n\n2020-03-15\nBren Hall\n8:24am -- Elevator North out of service\n\n\n2020-04-10\nEngineering-South\n12:41am -- Fire alarm, UCSB fire responded and cleared\n\n\n2020-04-18\nEngr-North\n9:58pm -- Campus point emergency siren, UCPD responded\n\n\n\n\n\n\n\n\n\nBack in your string_practice.Rmd, create a new code chunk\nWith your cursor in your code chunk, go up to Addins in the top bar of RStudio. From the drop-down menu, choose ‘Paste as data frame’. Make sure to add code to store the data frame as alarm_report\nPractice working with strings by writing code to update alarm_report as follows (these can be separate, or all as part of a piped sequence):\n\nReplace the “Engr” with “Engineering” in the building column\nSeparate the building column into two separate columns, building and wing, separated at the dash\nOnly keep observations with the word “responded” in the alarm_message column\nSeparate the message time from the rest of the message by separating at --\nConvert the date column to a Date class using lubridate\n\n\n\nEnd Activity Session (Day 7)"
+    "text": "Task 3: Practice with strings\n\nCreate a new .qmd in your R folder called string_practice.qmd\nCopy all contents of the html table below to your clipboard:\n\n\n\n\n\n\ndate\nbuilding\nalarm_message\n\n\n\n\n2020-03-14\nEngineering-North\n10:02am -- HVAC system down, facilities management alerted\n\n\n2020-03-15\nBren Hall\n8:24am -- Elevator North out of service\n\n\n2020-04-10\nEngineering-South\n12:41am -- Fire alarm, UCSB fire responded and cleared\n\n\n2020-04-18\nEngr-North\n9:58pm -- Campus point emergency siren, UCPD responded\n\n\n\n\n\n\n\n\nBack in your string_practice.Rmd, create a new code chunk\nWith your cursor in your code chunk, go up to Addins in the top bar of RStudio. From the drop-down menu, choose ‘Paste as data frame’. Make sure to add code to store the data frame as alarm_report\nPractice working with strings by writing code to update alarm_report as follows (these can be separate, or all as part of a piped sequence):\n\nReplace the “Engr” with “Engineering” in the building column\nSeparate the building column into two separate columns, building and wing, separated at the dash\nOnly keep observations with the word “responded” in the alarm_message column\nSeparate the message time from the rest of the message by separating at --\nConvert the date column to a Date class using lubridate\n\n\n\nEnd Activity Session (Day 7)"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day4.html",
     "href": "course-materials/eod-practice/eod-day4.html",
-    "title": "Day 4 Task & Activities",
+    "title": "Day 4: Task & Activities",
     "section": "",
     "text": "Create a repo on GitHub named eds221-day4-activities\nClone to create a version-controlled R Project\nCreate some subfolder infrastructure (docs, data)\nAdd a new Quarto file, save as loops_and_functions.qmd in docs"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day4.html#setup",
     "href": "course-materials/eod-practice/eod-day4.html#setup",
-    "title": "Day 4 Task & Activities",
+    "title": "Day 4: Task & Activities",
     "section": "",
     "text": "Create a repo on GitHub named eds221-day4-activities\nClone to create a version-controlled R Project\nCreate some subfolder infrastructure (docs, data)\nAdd a new Quarto file, save as loops_and_functions.qmd in docs"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day4.html#for-loops-revisited",
     "href": "course-materials/eod-practice/eod-day4.html#for-loops-revisited",
-    "title": "Day 4 Task & Activities",
+    "title": "Day 4: Task & Activities",
     "section": "2. For loops revisited",
-    "text": "2. For loops revisited\n\nTask 1\nCreate two sequences, one called weekdays that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called transects that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:\n\n\n\n\n\n\n\n\n\n\n\n\n\nMonday - Transect A\nMonday - Transect B\nMonday - Transect C\n\n\nTuesday - Transect A\nTuesday - Transect B\nTuesday - Transect C\n\n\nWednesday - Transect A\nWednesday - Transect B\nWednesday - Transect C\n\n\nThursday - Transect A\nThursday - Transect B\nThursday - Transect C\n\n\nFriday - Transect A\nFriday - Transect B\nFriday - Transect C\n\n\nSaturday - Transect A\nSaturday - Transect B\nSaturday - Transect C\n\n\nSunday - Transect A\nSunday - Transect B\nSunday - Transect C"
+    "text": "2. For loops revisited\n\nTask 1\nCreate two sequences, one called weekdays that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called transects that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:\n\n\n\n\n\n\n\n\n\n\n\n\nMonday - Transect A\nMonday - Transect B\nMonday - Transect C\n\n\nTuesday - Transect A\nTuesday - Transect B\nTuesday - Transect C\n\n\nWednesday - Transect A\nWednesday - Transect B\nWednesday - Transect C\n\n\nThursday - Transect A\nThursday - Transect B\nThursday - Transect C\n\n\nFriday - Transect A\nFriday - Transect B\nFriday - Transect C\n\n\nSaturday - Transect A\nSaturday - Transect B\nSaturday - Transect C\n\n\nSunday - Transect A\nSunday - Transect B\nSunday - Transect C"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day4.html#functions-introduced",
     "href": "course-materials/eod-practice/eod-day4.html#functions-introduced",
-    "title": "Day 4 Task & Activities",
+    "title": "Day 4: Task & Activities",
     "section": "3. Functions introduced",
-    "text": "3. Functions introduced\n\nTask 2\nWrite a function called force that calculates a force (in Newtons), given inputs of mass (in kg) and acceleration (in \\(\\frac{m}{s^2}\\) (recall: \\(F = ma\\)), and returns a statement “The resulting force is ___ Newtons.”\n\n\n\nTask 3\nThe length:weight relationship for fish is: \\(W=aL^b\\), where where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values (shown below for several fish from Peyton et al. 2016).\n\n\n\n\n\n\nsci_name\ncommon_name\na_est\nb_est\n\n\n\n\nChanos chanos\nMilkfish\n0.0905\n2.52\n\n\nSphyraena barracuda\nGreat barracuda\n0.0181\n3.27\n\n\nCaranx ignobilis\nGiant trevally\n0.0353\n3.05\n\n\n\n\n\n\n\n\nRecreate the table above as a data frame stored as fish_parms. Then, write a function called fish_weight that allows a user to only enter the common name (argument fish_name) and total length (argument tot_length) (in centimeters) of a fish, to return the expected fish weight in grams. Test it out for different species and lengths.\nNow, try creating a vector of lengths (e.g. 0 to 100, by increments of 1) and ensuring that your function will calculate the fish weight over a range of lengths for the given species (try this for milkfish, storing the output weights as milkfish_weights.\n\n\nTask 4\nWave power (more accurately wave energy flux) in deep water is approximated by:\n\\[P_{deep}=0.5 H^2 T\\] where \\(P\\) is power in \\(\\frac{kW}{m}\\) (potential power per wave meter), \\(H\\) is wave height in meters (more specifically, the significant wave height), and \\(T\\) is the wave period in seconds. Learn more here.\nWrite a function called wave_power that calculates potential ocean wave power given inputs of wave height and period.\nUse your wave_power function to approximate wave power for a period of 8 seconds, over a range of wave heights from 0 to 3 meters by increments of 0.2 meters.\n\n\nTask 5 (OPTIONAL)\nThe wave energy equation changes based on ocean depth. Along the coast of Brenville, which has a very sharp shelf as the wave approaches the coast, wave energy is approximated using the deep ocean equation (the one you used above) for depths &gt; 12 meters, and a shallow equation for depths &lt;= 12 meters. The Brenville team estimates shallow wave power by:\n\\[P_{shallow}=0.81 H^2 T\\]\nCreate a function that requires inputs of water depth, wave height and period, then returns the approximated wave power using the correct equation for the depth entered. It should also include a message (hint: use message() just like you would use warning!) that lets the user know if the shallow or deep water equation was used.\n\n\n\n\n\n\n\nCitation\n\n\n\nPeyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957.\n\n\n\nEnd Activity Session (Day 4)"
+    "text": "3. Functions introduced\n\nTask 2\nWrite a function called force that calculates a force (in Newtons), given inputs of mass (in kg) and acceleration (in \\(\\frac{m}{s^2}\\) (recall: \\(F = ma\\)), and returns a statement “The resulting force is ___ Newtons.”\n\n\n\nTask 3\nThe length:weight relationship for fish is: \\(W=aL^b\\), where where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values (shown below for several fish from Peyton et al. 2016).\n\n\n\n\n\nsci_name\ncommon_name\na_est\nb_est\n\n\n\n\nChanos chanos\nMilkfish\n0.0905\n2.52\n\n\nSphyraena barracuda\nGreat barracuda\n0.0181\n3.27\n\n\nCaranx ignobilis\nGiant trevally\n0.0353\n3.05\n\n\n\n\n\n\n\nRecreate the table above as a data frame stored as fish_parms. Then, write a function called fish_weight that allows a user to only enter the common name (argument fish_name) and total length (argument tot_length) (in centimeters) of a fish, to return the expected fish weight in grams. Test it out for different species and lengths.\nNow, try creating a vector of lengths (e.g. 0 to 100, by increments of 1) and ensuring that your function will calculate the fish weight over a range of lengths for the given species (try this for milkfish, storing the output weights as milkfish_weights.\n\n\nTask 4\nWave power (more accurately wave energy flux) in deep water is approximated by:\n\\[P_{deep}=0.5 H^2 T\\] where \\(P\\) is power in \\(\\frac{kW}{m}\\) (potential power per wave meter), \\(H\\) is wave height in meters (more specifically, the significant wave height), and \\(T\\) is the wave period in seconds. Learn more here.\nWrite a function called wave_power that calculates potential ocean wave power given inputs of wave height and period.\nUse your wave_power function to approximate wave power for a period of 8 seconds, over a range of wave heights from 0 to 3 meters by increments of 0.2 meters.\n\n\nTask 5 (OPTIONAL)\nThe wave energy equation changes based on ocean depth. Along the coast of Brenville, which has a very sharp shelf as the wave approaches the coast, wave energy is approximated using the deep ocean equation (the one you used above) for depths &gt; 12 meters, and a shallow equation for depths &lt;= 12 meters. The Brenville team estimates shallow wave power by:\n\\[P_{shallow}=0.81 H^2 T\\]\nCreate a function that requires inputs of water depth, wave height and period, then returns the approximated wave power using the correct equation for the depth entered. It should also include a message (hint: use message() just like you would use warning!) that lets the user know if the shallow or deep water equation was used.\n\n\n\n\n\n\n\nCitation\n\n\n\nPeyton, K. A., T. S. Sakihara, L. K. Nishiura, T. T. Shindo, T. E. Shimoda, S. Hau, A. Akiona, and K. Lorance. 2016. “Length–Weight Relationships for Common Juvenile Fishes and Prey Species in Hawaiian Estuaries.” Journal of Applied Ichthyology 32 (3): 499–502. https://doi.org/10.1111/jai.12957.\n\n\n\nEnd Activity Session (Day 4)"
   },
   {
     "objectID": "course-materials/day5.html#class-materials",
@@ -1069,5 +1069,26 @@
     "title": "Conditionals and logical operators",
     "section": "Additional Resources",
     "text": "Additional Resources\nTBD"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day1-key.html",
+    "href": "course-materials/eod-keys/eod-day1-key.html",
+    "title": "Day 1: Tasks & activities - KEY",
+    "section": "",
+    "text": "Attach the tidyverse and janitor packages in a new code chunk\n\n\n\n\n\n\n\nImportant\n\n\n\n\nlibrary(tidyverse)\nlibrary(janitor)\n\n\n\n\nRead in the stl_blood_lead.csv data as stl_lead and use janitor::clean_names to convert all variable names to lower snake case\n\n\n\n\n\n\n\nImportant\n\n\n\n\nstl_lead &lt;- read_csv(here::here(\"data\", \"stl_blood_lead.csv\")) |&gt;\n  janitor::clean_names() # Convert variable names to lower snake case\n\n\n\n\nDo some basic exploration of the dataset\n\n\n\n\n\n\n\nImportant\n\n\n\n\nsummary(stl_lead) # View summary statistics of each variable\n\n     geo_id             tract_ce       name_lsad          count_tested   \n Min.   :2.951e+10   Min.   :101100   Length:106         Min.   :  23.0  \n 1st Qu.:2.951e+10   1st Qu.:106425   Class :character   1st Qu.: 411.0  \n Median :2.951e+10   Median :112350   Mode  :character   Median : 694.0  \n Mean   :2.951e+10   Mean   :113386                      Mean   : 737.4  \n 3rd Qu.:2.951e+10   3rd Qu.:119102                      3rd Qu.: 923.2  \n Max.   :2.951e+10   Max.   :127600                      Max.   :2116.0  \n  pct_elevated      total_pop    total_pop_moe       white       \n Min.   : 0.000   Min.   : 620   Min.   : 94.0   Min.   :   1.0  \n 1st Qu.: 4.588   1st Qu.:2025   1st Qu.:249.5   1st Qu.:  88.5  \n Median : 9.480   Median :2912   Median :333.5   Median :1290.0  \n Mean   :10.164   Mean   :2999   Mean   :353.3   Mean   :1371.7  \n 3rd Qu.:14.380   3rd Qu.:3784   3rd Qu.:439.5   3rd Qu.:2168.2  \n Max.   :23.280   Max.   :7069   Max.   :832.0   Max.   :6128.0  \n   white_moe         black          black_moe      poverty_tot    \n Min.   :  4.0   Min.   :  35.0   Min.   : 38.0   Min.   : 158.0  \n 1st Qu.: 60.5   1st Qu.: 633.2   1st Qu.:183.2   1st Qu.: 408.5  \n Median :212.5   Median :1334.5   Median :269.0   Median : 651.5  \n Mean   :201.4   Mean   :1429.9   Mean   :288.4   Mean   : 786.9  \n 3rd Qu.:299.8   3rd Qu.:2029.0   3rd Qu.:379.2   3rd Qu.: 955.8  \n Max.   :751.0   Max.   :4572.0   Max.   :760.0   Max.   :2801.0  \n poverty_tot_moe   poverty_u18     poverty_u18_moe \n Min.   :  65.0   Min.   :   0.0   Min.   :  3.00  \n 1st Qu.: 160.2   1st Qu.:  66.5   1st Qu.: 61.25  \n Median : 241.5   Median : 173.5   Median :120.50  \n Mean   : 270.5   Mean   : 249.8   Mean   :140.08  \n 3rd Qu.: 337.5   3rd Qu.: 341.8   3rd Qu.:194.75  \n Max.   :1049.0   Max.   :1320.0   Max.   :595.00  \n\n\n\n\n\nCreate a new data frame called stl_lead_prop that has one additional column called prop_white that returns the percent of each census tract identifying as white (variable white in the dataset divided by variable totalPop, times 100)\n\n\n\n\n\n\n\nImportant\n\n\n\n\nstl_lead_prop &lt;- stl_lead |&gt; # Call data for wrangling\n  mutate(prop_white = (white / total_pop)*100) # Create a new variable and populate"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day1-key.html#data-import-and-exploration",
+    "href": "course-materials/eod-keys/eod-day1-key.html#data-import-and-exploration",
+    "title": "Day 1: Tasks & activities - KEY",
+    "section": "",
+    "text": "Attach the tidyverse and janitor packages in a new code chunk\n\n\n\n\n\n\n\nImportant\n\n\n\n\nlibrary(tidyverse)\nlibrary(janitor)\n\n\n\n\nRead in the stl_blood_lead.csv data as stl_lead and use janitor::clean_names to convert all variable names to lower snake case\n\n\n\n\n\n\n\nImportant\n\n\n\n\nstl_lead &lt;- read_csv(here::here(\"data\", \"stl_blood_lead.csv\")) |&gt;\n  janitor::clean_names() # Convert variable names to lower snake case\n\n\n\n\nDo some basic exploration of the dataset\n\n\n\n\n\n\n\nImportant\n\n\n\n\nsummary(stl_lead) # View summary statistics of each variable\n\n     geo_id             tract_ce       name_lsad          count_tested   \n Min.   :2.951e+10   Min.   :101100   Length:106         Min.   :  23.0  \n 1st Qu.:2.951e+10   1st Qu.:106425   Class :character   1st Qu.: 411.0  \n Median :2.951e+10   Median :112350   Mode  :character   Median : 694.0  \n Mean   :2.951e+10   Mean   :113386                      Mean   : 737.4  \n 3rd Qu.:2.951e+10   3rd Qu.:119102                      3rd Qu.: 923.2  \n Max.   :2.951e+10   Max.   :127600                      Max.   :2116.0  \n  pct_elevated      total_pop    total_pop_moe       white       \n Min.   : 0.000   Min.   : 620   Min.   : 94.0   Min.   :   1.0  \n 1st Qu.: 4.588   1st Qu.:2025   1st Qu.:249.5   1st Qu.:  88.5  \n Median : 9.480   Median :2912   Median :333.5   Median :1290.0  \n Mean   :10.164   Mean   :2999   Mean   :353.3   Mean   :1371.7  \n 3rd Qu.:14.380   3rd Qu.:3784   3rd Qu.:439.5   3rd Qu.:2168.2  \n Max.   :23.280   Max.   :7069   Max.   :832.0   Max.   :6128.0  \n   white_moe         black          black_moe      poverty_tot    \n Min.   :  4.0   Min.   :  35.0   Min.   : 38.0   Min.   : 158.0  \n 1st Qu.: 60.5   1st Qu.: 633.2   1st Qu.:183.2   1st Qu.: 408.5  \n Median :212.5   Median :1334.5   Median :269.0   Median : 651.5  \n Mean   :201.4   Mean   :1429.9   Mean   :288.4   Mean   : 786.9  \n 3rd Qu.:299.8   3rd Qu.:2029.0   3rd Qu.:379.2   3rd Qu.: 955.8  \n Max.   :751.0   Max.   :4572.0   Max.   :760.0   Max.   :2801.0  \n poverty_tot_moe   poverty_u18     poverty_u18_moe \n Min.   :  65.0   Min.   :   0.0   Min.   :  3.00  \n 1st Qu.: 160.2   1st Qu.:  66.5   1st Qu.: 61.25  \n Median : 241.5   Median : 173.5   Median :120.50  \n Mean   : 270.5   Mean   : 249.8   Mean   :140.08  \n 3rd Qu.: 337.5   3rd Qu.: 341.8   3rd Qu.:194.75  \n Max.   :1049.0   Max.   :1320.0   Max.   :595.00  \n\n\n\n\n\nCreate a new data frame called stl_lead_prop that has one additional column called prop_white that returns the percent of each census tract identifying as white (variable white in the dataset divided by variable totalPop, times 100)\n\n\n\n\n\n\n\nImportant\n\n\n\n\nstl_lead_prop &lt;- stl_lead |&gt; # Call data for wrangling\n  mutate(prop_white = (white / total_pop)*100) # Create a new variable and populate"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day1-key.html#visualize-data",
+    "href": "course-materials/eod-keys/eod-day1-key.html#visualize-data",
+    "title": "Day 1: Tasks & activities - KEY",
+    "section": "Visualize data",
+    "text": "Visualize data\n\nCreate a scatterplot graph of the percentage of children in each census tract with elevated blood lead levels versus the percent of each census tract identifying as white\n\n\n\n\n\n\n\nImportant\n\n\n\n\nstl_lead_plot &lt;- ggplot(data = stl_lead_prop, # Set data for plotting\n                        aes(x = prop_white, y = pct_elevated)) + # Assign x- and y-axis variables\n  geom_point() # Create scatterplot\n\nstl_lead_plot # View scatterplot\n\n\n\n\n\n\n\n\n\n\n\nSave a .png of the scatterplot to figs, with dimensions of (6” x 5”) (width x height)\n\n\n\n\n\n\n\nImportant\n\n\n\n\nggsave(stl_lead_plot,\n       here::here(\"figs\", \"stl_lead_plot.png\"), # Set filepath to save scatterplot\n       width = 6, height = 5, units = c(\"in\")) # Set dimensions with units\n\n\n\n\nCreate a histogram of the percentage of children in each census tract with elevated blood lead levels\n\n\n\n\n\n\n\nImportant\n\n\n\n\nstl_lead_hist &lt;- ggplot(data = stl_lead_prop, # Set data for plotting\n       aes(x = pct_elevated)) + # Assign x-axis variable\n  geom_histogram() # Create histogram\n\nstl_lead_hist # View histogram\n\n\n\n\n\n\n\n\n\n\n\nSave a .jpg of the scatterplot to figs\n\n\n\n\n\n\n\nImportant\n\n\n\n\nggsave(stl_lead_hist,\n       here::here(\"figs\", \"stl_lead_hist.jpg\")) # Set filepath to save histogram"
   }
 ]

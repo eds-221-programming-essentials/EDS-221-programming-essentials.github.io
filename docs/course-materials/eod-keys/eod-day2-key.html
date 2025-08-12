@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 2: Tasks &amp; Activities</title>
+<title>Day 2: Tasks &amp; activities - KEY</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 2: Tasks &amp; Activities</h1>
+      <h1 class="title">Day 2: Tasks &amp; activities - KEY</h1>
             <p class="subtitle lead">Data types, indexing data, import &amp; plot data</p>
                       </div>
   </div>
@@ -217,15 +217,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#checking-data-types" id="toc-checking-data-types" class="nav-link active" data-scroll-target="#checking-data-types">1. Checking data types</a>
-  <ul class="collapse">
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#checking-data-types-1" id="toc-checking-data-types-1" class="nav-link" data-scroll-target="#checking-data-types-1">Checking data types</a></li>
-  </ul></li>
-  <li><a href="#wild-data" id="toc-wild-data" class="nav-link" data-scroll-target="#wild-data">2. Wild data</a>
-  <ul class="collapse">
-  <li><a href="#stage-commit-pull-push" id="toc-stage-commit-pull-push" class="nav-link" data-scroll-target="#stage-commit-pull-push">Stage, commit, pull, push</a></li>
-  </ul></li>
+  <li><a href="#check-data-types" id="toc-check-data-types" class="nav-link active" data-scroll-target="#check-data-types">Check data types</a></li>
+  <li><a href="#wild-data" id="toc-wild-data" class="nav-link" data-scroll-target="#wild-data">Wild data</a></li>
   </ul>
 </nav>
     </div>
@@ -236,29 +229,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="checking-data-types" class="level2">
-<h2 class="anchored" data-anchor-id="checking-data-types">1. Checking data types</h2>
-<section id="setup" class="level3">
-<h3 class="anchored" data-anchor-id="setup">Setup</h3>
-<ul>
-<li>Create a new repo on GitHub for today’s activities</li>
-<li>Clone to create a version controlled R Project</li>
-<li>Create subfolders called <code>docs</code>, <code>data</code>, and <code>figs</code></li>
-<li>Create a Quarto Document, save in the <code>docs</code> subfolder as <code>r_data_types.qmd</code></li>
-</ul>
-</section>
-<section id="checking-data-types-1" class="level3">
-<h3 class="anchored" data-anchor-id="checking-data-types-1">Checking data types</h3>
-<section id="vectors-lists-data-frames" class="level4">
-<h4 class="anchored" data-anchor-id="vectors-lists-data-frames">Vectors, lists &amp; data frames</h4>
-<p>In your Quarto document:</p>
+<section id="check-data-types" class="level2">
+<h2 class="anchored" data-anchor-id="check-data-types">Check data types</h2>
 <ol type="1">
-<li>Create a vector called <code>vec_1</code>containing the following:</li>
+<li>Create a vector called <code>vec_1</code> containing the following:</li>
 </ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">1</span>, <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Check the following for that vector:</p>
 <ul>
 <li>What is the class of the vector? <code>class()</code></li>
 <li>What type of variable does it store? <code>typeof()</code></li>
@@ -267,110 +242,368 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Access the 5th through 7th elements and store as <code>vec_1_e5to7</code></li>
 <li>Reassign <code>vec_1</code> as a character using <code>as.character</code>, stored as <code>vec_1_char</code>. What does the output look like?</li>
 </ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vec_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="co"># Create vector</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>vec_1 <span class="co"># View vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  2  5  9 10  8 12  1  0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vec_1) <span class="co"># Check vector class</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(vec_1) <span class="co"># Check data type</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "double"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>vec_1_e3 <span class="ot">&lt;-</span> vec_1[<span class="dv">3</span>] <span class="co"># Extract 3rd element</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>vec_1_e3 <span class="co"># Print element</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>vec_1_e1 <span class="ot">&lt;-</span> vec_1[<span class="dv">1</span>] <span class="co"># Extract 1st element</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>vec_1_e1 <span class="co"># Print element</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>vec_1_e5to7 <span class="ot">&lt;-</span> vec_1[<span class="dv">5</span><span class="sc">:</span><span class="dv">7</span>] <span class="co"># Extract 5th-7th elements</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>vec_1_e5to7 <span class="co"># Print elements</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  8 12  1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>vec_1_char <span class="ot">&lt;-</span> <span class="fu">as.character</span>(vec_1) <span class="co"># Reassign to character vector</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>vec_1_logical <span class="ot">&lt;-</span> <span class="fu">as.logical</span>(vec_1) <span class="co"># Reassign to logical vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 <ol start="2" type="1">
-<li>Create a vector called <code>vec_2</code></li>
+<li>Create a vector called <code>vec_2</code> of <em>named</em> elements, where <code>town = "Santa Barbara</code>, <code>location = "Rincon"</code>, <code>swell = "south"</code></li>
 </ol>
-<p><code>vec_2</code> should contained <em>named</em> elements, where <code>town = "Santa Barbara</code>, <code>location = "Rincon"</code>, <code>swell = "south"</code></p>
 <ul>
 <li>Take a look at what you’ve made</li>
 <li>What is the class of vector elements? <code>class()</code></li>
 <li>What is the length of vec_2?</li>
 <li>Access the 2nd element by name and store as <code>vec_2_e2</code></li>
 </ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>vec_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">town =</span> <span class="st">"Santa Barbara"</span>, <span class="at">location =</span> <span class="st">"Rincon"</span>, <span class="at">swell =</span> <span class="st">"south"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>vec_2 <span class="co"># View vector</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           town        location           swell 
+"Santa Barbara"        "Rincon"         "south" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vec_2) <span class="co"># Check vector class</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(vec_2) <span class="co"># Check vector length</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>vec_2_e2 <span class="ot">&lt;-</span> vec_2[<span class="dv">2</span>] <span class="co"># Extract 2nd element</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>vec_2_e2 <span class="co"># Print element</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>location 
+"Rincon" </code></pre>
+</div>
+</div>
+</div>
+</div>
 <ol start="3" type="1">
 <li>Create a data frame in R</li>
 </ol>
-<p>Write code to create a data frame called <code>df_1</code> that looks like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>  region     species count
-1      A       otter    12
-2      B great white     2
-3      A    sea lion    36
-4      D  gray whale     6</code></pre>
-</div>
-</div>
 <ul>
 <li>Return the class of the entire data frame</li>
-<li>Return the class of the species column</li>
+<li>Return the class of the <code>species</code> column</li>
 <li>Find the maximum value of the <code>count()</code> column, store as <code>max_count</code></li>
 </ul>
-</section>
-</section>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">region =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"A"</span>,<span class="st">"D"</span>),</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">species =</span> <span class="fu">c</span>(<span class="st">"otter"</span>, <span class="st">"great white"</span>, <span class="st">"sea lion"</span>, <span class="st">"gray whale"</span>),</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">count =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">2</span>, <span class="dv">36</span>, <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(df_1) <span class="co"># Check df class</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(df_1<span class="sc">$</span>species) <span class="co"># Check species column class</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>max_count <span class="ot">&lt;-</span> <span class="fu">max</span>(df_1<span class="sc">$</span>count) <span class="co"># Find maximum value of count column</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>max_count <span class="co"># Print maximum value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 36</code></pre>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="wild-data" class="level2">
-<h2 class="anchored" data-anchor-id="wild-data">2. Wild data</h2>
-<section id="set-up" class="level4">
-<h4 class="anchored" data-anchor-id="set-up">Set-up</h4>
+<h2 class="anchored" data-anchor-id="wild-data">Wild data</h2>
+<ol type="1">
+<li>Read in the data using <code>read_csv()</code> with <code>here()</code>, store as <code>mack_verts</code></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>mack_verts <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"AS00601.csv"</span>))</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(mack_verts) <span class="co"># View dataset</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Update the variable names in <code>mack_verts</code> to lower snake case</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>mack_verts <span class="ot">&lt;-</span> <span class="fu">clean_names</span>(mack_verts) <span class="co"># Update to lower snake case</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>In a new code chunk, practice accessing individual pieces of the data frame:</li>
+</ol>
 <ul>
-<li><p>Visit the EDI site to learn about Mack Creek salamander &amp; cutthroat trout data you’ll be using here: <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14">data package</a></p></li>
-<li><p>Download the <em>first CSV</em> listed (<code>AS00601.csv</code>), and take a look at it (outside of R is fine as a first step, e.g.&nbsp;you can open the CSV in Excel)</p></li>
-<li><p>Explore the metadata (see View Full Metadata in the <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14">Resources section</a> of the data website)</p></li>
-<li><p>What does each column contain? What are the units of each? What is the study overall about?</p></li>
-<li><p>Create a new Quarto Document and save it in your <code>docs</code> folder. Attach the <code>tidyverse</code>, <code>here</code> and <code>janitor</code> packages in the setup chunk (you choose the file name)</p></li>
-<li><p>Set global options in the YAML so that messages and warnings do NOT show up in the rendered document</p></li>
-<li><p>Save the <code>AS00601.csv</code> in your <code>data</code> folder of your project</p></li>
+<li>Store the 5th value in column <strong>WEIGHT</strong> as <code>mc_wt_5</code></li>
+<li>Store the 8th - 20th value in the <strong>LENGTH1</strong> column as <code>mc_length_8_20</code></li>
+<li>Store everything in column <strong>SAMPLEDATE</strong> as a vector called <code>mc_dates</code></li>
 </ul>
-</section>
-<section id="read-in-the-data" class="level4">
-<h4 class="anchored" data-anchor-id="read-in-the-data">Read in the data</h4>
-<ul>
-<li><p>Read in the data using <code>read_csv()</code> with <code>here()</code>, store as <code>mack_verts</code></p></li>
-<li><p>Look at what you’ve read in (e.g.&nbsp;with view())</p></li>
-</ul>
-</section>
-<section id="a-bit-of-wrangling-exploring" class="level4">
-<h4 class="anchored" data-anchor-id="a-bit-of-wrangling-exploring">A bit of wrangling &amp; exploring</h4>
-<ul>
-<li><p>Update the variable names in <code>mack_verts</code> to lower snake case</p></li>
-<li><p>In a new code chunk, practice accessing individual pieces of the data frame (there is no real functionality to this right now, but just to reinforce stuff we learned in our interactive session):</p>
-<ul>
-<li>Store the 5th value in column “WEIGHT” as <code>mc_wt_5</code>. Check by looking at your data frame to confirm.</li>
-<li>Store the 8th - 20th value in the “LENGTH1” column as <code>mc_length_8_20</code>. Check by looking at your data frame to confirm.</li>
-<li>Store everything in column SAMPLEDATE as a vector called <code>mc_dates</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="make-a-salamander-subset" class="level4">
-<h4 class="anchored" data-anchor-id="make-a-salamander-subset">Make a salamander subset</h4>
-<ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>mc_wt_5 <span class="ot">&lt;-</span> mack_verts[<span class="dv">5</span>, <span class="st">'weight'</span>] <span class="co"># Extract 5th value in column `weight`</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>mc_wt_5 <span class="co"># Print value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  weight
+   &lt;dbl&gt;
+1    6.9</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>mc_length_8_20 <span class="ot">&lt;-</span> mack_verts[<span class="dv">8</span><span class="sc">:</span><span class="dv">20</span>, <span class="st">'length1'</span>] <span class="co"># Extract 8th-20th values in column `length1`</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>mc_length_8_20 <span class="co"># Print values</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 13 × 1
+   length1
+     &lt;dbl&gt;
+ 1     131
+ 2     103
+ 3     117
+ 4     100
+ 5     127
+ 6      99
+ 7     111
+ 8     149
+ 9     102
+10      53
+11      58
+12      58
+13     105</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>mc_dates <span class="ot">&lt;-</span> mack_verts[,<span class="st">'sampledate'</span>] <span class="co"># Extract column `sampledate`</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>mc_dates <span class="ot">&lt;-</span> mack_verts<span class="sc">$</span>sampledate <span class="co"># Extract column `sampledate`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
 <li>Create a subset that only contains observations for Pacific Giant Salamanders (species <em>Dicamptodon tenebrosus</em>, stored in <code>species</code> as <code>DITE</code>). Store the subset as <code>mc_salamanders</code>. <em>Hint:</em> see <code>dplyr::filter()</code>!</li>
-</ul>
-</section>
-<section id="make-a-scatterplot-of-salamander-length-x-weight" class="level4">
-<h4 class="anchored" data-anchor-id="make-a-scatterplot-of-salamander-length-x-weight">Make a scatterplot of salamander length x weight</h4>
-<ul>
-<li><p>Create a scatterplot of length1 (snout-vent length in millimeters) versus weight (grams) for all salamanders in the subset you created above, <code>mc_salamanders</code>. Update axis labels, title, subtitle, and add a caption with the data source. Customize point color and size, possibly opacity, and theme.</p></li>
-<li><p>Export your scatterplot as <code>salamander_size.png</code> to your figs folder.</p></li>
-</ul>
-</section>
-<section id="make-a-cutthroat-plot" class="level4">
-<h4 class="anchored" data-anchor-id="make-a-cutthroat-plot">Make a cutthroat plot</h4>
-<ul>
-<li>Similar to above, make a subset called <code>mc_trout</code> that only contains observations for cutthroat trout (species “ONCL”)</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mc_salamanders <span class="ot">&lt;-</span> mack_verts <span class="sc">|&gt;</span>  </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"DITE"</span>) <span class="co"># Keep rows where species == "DITE"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Create a scatterplot of length1 (snout-vent length in millimeters) versus weight (grams) for all salamanders in the subset you created above, <code>mc_salamanders</code></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>salamander_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> mc_salamanders,</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>                          <span class="fu">aes</span>(<span class="at">x =</span> length1, <span class="at">y =</span> weight)) <span class="sc">+</span> </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"purple"</span>) <span class="sc">+</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>salamander_plot <span class="co"># View plot</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day2-key_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Export your scatterplot as <code>salamander_size.png</code> to your <strong>figs</strong> folder.</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">plot =</span> salamander_plot, here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"figs"</span>, <span class="st">"salamander_size.png"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Make a subset called <code>mc_trout</code> that only contains observations for cutthroat trout</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>mc_trout <span class="ot">&lt;-</span> mack_verts <span class="sc">|&gt;</span> </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(species <span class="sc">==</span> <span class="st">"ONCL"</span>) <span class="co"># Keep rows where species == "ONCL"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<ol start="8" type="1">
 <li>Create a scatterplot of length1 by weight for all trout in the dataset</li>
+</ol>
+<ul>
 <li>Customize so that the point color depends on <em>reach</em></li>
 <li>Customize your color scheme (e.g.&nbsp;<code>scale_color_manual()</code>)</li>
 <li>Facet your plot by creek reach (hint: <code>facet_wrap(~...)</code>)</li>
 <li>Update graph axis labels and title</li>
 <li>Export your graph as <code>cutthroat_size.png</code> to the <code>figs</code> folder</li>
 </ul>
-</section>
-<section id="stage-commit-pull-push" class="level3">
-<h3 class="anchored" data-anchor-id="stage-commit-pull-push">Stage, commit, pull, push</h3>
-<ul>
-<li>Make sure your changes are safely stored by pushing to GitHub</li>
-<li>Close your project locally</li>
-<li>Reopen your project locally</li>
-<li>Reopen your .qmd files for the activities you did today.</li>
-<li>Render. Does it work? Done.</li>
-</ul>
-<div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 2)</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(mc_trout<span class="sc">$</span>reach) <span class="co"># Check unique values in column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "L" "M" "U"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create named vector of custom colors</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>custom_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"L"</span> <span class="ot">=</span> <span class="st">"darkblue"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"darkgreen"</span>, <span class="st">"U"</span> <span class="ot">=</span> <span class="st">"orange"</span>) </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mc_trout, <span class="fu">aes</span>(<span class="at">x =</span> length1, <span class="at">y =</span> weight)) <span class="sc">+</span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> reach)) <span class="sc">+</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> custom_colors) <span class="sc">+</span> <span class="co"># Assign custom colors</span></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>reach) <span class="sc">+</span> <span class="co"># Facet by variable `reach`</span></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="eod-day2-key_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

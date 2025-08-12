@@ -1,0 +1,129 @@
+---
+title: "Day 3: Tasks & activities - KEY"
+subtitle: "Conditionals & for loops"
+execute: 
+  eval: false
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Part 1
+
+Loading packages:
+```{r, message=FALSE, warning=FALSE}
+library(dplyr)
+```
+
+# Task 1
+
+Object:
+```{r, message=FALSE, warning=FALSE}
+pm2_5 <- 48
+```
+
+Statement:
+```{r, message=FALSE, warning=FALSE}
+if (pm2_5 < 100) {
+  print('Unhealthy sensitive groups') 
+  } else if (pm2_5>=100 & pm2_5 <150) {
+      print('Health risk present')
+  }else 
+    print('Health risk present')
+```
+
+# Task 2
+Object:
+```{r, message=FALSE, warning=FALSE}
+species <- 'blue whale'
+```
+
+Statement:
+```{r, message=FALSE, warning=FALSE}
+if (grepl("whale", species)) {
+  print('You found a whale!') 
+  } else 
+    print('')
+```
+
+# Task 3
+Base Object:
+```{r, message=FALSE, warning=FALSE}
+base_burrito <- 6.50
+```
+
+Statement:
+```{r, message=FALSE, warning=FALSE}
+main_ingredient <- "veggie"
+if (main_ingredient == "veggie") {
+  print(base_burrito) 
+} else if (main_ingredient=='chicken') {
+      print(base_burrito+3)
+  }else 
+    print(base_burrito+3.25)
+```
+
+# Task 4
+Base Objects:
+```{r, message=FALSE, warning=FALSE}
+fish <- c(goldfish=8, tetras=10, guppies=12, mollies=23)
+```
+
+Statement:
+```{r, message=FALSE, warning=FALSE}
+for (i in 1:length(fish)) {
+  proportion <- fish[i]/sum(fish)
+  print(proportion)
+}
+```
+
+# Task 5
+Checking out R's vector:
+```{r, message=FALSE, warning=FALSE}
+month.name
+```
+
+Statement:
+```{r, message=FALSE, warning=FALSE}
+for (i in seq_along(month.name)) {
+  print(paste(month.name[i], "is month", i))
+}
+```
+
+## Part 2 - Real data
+
+Opening and cleaning:
+```{r, message=FALSE, warning=FALSE}
+toolik_biochem <- read.csv(here::here("data", "2011_Kling_Akchem.csv") , na.strings = c(".", "NA"))
+toolik_biochem <- janitor::clean_names(toolik_biochem)
+```
+
+Checking the variables names:
+```{r, message=FALSE, warning=FALSE}
+variable.names(toolik_biochem)
+```
+
+Creating subset:
+```{r, message=FALSE, warning=FALSE}
+inlet_biochem <- toolik_biochem %>% dplyr::select(p_h,doc_u_m, tdn_u_m)
+```
+
+
+Finding the mean value of each column:
+
+Using a for loop:
+```{r, message=FALSE, warning=FALSE}
+# Vector where I will store the means
+mean_column <- c()
+
+for (i in 1:ncol(inlet_biochem)){
+  mean_column <- c(mean_column, mean(inlet_biochem[,i], na.rm=TRUE))
+}
+```
+
+Using purrr:map_df:
+```{r, message=FALSE, warning=FALSE}
+library(purrr)
+mean_df <- inlet_biochem %>%
+  map_df(~ mean(.x, na.rm = TRUE))
+```

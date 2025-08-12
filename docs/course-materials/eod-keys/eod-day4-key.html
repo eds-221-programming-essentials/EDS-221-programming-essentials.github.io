@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 2: Tasks &amp; Activities</title>
+<title>Day 4: Tasks &amp; activities - KEY</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -195,8 +195,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 2: Tasks &amp; Activities</h1>
-            <p class="subtitle lead">Data types, indexing data, import &amp; plot data</p>
+      <h1 class="title">Day 4: Tasks &amp; activities - KEY</h1>
+            <p class="subtitle lead">Intro to functions</p>
                       </div>
   </div>
     
@@ -217,15 +217,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#checking-data-types" id="toc-checking-data-types" class="nav-link active" data-scroll-target="#checking-data-types">1. Checking data types</a>
-  <ul class="collapse">
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#checking-data-types-1" id="toc-checking-data-types-1" class="nav-link" data-scroll-target="#checking-data-types-1">Checking data types</a></li>
-  </ul></li>
-  <li><a href="#wild-data" id="toc-wild-data" class="nav-link" data-scroll-target="#wild-data">2. Wild data</a>
-  <ul class="collapse">
-  <li><a href="#stage-commit-pull-push" id="toc-stage-commit-pull-push" class="nav-link" data-scroll-target="#stage-commit-pull-push">Stage, commit, pull, push</a></li>
-  </ul></li>
+  <li><a href="#task-1" id="toc-task-1" class="nav-link active" data-scroll-target="#task-1">Task 1</a></li>
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
+  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
+  <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4">Task 4</a></li>
+  <li><a href="#task-5" id="toc-task-5" class="nav-link" data-scroll-target="#task-5">Task 5</a></li>
   </ul>
 </nav>
     </div>
@@ -236,141 +232,108 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="checking-data-types" class="level2">
-<h2 class="anchored" data-anchor-id="checking-data-types">1. Checking data types</h2>
-<section id="setup" class="level3">
-<h3 class="anchored" data-anchor-id="setup">Setup</h3>
-<ul>
-<li>Create a new repo on GitHub for today’s activities</li>
-<li>Clone to create a version controlled R Project</li>
-<li>Create subfolders called <code>docs</code>, <code>data</code>, and <code>figs</code></li>
-<li>Create a Quarto Document, save in the <code>docs</code> subfolder as <code>r_data_types.qmd</code></li>
-</ul>
-</section>
-<section id="checking-data-types-1" class="level3">
-<h3 class="anchored" data-anchor-id="checking-data-types-1">Checking data types</h3>
-<section id="vectors-lists-data-frames" class="level4">
-<h4 class="anchored" data-anchor-id="vectors-lists-data-frames">Vectors, lists &amp; data frames</h4>
-<p>In your Quarto document:</p>
-<ol type="1">
-<li>Create a vector called <code>vec_1</code>containing the following:</li>
-</ol>
+<section id="task-1" class="level2">
+<h2 class="anchored" data-anchor-id="task-1">Task 1</h2>
+<p>Create two sequences, one called weekdays that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called transects that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:</p>
+<p>Creating the sequences:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">1</span>, <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>weekdays <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Monday"</span>, <span class="st">"Tuesday"</span>, <span class="st">"Wednesday"</span>, <span class="st">"Thursday"</span>, <span class="st">"Friday"</span>, <span class="st">"Saturday"</span>, <span class="st">"Sunday"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>transect <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Transect A"</span>, <span class="st">"Transect B"</span>, <span class="st">"Transect C"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Check the following for that vector:</p>
-<ul>
-<li>What is the class of the vector? <code>class()</code></li>
-<li>What type of variable does it store? <code>typeof()</code></li>
-<li>Access the 3rd element and store as <code>vec_1_e3</code></li>
-<li>Access the 1st element and store as <code>vec_1_e1</code></li>
-<li>Access the 5th through 7th elements and store as <code>vec_1_e5to7</code></li>
-<li>Reassign <code>vec_1</code> as a character using <code>as.character</code>, stored as <code>vec_1_char</code>. What does the output look like?</li>
-</ul>
-<ol start="2" type="1">
-<li>Create a vector called <code>vec_2</code></li>
-</ol>
-<p><code>vec_2</code> should contained <em>named</em> elements, where <code>town = "Santa Barbara</code>, <code>location = "Rincon"</code>, <code>swell = "south"</code></p>
-<ul>
-<li>Take a look at what you’ve made</li>
-<li>What is the class of vector elements? <code>class()</code></li>
-<li>What is the length of vec_2?</li>
-<li>Access the 2nd element by name and store as <code>vec_2_e2</code></li>
-</ul>
-<ol start="3" type="1">
-<li>Create a data frame in R</li>
-</ol>
-<p>Write code to create a data frame called <code>df_1</code> that looks like this:</p>
+<p>Creating a matrix using a nested loop:</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>  region     species count
-1      A       otter    12
-2      B great white     2
-3      A    sea lion    36
-4      D  gray whale     6</code></pre>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating matrix:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">7</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Nested loop:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(weekdays)) { <span class="co"># Outer loop is the growth rates</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (j <span class="cf">in</span> <span class="fu">seq_along</span>(transect)) { <span class="co"># Inner loop is the time sequence values</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  matrix[i,j] <span class="ot">&lt;-</span> <span class="fu">paste</span>(weekdays[i], <span class="st">"-"</span>, transect[j])</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  } </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>matrix</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="task-2" class="level2">
+<h2 class="anchored" data-anchor-id="task-2">Task 2</h2>
+<p>Writing the function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>force <span class="ot">&lt;-</span> <span class="cf">function</span>(mass,acc){</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  force <span class="ot">=</span> mass<span class="sc">*</span>acc</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"The resulting force is"</span>, force, <span class="st">"Newtowns"</span>))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li>Return the class of the entire data frame</li>
-<li>Return the class of the species column</li>
-<li>Find the maximum value of the <code>count()</code> column, store as <code>max_count</code></li>
-</ul>
+<p>Checking if it works:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">force</span>(<span class="dv">10</span>,<span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
+<section id="task-3" class="level2">
+<h2 class="anchored" data-anchor-id="task-3">Task 3</h2>
+<p>Creating the data frame:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fish_parms <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">sci_name=</span> <span class="fu">c</span>(<span class="st">"Chanos chanos"</span>,<span class="st">"Sphyraena barracuda"</span>,<span class="st">"Sphyraena barracuda"</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">common_name =</span> <span class="fu">c</span>(<span class="st">"Milkfish"</span>,<span class="st">"Great barracuda"</span>,<span class="st">"Great barracuda"</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">a_est =</span> <span class="fu">c</span>(<span class="fl">0.0905</span>, <span class="fl">0.0181</span>    ,<span class="fl">0.0353</span> ),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">b_est =</span> <span class="fu">c</span>(<span class="fl">2.52</span>, <span class="fl">3.27</span>, <span class="fl">3.05</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Creating the function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fish_weight <span class="ot">&lt;-</span> <span class="cf">function</span>(name, length){</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> <span class="fu">which</span>(fish_parms<span class="sc">$</span>common_name <span class="sc">==</span> name)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  a<span class="ot">&lt;-</span>fish_parms[i,<span class="dv">3</span>]</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  b<span class="ot">&lt;-</span>fish_parms[i,<span class="dv">4</span>]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  w<span class="ot">=</span> a <span class="sc">*</span>(length<span class="sc">^</span>b)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(w)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Testing:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fish_weight</span>(<span class="st">'Milkfish'</span>, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
+<section id="task-4" class="level2">
+<h2 class="anchored" data-anchor-id="task-4">Task 4</h2>
+<p>Creating the function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wave_power <span class="ot">&lt;-</span> <span class="cf">function</span>(h, t){</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  p<span class="ot">=</span> <span class="fl">0.5</span> <span class="sc">*</span> t <span class="sc">*</span> h<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Creating the vector:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>waves <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">3</span>, <span class="at">by =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Applying over the wave heights range:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">sapply</span>(waves, wave_power, <span class="at">t =</span> <span class="dv">8</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="wild-data" class="level2">
-<h2 class="anchored" data-anchor-id="wild-data">2. Wild data</h2>
-<section id="set-up" class="level4">
-<h4 class="anchored" data-anchor-id="set-up">Set-up</h4>
-<ul>
-<li><p>Visit the EDI site to learn about Mack Creek salamander &amp; cutthroat trout data you’ll be using here: <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14">data package</a></p></li>
-<li><p>Download the <em>first CSV</em> listed (<code>AS00601.csv</code>), and take a look at it (outside of R is fine as a first step, e.g.&nbsp;you can open the CSV in Excel)</p></li>
-<li><p>Explore the metadata (see View Full Metadata in the <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14">Resources section</a> of the data website)</p></li>
-<li><p>What does each column contain? What are the units of each? What is the study overall about?</p></li>
-<li><p>Create a new Quarto Document and save it in your <code>docs</code> folder. Attach the <code>tidyverse</code>, <code>here</code> and <code>janitor</code> packages in the setup chunk (you choose the file name)</p></li>
-<li><p>Set global options in the YAML so that messages and warnings do NOT show up in the rendered document</p></li>
-<li><p>Save the <code>AS00601.csv</code> in your <code>data</code> folder of your project</p></li>
-</ul>
-</section>
-<section id="read-in-the-data" class="level4">
-<h4 class="anchored" data-anchor-id="read-in-the-data">Read in the data</h4>
-<ul>
-<li><p>Read in the data using <code>read_csv()</code> with <code>here()</code>, store as <code>mack_verts</code></p></li>
-<li><p>Look at what you’ve read in (e.g.&nbsp;with view())</p></li>
-</ul>
-</section>
-<section id="a-bit-of-wrangling-exploring" class="level4">
-<h4 class="anchored" data-anchor-id="a-bit-of-wrangling-exploring">A bit of wrangling &amp; exploring</h4>
-<ul>
-<li><p>Update the variable names in <code>mack_verts</code> to lower snake case</p></li>
-<li><p>In a new code chunk, practice accessing individual pieces of the data frame (there is no real functionality to this right now, but just to reinforce stuff we learned in our interactive session):</p>
-<ul>
-<li>Store the 5th value in column “WEIGHT” as <code>mc_wt_5</code>. Check by looking at your data frame to confirm.</li>
-<li>Store the 8th - 20th value in the “LENGTH1” column as <code>mc_length_8_20</code>. Check by looking at your data frame to confirm.</li>
-<li>Store everything in column SAMPLEDATE as a vector called <code>mc_dates</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="make-a-salamander-subset" class="level4">
-<h4 class="anchored" data-anchor-id="make-a-salamander-subset">Make a salamander subset</h4>
-<ul>
-<li>Create a subset that only contains observations for Pacific Giant Salamanders (species <em>Dicamptodon tenebrosus</em>, stored in <code>species</code> as <code>DITE</code>). Store the subset as <code>mc_salamanders</code>. <em>Hint:</em> see <code>dplyr::filter()</code>!</li>
-</ul>
-</section>
-<section id="make-a-scatterplot-of-salamander-length-x-weight" class="level4">
-<h4 class="anchored" data-anchor-id="make-a-scatterplot-of-salamander-length-x-weight">Make a scatterplot of salamander length x weight</h4>
-<ul>
-<li><p>Create a scatterplot of length1 (snout-vent length in millimeters) versus weight (grams) for all salamanders in the subset you created above, <code>mc_salamanders</code>. Update axis labels, title, subtitle, and add a caption with the data source. Customize point color and size, possibly opacity, and theme.</p></li>
-<li><p>Export your scatterplot as <code>salamander_size.png</code> to your figs folder.</p></li>
-</ul>
-</section>
-<section id="make-a-cutthroat-plot" class="level4">
-<h4 class="anchored" data-anchor-id="make-a-cutthroat-plot">Make a cutthroat plot</h4>
-<ul>
-<li>Similar to above, make a subset called <code>mc_trout</code> that only contains observations for cutthroat trout (species “ONCL”)</li>
-<li>Create a scatterplot of length1 by weight for all trout in the dataset</li>
-<li>Customize so that the point color depends on <em>reach</em></li>
-<li>Customize your color scheme (e.g.&nbsp;<code>scale_color_manual()</code>)</li>
-<li>Facet your plot by creek reach (hint: <code>facet_wrap(~...)</code>)</li>
-<li>Update graph axis labels and title</li>
-<li>Export your graph as <code>cutthroat_size.png</code> to the <code>figs</code> folder</li>
-</ul>
-</section>
-<section id="stage-commit-pull-push" class="level3">
-<h3 class="anchored" data-anchor-id="stage-commit-pull-push">Stage, commit, pull, push</h3>
-<ul>
-<li>Make sure your changes are safely stored by pushing to GitHub</li>
-<li>Close your project locally</li>
-<li>Reopen your project locally</li>
-<li>Reopen your .qmd files for the activities you did today.</li>
-<li>Render. Does it work? Done.</li>
-</ul>
-<div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 2)</p>
+<section id="task-5" class="level2">
+<h2 class="anchored" data-anchor-id="task-5">Task 5</h2>
+<p>Creating the function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wave_power <span class="ot">&lt;-</span> <span class="cf">function</span>(d,h, t){</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (d<span class="sc">&lt;=</span><span class="dv">12</span>){</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>     p<span class="ot">=</span> <span class="fl">0.81</span> <span class="sc">*</span> t <span class="sc">*</span> h<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">message</span>(<span class="st">"Message: Shallow water equation was used"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>      p<span class="ot">=</span> <span class="fl">0.5</span> <span class="sc">*</span> t <span class="sc">*</span> h<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">message</span>(<span class="st">"Message: Deep water equation was used"</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(p)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Testing:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wave_power</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

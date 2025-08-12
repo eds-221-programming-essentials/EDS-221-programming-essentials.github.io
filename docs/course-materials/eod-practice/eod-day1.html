@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 1 Tasks &amp; Activities</title>
+<title>Day 1: Tasks &amp; Activities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 1 Tasks &amp; Activities</h1>
+      <h1 class="title">Day 1: Tasks &amp; Activities</h1>
             <p class="subtitle lead">Project organization, data import, file paths</p>
                       </div>
   </div>
@@ -230,7 +230,7 @@ ul.task-list li input[type="checkbox"] {
 <p>In your .qmd:</p>
 <ul>
 <li><p>Attach the <code>tidyverse</code> and <code>janitor</code> packages in a new code chunk</p></li>
-<li><p>Read in the <code>stl_blood_lead.csv</code> data as <code>stl_lead</code> and use janitor::clean_names to convert all variable names to lower snake case</p></li>
+<li><p>Read in the <code>stl_blood_lead.csv</code> data as <code>stl_lead</code> and use <code>janitor::clean_names</code> to convert all variable names to lower snake case</p></li>
 <li><p>Do some basic exploration of the dataset (e.g.&nbsp;using summary, data visualizations and summary statistics).</p></li>
 <li><p>In a new code chunk, from <code>stl_blood_lead</code> create a new data frame called <code>stl_lead_prop</code> that has one additional column called <code>prop_white</code> that returns the percent of each census tract identifying as white (variable <code>white</code> in the dataset divided by variable <code>totalPop</code>, times 100). You may need to do some Googling. Hint: <code>dplyr::mutate(new_col = col_a / col_b)</code> will create a new column <code>new_col</code> that contains the value of <code>col_a / col_b</code></p></li>
 </ul>

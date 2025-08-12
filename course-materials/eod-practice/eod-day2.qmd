@@ -121,7 +121,7 @@ mack_verts <- read_csv(here("course-materials","eod-practice","data","AS00601.cs
 
 #### A bit of wrangling & exploring
 
-- Update the variable names in mack_verts to lower snake case
+- Update the variable names in `mack_verts` to lower snake case
 
 ```{r, include = FALSE}
 mack_verts <- clean_names(mack_verts)

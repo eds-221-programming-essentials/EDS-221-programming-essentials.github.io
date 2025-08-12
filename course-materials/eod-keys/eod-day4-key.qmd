@@ -1,0 +1,112 @@
+---
+title: "Day 4: Tasks & activities - KEY"
+subtitle: "Intro to functions"
+execute:
+  eval: false
+editor_options: 
+  chunk_output_type: console
+---
+
+## Task 1
+
+Create two sequences, one called weekdays that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called transects that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:
+
+Creating the sequences:
+```{r, message=FALSE, warning=FALSE}
+weekdays <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+transect <- c("Transect A", "Transect B", "Transect C")
+```
+
+Creating a matrix using a nested loop:
+```{r, message=FALSE, warning=FALSE}
+# Creating matrix:
+matrix <- matrix(1:9, nrow = 7, ncol = 3)
+
+#Nested loop:
+for (i in seq_along(weekdays)) { # Outer loop is the growth rates
+  for (j in seq_along(transect)) { # Inner loop is the time sequence values
+  matrix[i,j] <- paste(weekdays[i], "-", transect[j])
+  } 
+}
+matrix
+```
+## Task 2
+Writing the function:
+```{r, message=FALSE, warning=FALSE}
+force <- function(mass,acc){
+  force = mass*acc
+  print(paste("The resulting force is", force, "Newtowns"))
+}
+```
+Checking if it works:
+```{r, message=FALSE, warning=FALSE}
+force(10,6)
+```
+
+## Task 3
+
+Creating the data frame:
+```{r, message=FALSE, warning=FALSE}
+fish_parms <- data.frame(
+sci_name= c("Chanos chanos","Sphyraena barracuda","Sphyraena barracuda"),
+common_name = c("Milkfish","Great barracuda","Great barracuda"),
+a_est = c(0.0905, 0.0181	,0.0353	),
+b_est = c(2.52, 3.27, 3.05)
+)
+```
+
+Creating the function:
+```{r, message=FALSE, warning=FALSE}
+fish_weight <- function(name, length){
+  i <- which(fish_parms$common_name == name)
+  a<-fish_parms[i,3]
+  b<-fish_parms[i,4]
+  w= a *(length^b)
+  return(w)
+}
+```
+
+Testing:
+```{r, message=FALSE, warning=FALSE}
+fish_weight('Milkfish', 10)
+```
+
+## Task 4
+Creating the function:
+```{r, message=FALSE, warning=FALSE}
+wave_power <- function(h, t){
+  p= 0.5 * t * h^2
+  return(p)
+}
+```
+
+Creating the vector:
+```{r, message=FALSE, warning=FALSE}
+waves <- seq(from = 0, to = 3, by = 0.2)
+```
+
+Applying over the wave heights range:
+```{r, message=FALSE, warning=FALSE}
+result <- sapply(waves, wave_power, t = 8)
+result
+```
+
+## Task 5
+Creating the function:
+```{r, message=FALSE, warning=FALSE}
+wave_power <- function(d,h, t){
+  if (d<=12){
+     p= 0.81 * t * h^2
+      message("Message: Shallow water equation was used")
+  } else {
+      p= 0.5 * t * h^2
+      message("Message: Deep water equation was used")
+  }
+  return(p)
+}
+```
+
+Testing:
+```{r, warning=FALSE}
+wave_power(10,3,1)
+```

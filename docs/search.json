@@ -422,35 +422,35 @@
   {
     "objectID": "course-materials/eod-practice/eod-day1.html",
     "href": "course-materials/eod-practice/eod-day1.html",
-    "title": "Day 1 Tasks & Activities",
+    "title": "Day 1: Tasks & Activities",
     "section": "",
     "text": "Fork, add your name to end of the repo name, and clone this repo\nBefore you move on, read more about the data here\nAdd two subfolders to your R project: docs and figs\nCreate and save a new Quarto document as stl_lead_inequity.qmd in the docs folder"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day1.html#setup",
     "href": "course-materials/eod-practice/eod-day1.html#setup",
-    "title": "Day 1 Tasks & Activities",
+    "title": "Day 1: Tasks & Activities",
     "section": "",
     "text": "Fork, add your name to end of the repo name, and clone this repo\nBefore you move on, read more about the data here\nAdd two subfolders to your R project: docs and figs\nCreate and save a new Quarto document as stl_lead_inequity.qmd in the docs folder"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day1.html#data-import-and-exploration",
     "href": "course-materials/eod-practice/eod-day1.html#data-import-and-exploration",
-    "title": "Day 1 Tasks & Activities",
+    "title": "Day 1: Tasks & Activities",
     "section": "2. Data import and exploration",
     "text": "2. Data import and exploration\n\nRead in & explore the data\nIn your .qmd:\n\nAttach the tidyverse and janitor packages in a new code chunk\nRead in the stl_blood_lead.csv data as stl_lead and use janitor::clean_names to convert all variable names to lower snake case\nDo some basic exploration of the dataset (e.g. using summary, data visualizations and summary statistics).\nIn a new code chunk, from stl_blood_lead create a new data frame called stl_lead_prop that has one additional column called prop_white that returns the percent of each census tract identifying as white (variable white in the dataset divided by variable totalPop, times 100). You may need to do some Googling. Hint: dplyr::mutate(new_col = col_a / col_b) will create a new column new_col that contains the value of col_a / col_b"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day1.html#visualize-data",
     "href": "course-materials/eod-practice/eod-day1.html#visualize-data",
-    "title": "Day 1 Tasks & Activities",
+    "title": "Day 1: Tasks & Activities",
     "section": "3. Visualize data",
     "text": "3. Visualize data\n\nCreate a scatterplot\n\nIn a new code chunk, create a scatterplot graph of the percentage of children in each census tract with elevated blood lead levels (pctElevated) versus the percent of each census tract identifying as white.\nCustomize by updating several aesthetics (e.g. size, opacity (see alpha =), color, etc.)\nStore the scatterplot as stl_lead_plot\nHave the scatterplot returned in the rendered html - customize the size that it appears when knitted\nAlso save a .png of the scatterplot to figs, with dimensions of (6” x 5”) (width x height)\nIn text above or below the scatterplot, write 1 - 2 sentences describing the overall trend that you observe from your graph\n\n\n\nCreate a histogram\n\nCreate a histogram of only the pctElevated column in the data frame (remember, this will only take one variable - the frequency is calculated for you by geom_histogram)\nCustomize the fill, color, and size aesthetics - test some stuff! Feel free to make it awful.\nOnce you’ve played around with customization, export the histogram as a .jpg to the figs folder\nMake sure the histogram also shows up in your rendered html"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day1.html#collaborate",
     "href": "course-materials/eod-practice/eod-day1.html#collaborate",
-    "title": "Day 1 Tasks & Activities",
+    "title": "Day 1: Tasks & Activities",
     "section": "4. Collaborate!",
     "text": "4. Collaborate!\n\nRender & push\n\nRender your .qmd\nStage, commit, pull then push changes using the command line\n\n\n\nShare & test\n\nShare the link to your public GitHub repo with a neighbor\nFork the repo your neighbor shared, then clone to get set up locally in RStudio\nNavigate to their .qmd\nRender - does everything work? Cool, your neighbor made a reproducible project with file paths you can use too!\n\n\nEnd Activity Session (Day 1)"
   },
@@ -653,21 +653,21 @@
   {
     "objectID": "course-materials/eod-practice/eod-day2.html",
     "href": "course-materials/eod-practice/eod-day2.html",
-    "title": "Day 2 Tasks & Activities",
+    "title": "Day 2: Tasks & Activities",
     "section": "",
     "text": "Create a new repo on GitHub for today’s activities\nClone to create a version controlled R Project\nCreate subfolders called docs, data, and figs\nCreate a Quarto Document, save in the docs subfolder as r_data_types.qmd\n\n\n\n\n\n\nIn your Quarto document:\n\nCreate a vector called vec_1containing the following:\n\n\n2, 5, 9, 10, 8, 12, 1, 0\n\nCheck the following for that vector:\n\nWhat is the class of the vector? class()\nWhat type of variable does it store? typeof()\nAccess the 3rd element and store as vec_1_e3\nAccess the 1st element and store as vec_1_e1\nAccess the 5th through 7th elements and store as vec_1_e5to7\nReassign vec_1 as a character using as.character, stored as vec_1_char. What does the output look like?\n\n\nCreate a vector called vec_2\n\nvec_2 should contained named elements, where town = \"Santa Barbara, location = \"Rincon\", swell = \"south\"\n\nTake a look at what you’ve made\nWhat is the class of vector elements? class()\nWhat is the length of vec_2?\nAccess the 2nd element by name and store as vec_2_e2\n\n\nCreate a data frame in R\n\nWrite code to create a data frame called df_1 that looks like this:\n\n\n  region     species count\n1      A       otter    12\n2      B great white     2\n3      A    sea lion    36\n4      D  gray whale     6\n\n\n\nReturn the class of the entire data frame\nReturn the class of the species column\nFind the maximum value of the count() column, store as max_count"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day2.html#checking-data-types",
     "href": "course-materials/eod-practice/eod-day2.html#checking-data-types",
-    "title": "Day 2 Tasks & Activities",
+    "title": "Day 2: Tasks & Activities",
     "section": "",
     "text": "Create a new repo on GitHub for today’s activities\nClone to create a version controlled R Project\nCreate subfolders called docs, data, and figs\nCreate a Quarto Document, save in the docs subfolder as r_data_types.qmd\n\n\n\n\n\n\nIn your Quarto document:\n\nCreate a vector called vec_1containing the following:\n\n\n2, 5, 9, 10, 8, 12, 1, 0\n\nCheck the following for that vector:\n\nWhat is the class of the vector? class()\nWhat type of variable does it store? typeof()\nAccess the 3rd element and store as vec_1_e3\nAccess the 1st element and store as vec_1_e1\nAccess the 5th through 7th elements and store as vec_1_e5to7\nReassign vec_1 as a character using as.character, stored as vec_1_char. What does the output look like?\n\n\nCreate a vector called vec_2\n\nvec_2 should contained named elements, where town = \"Santa Barbara, location = \"Rincon\", swell = \"south\"\n\nTake a look at what you’ve made\nWhat is the class of vector elements? class()\nWhat is the length of vec_2?\nAccess the 2nd element by name and store as vec_2_e2\n\n\nCreate a data frame in R\n\nWrite code to create a data frame called df_1 that looks like this:\n\n\n  region     species count\n1      A       otter    12\n2      B great white     2\n3      A    sea lion    36\n4      D  gray whale     6\n\n\n\nReturn the class of the entire data frame\nReturn the class of the species column\nFind the maximum value of the count() column, store as max_count"
   },
   {
     "objectID": "course-materials/eod-practice/eod-day2.html#wild-data",
     "href": "course-materials/eod-practice/eod-day2.html#wild-data",
-    "title": "Day 2 Tasks & Activities",
+    "title": "Day 2: Tasks & Activities",
     "section": "2. Wild data",
     "text": "2. Wild data\n\nSet-up\n\nVisit the EDI site to learn about Mack Creek salamander & cutthroat trout data you’ll be using here: data package\nDownload the first CSV listed (AS00601.csv), and take a look at it (outside of R is fine as a first step, e.g. you can open the CSV in Excel)\nExplore the metadata (see View Full Metadata in the Resources section of the data website)\nWhat does each column contain? What are the units of each? What is the study overall about?\nCreate a new Quarto Document and save it in your docs folder. Attach the tidyverse, here and janitor packages in the setup chunk (you choose the file name)\nSet global options in the YAML so that messages and warnings do NOT show up in the rendered document\nSave the AS00601.csv in your data folder of your project\n\n\n\nRead in the data\n\nRead in the data using read_csv() with here(), store as mack_verts\nLook at what you’ve read in (e.g. with view())\n\n\n\nA bit of wrangling & exploring\n\nUpdate the variable names in mack_verts to lower snake case\nIn a new code chunk, practice accessing individual pieces of the data frame (there is no real functionality to this right now, but just to reinforce stuff we learned in our interactive session):\n\nStore the 5th value in column “WEIGHT” as mc_wt_5. Check by looking at your data frame to confirm.\nStore the 8th - 20th value in the “LENGTH1” column as mc_length_8_20. Check by looking at your data frame to confirm.\nStore everything in column SAMPLEDATE as a vector called mc_dates\n\n\n\n\nMake a salamander subset\n\nCreate a subset that only contains observations for Pacific Giant Salamanders (species Dicamptodon tenebrosus, stored in species as DITE). Store the subset as mc_salamanders. Hint: see dplyr::filter()!\n\n\n\nMake a scatterplot of salamander length x weight\n\nCreate a scatterplot of length1 (snout-vent length in millimeters) versus weight (grams) for all salamanders in the subset you created above, mc_salamanders. Update axis labels, title, subtitle, and add a caption with the data source. Customize point color and size, possibly opacity, and theme.\nExport your scatterplot as salamander_size.png to your figs folder.\n\n\n\nMake a cutthroat plot\n\nSimilar to above, make a subset called mc_trout that only contains observations for cutthroat trout (species “ONCL”)\nCreate a scatterplot of length1 by weight for all trout in the dataset\nCustomize so that the point color depends on reach\nCustomize your color scheme (e.g. scale_color_manual())\nFacet your plot by creek reach (hint: facet_wrap(~...))\nUpdate graph axis labels and title\nExport your graph as cutthroat_size.png to the figs folder\n\n\n\nStage, commit, pull, push\n\nMake sure your changes are safely stored by pushing to GitHub\nClose your project locally\nReopen your project locally\nReopen your .qmd files for the activities you did today.\nRender. Does it work? Done.\n\n\nEnd Activity Session (Day 2)"
   },
@@ -1090,5 +1090,89 @@
     "title": "Day 1: Tasks & activities - KEY",
     "section": "Visualize data",
     "text": "Visualize data\n\nCreate a scatterplot graph of the percentage of children in each census tract with elevated blood lead levels versus the percent of each census tract identifying as white\n\n\n\n\n\n\n\nImportant\n\n\n\n\nstl_lead_plot &lt;- ggplot(data = stl_lead_prop, # Set data for plotting\n                        aes(x = prop_white, y = pct_elevated)) + # Assign x- and y-axis variables\n  geom_point() # Create scatterplot\n\nstl_lead_plot # View scatterplot\n\n\n\n\n\n\n\n\n\n\n\nSave a .png of the scatterplot to figs, with dimensions of (6” x 5”) (width x height)\n\n\n\n\n\n\n\nImportant\n\n\n\n\nggsave(stl_lead_plot,\n       here::here(\"figs\", \"stl_lead_plot.png\"), # Set filepath to save scatterplot\n       width = 6, height = 5, units = c(\"in\")) # Set dimensions with units\n\n\n\n\nCreate a histogram of the percentage of children in each census tract with elevated blood lead levels\n\n\n\n\n\n\n\nImportant\n\n\n\n\nstl_lead_hist &lt;- ggplot(data = stl_lead_prop, # Set data for plotting\n       aes(x = pct_elevated)) + # Assign x-axis variable\n  geom_histogram() # Create histogram\n\nstl_lead_hist # View histogram\n\n\n\n\n\n\n\n\n\n\n\nSave a .jpg of the scatterplot to figs\n\n\n\n\n\n\n\nImportant\n\n\n\n\nggsave(stl_lead_hist,\n       here::here(\"figs\", \"stl_lead_hist.jpg\")) # Set filepath to save histogram"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day2-key.html",
+    "href": "course-materials/eod-keys/eod-day2-key.html",
+    "title": "Day 2: Tasks & activities - KEY",
+    "section": "",
+    "text": "Create a vector called vec_1 containing the following:\n\n\nWhat is the class of the vector? class()\nWhat type of variable does it store? typeof()\nAccess the 3rd element and store as vec_1_e3\nAccess the 1st element and store as vec_1_e1\nAccess the 5th through 7th elements and store as vec_1_e5to7\nReassign vec_1 as a character using as.character, stored as vec_1_char. What does the output look like?\n\n\n\n\n\n\n\nSolution\n\n\n\n\nvec_1 &lt;- c(2, 5, 9, 10, 8, 12, 1, 0) # Create vector\nvec_1 # View vector\n\n[1]  2  5  9 10  8 12  1  0\n\nclass(vec_1) # Check vector class\n\n[1] \"numeric\"\n\ntypeof(vec_1) # Check data type\n\n[1] \"double\"\n\nvec_1_e3 &lt;- vec_1[3] # Extract 3rd element\nvec_1_e3 # Print element\n\n[1] 9\n\nvec_1_e1 &lt;- vec_1[1] # Extract 1st element\nvec_1_e1 # Print element\n\n[1] 2\n\nvec_1_e5to7 &lt;- vec_1[5:7] # Extract 5th-7th elements\nvec_1_e5to7 # Print elements\n\n[1]  8 12  1\n\nvec_1_char &lt;- as.character(vec_1) # Reassign to character vector\nvec_1_logical &lt;- as.logical(vec_1) # Reassign to logical vector\n\n\n\n\nCreate a vector called vec_2 of named elements, where town = \"Santa Barbara, location = \"Rincon\", swell = \"south\"\n\n\nTake a look at what you’ve made\nWhat is the class of vector elements? class()\nWhat is the length of vec_2?\nAccess the 2nd element by name and store as vec_2_e2\n\n\n\n\n\n\n\nSolution\n\n\n\n\nvec_2 &lt;- c(town = \"Santa Barbara\", location = \"Rincon\", swell = \"south\")\nvec_2 # View vector\n\n           town        location           swell \n\"Santa Barbara\"        \"Rincon\"         \"south\" \n\nclass(vec_2) # Check vector class\n\n[1] \"character\"\n\nlength(vec_2) # Check vector length\n\n[1] 3\n\nvec_2_e2 &lt;- vec_2[2] # Extract 2nd element\nvec_2_e2 # Print element\n\nlocation \n\"Rincon\" \n\n\n\n\n\nCreate a data frame in R\n\n\nReturn the class of the entire data frame\nReturn the class of the species column\nFind the maximum value of the count() column, store as max_count\n\n\n\n\n\n\n\nSolution\n\n\n\n\ndf_1 &lt;- data.frame(region = c(\"A\", \"B\", \"A\",\"D\"),\n                   species = c(\"otter\", \"great white\", \"sea lion\", \"gray whale\"),\n                   count = c(12, 2, 36, 6))\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\nclass(df_1) # Check df class\n\n[1] \"data.frame\"\n\nclass(df_1$species) # Check species column class\n\n[1] \"character\"\n\nmax_count &lt;- max(df_1$count) # Find maximum value of count column\nmax_count # Print maximum value\n\n[1] 36"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day2-key.html#check-data-types",
+    "href": "course-materials/eod-keys/eod-day2-key.html#check-data-types",
+    "title": "Day 2: Tasks & activities - KEY",
+    "section": "",
+    "text": "Create a vector called vec_1 containing the following:\n\n\nWhat is the class of the vector? class()\nWhat type of variable does it store? typeof()\nAccess the 3rd element and store as vec_1_e3\nAccess the 1st element and store as vec_1_e1\nAccess the 5th through 7th elements and store as vec_1_e5to7\nReassign vec_1 as a character using as.character, stored as vec_1_char. What does the output look like?\n\n\n\n\n\n\n\nSolution\n\n\n\n\nvec_1 &lt;- c(2, 5, 9, 10, 8, 12, 1, 0) # Create vector\nvec_1 # View vector\n\n[1]  2  5  9 10  8 12  1  0\n\nclass(vec_1) # Check vector class\n\n[1] \"numeric\"\n\ntypeof(vec_1) # Check data type\n\n[1] \"double\"\n\nvec_1_e3 &lt;- vec_1[3] # Extract 3rd element\nvec_1_e3 # Print element\n\n[1] 9\n\nvec_1_e1 &lt;- vec_1[1] # Extract 1st element\nvec_1_e1 # Print element\n\n[1] 2\n\nvec_1_e5to7 &lt;- vec_1[5:7] # Extract 5th-7th elements\nvec_1_e5to7 # Print elements\n\n[1]  8 12  1\n\nvec_1_char &lt;- as.character(vec_1) # Reassign to character vector\nvec_1_logical &lt;- as.logical(vec_1) # Reassign to logical vector\n\n\n\n\nCreate a vector called vec_2 of named elements, where town = \"Santa Barbara, location = \"Rincon\", swell = \"south\"\n\n\nTake a look at what you’ve made\nWhat is the class of vector elements? class()\nWhat is the length of vec_2?\nAccess the 2nd element by name and store as vec_2_e2\n\n\n\n\n\n\n\nSolution\n\n\n\n\nvec_2 &lt;- c(town = \"Santa Barbara\", location = \"Rincon\", swell = \"south\")\nvec_2 # View vector\n\n           town        location           swell \n\"Santa Barbara\"        \"Rincon\"         \"south\" \n\nclass(vec_2) # Check vector class\n\n[1] \"character\"\n\nlength(vec_2) # Check vector length\n\n[1] 3\n\nvec_2_e2 &lt;- vec_2[2] # Extract 2nd element\nvec_2_e2 # Print element\n\nlocation \n\"Rincon\" \n\n\n\n\n\nCreate a data frame in R\n\n\nReturn the class of the entire data frame\nReturn the class of the species column\nFind the maximum value of the count() column, store as max_count\n\n\n\n\n\n\n\nSolution\n\n\n\n\ndf_1 &lt;- data.frame(region = c(\"A\", \"B\", \"A\",\"D\"),\n                   species = c(\"otter\", \"great white\", \"sea lion\", \"gray whale\"),\n                   count = c(12, 2, 36, 6))\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\nclass(df_1) # Check df class\n\n[1] \"data.frame\"\n\nclass(df_1$species) # Check species column class\n\n[1] \"character\"\n\nmax_count &lt;- max(df_1$count) # Find maximum value of count column\nmax_count # Print maximum value\n\n[1] 36"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day2-key.html#wild-data",
+    "href": "course-materials/eod-keys/eod-day2-key.html#wild-data",
+    "title": "Day 2: Tasks & activities - KEY",
+    "section": "Wild data",
+    "text": "Wild data\n\nRead in the data using read_csv() with here(), store as mack_verts\n\n\n\n\n\n\n\nSolution\n\n\n\n\nmack_verts &lt;- read_csv(here::here(\"data\", \"AS00601.csv\"))\nView(mack_verts) # View dataset\n\n\n\n\nUpdate the variable names in mack_verts to lower snake case\n\n\n\n\n\n\n\nSolution\n\n\n\n\nmack_verts &lt;- clean_names(mack_verts) # Update to lower snake case\n\n\n\n\nIn a new code chunk, practice accessing individual pieces of the data frame:\n\n\nStore the 5th value in column WEIGHT as mc_wt_5\nStore the 8th - 20th value in the LENGTH1 column as mc_length_8_20\nStore everything in column SAMPLEDATE as a vector called mc_dates\n\n\n\n\n\n\n\nSolution\n\n\n\n\nmc_wt_5 &lt;- mack_verts[5, 'weight'] # Extract 5th value in column `weight`\nmc_wt_5 # Print value\n\n# A tibble: 1 × 1\n  weight\n   &lt;dbl&gt;\n1    6.9\n\nmc_length_8_20 &lt;- mack_verts[8:20, 'length1'] # Extract 8th-20th values in column `length1`\nmc_length_8_20 # Print values\n\n# A tibble: 13 × 1\n   length1\n     &lt;dbl&gt;\n 1     131\n 2     103\n 3     117\n 4     100\n 5     127\n 6      99\n 7     111\n 8     149\n 9     102\n10      53\n11      58\n12      58\n13     105\n\nmc_dates &lt;- mack_verts[,'sampledate'] # Extract column `sampledate`\nmc_dates &lt;- mack_verts$sampledate # Extract column `sampledate`\n\n\n\n\nCreate a subset that only contains observations for Pacific Giant Salamanders (species Dicamptodon tenebrosus, stored in species as DITE). Store the subset as mc_salamanders. Hint: see dplyr::filter()!\n\n\n\n\n\n\n\nSolution\n\n\n\n\nmc_salamanders &lt;- mack_verts |&gt;  \n  filter(species == \"DITE\") # Keep rows where species == \"DITE\"\n\n\n\n\nCreate a scatterplot of length1 (snout-vent length in millimeters) versus weight (grams) for all salamanders in the subset you created above, mc_salamanders\n\n\n\n\n\n\n\nSolution\n\n\n\n\nsalamander_plot &lt;- ggplot(data = mc_salamanders,\n                          aes(x = length1, y = weight)) + \n  geom_point(alpha = 0.5, color = \"purple\") +\n  theme_minimal()\n\nsalamander_plot # View plot\n\n\n\n\n\n\n\n\n\n\n\nExport your scatterplot as salamander_size.png to your figs folder.\n\n\n\n\n\n\n\nSolution\n\n\n\n\nggsave(plot = salamander_plot, here::here(\"figs\", \"salamander_size.png\"))\n\n\n\n\nMake a subset called mc_trout that only contains observations for cutthroat trout\n\n\n\n\n\n\n\nSolution\n\n\n\n\nmc_trout &lt;- mack_verts |&gt; \n  filter(species == \"ONCL\") # Keep rows where species == \"ONCL\"\n\n\n\n\nCreate a scatterplot of length1 by weight for all trout in the dataset\n\n\nCustomize so that the point color depends on reach\nCustomize your color scheme (e.g. scale_color_manual())\nFacet your plot by creek reach (hint: facet_wrap(~...))\nUpdate graph axis labels and title\nExport your graph as cutthroat_size.png to the figs folder\n\n\n\n\n\n\n\nSolution\n\n\n\n\nunique(mc_trout$reach) # Check unique values in column\n\n[1] \"L\" \"M\" \"U\"\n\n# Create named vector of custom colors\ncustom_colors &lt;- c(\"L\" = \"darkblue\", \"M\" = \"darkgreen\", \"U\" = \"orange\") \n\nggplot(data = mc_trout, aes(x = length1, y = weight)) +\n  geom_point(aes(color = reach)) +\n  scale_color_manual(values = custom_colors) + # Assign custom colors\n  facet_wrap(~reach) + # Facet by variable `reach`\n  theme_minimal()"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day3-key.html",
+    "href": "course-materials/eod-keys/eod-day3-key.html",
+    "title": "Day 3: Tasks & activities - KEY",
+    "section": "",
+    "text": "Loading packages:\n\nlibrary(dplyr)"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day3-key.html#part-1",
+    "href": "course-materials/eod-keys/eod-day3-key.html#part-1",
+    "title": "Day 3: Tasks & activities - KEY",
+    "section": "",
+    "text": "Loading packages:\n\nlibrary(dplyr)"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day3-key.html#part-2---real-data",
+    "href": "course-materials/eod-keys/eod-day3-key.html#part-2---real-data",
+    "title": "Day 3: Tasks & activities - KEY",
+    "section": "Part 2 - Real data",
+    "text": "Part 2 - Real data\nOpening and cleaning:\n\ntoolik_biochem &lt;- read.csv(here::here(\"data\", \"2011_Kling_Akchem.csv\") , na.strings = c(\".\", \"NA\"))\ntoolik_biochem &lt;- janitor::clean_names(toolik_biochem)\n\nChecking the variables names:\n\nvariable.names(toolik_biochem)\n\nCreating subset:\n\ninlet_biochem &lt;- toolik_biochem %&gt;% dplyr::select(p_h,doc_u_m, tdn_u_m)\n\nFinding the mean value of each column:\nUsing a for loop:\n\n# Vector where I will store the means\nmean_column &lt;- c()\n\nfor (i in 1:ncol(inlet_biochem)){\n  mean_column &lt;- c(mean_column, mean(inlet_biochem[,i], na.rm=TRUE))\n}\n\nUsing purrr:map_df:\n\nlibrary(purrr)\nmean_df &lt;- inlet_biochem %&gt;%\n  map_df(~ mean(.x, na.rm = TRUE))"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day4-key.html",
+    "href": "course-materials/eod-keys/eod-day4-key.html",
+    "title": "Day 4: Tasks & activities - KEY",
+    "section": "",
+    "text": "Create two sequences, one called weekdays that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called transects that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:\nCreating the sequences:\n\nweekdays &lt;- c(\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\")\ntransect &lt;- c(\"Transect A\", \"Transect B\", \"Transect C\")\n\nCreating a matrix using a nested loop:\n\n# Creating matrix:\nmatrix &lt;- matrix(1:9, nrow = 7, ncol = 3)\n\n#Nested loop:\nfor (i in seq_along(weekdays)) { # Outer loop is the growth rates\n  for (j in seq_along(transect)) { # Inner loop is the time sequence values\n  matrix[i,j] &lt;- paste(weekdays[i], \"-\", transect[j])\n  } \n}\nmatrix"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day4-key.html#task-1",
+    "href": "course-materials/eod-keys/eod-day4-key.html#task-1",
+    "title": "Day 4: Tasks & activities - KEY",
+    "section": "",
+    "text": "Create two sequences, one called weekdays that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called transects that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:\nCreating the sequences:\n\nweekdays &lt;- c(\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\")\ntransect &lt;- c(\"Transect A\", \"Transect B\", \"Transect C\")\n\nCreating a matrix using a nested loop:\n\n# Creating matrix:\nmatrix &lt;- matrix(1:9, nrow = 7, ncol = 3)\n\n#Nested loop:\nfor (i in seq_along(weekdays)) { # Outer loop is the growth rates\n  for (j in seq_along(transect)) { # Inner loop is the time sequence values\n  matrix[i,j] &lt;- paste(weekdays[i], \"-\", transect[j])\n  } \n}\nmatrix"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day4-key.html#task-2",
+    "href": "course-materials/eod-keys/eod-day4-key.html#task-2",
+    "title": "Day 4: Tasks & activities - KEY",
+    "section": "Task 2",
+    "text": "Task 2\nWriting the function:\n\nforce &lt;- function(mass,acc){\n  force = mass*acc\n  print(paste(\"The resulting force is\", force, \"Newtowns\"))\n}\n\nChecking if it works:\n\nforce(10,6)"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day4-key.html#task-3",
+    "href": "course-materials/eod-keys/eod-day4-key.html#task-3",
+    "title": "Day 4: Tasks & activities - KEY",
+    "section": "Task 3",
+    "text": "Task 3\nCreating the data frame:\n\nfish_parms &lt;- data.frame(\nsci_name= c(\"Chanos chanos\",\"Sphyraena barracuda\",\"Sphyraena barracuda\"),\ncommon_name = c(\"Milkfish\",\"Great barracuda\",\"Great barracuda\"),\na_est = c(0.0905, 0.0181    ,0.0353 ),\nb_est = c(2.52, 3.27, 3.05)\n)\n\nCreating the function:\n\nfish_weight &lt;- function(name, length){\n  i &lt;- which(fish_parms$common_name == name)\n  a&lt;-fish_parms[i,3]\n  b&lt;-fish_parms[i,4]\n  w= a *(length^b)\n  return(w)\n}\n\nTesting:\n\nfish_weight('Milkfish', 10)"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day4-key.html#task-4",
+    "href": "course-materials/eod-keys/eod-day4-key.html#task-4",
+    "title": "Day 4: Tasks & activities - KEY",
+    "section": "Task 4",
+    "text": "Task 4\nCreating the function:\n\nwave_power &lt;- function(h, t){\n  p= 0.5 * t * h^2\n  return(p)\n}\n\nCreating the vector:\n\nwaves &lt;- seq(from = 0, to = 3, by = 0.2)\n\nApplying over the wave heights range:\n\nresult &lt;- sapply(waves, wave_power, t = 8)\nresult"
+  },
+  {
+    "objectID": "course-materials/eod-keys/eod-day4-key.html#task-5",
+    "href": "course-materials/eod-keys/eod-day4-key.html#task-5",
+    "title": "Day 4: Tasks & activities - KEY",
+    "section": "Task 5",
+    "text": "Task 5\nCreating the function:\n\nwave_power &lt;- function(d,h, t){\n  if (d&lt;=12){\n     p= 0.81 * t * h^2\n      message(\"Message: Shallow water equation was used\")\n  } else {\n      p= 0.5 * t * h^2\n      message(\"Message: Deep water equation was used\")\n  }\n  return(p)\n}\n\nTesting:\n\nwave_power(10,3,1)"
   }
 ]

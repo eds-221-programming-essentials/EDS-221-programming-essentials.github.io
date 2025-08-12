@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Day 2: Tasks &amp; Activities</title>
+<title>Day 3: Tasks &amp; activities - KEY</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -195,8 +195,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Day 2: Tasks &amp; Activities</h1>
-            <p class="subtitle lead">Data types, indexing data, import &amp; plot data</p>
+      <h1 class="title">Day 3: Tasks &amp; activities - KEY</h1>
+            <p class="subtitle lead">Conditionals &amp; for loops</p>
                       </div>
   </div>
     
@@ -217,14 +217,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#checking-data-types" id="toc-checking-data-types" class="nav-link active" data-scroll-target="#checking-data-types">1. Checking data types</a>
+  <li><a href="#part-1" id="toc-part-1" class="nav-link active" data-scroll-target="#part-1">Part 1</a></li>
+  <li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1">Task 1</a></li>
+  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
+  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
+  <li><a href="#task-4" id="toc-task-4" class="nav-link" data-scroll-target="#task-4">Task 4</a></li>
+  <li><a href="#task-5" id="toc-task-5" class="nav-link" data-scroll-target="#task-5">Task 5</a>
   <ul class="collapse">
-  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
-  <li><a href="#checking-data-types-1" id="toc-checking-data-types-1" class="nav-link" data-scroll-target="#checking-data-types-1">Checking data types</a></li>
-  </ul></li>
-  <li><a href="#wild-data" id="toc-wild-data" class="nav-link" data-scroll-target="#wild-data">2. Wild data</a>
-  <ul class="collapse">
-  <li><a href="#stage-commit-pull-push" id="toc-stage-commit-pull-push" class="nav-link" data-scroll-target="#stage-commit-pull-push">Stage, commit, pull, push</a></li>
+  <li><a href="#part-2---real-data" id="toc-part-2---real-data" class="nav-link" data-scroll-target="#part-2---real-data">Part 2 - Real data</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -236,137 +236,116 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="checking-data-types" class="level2">
-<h2 class="anchored" data-anchor-id="checking-data-types">1. Checking data types</h2>
-<section id="setup" class="level3">
-<h3 class="anchored" data-anchor-id="setup">Setup</h3>
-<ul>
-<li>Create a new repo on GitHub for today’s activities</li>
-<li>Clone to create a version controlled R Project</li>
-<li>Create subfolders called <code>docs</code>, <code>data</code>, and <code>figs</code></li>
-<li>Create a Quarto Document, save in the <code>docs</code> subfolder as <code>r_data_types.qmd</code></li>
-</ul>
-</section>
-<section id="checking-data-types-1" class="level3">
-<h3 class="anchored" data-anchor-id="checking-data-types-1">Checking data types</h3>
-<section id="vectors-lists-data-frames" class="level4">
-<h4 class="anchored" data-anchor-id="vectors-lists-data-frames">Vectors, lists &amp; data frames</h4>
-<p>In your Quarto document:</p>
-<ol type="1">
-<li>Create a vector called <code>vec_1</code>containing the following:</li>
-</ol>
+<section id="part-1" class="level2">
+<h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
+<p>Loading packages:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">1</span>, <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Check the following for that vector:</p>
-<ul>
-<li>What is the class of the vector? <code>class()</code></li>
-<li>What type of variable does it store? <code>typeof()</code></li>
-<li>Access the 3rd element and store as <code>vec_1_e3</code></li>
-<li>Access the 1st element and store as <code>vec_1_e1</code></li>
-<li>Access the 5th through 7th elements and store as <code>vec_1_e5to7</code></li>
-<li>Reassign <code>vec_1</code> as a character using <code>as.character</code>, stored as <code>vec_1_char</code>. What does the output look like?</li>
-</ul>
-<ol start="2" type="1">
-<li>Create a vector called <code>vec_2</code></li>
-</ol>
-<p><code>vec_2</code> should contained <em>named</em> elements, where <code>town = "Santa Barbara</code>, <code>location = "Rincon"</code>, <code>swell = "south"</code></p>
-<ul>
-<li>Take a look at what you’ve made</li>
-<li>What is the class of vector elements? <code>class()</code></li>
-<li>What is the length of vec_2?</li>
-<li>Access the 2nd element by name and store as <code>vec_2_e2</code></li>
-</ul>
-<ol start="3" type="1">
-<li>Create a data frame in R</li>
-</ol>
-<p>Write code to create a data frame called <code>df_1</code> that looks like this:</p>
+</section>
+<section id="task-1" class="level1">
+<h1>Task 1</h1>
+<p>Object:</p>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>  region     species count
-1      A       otter    12
-2      B great white     2
-3      A    sea lion    36
-4      D  gray whale     6</code></pre>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pm2_5 <span class="ot">&lt;-</span> <span class="dv">48</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Statement:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (pm2_5 <span class="sc">&lt;</span> <span class="dv">100</span>) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'Unhealthy sensitive groups'</span>) </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> <span class="cf">if</span> (pm2_5<span class="sc">&gt;=</span><span class="dv">100</span> <span class="sc">&amp;</span> pm2_5 <span class="sc">&lt;</span><span class="dv">150</span>) {</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(<span class="st">'Health risk present'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">'Health risk present'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li>Return the class of the entire data frame</li>
-<li>Return the class of the species column</li>
-<li>Find the maximum value of the <code>count()</code> column, store as <code>max_count</code></li>
-</ul>
 </section>
+<section id="task-2" class="level1">
+<h1>Task 2</h1>
+<p>Object:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>species <span class="ot">&lt;-</span> <span class="st">'blue whale'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Statement:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">grepl</span>(<span class="st">"whale"</span>, species)) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">'You found a whale!'</span>) </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
+<section id="task-3" class="level1">
+<h1>Task 3</h1>
+<p>Base Object:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>base_burrito <span class="ot">&lt;-</span> <span class="fl">6.50</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Statement:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>main_ingredient <span class="ot">&lt;-</span> <span class="st">"veggie"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (main_ingredient <span class="sc">==</span> <span class="st">"veggie"</span>) {</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(base_burrito) </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> <span class="cf">if</span> (main_ingredient<span class="sc">==</span><span class="st">'chicken'</span>) {</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(base_burrito<span class="sc">+</span><span class="dv">3</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  }<span class="cf">else</span> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(base_burrito<span class="fl">+3.25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="wild-data" class="level2">
-<h2 class="anchored" data-anchor-id="wild-data">2. Wild data</h2>
-<section id="set-up" class="level4">
-<h4 class="anchored" data-anchor-id="set-up">Set-up</h4>
-<ul>
-<li><p>Visit the EDI site to learn about Mack Creek salamander &amp; cutthroat trout data you’ll be using here: <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14">data package</a></p></li>
-<li><p>Download the <em>first CSV</em> listed (<code>AS00601.csv</code>), and take a look at it (outside of R is fine as a first step, e.g.&nbsp;you can open the CSV in Excel)</p></li>
-<li><p>Explore the metadata (see View Full Metadata in the <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-and.4027.14">Resources section</a> of the data website)</p></li>
-<li><p>What does each column contain? What are the units of each? What is the study overall about?</p></li>
-<li><p>Create a new Quarto Document and save it in your <code>docs</code> folder. Attach the <code>tidyverse</code>, <code>here</code> and <code>janitor</code> packages in the setup chunk (you choose the file name)</p></li>
-<li><p>Set global options in the YAML so that messages and warnings do NOT show up in the rendered document</p></li>
-<li><p>Save the <code>AS00601.csv</code> in your <code>data</code> folder of your project</p></li>
-</ul>
+<section id="task-4" class="level1">
+<h1>Task 4</h1>
+<p>Base Objects:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fish <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">goldfish=</span><span class="dv">8</span>, <span class="at">tetras=</span><span class="dv">10</span>, <span class="at">guppies=</span><span class="dv">12</span>, <span class="at">mollies=</span><span class="dv">23</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Statement:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(fish)) {</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  proportion <span class="ot">&lt;-</span> fish[i]<span class="sc">/</span><span class="fu">sum</span>(fish)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(proportion)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="read-in-the-data" class="level4">
-<h4 class="anchored" data-anchor-id="read-in-the-data">Read in the data</h4>
-<ul>
-<li><p>Read in the data using <code>read_csv()</code> with <code>here()</code>, store as <code>mack_verts</code></p></li>
-<li><p>Look at what you’ve read in (e.g.&nbsp;with view())</p></li>
-</ul>
-</section>
-<section id="a-bit-of-wrangling-exploring" class="level4">
-<h4 class="anchored" data-anchor-id="a-bit-of-wrangling-exploring">A bit of wrangling &amp; exploring</h4>
-<ul>
-<li><p>Update the variable names in <code>mack_verts</code> to lower snake case</p></li>
-<li><p>In a new code chunk, practice accessing individual pieces of the data frame (there is no real functionality to this right now, but just to reinforce stuff we learned in our interactive session):</p>
-<ul>
-<li>Store the 5th value in column “WEIGHT” as <code>mc_wt_5</code>. Check by looking at your data frame to confirm.</li>
-<li>Store the 8th - 20th value in the “LENGTH1” column as <code>mc_length_8_20</code>. Check by looking at your data frame to confirm.</li>
-<li>Store everything in column SAMPLEDATE as a vector called <code>mc_dates</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="make-a-salamander-subset" class="level4">
-<h4 class="anchored" data-anchor-id="make-a-salamander-subset">Make a salamander subset</h4>
-<ul>
-<li>Create a subset that only contains observations for Pacific Giant Salamanders (species <em>Dicamptodon tenebrosus</em>, stored in <code>species</code> as <code>DITE</code>). Store the subset as <code>mc_salamanders</code>. <em>Hint:</em> see <code>dplyr::filter()</code>!</li>
-</ul>
-</section>
-<section id="make-a-scatterplot-of-salamander-length-x-weight" class="level4">
-<h4 class="anchored" data-anchor-id="make-a-scatterplot-of-salamander-length-x-weight">Make a scatterplot of salamander length x weight</h4>
-<ul>
-<li><p>Create a scatterplot of length1 (snout-vent length in millimeters) versus weight (grams) for all salamanders in the subset you created above, <code>mc_salamanders</code>. Update axis labels, title, subtitle, and add a caption with the data source. Customize point color and size, possibly opacity, and theme.</p></li>
-<li><p>Export your scatterplot as <code>salamander_size.png</code> to your figs folder.</p></li>
-</ul>
-</section>
-<section id="make-a-cutthroat-plot" class="level4">
-<h4 class="anchored" data-anchor-id="make-a-cutthroat-plot">Make a cutthroat plot</h4>
-<ul>
-<li>Similar to above, make a subset called <code>mc_trout</code> that only contains observations for cutthroat trout (species “ONCL”)</li>
-<li>Create a scatterplot of length1 by weight for all trout in the dataset</li>
-<li>Customize so that the point color depends on <em>reach</em></li>
-<li>Customize your color scheme (e.g.&nbsp;<code>scale_color_manual()</code>)</li>
-<li>Facet your plot by creek reach (hint: <code>facet_wrap(~...)</code>)</li>
-<li>Update graph axis labels and title</li>
-<li>Export your graph as <code>cutthroat_size.png</code> to the <code>figs</code> folder</li>
-</ul>
-</section>
-<section id="stage-commit-pull-push" class="level3">
-<h3 class="anchored" data-anchor-id="stage-commit-pull-push">Stage, commit, pull, push</h3>
-<ul>
-<li>Make sure your changes are safely stored by pushing to GitHub</li>
-<li>Close your project locally</li>
-<li>Reopen your project locally</li>
-<li>Reopen your .qmd files for the activities you did today.</li>
-<li>Render. Does it work? Done.</li>
-</ul>
-<div class="center-text body-text-xl teal-text">
-<p>End Activity Session (Day 2)</p>
+<section id="task-5" class="level1">
+<h1>Task 5</h1>
+<p>Checking out R’s vector:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>month.name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Statement:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(month.name)) {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(month.name[i], <span class="st">"is month"</span>, i))</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="part-2---real-data" class="level2">
+<h2 class="anchored" data-anchor-id="part-2---real-data">Part 2 - Real data</h2>
+<p>Opening and cleaning:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>toolik_biochem <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"data"</span>, <span class="st">"2011_Kling_Akchem.csv"</span>) , <span class="at">na.strings =</span> <span class="fu">c</span>(<span class="st">"."</span>, <span class="st">"NA"</span>))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>toolik_biochem <span class="ot">&lt;-</span> janitor<span class="sc">::</span><span class="fu">clean_names</span>(toolik_biochem)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Checking the variables names:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">variable.names</span>(toolik_biochem)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Creating subset:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>inlet_biochem <span class="ot">&lt;-</span> toolik_biochem <span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(p_h,doc_u_m, tdn_u_m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Finding the mean value of each column:</p>
+<p>Using a for loop:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vector where I will store the means</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>mean_column <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">ncol</span>(inlet_biochem)){</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  mean_column <span class="ot">&lt;-</span> <span class="fu">c</span>(mean_column, <span class="fu">mean</span>(inlet_biochem[,i], <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Using purrr:map_df:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>mean_df <span class="ot">&lt;-</span> inlet_biochem <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">map_df</span>(<span class="sc">~</span> <span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 

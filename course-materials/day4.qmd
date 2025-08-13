@@ -34,7 +34,3 @@ Complete the following tasks / activities before heading home for the day!
 
 - [{{< fa pencil title="A pencil" >}} **Day 4 Practice:** Intro to functions](eod-practice/eod-day4.qmd){target="_blank"}
 
-## Additional Resources
-
-TBD
-

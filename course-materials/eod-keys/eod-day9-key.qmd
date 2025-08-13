@@ -1,0 +1,8 @@
+---
+title: "Day 9: Tasks & activities - KEY"
+subtitle: "Troubleshooting, `{reprex}`, and working with data continued"
+execute: 
+  eval: false
+editor_options: 
+  chunk_output_type: console
+---

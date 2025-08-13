@@ -1,0 +1,9 @@
+---
+title: "Day 10b: Afternoon tasks & activities - KEY"
+subtitle: "Long-term ice cover duration: North Temperate Lakes LTER"
+execute: 
+  eval: false
+editor_options: 
+  chunk_output_type: console
+---
+

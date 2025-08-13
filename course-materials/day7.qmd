@@ -34,7 +34,5 @@ Complete the following tasks / activities before heading home for the day!
 
 - [{{< fa pencil title="A pencil" >}} **Day 7 Practice:** Wrangling continued: joins, strings, dates](eod-practice/eod-day7.qmd){target="_blank"}
 
-## Additional Resources
 
-TBD
 

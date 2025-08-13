@@ -32,9 +32,6 @@ knitr::include_graphics("images/horst-across.png")
 
 Complete the following tasks / activities before heading home for the day!
 
+- [{{< fa person-chalkboard title="A person-chalkboard" >}} **Presentation:** Learning strategies for programming](https://docs.google.com/presentation/d/19J6iphKbT-nEYXfSxNDwg6a6-wqdX0Anc6y2SC9FQDs/present#slide=id.g37850b65d60_0_11){target="_blank"}
 - [{{< fa pencil title="A pencil" >}} **Day 3 Practice:** Conditionals & for loops](eod-practice/eod-day3.qmd){target="_blank"}
-
-## Additional Resources
-
-TBD
 

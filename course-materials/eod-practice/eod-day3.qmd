@@ -112,7 +112,7 @@ for (i in seq_along(fish)) {
 
 #### Task 5
 
-There is an existing vector in R called `month.name` that contains all month names (just ry running `month.name` in the Console to check it out). **Write a for loop** that iterates over all months in `month.name` and prints "January is month 1," "February is month 2", etc. 
+There is an existing vector in R called `month.name` that contains all month names (just try running `month.name` in the Console to check it out). **Write a for loop** that iterates over all months in `month.name` and prints "January is month 1," "February is month 2", etc. 
 
 **Hint:** you can index values in the `month.name` vector just like you would any other vector (e.g., try running `month.name[5]`).
 

@@ -34,7 +34,3 @@ Complete the following tasks / activities before heading home for the day!
 
 - [{{< fa pencil title="A pencil" >}} **Day 1 Practice:** Project organization, data import, file paths](eod-practice/eod-day1.qmd){target="_blank"}
 
-## Additional Resources
-
-TBD
-

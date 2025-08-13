@@ -35,7 +35,4 @@ Complete the following tasks / activities before heading home for the day!
 - [{{< fa pencil title="A pencil" >}} **Day 10 Morning Practice:** GitHub collaboration](eod-practice/eod-day10a.qmd){target="_blank"}
 - [{{< fa pencil title="A pencil" >}} **Day 10 Afternoon Practice:** Data import, exploration, & visualization](eod-practice/eod-day10b.qmd){target="_blank"}
 
-## Additional Resources
-
-TBD
 

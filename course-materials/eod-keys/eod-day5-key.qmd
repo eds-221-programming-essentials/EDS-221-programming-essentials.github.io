@@ -1,0 +1,109 @@
+---
+title: "Day 5: Tasks & activities - KEY"
+subtitle: "Loops revisited, functions continued, testing, sourcing scripts, working on your R package"
+execute: 
+  eval: false
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## Task 1
+
+Creating the function: 
+```{r, message=FALSE, warning=FALSE}
+predict_runoff <- function(fraction,area){
+    v = 3630 * 1 * (0.05 + 0.9 * fraction) * area
+}
+```
+
+Using it: 
+```{r, message=FALSE, warning=FALSE}
+fraction <- seq(from=0.6, to=0.8, by=0.01)
+est <- predict_runoff(fraction,182)
+```
+
+Creating data frame:
+```{r, message=FALSE, warning=FALSE}
+data_frame <- data.frame(fraction,est)
+```
+
+Plotting:
+```{r, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+ggplot(data=data_frame,aes(x=fraction,y=est)) +
+  geom_line()+
+  geom_point()+
+  labs(x="Fraction", y="Estimate")
+```
+
+Saving:
+```{r, message=FALSE, warning=FALSE}
+ggsave(here::here("figs", "plot.png"), height = 10, width = 10)
+```
+
+## Task 2 
+Attaching the packages we will use:
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
+Opening the data:
+```{r, message=FALSE, warning=FALSE}
+us_tilapia_imports <- read.csv(here::here("data", "us_tilapia_imports.csv"))
+```
+
+Exploring it:
+
+```{r, message=FALSE, warning=FALSE}
+#Checking the variable names
+names(us_tilapia_imports) 
+```
+```{r, message=FALSE, warning=FALSE}
+#Checking the number of rows and columns(variables)
+dim(us_tilapia_imports) 
+```
+
+Reshaping the dataset from wide to long:
+```{r, message=FALSE, warning=FALSE}
+us_tilapia_imports <- us_tilapia_imports %>%
+  pivot_longer(
+    cols = starts_with("X"),
+    names_to = "year",
+    names_prefix = "X",
+    values_to = "imports"
+  )
+```
+
+Checking the year column type:
+```{r}
+class(us_tilapia_imports$year)
+class(us_tilapia_imports$imports)
+```
+
+Conveting to numeric:
+```{r}
+us_tilapia_imports <- us_tilapia_imports %>%
+  dplyr::mutate(year=as.numeric(year)) %>%
+  mutate(imports = gsub("[^0-9.-]", "", imports)) %>% 
+  mutate(imports = as.numeric(imports)) #also had to convert imports to numeric otherwise the next step wouldnt work
+```
+
+Summarizing the data by year:
+```{r}
+yearly_tilapia_tot <- us_tilapia_imports %>% dplyr::group_by(year) %>%
+  dplyr::summarise(imports=sum(imports))
+```
+
+Plotting: 
+```{r}
+yearly_tilapia_plot <- ggplot(yearly_tilapia_tot, aes(x = year, y=imports)) +
+  geom_line() +
+  labs( x = "Year",  y = "Imports") +
+   theme_minimal()
+yearly_tilapia_plot
+```
+

@@ -34,7 +34,4 @@ Complete the following tasks / activities before heading home for the day!
 
 - [{{< fa pencil title="A pencil" >}} **Day 6 Practice:** Tidying & subsetting with `tidyr` and `dplyr`](eod-practice/eod-day6.qmd){target="_blank"}
 
-## Additional Resources
-
-TBD
 

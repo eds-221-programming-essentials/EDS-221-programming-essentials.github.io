@@ -411,7 +411,7 @@ Solution
 
 </div>
 </div>
-<pre><code>Recreate the table above as a data frame stored as `fish_parms`. Then, write a function called `fish_weight` that allows a user to only enter the *common name* (argument `fish_name`) and *total length* (argument `tot_length`) (in centimeters) of a fish, to return the expected fish weight in grams. Test it out for different species and lengths. </code></pre>
+<p>Recreate the table above as a data frame stored as <code>fish_parms</code>. Then, write a function called <code>fish_weight</code> that allows a user to only enter the <em>common name</em> (argument <code>fish_name</code>) and <em>total length</em> (argument <code>tot_length</code>) (in centimeters) of a fish, to return the expected fish weight in grams. Test it out for different species and lengths.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -423,20 +423,40 @@ Solution
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fish_weight <span class="ot">&lt;-</span> <span class="cf">function</span>(fish_name, tot_length) {</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  fish_sub <span class="ot">&lt;-</span> fish_parms <span class="sc">|&gt;</span> </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(common_name <span class="sc">==</span> fish_name)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  wt <span class="ot">&lt;-</span> fish_sub<span class="sc">$</span>a_est <span class="sc">*</span> (tot_length <span class="sc">^</span> fish_sub<span class="sc">$</span>b_est)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(wt)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="fu">fish_weight</span>(<span class="at">fish_name =</span> <span class="st">"Milkfish"</span>, <span class="at">tot_length =</span> <span class="dv">57</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fish_weight <span class="ot">&lt;-</span> <span class="cf">function</span>(fish_name, tot_length) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  fish_sub <span class="ot">&lt;-</span> fish_parms <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(common_name <span class="sc">==</span> fish_name)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  wt <span class="ot">&lt;-</span> fish_sub<span class="sc">$</span>a_est <span class="sc">*</span> (tot_length <span class="sc">^</span> fish_sub<span class="sc">$</span>b_est)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(wt)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">fish_weight</span>(<span class="at">fish_name =</span> <span class="st">"Milkfish"</span>, <span class="at">tot_length =</span> <span class="dv">57</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2406.873</code></pre>
 </div>
+</div>
+</div>
+</div>
+<p>Now, try creating a vector of lengths (e.g.&nbsp;0 to 100, by increments of 1) and ensuring that your function will calculate the fish weight over a <em>range</em> of lengths for the given species (try this for milkfish, storing the output weights as <code>milkfish_weights</code>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the vector of lengths</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>lengths_vector <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">100</span>, <span class="at">by =</span> <span class="dv">1</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Send it to the function: </span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>milkfish_weights <span class="ot">&lt;-</span> <span class="fu">fish_weight</span>(<span class="at">fish_name =</span> <span class="st">"Milkfish"</span>, <span class="at">tot_length =</span> lengths_vector)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -444,9 +464,8 @@ Solution
 <li>Wave power (more accurately wave energy flux) in deep water is approximated by:</li>
 </ol>
 <p><span class="math display">\[P_{deep}=0.5 H^2 T\]</span></p>
-<pre><code>where $P$ is power in $\frac{kW}{m}$ (potential power per wave meter), $H$ is wave height in meters (more specifically, the *significant wave height*), and $T$ is the wave period in seconds. Learn more [here](https://en.wikipedia.org/wiki/Wave_power).
-
-Write a function called `wave_power` that calculates potential ocean wave power given inputs of wave height and period. </code></pre>
+<p>where <span class="math inline">\(P\)</span> is power in <span class="math inline">\(\frac{kW}{m}\)</span> (potential power per wave meter), <span class="math inline">\(H\)</span> is wave height in meters (more specifically, the <em>significant wave height</em>), and <span class="math inline">\(T\)</span> is the wave period in seconds. Learn more <a href="https://en.wikipedia.org/wiki/Wave_power">here</a>.</p>
+<p>Write a function called <code>wave_power</code> that calculates potential ocean wave power given inputs of wave height and period.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -458,14 +477,14 @@ Solution
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wave_power <span class="ot">&lt;-</span> <span class="cf">function</span>(wave_height, wave_period) {</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fl">0.5</span> <span class="sc">*</span> (wave_height <span class="sc">^</span> <span class="dv">2</span>) <span class="sc">*</span> wave_period</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>wave_power <span class="ot">&lt;-</span> <span class="cf">function</span>(wave_height, wave_period) {</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fl">0.5</span> <span class="sc">*</span> (wave_height <span class="sc">^</span> <span class="dv">2</span>) <span class="sc">*</span> wave_period</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>wave_heights <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">3</span>, <span class="at">by =</span> <span class="fl">0.2</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wave_power</span>(<span class="at">wave_height =</span> wave_heights, <span class="at">wave_period =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wave_heights <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">3</span>, <span class="at">by =</span> <span class="fl">0.2</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wave_power</span>(<span class="at">wave_height =</span> wave_heights, <span class="at">wave_period =</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  0.00  0.16  0.64  1.44  2.56  4.00  5.76  7.84 10.24 12.96 16.00 19.36
 [13] 23.04 27.04 31.36 36.00</code></pre>
@@ -489,22 +508,22 @@ Solution
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>brenville_waves <span class="ot">&lt;-</span> <span class="cf">function</span>(wave_height, wave_period, depth) {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (depth <span class="sc">&gt;</span> <span class="dv">12</span>) {</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">"Using the deep wave equation."</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    bren_wave_energy <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">*</span> (wave_height <span class="sc">^</span> <span class="dv">2</span>) <span class="sc">*</span> wave_period</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (depth <span class="sc">&lt;=</span> <span class="dv">12</span>) {</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">"Using the shallow wave equation."</span>)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    bren_wave_energy <span class="ot">&lt;-</span> <span class="fl">0.81</span> <span class="sc">*</span> (wave_height <span class="sc">^</span> <span class="dv">2</span>) <span class="sc">*</span> wave_period</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(bren_wave_energy)</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="fu">brenville_waves</span>(<span class="at">wave_height =</span> <span class="dv">5</span>, <span class="at">wave_period =</span> <span class="dv">10</span>, <span class="at">depth =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>brenville_waves <span class="ot">&lt;-</span> <span class="cf">function</span>(wave_height, wave_period, depth) {</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (depth <span class="sc">&gt;</span> <span class="dv">12</span>) {</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">"Using the deep wave equation."</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    bren_wave_energy <span class="ot">&lt;-</span> <span class="fl">0.5</span> <span class="sc">*</span> (wave_height <span class="sc">^</span> <span class="dv">2</span>) <span class="sc">*</span> wave_period</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (depth <span class="sc">&lt;=</span> <span class="dv">12</span>) {</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(<span class="st">"Using the shallow wave equation."</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    bren_wave_energy <span class="ot">&lt;-</span> <span class="fl">0.81</span> <span class="sc">*</span> (wave_height <span class="sc">^</span> <span class="dv">2</span>) <span class="sc">*</span> wave_period</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(bren_wave_energy)</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="fu">brenville_waves</span>(<span class="at">wave_height =</span> <span class="dv">5</span>, <span class="at">wave_period =</span> <span class="dv">10</span>, <span class="at">depth =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Using the shallow wave equation.</code></pre>
 </div>

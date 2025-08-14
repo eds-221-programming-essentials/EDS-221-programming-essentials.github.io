@@ -99,6 +99,18 @@ fish_weight(fish_name = "Milkfish", tot_length = 57)
 ```
 :::
 
+Now, try creating a vector of lengths (e.g. 0 to 100, by increments of 1) and ensuring that your function will calculate the fish weight over a *range* of lengths for the given species (try this for milkfish, storing the output weights as `milkfish_weights`.
+
+::: {.callout-important}
+## Solution
+```{r}
+# Create the vector of lengths
+lengths_vector <- seq(from = 0, to = 100, by = 1)
+
+# Send it to the function: 
+milkfish_weights <- fish_weight(fish_name = "Milkfish", tot_length = lengths_vector)
+```
+:::
 
 4. Wave power (more accurately wave energy flux) in deep water is approximated by: 
 

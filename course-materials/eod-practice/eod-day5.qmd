@@ -17,8 +17,6 @@ library(here)
 
 ## 2. Make a function, source in a Quarto doc
 
-### Task 1
-
 ::: {.callout-note}
 ## Citation
 [NCDENR Stormwater BMP Manual](https://files.nc.gov/ncdeq/Water%20Quality/Surface%20Water%20Protection/SPU/SPU%20-%20BMP%20Manual%20Documents/BMPMan-Ch03-SWCalcs-20090616-DWQ-SPU.pdf)
@@ -94,13 +92,9 @@ ggplot(data = runoff_df, aes(x = impervious_sequence, y = val)) +
 
 ```
 
-**Done with Task 1**
-
 ## 3. Wild data
 
-### Task 2
-
-For Task 2, you will work with the `us_tilapia_imports.csv`. It exists in your `eds221-day5-comp` project - copy that file into your `data` folder for your day 5 activities project. The data are from the USDA Economic Research Service, and contain annual total volumes (in thousands of pounds) of tilapia imports to the United States from different countries. 
+For your next task, you will work with the `us_tilapia_imports.csv`. It exists in your `eds221-day5-comp` project - copy that file into your `data` folder for your day 5 activities project. The data are from the USDA Economic Research Service, and contain annual total volumes (in thousands of pounds) of tilapia imports to the United States from different countries. 
 
 **You can decide if you want to do this all in separate steps, or piped together in sequence, or some combination.** Make sure if you pipe things together, you check the output at every step.  
 
@@ -147,13 +141,9 @@ ggplot(data = limited_us_tilapia, aes(x = year, y = tilapia_volume_kpounds)) +
   geom_point(aes(color = country))
 ```
 
-**Done with Task 2.**
-
 ## 4. Add to your R package
 
-### Task 3
-
-For Task 3, reopen your R package you started today, and add two new functions. They can do whatever you want as long as: 
+For your final task, reopen your R package you started today, and add two new functions. They can do whatever you want as long as: 
 
 - They have at least two required arguments
 - You add documentation for each function with a Roxygen skeleton

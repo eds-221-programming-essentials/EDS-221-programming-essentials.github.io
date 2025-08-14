@@ -213,18 +213,9 @@ window.Quarto = {
    
   <ul>
   <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
-  <li><a href="#make-a-function-source-in-an-r-markdown-doc" id="toc-make-a-function-source-in-an-r-markdown-doc" class="nav-link" data-scroll-target="#make-a-function-source-in-an-r-markdown-doc">2. Make a function, source in an R Markdown doc</a>
-  <ul class="collapse">
-  <li><a href="#task-1" id="toc-task-1" class="nav-link" data-scroll-target="#task-1">Task 1</a></li>
-  </ul></li>
-  <li><a href="#wild-data" id="toc-wild-data" class="nav-link" data-scroll-target="#wild-data">3. Wild data</a>
-  <ul class="collapse">
-  <li><a href="#task-2" id="toc-task-2" class="nav-link" data-scroll-target="#task-2">Task 2</a></li>
-  </ul></li>
-  <li><a href="#add-to-your-r-package" id="toc-add-to-your-r-package" class="nav-link" data-scroll-target="#add-to-your-r-package">4. Add to your R package</a>
-  <ul class="collapse">
-  <li><a href="#task-3" id="toc-task-3" class="nav-link" data-scroll-target="#task-3">Task 3</a></li>
-  </ul></li>
+  <li><a href="#make-a-function-source-in-a-quarto-doc" id="toc-make-a-function-source-in-a-quarto-doc" class="nav-link" data-scroll-target="#make-a-function-source-in-a-quarto-doc">2. Make a function, source in a Quarto doc</a></li>
+  <li><a href="#wild-data" id="toc-wild-data" class="nav-link" data-scroll-target="#wild-data">3. Wild data</a></li>
+  <li><a href="#add-to-your-r-package" id="toc-add-to-your-r-package" class="nav-link" data-scroll-target="#add-to-your-r-package">4. Add to your R package</a></li>
   </ul>
 </nav>
     </div>
@@ -243,10 +234,8 @@ window.Quarto = {
 <li>Create subfolders: <code>docs</code>, <code>src</code>, <code>data</code>, <code>figs</code></li>
 </ul>
 </section>
-<section id="make-a-function-source-in-an-r-markdown-doc" class="level2">
-<h2 class="anchored" data-anchor-id="make-a-function-source-in-an-r-markdown-doc">2. Make a function, source in an R Markdown doc</h2>
-<section id="task-1" class="level3">
-<h3 class="anchored" data-anchor-id="task-1">Task 1</h3>
+<section id="make-a-function-source-in-a-quarto-doc" class="level2">
+<h2 class="anchored" data-anchor-id="make-a-function-source-in-a-quarto-doc">2. Make a function, source in a Quarto doc</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -275,14 +264,10 @@ Citation
 <li><p>Bind your sequence of impervious fractions together with the resulting runoff volume calculated into a data frame</p></li>
 <li><p>Create a ggplot graph that has both dots and connecting lines (i.e., you’ll layer <code>geom_point()</code> and <code>geom_line()</code>. Update axis labels. Export a png of your graph to the <code>figs</code> folder using <code>ggsave</code>.</p></li>
 </ul>
-<p><strong>Done with Task 1</strong></p>
-</section>
 </section>
 <section id="wild-data" class="level2">
 <h2 class="anchored" data-anchor-id="wild-data">3. Wild data</h2>
-<section id="task-2" class="level3">
-<h3 class="anchored" data-anchor-id="task-2">Task 2</h3>
-<p>For Task 2, you will work with the <code>us_tilapia_imports.csv</code>. It exists in your <code>eds221-day5-comp</code> project - copy that file into your <code>data</code> folder for your day 5 activities project. The data are from the USDA Economic Research Service, and contain annual total volumes (in thousands of pounds) of tilapia imports to the United States from different countries.</p>
+<p>For your next task, you will work with the <code>us_tilapia_imports.csv</code>. It exists in your <code>eds221-day5-comp</code> project - copy that file into your <code>data</code> folder for your day 5 activities project. The data are from the USDA Economic Research Service, and contain annual total volumes (in thousands of pounds) of tilapia imports to the United States from different countries.</p>
 <p><strong>You can decide if you want to do this all in separate steps, or piped together in sequence, or some combination.</strong> Make sure if you pipe things together, you check the output at every step.</p>
 <ul>
 <li><p>Create a new .Rmd in your <code>docs</code> folder called <code>us_tilapia_imports.Rmd</code></p></li>
@@ -296,29 +281,24 @@ Citation
 <li><p>Create a subset that only retains imports from Ecuador, Honduras, Costa Rica, and Mexico (you decide what to name this)</p></li>
 <li><p>Create a ggplot graph of total US tilapia imports over time, for those four countries in the subset you created above, separated by country. Update axis labels, add a title, customize your color scheme, update the theme. Export a .jpg of your graph to <code>figs</code>.</p></li>
 </ul>
-<p><strong>Done with Task 2.</strong></p>
-</section>
 </section>
 <section id="add-to-your-r-package" class="level2">
 <h2 class="anchored" data-anchor-id="add-to-your-r-package">4. Add to your R package</h2>
-<section id="task-3" class="level3">
-<h3 class="anchored" data-anchor-id="task-3">Task 3</h3>
-<p>For Task 3, reopen your R package you started today, and add two new functions. They can do whatever you want as long as:</p>
+<p>For your final task, reopen your R package you started today, and add two new functions. They can do whatever you want as long as:</p>
 <ul>
 <li>They have at least two required arguments</li>
 <li>You add documentation for each function with a Roxygen skeleton</li>
 </ul>
-<p>Once you’ve added your functions, make sure to <code>devtools::document()</code>, Install and Restart, and check to make sure your functions are working, and that you can see your documentation. Then:</p>
+<p>Once you’ve added your functions, make sure to <code>devtools::document()</code>, install and restart, and check to make sure your functions are working, and that you can see your documentation. Then:</p>
 <ul>
 <li>Push your changes back to your repo on GitHub</li>
-<li>Share the link with someone (they’ll need to reinstall your package from GitHub using <code>install_github("username/reponame")</code>)</li>
+<li>Share the link with someone (they’ll need to re-install your package from GitHub using <code>install_github("username/reponame")</code>)</li>
 </ul>
 <div class="center-text body-text-xl teal-text">
 <p>End Activity Session (Day 5)</p>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

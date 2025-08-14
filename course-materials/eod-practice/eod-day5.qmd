@@ -15,7 +15,7 @@ library(here)
 - Clone to create a version-controlled R Project
 - Create subfolders: `docs`, `src`, `data`, `figs`
 
-## 2. Make a function, source in an R Markdown doc
+## 2. Make a function, source in a Quarto doc
 
 ### Task 1
 
@@ -158,10 +158,10 @@ For Task 3, reopen your R package you started today, and add two new functions. 
 - They have at least two required arguments
 - You add documentation for each function with a Roxygen skeleton
 
-Once you've added your functions, make sure to `devtools::document()`, Install and Restart, and check to make sure your functions are working, and that you can see your documentation. Then: 
+Once you've added your functions, make sure to `devtools::document()`, install and restart, and check to make sure your functions are working, and that you can see your documentation. Then: 
 
 - Push your changes back to your repo on GitHub
-- Share the link with someone (they'll need to reinstall your package from GitHub using `install_github("username/reponame")`)
+- Share the link with someone (they'll need to re-install your package from GitHub using `install_github("username/reponame")`)
 
 ::: {.center-text .body-text-xl .teal-text}
 End Activity Session (Day 5)

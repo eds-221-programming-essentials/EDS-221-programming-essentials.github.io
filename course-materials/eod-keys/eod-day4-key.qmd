@@ -1,8 +1,6 @@
 ---
 title: "Day 4: Tasks & activities - KEY"
 subtitle: "Intro to functions"
-execute: 
-  eval: false
 editor_options: 
   chunk_output_type: console
 ---
@@ -13,6 +11,7 @@ editor_options:
 #| warning: false
 
 library(tidyverse)
+library(kableExtra)
 ```
 
 ## For loops revisited
@@ -41,10 +40,12 @@ for (i in seq_along(weekdays)) {
 ```
 
 ```{r}
-#| echo: true
-study_matrix %>% 
-  kable() %>% 
+#| echo: false
+study_matrix_table <- study_matrix |> 
+  kable() |> 
   kable_styling()
+
+study_matrix_table
 ```
 :::
 
@@ -84,8 +85,12 @@ Recreate the table above as a data frame stored as `fish_parms`. Then, write a f
 ## Solution
 ```{r}
 fish_weight <- function(fish_name, tot_length) {
-  fish_sub <- filter(fish_parms, common_name == fish_name)
+  
+  fish_sub <- fish_parms |> 
+    filter(common_name == fish_name)
+  
   wt <- fish_sub$a_est * (tot_length ^ fish_sub$b_est)
+  
   return(wt)
 }
 
@@ -95,70 +100,53 @@ fish_weight(fish_name = "Milkfish", tot_length = 57)
 :::
 
 
+4. Wave power (more accurately wave energy flux) in deep water is approximated by: 
 
+$$P_{deep}=0.5 H^2 T$$
 
+where $P$ is power in $\frac{kW}{m}$ (potential power per wave meter), $H$ is wave height in meters (more specifically, the *significant wave height*), and $T$ is the wave period in seconds. Learn more [here](https://en.wikipedia.org/wiki/Wave_power).
 
+Write a function called `wave_power` that calculates potential ocean wave power given inputs of wave height and period. 
 
-
-
-
-
-
-
-
-Creating the function:
-```{r, message=FALSE, warning=FALSE}
-fish_weight <- function(name, length){
-  i <- which(fish_parms$common_name == name)
-  a<-fish_parms[i,3]
-  b<-fish_parms[i,4]
-  w= a *(length^b)
-  return(w)
+::: {.callout-important}
+## Solution
+```{r}
+wave_power <- function(wave_height, wave_period) {
+  0.5 * (wave_height ^ 2) * wave_period
 }
 ```
 
-Testing:
-```{r, message=FALSE, warning=FALSE}
-fish_weight('Milkfish', 10)
-```
+```{r}
+wave_heights <- seq(from = 0, to = 3, by = 0.2)
 
-## Task 4
-Creating the function:
-```{r, message=FALSE, warning=FALSE}
-wave_power <- function(h, t){
-  p= 0.5 * t * h^2
-  return(p)
-}
+wave_power(wave_height = wave_heights, wave_period = 8)
 ```
+:::
 
-Creating the vector:
-```{r, message=FALSE, warning=FALSE}
-waves <- seq(from = 0, to = 3, by = 0.2)
-```
+5. The wave energy equation changes based on ocean depth. Along the coast of Brenville, which has a very sharp shelf as the wave approaches the coast, wave energy is approximated using the deep ocean equation (the one you used above) for depths > 12 meters, and a shallow equation for depths <= 12 meters. The Brenville team estimates shallow wave power by:
 
-Applying over the wave heights range:
-```{r, message=FALSE, warning=FALSE}
-result <- sapply(waves, wave_power, t = 8)
-result
-```
+$$P_{shallow}=0.81 H^2 T$$
 
-## Task 5
-Creating the function:
-```{r, message=FALSE, warning=FALSE}
-wave_power <- function(d,h, t){
-  if (d<=12){
-     p= 0.81 * t * h^2
-      message("Message: Shallow water equation was used")
-  } else {
-      p= 0.5 * t * h^2
-      message("Message: Deep water equation was used")
+Create a function that requires inputs of water depth, wave height and period, then returns the approximated wave power using the correct equation for the depth entered. It should also include a message (hint: use `message()` just like you would use warning!) that lets the user know if the shallow or deep water equation was used. 
+
+::: {.callout-important}
+## Solution
+```{r}
+brenville_waves <- function(wave_height, wave_period, depth) {
+  
+  if (depth > 12) {
+    message("Using the deep wave equation.")
+    bren_wave_energy <- 0.5 * (wave_height ^ 2) * wave_period
   }
-  return(p)
+  
+  else if (depth <= 12) {
+    message("Using the shallow wave equation.")
+    bren_wave_energy <- 0.81 * (wave_height ^ 2) * wave_period
+  }
+  
+  return(bren_wave_energy)
 }
-```
 
-Testing:
-```{r, warning=FALSE}
-wave_power(10,3,1)
+brenville_waves(wave_height = 5, wave_period = 10, depth = 4)
 ```
-
+:::

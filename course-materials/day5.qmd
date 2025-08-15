@@ -32,6 +32,6 @@ knitr::include_graphics("images/horst-bugs.png")
 
 Complete the following tasks / activities before heading home for the day!
 
-- [{{< fa pencil title="A pencil" >}} **Day 5 Practice:** Loops revisited, functions continued, testing & sourcing scripts, working on your R package](eod-practice/eod-day5.qmd){target="_blank"}
+- [{{< fa pencil title="A pencil" >}} **Day 5 Practice:** Functions, sourcing scripts, working on your R package](eod-practice/eod-day5.qmd){target="_blank"}
 
 

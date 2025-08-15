@@ -1,6 +1,6 @@
 ---
 title: "Day 5: Task & Activities"
-subtitle: "Loops revisited, functions continued, testing, sourcing scripts, working on your R package"
+subtitle: "Functions, sourcing scripts, working on your R package"
 ---
 
 ```{r setup, include=FALSE}

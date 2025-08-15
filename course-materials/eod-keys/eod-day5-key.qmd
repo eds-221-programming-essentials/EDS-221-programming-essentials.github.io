@@ -1,6 +1,6 @@
 ---
 title: "Day 5: Tasks & activities - KEY"
-subtitle: "Loops revisited, functions continued, testing, sourcing scripts, working on your R package"
+subtitle: "Functions, sourcing scripts, working on your R package"
 editor_options: 
   chunk_output_type: console
 ---

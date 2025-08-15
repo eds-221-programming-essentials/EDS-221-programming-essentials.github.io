@@ -61,7 +61,7 @@ predict_runoff(frac_impervious = c(0.3, 0.8, 0.6), watershed_area = 5.2)
 
 - Attach the `tidyverse` and `here` packages
 
-- Source your `storm_runoff.R` script so you are able to use the `predict_runoff` function in your .Rmd
+- Source your `storm_runoff.R` script so you are able to use the `predict_runoff` function in your `.Rmd`
 
 - In a code chunk in your `runoff_volumes.Rmd`, use your `predict_runoff` function to estimate stormwater volume for a watershed of 182 acres, over a range of estimates for the impervious fraction (from 0.6 to 0.8, by increments of 0.01). *Note: you do not need to write a for loop here.* 
 
@@ -77,7 +77,7 @@ val
 
 - Bind your sequence of impervious fractions together with the resulting runoff volume calculated into a data frame
 
-- Create a ggplot graph that has both dots and connecting lines (i.e., you'll layer `geom_point()` and `geom_line()`. Update axis labels. Export a png of your graph to the `figs` folder using `ggsave`. 
+- Create a ggplot graph that has both dots and connecting lines (i.e., you'll layer `geom_point()` and `geom_line()`). Update axis labels. Export a png of your graph to the `figs` folder using `ggsave`. 
 
 ```{r, include = FALSE}
 

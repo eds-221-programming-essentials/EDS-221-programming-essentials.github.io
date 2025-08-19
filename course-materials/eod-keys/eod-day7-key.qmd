@@ -102,8 +102,8 @@ birds_df <- birds_df |>
 #| message: false
 birds_park_month <- birds_df |> 
   group_by(park_name, survey_month) |> 
-  summarize(total_birds = sum(bird_count, na.rm = TRUE)) |> 
-  ungroup() |> 
+  mutate(total_birds = sum(bird_count, na.rm = TRUE)) |> 
+  ungroup(park_name, survey_month) |> 
   filter(park_name %in% c("Lindo", "Orme", "Palomino", "Sonrisa"))
 ```
 :::

@@ -103,8 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 </head>
@@ -220,17 +218,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
-  <li><a href="#making-a-reproducible-example-reprex" id="toc-making-a-reproducible-example-reprex" class="nav-link" data-scroll-target="#making-a-reproducible-example-reprex">2. Making a reproducible example: <code>{reprex}</code></a></li>
+  <li><a href="#making-a-reproducible-example-reprex" id="toc-making-a-reproducible-example-reprex" class="nav-link" data-scroll-target="#making-a-reproducible-example-reprex">2. Making a reproducible example: <code>{reprex}</code></a>
+  <ul class="collapse">
+  <li><a href="#practice-with-reprex" id="toc-practice-with-reprex" class="nav-link" data-scroll-target="#practice-with-reprex">Practice with <code>reprex</code></a></li>
+  </ul></li>
   <li><a href="#a-few-new-wrangling-tools-dplyracross-janitorget_dupes" id="toc-a-few-new-wrangling-tools-dplyracross-janitorget_dupes" class="nav-link" data-scroll-target="#a-few-new-wrangling-tools-dplyracross-janitorget_dupes">3. A few new wrangling tools: <code>dplyr::across()</code> &amp; <code>janitor::get_dupes()</code></a>
   <ul class="collapse">
-  <li><a href="#janitorget_dupes-to-check-for-duplicates" id="toc-janitorget_dupes-to-check-for-duplicates" class="nav-link" data-scroll-target="#janitorget_dupes-to-check-for-duplicates">janitor::get_dupes() to check for duplicates</a></li>
+  <li><a href="#janitorget_dupes-to-check-for-duplicates" id="toc-janitorget_dupes-to-check-for-duplicates" class="nav-link" data-scroll-target="#janitorget_dupes-to-check-for-duplicates"><code>janitor::get_dupes()</code> to check for duplicates</a></li>
   <li><a href="#dplyracross---operations-across-columns" id="toc-dplyracross---operations-across-columns" class="nav-link" data-scroll-target="#dplyracross---operations-across-columns"><code>dplyr::across()</code> - operations across columns</a></li>
   </ul></li>
   <li><a href="#tables-with-kable-and-kableextra" id="toc-tables-with-kable-and-kableextra" class="nav-link" data-scroll-target="#tables-with-kable-and-kableextra">4. Tables with <code>{kable}</code> and <code>{kableExtra}</code></a></li>
-  <li><a href="#a-package-for-your-ggplot-theme" id="toc-a-package-for-your-ggplot-theme" class="nav-link" data-scroll-target="#a-package-for-your-ggplot-theme">5. A package for your <code>ggplot</code> theme</a>
-  <ul class="collapse">
-  <li><a href="#creating-a-package" id="toc-creating-a-package" class="nav-link" data-scroll-target="#creating-a-package">Creating a package</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -257,75 +254,95 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="making-a-reproducible-example-reprex" class="level2">
 <h2 class="anchored" data-anchor-id="making-a-reproducible-example-reprex">2. Making a reproducible example: <code>{reprex}</code></h2>
 <p>Making a minimum viable example is often the best way to troubleshoot problematic code when you can’t figure out a solution quickly – and is <em>definitely</em> the best way to share an example of something you’re struggling with so you’re most likely to get help. If people can’t run or play with your code, it’s much less likely they’ll be able to offer a solution.</p>
-<p>You probably already have <code>{reprex}</code> (part of the tidyverse). Copy code to clipboard and run <code>reprex()</code> to make one!</p>
+<p>You probably already have <code>{reprex}</code> (part of the <code>tidyverse</code>). Copy code to clipboard and run <code>reprex()</code> to make one!</p>
 <p>Some guidelines:</p>
 <ul>
 <li>Ruthlessly simplify</li>
-<li>Consider using or making a subset of data (possibly w/ datapasta, tribble)</li>
+<li>Consider using or making a subset of data (possibly with datapasta, tribble)</li>
 <li>Include library calls (e.g.&nbsp;<code>library(janitor)</code> in the reprex)</li>
 <li>Make the minimum viable example of the thing that’s not working</li>
 <li>Copy to clipboard</li>
-<li>Run <code>reprex()</code> to create markdown-formatted (e.g.&nbsp;for GitHub issues) or <code>reprex(venue = "slack")</code> if posting to Slack (click “Add formatting” or Cmd-Shift-F for formatting)</li>
+<li>Run <code>reprex()</code> to create markdown-formatted (e.g.&nbsp;for GitHub issues) or <code>reprex(venue = "slack")</code> if posting to Slack (click “Add formatting” or <kbd>Cmd-Shift-F</kbd> for formatting)</li>
 </ul>
 <p>See more:</p>
 <ul>
 <li>https://community.rstudio.com/t/faq-how-to-do-a-minimal-reproducible-example-reprex-for-beginners/23061</li>
 <li>https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html</li>
 </ul>
+<section id="practice-with-reprex" class="level3">
+<h3 class="anchored" data-anchor-id="practice-with-reprex">Practice with <code>reprex</code></h3>
+<p>Let’s create some code that throws an error. We’ll try to plot the <code>palmerpenguins</code>, but forget to use the <code>aes()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="at">x =</span> flipper_length, <span class="at">y =</span> body_mass_g) <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We try to troubleshoot on our own, but can’t figure it out so we create a reprex!</p>
+<p>Install and load the reprex package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"reprex"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reprex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>First, we want to create a small amount of data to reproduce our error to include in our reprex. We’ll use <code>dplyr</code> functions to limit to just the columns we’re plotting and a few rows and then use <code>datapasta</code> to create a little data frame with that data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>penguins_subset <span class="ot">&lt;-</span> penguins <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(flipper_length_mm, body_mass_g) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">5</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>datapasta<span class="sc">::</span><span class="fu">df_paste</span>(penguins_subset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This should add the following to our script:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">flipper_length_mm =</span> <span class="fu">c</span>(<span class="dv">181</span>L, <span class="dv">186</span>L, <span class="dv">195</span>L, <span class="cn">NA</span>, <span class="dv">193</span>L),</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">body_mass_g =</span> <span class="fu">c</span>(<span class="dv">3750</span>L, <span class="dv">3800</span>L, <span class="dv">3250</span>L, <span class="cn">NA</span>, <span class="dv">3450</span>L))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, we need to create a small chunk of code to reproduce our error.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">flipper_length_mm =</span> <span class="fu">c</span>(<span class="dv">181</span>L, <span class="dv">186</span>L, <span class="dv">195</span>L, <span class="cn">NA</span>, <span class="dv">193</span>L),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">body_mass_g =</span> <span class="fu">c</span>(<span class="dv">3750</span>L, <span class="dv">3800</span>L, <span class="dv">3250</span>L, <span class="cn">NA</span>, <span class="dv">3450</span>L)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="at">x =</span> flipper_length, <span class="at">y =</span> body_mass_g) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Prove to yourself that it throws the same error. Then, copy that chunk of code into your clipboard (<kbd>Cmd + C</kbd>) and run <code>reprex()</code> in your console. Your reproducible example is now loaded into your clipboard. Find your neighbor on Slack and send them your reprex as a message!</p>
+<p>Now, practice a version on your own.</p>
+</section>
 </section>
 <section id="a-few-new-wrangling-tools-dplyracross-janitorget_dupes" class="level2">
 <h2 class="anchored" data-anchor-id="a-few-new-wrangling-tools-dplyracross-janitorget_dupes">3. A few new wrangling tools: <code>dplyr::across()</code> &amp; <code>janitor::get_dupes()</code></h2>
 <section id="janitorget_dupes-to-check-for-duplicates" class="level3">
-<h3 class="anchored" data-anchor-id="janitorget_dupes-to-check-for-duplicates">janitor::get_dupes() to check for duplicates</h3>
+<h3 class="anchored" data-anchor-id="janitorget_dupes-to-check-for-duplicates"><code>janitor::get_dupes()</code> to check for duplicates</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dupes <span class="ot">&lt;-</span> <span class="fu">get_dupes</span>(starwars) <span class="co"># Across all variables (exact match across all columns?)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>No variable names specified - using all columns.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>No duplicate combinations found of: name, height, mass, hair_color, skin_color, eye_color, birth_year, sex, gender, ... and 5 other variables</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for duplicate values in the `2000` column</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dupes_2 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_dupes</span>(homeworld)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for duplicates in the homeworld and species column</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>dupes_3 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_dupes</span>(homeworld, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dupes <span class="ot">&lt;-</span> <span class="fu">get_dupes</span>(starwars) <span class="co"># Across all variables (exact match across all columns?)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for duplicate values in the `2000` column</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>dupes_2 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_dupes</span>(homeworld)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Check for duplicates in the homeworld and species column</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>dupes_3 <span class="ot">&lt;-</span> starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_dupes</span>(homeworld, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="dplyracross---operations-across-columns" class="level3">
 <h3 class="anchored" data-anchor-id="dplyracross---operations-across-columns"><code>dplyr::across()</code> - operations across columns</h3>
 <p>Mutate across multiple columns:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), tolower))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.character), tolower))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You can use it within <code>group_by() + summarize()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(homeworld) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: There was 1 warning in `summarise()`.
-ℹ In argument: `across(where(is.numeric), mean, na.rm = TRUE)`.
-ℹ In group 1: `homeworld = "Alderaan"`.
-Caused by warning:
-! The `...` argument of `across()` is deprecated as of dplyr 1.1.0.
-Supply arguments directly to `.fns` through an anonymous function instead.
-
-  # Previously
-  across(a:b, mean, na.rm = TRUE)
-
-  # Now
-  across(a:b, \(x) mean(x, na.rm = TRUE))</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>starwars <span class="sc">%&gt;%</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(homeworld) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="at">count =</span> <span class="fu">n</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Another example:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(drat<span class="sc">:</span>qsec, mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="fu">across</span>(drat<span class="sc">:</span>qsec, mean))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -335,69 +352,31 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <p>We’ll just use one tool: <code>kable</code> + <code>kableExtra</code> to make nice html tables.</p>
 <p>Try it out of the box (knit to see the table):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, island) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Island"</span>, <span class="st">"Body mass (g)"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">"striped"</span>, <span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>`summarise()` has grouped output by 'species'. You can override using the
-`.groups` argument.</code></pre>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species, island) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Island"</span>, <span class="st">"Body mass (g)"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">"striped"</span>, <span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output-display">
-<table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Island</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Body mass (g)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Biscoe</td>
-<td style="text-align: right;">3709.659</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Dream</td>
-<td style="text-align: right;">3688.393</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">3706.373</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Chinstrap</td>
-<td style="text-align: left;">Dream</td>
-<td style="text-align: right;">3733.088</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Gentoo</td>
-<td style="text-align: left;">Biscoe</td>
-<td style="text-align: right;">5076.016</td>
-</tr>
-</tbody>
-</table>
+<!--
+
+## 5. A package for your `ggplot` theme
+
+### Creating a package
+
+a. In RStudio, create a new R Project that is an R Package (New Project > New directory > R Package). Make your package name something specific to you, e.g. `themes_yourname` (like `themes_teddy`). Make it a version controlled repo by running `usethis::use_git()` and `usethis::use_github()` (or w/ CLI). 
 
 
-</div>
-</div>
-</section>
-<section id="a-package-for-your-ggplot-theme" class="level2">
-<h2 class="anchored" data-anchor-id="a-package-for-your-ggplot-theme">5. A package for your <code>ggplot</code> theme</h2>
-<section id="creating-a-package" class="level3">
-<h3 class="anchored" data-anchor-id="creating-a-package">Creating a package</h3>
-<ol type="a">
-<li><p>In RStudio, create a new R Project that is an R Package (New Project &gt; New directory &gt; R Package). Make your package name something specific to you, e.g.&nbsp;<code>themes_yourname</code> (like <code>themes_teddy</code>). Make it a version controlled repo by running <code>usethis::use_git()</code> and <code>usethis::use_github()</code> (or w/ CLI).</p></li>
-<li><p>Check out the existing infrastructure for your R package, which currently contains a single function hello(), which prints “Hello, world!” Check out the R/hello.R file to see where that function is created.</p></li>
-<li><p>In the Build tab, click Install and Restart. You should see that the package is automatically attached in the Console.</p></li>
-<li><p>Run the hello() function in the Console, to see that it works.</p></li>
-<li><p>Create a new R <strong>script</strong> (.R). Copy and paste the following placeholder code into your R script. Then update the colors (in quotations) to colors that R will recognize (or hexidecimals) and change the function name to <strong>theme_yourname</strong> (e.g.&nbsp;theme_allison). You can also add other options within <code>theme()</code> to further customize your theme.</p></li>
-</ol>
-<pre><code>my_theme &lt;- function() {
+b. Check out the existing infrastructure for your R package, which currently contains a single function hello(), which prints “Hello, world!” Check out the R/hello.R file to see where that function is created.  
+
+c. In the Build tab, click Install and Restart. You should see that the package is automatically attached in the Console. 
+
+d. Run the hello() function in the Console, to see that it works. 
+
+e. Create a new R **script** (.R). Copy and paste the following placeholder code into your R script. Then update the colors (in quotations) to colors that R will recognize (or hexidecimals) and change the function name to **theme_yourname** (e.g. theme_allison). You can also add other options within `theme()` to further customize your theme.
+
+``` 
+my_theme <- function() {
   theme(
     panel.background = element_rect(fill = "yellow"),
     panel.grid.major.x = element_line(colour = "purple", linetype = 3, size = 0.5),
@@ -406,27 +385,33 @@ Supply arguments directly to `.fns` through an anonymous function instead.
     axis.text = element_text(colour = "red"),
     axis.title = element_text(colour = "orange")
   )
-}</code></pre>
-<p>Save the R script in to the R/ folder (with the file name matching the function name).</p>
-<ol start="6" type="a">
-<li><p>Put your cursor anywhere in the function code within your R script. In the top menu of RStudio, select Code &gt; Insert Roxygen skeleton. The information added is important - it specifies the params (arguments of the function) and more that will appear in the documentation, which we’ll create next. Save the .R file, which now contains your function and the Roxygen information.</p></li>
-<li><p>Document the function by running <code>devtools::document()</code> in the Console. This will create a new .Rd file in the man/ folder, containing important documentation information about your function.</p></li>
-<li><p>Press <code>Build &gt; Install and Restart</code>. In the Console, run <code>?function_name</code>, replacing function_name there instead. It will bring up the documentation, and let you know your function exists! Now go ahead and try to <em>use</em> your function by making a graph in the Console.</p></li>
-</ol>
-<pre><code>library(tidyverse)
+}
+```
+
+Save the R script in to the R/ folder (with the file name matching the function name). 
+
+f. Put your cursor anywhere in the function code within your R script. In the top menu of RStudio, select Code > Insert Roxygen skeleton. The information added is important - it specifies the params (arguments of the function) and more that will appear in the documentation, which we’ll create next. Save the .R file, which now contains your function and the Roxygen information. 
+
+g. Document the function by running `devtools::document()` in the Console. This will create a new .Rd file in the man/ folder, containing important documentation information about your function. 
+
+h. Press `Build > Install and Restart`. In the Console, run `?function_name`, replacing function_name there instead. It will bring up the documentation, and let you know your function exists! Now go ahead and try to *use* your function by making a graph in the Console. 
+
+```
+library(tidyverse)
 
 ggplot(data = msleep, aes(x = sleep_total, y = sleep_rem)) +
   geom_point() 
-  + THEME_NAME()</code></pre>
-<ol type="i">
-<li>Once you confirm it’s working, push your changes back to your repo on GitHub. Share your repo “username/reponame” with your neighbor so they can install your package from GitHub (recall: using <code>remotes::install_github("username/reponame")</code>). Install your neighbor’s theming package, check which functions exist by running <code>help(package = "packagename")</code> in the Console, then make a ggplot graph that uses your <em>neighbor’s</em> ggplot theme. Done!</li>
-</ol>
+  + THEME_NAME()
+```
+
+i. Once you confirm it's working, push your changes back to your repo on GitHub. Share your repo "username/reponame" with your neighbor so they can install your package from GitHub (recall: using `remotes::install_github("username/reponame")`). Install your neighbor's theming package, check which functions exist by running `help(package = "packagename")` in the Console, then make a ggplot graph that uses your *neighbor's* ggplot theme. Done!
+
+-->
 <div class="center-text body-text-xl teal-text">
 <p>End Interactive Session 9</p>
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

@@ -27,28 +27,86 @@ library(janitor)
 
 Making a minimum viable example is often the best way to troubleshoot problematic code when you can't figure out a solution quickly -- and is *definitely* the best way to share an example of something you're struggling with so you're most likely to get help. If people can't run or play with your code, it's much less likely they'll be able to offer a solution. 
 
-You probably already have `{reprex}` (part of the tidyverse). Copy code to clipboard and run `reprex()` to make one! 
+You probably already have `{reprex}` (part of the `tidyverse`). Copy code to clipboard and run `reprex()` to make one! 
 
 Some guidelines:
  
 - Ruthlessly simplify
-- Consider using or making a subset of data (possibly w/ datapasta, tribble)
+- Consider using or making a subset of data (possibly with datapasta, tribble)
 - Include library calls (e.g. `library(janitor)` in the reprex)
 - Make the minimum viable example of the thing that's not working
 - Copy to clipboard
-- Run `reprex()` to create markdown-formatted (e.g. for GitHub issues) or `reprex(venue = "slack")` if posting to Slack (click "Add formatting" or Cmd-Shift-F for formatting)
+- Run `reprex()` to create markdown-formatted (e.g. for GitHub issues) or `reprex(venue = "slack")` if posting to Slack (click "Add formatting" or <kbd>Cmd-Shift-F</kbd> for formatting)
 
 See more: 
 
 - https://community.rstudio.com/t/faq-how-to-do-a-minimal-reproducible-example-reprex-for-beginners/23061
 - https://reprex.tidyverse.org/articles/reprex-dos-and-donts.html
 
+### Practice with `reprex`
+
+Let's create some code that throws an error. We'll try to plot the `palmerpenguins`, but forget to use the `aes()` function.
+
+```{r}
+#| eval: false
+ggplot(data = penguins, x = flipper_length, y = body_mass_g) +
+  geom_point()
+```
+
+We try to troubleshoot on our own, but can't figure it out so we create a reprex!
+
+Install and load the reprex package.
+
+```{r}
+#| eval: false
+install.packages("reprex")
+library(reprex)
+```
+
+First, we want to create a small amount of data to reproduce our error to include in our reprex. We'll use `dplyr` functions to limit to just the columns we're plotting and a few rows and then use `datapasta` to create a little data frame with that data.
+
+```{r}
+#| eval: false
+penguins_subset <- penguins %>%
+  select(flipper_length_mm, body_mass_g) %>%
+  slice_head(n = 5)
+
+datapasta::df_paste(penguins_subset)
+```
+
+This should add the following to our script:
+
+```{r}
+#| eval: false
+data.frame(flipper_length_mm = c(181L, 186L, 195L, NA, 193L),
+           body_mass_g = c(3750L, 3800L, 3250L, NA, 3450L))
+```
+
+Now, we need to create a small chunk of code to reproduce our error.
+
+```{r}
+#| eval: false
+penguins <- data.frame(
+  flipper_length_mm = c(181L, 186L, 195L, NA, 193L),
+  body_mass_g = c(3750L, 3800L, 3250L, NA, 3450L)
+  )
+
+ggplot(data = penguins, x = flipper_length, y = body_mass_g) +
+  geom_point()
+```
+
+Prove to yourself that it throws the same error. Then, copy that chunk of code into your clipboard (<kbd>Cmd + C</kbd>) and run `reprex()` in your console. Your reproducible example is now loaded into your clipboard. Find your neighbor on Slack and send them your reprex as a message!
+
+Now, practice a version on your own.
 
 ## 3. A few new wrangling tools: `dplyr::across()` & `janitor::get_dupes()`
 
-### janitor::get_dupes() to check for duplicates
+### `janitor::get_dupes()` to check for duplicates
 
-```{r, results = 'hide'}
+```{r}
+#| results: 'hide'
+#| warning: false
+#| message: false
 dupes <- get_dupes(starwars) # Across all variables (exact match across all columns?)
 
 # Check for duplicate values in the `2000` column
@@ -63,20 +121,29 @@ dupes_3 <- starwars %>%
 ### `dplyr::across()` - operations across columns
 
 Mutate across multiple columns: 
-```{r, results = 'hide'}
+```{r}
+#| results: 'hide'
+#| warning: false
+#| message: false
 starwars %>% 
   mutate(across(where(is.character), tolower))
 ```
 
 You can use it within `group_by() + summarize()`:
-```{r, results = 'hide'}
+```{r}
+#| results: 'hide'
+#| warning: false
+#| message: false
 starwars %>% 
   group_by(homeworld) %>% 
   summarise(across(where(is.numeric), mean, na.rm = TRUE), count = n())
 ```
 
 Another example: 
-```{r, results = 'hide'}
+```{r}
+#| results: 'hide'
+#| warning: false
+#| message: false
 mtcars %>% 
   group_by(cyl) %>% 
   summarize(across(drat:qsec, mean))
@@ -91,12 +158,17 @@ We'll just use one tool: `kable` + `kableExtra` to make nice html tables.
 
 Try it out of the box (knit to see the table): 
 ```{r}
+#| results: 'hide'
+#| warning: false
+#| message: false
 penguins %>% 
   group_by(species, island) %>% 
   summarize(mean_mass = mean(body_mass_g, na.rm = TRUE)) %>% 
   kable(col.names = c("Species", "Island", "Body mass (g)")) %>% 
   kable_styling(bootstrap_options = "striped", full_width = FALSE)
 ```
+
+<!--
 
 ## 5. A package for your `ggplot` theme
 
@@ -143,6 +215,8 @@ ggplot(data = msleep, aes(x = sleep_total, y = sleep_rem)) +
 ```
 
 i. Once you confirm it's working, push your changes back to your repo on GitHub. Share your repo "username/reponame" with your neighbor so they can install your package from GitHub (recall: using `remotes::install_github("username/reponame")`). Install your neighbor's theming package, check which functions exist by running `help(package = "packagename")` in the Console, then make a ggplot graph that uses your *neighbor's* ggplot theme. Done!
+
+-->
 
 ::: {.center-text .body-text-xl .teal-text}
 End Interactive Session 9

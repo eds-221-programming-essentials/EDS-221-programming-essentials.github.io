@@ -3,8 +3,8 @@ title: "Day 10: Morning Tasks & Activities"
 subtitle: "Fiddler crabs and Bergmann's rule"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup}
+#| include: false
 library(tidyverse)
 library(skimr)
 library(lubridate)

@@ -168,24 +168,13 @@ penguins %>%
   kable_styling(bootstrap_options = "striped", full_width = FALSE)
 ```
 
-<!--
 
-## 5. A package for your `ggplot` theme
+## 5. A function for your `ggplot` theme
 
-### Creating a package
+a. Create a new R **script** (.R). Copy and paste the following placeholder code into your R script. Then update the colors (in quotations) to colors that R will recognize (or hexidecimals) and change the function name to **theme_yourname** (e.g. theme_allison). You can also add other options within `theme()` to further customize your theme.
 
-a. In RStudio, create a new R Project that is an R Package (New Project > New directory > R Package). Make your package name something specific to you, e.g. `themes_yourname` (like `themes_teddy`). Make it a version controlled repo by running `usethis::use_git()` and `usethis::use_github()` (or w/ CLI). 
-
-
-b. Check out the existing infrastructure for your R package, which currently contains a single function hello(), which prints “Hello, world!” Check out the R/hello.R file to see where that function is created.  
-
-c. In the Build tab, click Install and Restart. You should see that the package is automatically attached in the Console. 
-
-d. Run the hello() function in the Console, to see that it works. 
-
-e. Create a new R **script** (.R). Copy and paste the following placeholder code into your R script. Then update the colors (in quotations) to colors that R will recognize (or hexidecimals) and change the function name to **theme_yourname** (e.g. theme_allison). You can also add other options within `theme()` to further customize your theme.
-
-``` 
+```{r}
+#| eval: false
 my_theme <- function() {
   theme(
     panel.background = element_rect(fill = "yellow"),
@@ -198,25 +187,24 @@ my_theme <- function() {
 }
 ```
 
-Save the R script in to the R/ folder (with the file name matching the function name). 
+b. Put your cursor anywhere in the function code within your R script. In the top menu of RStudio, select Code > Insert Roxygen skeleton. The information added is important - it specifies the params (arguments of the function). Now, save the `.R` script (with the file name matching the function name). This now contains your function and the Roxygen information. 
 
-f. Put your cursor anywhere in the function code within your R script. In the top menu of RStudio, select Code > Insert Roxygen skeleton. The information added is important - it specifies the params (arguments of the function) and more that will appear in the documentation, which we’ll create next. Save the .R file, which now contains your function and the Roxygen information. 
+c. Source the `.R` script into your `.qmd`
 
-g. Document the function by running `devtools::document()` in the Console. This will create a new .Rd file in the man/ folder, containing important documentation information about your function. 
+```{r}
+#| eval: false
 
-h. Press `Build > Install and Restart`. In the Console, run `?function_name`, replacing function_name there instead. It will bring up the documentation, and let you know your function exists! Now go ahead and try to *use* your function by making a graph in the Console. 
-
+source(here::here("my_theme.R"))
 ```
-library(tidyverse)
 
+d. Then make a `ggplot` graph that uses your ggplot theme. Done!
+
+```{r}
+#| eval: false
 ggplot(data = msleep, aes(x = sleep_total, y = sleep_rem)) +
-  geom_point() 
-  + THEME_NAME()
+  geom_point() + 
+  my_theme()
 ```
-
-i. Once you confirm it's working, push your changes back to your repo on GitHub. Share your repo "username/reponame" with your neighbor so they can install your package from GitHub (recall: using `remotes::install_github("username/reponame")`). Install your neighbor's theming package, check which functions exist by running `help(package = "packagename")` in the Console, then make a ggplot graph that uses your *neighbor's* ggplot theme. Done!
-
--->
 
 ::: {.center-text .body-text-xl .teal-text}
 End Interactive Session 9

@@ -5,3 +5,69 @@ editor_options:
   chunk_output_type: console
 ---
 
+
+1. Read in both files (ice cover duration and meteorological data). Note that the ice cover data has some NA values stored as -999
+
+::: {.callout-important}
+## Solution
+```{r}
+
+```
+
+:::
+
+2. Create a visualization that compares ice duration across different lakes in the Madison Lake Area. Include both the actual ice duration values *and* some representation of summary statistics for each lake.
+
+::: {.callout-important}
+## Solution
+```{r}
+
+```
+:::
+
+3. Find the mean ice cover duration in Madison Lake Area by year (i.e., you'll only be grouping by the year variable here). Understanding check: what are you finding the mean of here? Why are there multiple observations for each year?)
+
+::: {.callout-important}
+## Solution
+
+:::
+
+4. Create an exploratory visualization of mean ice cover duration by year for the Madison Lake Area. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe. 
+  
+::: {.callout-important}
+## Solution
+
+:::
+5. Find the mean air temperature (using the daily average air temperature - adjusted) in Madison Lake Area **by year** using **only observations from winter months (December, January, February)**
+  
+::: {.callout-important}
+## Solution
+
+:::
+
+6. Create an exploratory visualization of mean winter temperatures for the Madison Lake Area. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe.
+  
+::: {.callout-important}
+## Solution
+:::
+
+7. Join the mean winter air temperatures to the mean ice cover duration data you found above
+
+::: {.callout-important}
+## Solution
+
+:::
+
+8. Create an exploratory scatterplot of mean winter temperatures versus mean ice duration. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe. 
+  
+::: {.callout-important}
+## Solution
+
+:::
+
+9. Explore thaw dates since 1970. Create a subset of the ice cover duration data since 1970 (ok to include 1970), then convert the `ice_off` column to a `Date`. Use `lubridate::yday()` to pull the numeric *day of the year* from that Date. Create an exploratory plot of the ice off day (numeric day-of-the-year) from 1970 - present. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe. 
+
+::: {.callout-important}
+## Solution
+
+:::

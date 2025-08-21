@@ -228,6 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#dplyracross---operations-across-columns" id="toc-dplyracross---operations-across-columns" class="nav-link" data-scroll-target="#dplyracross---operations-across-columns"><code>dplyr::across()</code> - operations across columns</a></li>
   </ul></li>
   <li><a href="#tables-with-kable-and-kableextra" id="toc-tables-with-kable-and-kableextra" class="nav-link" data-scroll-target="#tables-with-kable-and-kableextra">4. Tables with <code>{kable}</code> and <code>{kableExtra}</code></a></li>
+  <li><a href="#a-function-for-your-ggplot-theme" id="toc-a-function-for-your-ggplot-theme" class="nav-link" data-scroll-target="#a-function-for-your-ggplot-theme">5. A function for your <code>ggplot</code> theme</a></li>
   </ul>
 </nav>
     </div>
@@ -358,55 +359,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Island"</span>, <span class="st">"Body mass (g)"</span>)) <span class="sc">%&gt;%</span> </span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="st">"striped"</span>, <span class="at">full_width =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<!--
-
-## 5. A package for your `ggplot` theme
-
-### Creating a package
-
-a. In RStudio, create a new R Project that is an R Package (New Project > New directory > R Package). Make your package name something specific to you, e.g. `themes_yourname` (like `themes_teddy`). Make it a version controlled repo by running `usethis::use_git()` and `usethis::use_github()` (or w/ CLI). 
-
-
-b. Check out the existing infrastructure for your R package, which currently contains a single function hello(), which prints “Hello, world!” Check out the R/hello.R file to see where that function is created.  
-
-c. In the Build tab, click Install and Restart. You should see that the package is automatically attached in the Console. 
-
-d. Run the hello() function in the Console, to see that it works. 
-
-e. Create a new R **script** (.R). Copy and paste the following placeholder code into your R script. Then update the colors (in quotations) to colors that R will recognize (or hexidecimals) and change the function name to **theme_yourname** (e.g. theme_allison). You can also add other options within `theme()` to further customize your theme.
-
-``` 
-my_theme <- function() {
-  theme(
-    panel.background = element_rect(fill = "yellow"),
-    panel.grid.major.x = element_line(colour = "purple", linetype = 3, size = 0.5),
-    panel.grid.minor.x = element_blank(),
-    panel.grid.major.y =  element_line(colour = "cyan4", linetype = 3, size = 0.5),
-    axis.text = element_text(colour = "red"),
-    axis.title = element_text(colour = "orange")
-  )
-}
-```
-
-Save the R script in to the R/ folder (with the file name matching the function name). 
-
-f. Put your cursor anywhere in the function code within your R script. In the top menu of RStudio, select Code > Insert Roxygen skeleton. The information added is important - it specifies the params (arguments of the function) and more that will appear in the documentation, which we’ll create next. Save the .R file, which now contains your function and the Roxygen information. 
-
-g. Document the function by running `devtools::document()` in the Console. This will create a new .Rd file in the man/ folder, containing important documentation information about your function. 
-
-h. Press `Build > Install and Restart`. In the Console, run `?function_name`, replacing function_name there instead. It will bring up the documentation, and let you know your function exists! Now go ahead and try to *use* your function by making a graph in the Console. 
-
-```
-library(tidyverse)
-
-ggplot(data = msleep, aes(x = sleep_total, y = sleep_rem)) +
-  geom_point() 
-  + THEME_NAME()
-```
-
-i. Once you confirm it's working, push your changes back to your repo on GitHub. Share your repo "username/reponame" with your neighbor so they can install your package from GitHub (recall: using `remotes::install_github("username/reponame")`). Install your neighbor's theming package, check which functions exist by running `help(package = "packagename")` in the Console, then make a ggplot graph that uses your *neighbor's* ggplot theme. Done!
-
--->
+</section>
+<section id="a-function-for-your-ggplot-theme" class="level2">
+<h2 class="anchored" data-anchor-id="a-function-for-your-ggplot-theme">5. A function for your <code>ggplot</code> theme</h2>
+<ol type="a">
+<li>Create a new R <strong>script</strong> (.R). Copy and paste the following placeholder code into your R script. Then update the colors (in quotations) to colors that R will recognize (or hexidecimals) and change the function name to <strong>theme_yourname</strong> (e.g.&nbsp;theme_allison). You can also add other options within <code>theme()</code> to further customize your theme.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my_theme <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"yellow"</span>),</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"purple"</span>, <span class="at">linetype =</span> <span class="dv">3</span>, <span class="at">size =</span> <span class="fl">0.5</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span>  <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"cyan4"</span>, <span class="at">linetype =</span> <span class="dv">3</span>, <span class="at">size =</span> <span class="fl">0.5</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"red"</span>),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">"orange"</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="a">
+<li><p>Put your cursor anywhere in the function code within your R script. In the top menu of RStudio, select Code &gt; Insert Roxygen skeleton. The information added is important - it specifies the params (arguments of the function). Now, save the <code>.R</code> script (with the file name matching the function name). This now contains your function and the Roxygen information.</p></li>
+<li><p>Source the <code>.R</code> script into your <code>.qmd</code></p></li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"my_theme.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="a">
+<li>Then make a <code>ggplot</code> graph that uses your ggplot theme. Done!</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> msleep, <span class="fu">aes</span>(<span class="at">x =</span> sleep_total, <span class="at">y =</span> sleep_rem)) <span class="sc">+</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">my_theme</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="center-text body-text-xl teal-text">
 <p>End Interactive Session 9</p>
 </div>

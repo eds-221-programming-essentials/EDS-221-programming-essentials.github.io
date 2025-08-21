@@ -5,7 +5,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup}
+```{r}
 #| include: false
 library(tidyverse)
 library(skimr)
@@ -13,63 +13,66 @@ library(kableExtra)
 library(lterdatasampler)
 ```
 
+## GitHub collaboration with Yellow fiddler crab data
 
-1. Read in both files (ice cover duration and meteorological data). Note that the ice cover data has some NA values stored as -999
+1. Read `fiddler_crab.csv` using `read_csv()`
 
+::: {.callout-important}
+## Solution
 ```{r}
 #| include: false
-fiddler_crab <- read_csv(here::here("course-materials", "eod-practice", "data", "fiddler_crab.csv"), na = c("-999"))
+fiddler_crab <- read_csv(here::here("course-materials", "eod-practice", "data", "fiddler_crab.csv"))
 ```
 
 ```{r}
 #| eval: false
-fiddler_crab <- read_csv(here::here("data", "fiddler_crab.csv"), na = c("-999"))
+fiddler_crab <- read_csv(here::here("data", "fiddler_crab.csv"))
 ```
+:::
 
+2. Create an exploratory (unfinalized) plot of fiddler crab carapace widths observed at the different latitudes
 
-2. Create a visualization that compares ice duration across different lakes in the Madison Lake Area. Include both the actual ice duration values *and* some representation of summary statistics for each lake. Careful if you use a boxplot over a jitter or beeswarm - what values might be doubly represented? Can you find an argument that would help you remove those from the boxplot? 
-
-
-3. Find the mean ice cover duration in Madison Lake Area by year (i.e., you'll only be grouping by the year variable here). Understanding check: what are you finding the mean of here? Why are there multiple observations for each year?)
-
-4. Create an exploratory visualization of mean ice cover duration by year for the Madison Lake Area. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe. 
-  
-5. Find the mean air temperature (using the daily average air temperature - adjusted) in Madison Lake Area **by year** using **only observations from winter months (December, January, February)**
-  
-6. Create an exploratory visualization of mean winter temperatures for the Madison Lake Area. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe.
-  
-7. Join the mean winter air temperatures to the mean ice cover duration data you found above
-  
-8. Create an exploratory scatterplot of mean winter temperatures versus mean ice duration. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe. 
-  
-9. Explore thaw dates since 1970. Create a subset of the ice cover duration data since 1970 (ok to include 1970), then convert the `ice_off` column to a `Date`. Use `lubridate::yday()` to pull the numeric *day of the year* from that Date. Create an exploratory plot of the ice off day (numeric day-of-the-year) from 1970 - present. Add a sentence or two below this exploratory graph describing the overall trend(s) you observe. 
-
+::: {.callout-important}
+## Solution
 ```{r}
 ggplot(data = fiddler_crab) +
   geom_point(aes(y = Latitude, x = carapace_width))
 ```
+:::
 
+3. Add a figure caption using `#| fig-cap: "this is my caption"` in the code chunk where the graph is created. Update code chunk options (hint: `execute: ` in YAML) so that only your finalized graph and figure caption show up in your knitted report (i.e., no code should show up)
 
+::: {.callout-important}
+## Solution
 ```{r}
-fiddler_summary <- fiddler_crab %>% 
-  drop_na(carapace_width) %>% 
-  group_by(Site) %>% 
+#| fig-cap: "Fiddler crab carapace widths observed at the different latitudes"
+ggplot(data = fiddler_crab) +
+  geom_point(aes(y = Latitude, x = carapace_width))
+```
+:::
+
+4. Add an unfinalized summary table containing the mean, standard deviation, and sample size of fiddler crab carapace widths by site (tip: use `round(mean(), 2)` to round a value to 2 decimal places)
+
+::: {.callout-important}
+## Solution
+```{r}
+fiddler_summary <- fiddler_crab |> 
+  drop_na(carapace_width) |> 
+  group_by(Site) |> 
   summarize(mean_carapace = round(mean(carapace_width), 2),
             sd_carapace = round(sd(carapace_width), 2),
-            n = n()) 
+            n = n()) |> 
+  ungroup()
+```
+:::
 
-fiddler_summary %>% 
-  kable(col.names = c("Site code", "Mean carapace width (mm)", "Standard deviation (mm)", "Sample size")) %>% 
+5. **Finalize the summary table** a bit so that it looks more polished when rendered, including with updated column names (including units as relevant)
+
+::: {.callout-important}
+## Solution
+```{r}
+fiddler_summary |> 
+  kable(col.names = c("Site code", "Mean carapace width (mm)", "Standard deviation (mm)", "Sample size")) |> 
   kable_styling(full_width = FALSE)
 ```
-
-```{r}
-meansize_airtemp <- fiddler_crab %>% 
-  group_by(Latitude) %>% 
-  summarize(mean_size = mean(carapace_width),
-            mean_water = mean(MATW))
-
-ggplot(data = meansize_airtemp, aes(x = mean_water, y = mean_size)) +
-  geom_point()
-```
-
+:::

@@ -24,7 +24,7 @@ knitr::include_graphics("images/horst-first-like.png")
 
 | {{< fa calendar-day title="A calendary with one day highlighted" >}} Session  | {{< fa person-chalkboard title="A person motioning at a chalkboard" >}} Lecture slides  |  {{< fa laptop-code title="A laptop with on-screen code" >}} Interactive session |
 |-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| day 10 / morning   |  | [R packages revisited, tables in R, a taste of git collaboration](interactive-sessions/interactive-session-10.qmd){target="_blank"} |
+| day 10 / morning   |  | [Collaborating with GitHub](interactive-sessions/interactive-session-10.qmd){target="_blank"} |
 | day 10 / afternoon | [Course wrap-up](https://docs.google.com/presentation/d/1Q2tbBXW8_6tkPlqdxebEzV3KxTbwsS16tJ3oVac063k/present?usp=sharing){target="_blank"} |  |
 : {.hover .bordered tbl-colwidths="[20,40,40]"} 
 

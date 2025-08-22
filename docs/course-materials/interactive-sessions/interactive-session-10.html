@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -103,8 +69,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 </head>
@@ -198,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
       <h1 class="title">Interactive Sessions 10</h1>
-            <p class="subtitle lead">Updating our R packages, <code>{kable}</code> tables, and a first git collaboration</p>
+            <p class="subtitle lead">Collaborating with GitHub</p>
                       </div>
   </div>
     
@@ -219,13 +183,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">1. Setup</a></li>
-  <li><a href="#make-a-ggplot-theme" id="toc-make-a-ggplot-theme" class="nav-link" data-scroll-target="#make-a-ggplot-theme">2. Make a <code>ggplot</code> theme</a></li>
-  <li><a href="#making-some-nice-tables-in-r" id="toc-making-some-nice-tables-in-r" class="nav-link" data-scroll-target="#making-some-nice-tables-in-r">3. Making some nice tables in R</a></li>
-  <li><a href="#git-collaboration-both-pushing-to-main" id="toc-git-collaboration-both-pushing-to-main" class="nav-link" data-scroll-target="#git-collaboration-both-pushing-to-main">4. Git collaboration: both pushing to main</a>
+  <li><a href="#working-in-main" id="toc-working-in-main" class="nav-link active" data-scroll-target="#working-in-main">Working in <code>main</code></a>
   <ul class="collapse">
-  <li><a href="#where-goes-what-now-on-github" id="toc-where-goes-what-now-on-github" class="nav-link" data-scroll-target="#where-goes-what-now-on-github">Where goes what now on GitHub?</a></li>
-  <li><a href="#submit-a-new-issue-that-references-specific-lines-in-your-files" id="toc-submit-a-new-issue-that-references-specific-lines-in-your-files" class="nav-link" data-scroll-target="#submit-a-new-issue-that-references-specific-lines-in-your-files">Submit a new issue that references specific line(s) in your files</a></li>
+  <li><a href="#starter-create-a-new-version-controlled-r-project-make-push-an-update" id="toc-starter-create-a-new-version-controlled-r-project-make-push-an-update" class="nav-link" data-scroll-target="#starter-create-a-new-version-controlled-r-project-make-push-an-update">Starter: Create a new version controlled R Project, make &amp; push an update</a></li>
+  <li><a href="#starter-add-a-contributor" id="toc-starter-add-a-contributor" class="nav-link" data-scroll-target="#starter-add-a-contributor">Starter: Add a contributor</a></li>
+  <li><a href="#collaborator-accept-invitation-clone-repo-make-an-update" id="toc-collaborator-accept-invitation-clone-repo-make-an-update" class="nav-link" data-scroll-target="#collaborator-accept-invitation-clone-repo-make-an-update">Collaborator: Accept invitation &amp; clone repo, make an update</a></li>
+  <li><a href="#starter-pull-add-something-new-to-the-.rmd" id="toc-starter-pull-add-something-new-to-the-.rmd" class="nav-link" data-scroll-target="#starter-pull-add-something-new-to-the-.rmd">Starter: Pull &amp; add something new to the <code>.Rmd</code></a></li>
+  <li><a href="#collaborator-pull-add-something-new-to-the-.rmd" id="toc-collaborator-pull-add-something-new-to-the-.rmd" class="nav-link" data-scroll-target="#collaborator-pull-add-something-new-to-the-.rmd">Collaborator: Pull &amp; add something new to the <code>.Rmd</code></a></li>
+  <li><a href="#starter-and-collaborator-where-goes-what-now-on-github" id="toc-starter-and-collaborator-where-goes-what-now-on-github" class="nav-link" data-scroll-target="#starter-and-collaborator-where-goes-what-now-on-github">Starter and Collaborator: Where goes what now on GitHub?</a></li>
+  <li><a href="#starter-and-collaborator-submit-a-new-issue-that-references-specific-lines-in-your-files" id="toc-starter-and-collaborator-submit-a-new-issue-that-references-specific-lines-in-your-files" class="nav-link" data-scroll-target="#starter-and-collaborator-submit-a-new-issue-that-references-specific-lines-in-your-files">Starter and Collaborator: Submit a new issue that references specific line(s) in your files</a></li>
+  </ul></li>
+  <li><a href="#working-in-branches" id="toc-working-in-branches" class="nav-link" data-scroll-target="#working-in-branches">Working in branches</a>
+  <ul class="collapse">
+  <li><a href="#starter-and-collaborator-create-new-branch" id="toc-starter-and-collaborator-create-new-branch" class="nav-link" data-scroll-target="#starter-and-collaborator-create-new-branch">Starter and Collaborator: Create new branch</a></li>
+  <li><a href="#starter-and-collaborator-work-on-new-branch-in-local-repo" id="toc-starter-and-collaborator-work-on-new-branch-in-local-repo" class="nav-link" data-scroll-target="#starter-and-collaborator-work-on-new-branch-in-local-repo">Starter and Collaborator: Work on new branch in local repo</a></li>
+  <li><a href="#starter-and-collaborator-check-out-changes-in-remote-repo" id="toc-starter-and-collaborator-check-out-changes-in-remote-repo" class="nav-link" data-scroll-target="#starter-and-collaborator-check-out-changes-in-remote-repo">Starter and Collaborator: Check out changes in remote repo</a></li>
+  <li><a href="#starter-and-collaborator-bring-new-changes-into-main" id="toc-starter-and-collaborator-bring-new-changes-into-main" class="nav-link" data-scroll-target="#starter-and-collaborator-bring-new-changes-into-main">Starter and Collaborator: Bring new changes into <code>main</code></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -237,436 +210,118 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">1. Setup</h2>
+<p>Find a partner. Designate who is “Starter” and who is “Collaborator”.</p>
+<p><br></p>
+<section id="working-in-main" class="level2">
+<h2 class="anchored" data-anchor-id="working-in-main">Working in <code>main</code></h2>
+<section id="starter-create-a-new-version-controlled-r-project-make-push-an-update" class="level3">
+<h3 class="anchored" data-anchor-id="starter-create-a-new-version-controlled-r-project-make-push-an-update">Starter: Create a new version controlled R Project, make &amp; push an update</h3>
 <ul>
-<li>Create new repo on GitHub named <code>eds221-day10-comp</code></li>
-<li>Clone to make a local version-controlled R Project</li>
-</ul>
-</section>
-<section id="make-a-ggplot-theme" class="level2">
-<h2 class="anchored" data-anchor-id="make-a-ggplot-theme">2. Make a <code>ggplot</code> theme</h2>
-<ul>
-<li>Add a new Quarto document, saved in your project root as <code>my_ggplot_theme.qmd</code></li>
-<li>Attach the <code>tidyverse</code> and <code>palmerpenguins</code> packages</li>
-<li>Create a plot from the data (whatever type you want)</li>
-<li>Highly customize the <code>theme()</code> component (you can make it as bright / awful as you want - this is going to become a ggplot theme you can share with the world, so it’s up to you)</li>
-<li>Keep this project OPEN (you’ll copy your custom theme in the next step…)</li>
-</ul>
-<p>Here’s something awful just to remind you of what this can look like:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> body_mass_g)) <span class="sc">+</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">color =</span> <span class="st">"purple"</span>),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"black"</span>),</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"gray20"</span>),</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"yellow"</span>),</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>),</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">"cyan"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- ## 3. Updating our R package
-
-- In a new session (so your existing project stays open), reopen the R Project for your R package you created last week
-- Install and Restart your package (this should also attach your package)
-- Remind yourself of what functions exist in the package (one way: in the Packages tab, click on your package name to see a list)
-- Create a new R script (.R )
-- Copy and paste just the `theme()` component of your customized ggplot graph that you just made into your empty R script. For the example above, that would just be: 
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-theme(title = element_text(size = 16, color = "purple"),
-        plot.background = element_rect(fill = "black"),
-        panel.background = element_rect(fill = "gray20"),
-        axis.text = element_text(color = "yellow"),
-        panel.grid.major = element_line(color = "blue"),
-        panel.grid.minor = element_line(color = "cyan")
-        )
-```
-:::
-
-
-
-- Put that theme inside of a function, and assign it a name. For example: 
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-theme_eighties <- function() {theme(title = element_text(size = 16, color = "purple"),
-      plot.background = element_rect(fill = "black"),
-      panel.background = element_rect(fill = "gray20"),
-      axis.text = element_text(color = "yellow"),
-      panel.grid.major = element_line(color = "blue"),
-      panel.grid.minor = element_line(color = "cyan")
-)
-}
-```
-:::
-
-
-
-- Save your script **using the same name as the function** in the `R` folder (e.g. this one would be `theme_eighties.R`)
-- Add a `Roxygen` skeleton (recall: click within your function > Code > Insert Roxygen skeleton), and update the title (note that there aren't any arguments / params)
-- `devtools::document()` to produce the R documentation for your new function
-- Install & restart
-- Try it out! Back in your *other* project, attach your package (which you just reinstalled), then make a plot that uses your custom theme from your package! 
-
-For example, if mine is called `tacopika`: 
-
-
-
-::: {.cell}
-
-```{.r .cell-code}
-library(tacopika)
-
-ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
-  geom_point() +
-  theme_eighties()
-```
-:::
-
-
-
-- Stage, commit, & push changes back to your GitHub repo
-- Share your repo information (username/reponame) with your neighbor so they can install your package from GitHub! Recall: `devtools::install_github("username/reponame")`
-- Test your neighbors new & improved R package and try out their custom theme!  -->
-</section>
-<section id="making-some-nice-tables-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="making-some-nice-tables-in-r">3. Making some nice tables in R</h2>
-<p>We’ve made a number of ggplot graphs, but we haven’t made any tables. Let’s learn one way!</p>
-<ul>
-<li>Back in your <code>eds221-day10-comp</code> R Project, create a new Quarto document</li>
-<li>In the setup chunk, attach the <code>tidyverse</code> &amp; <code>kableExtra</code> (note: there are a <em>bunch</em> of ways to make nice tables in R - see David Keyes’ post on <a href="https://rfortherestofus.com/2019/11/how-to-make-beautiful-tables-in-r/"><em>How to make beautiful tables in R</em></a> for more options)</li>
-<li>Copy the contents of the table below to the clipboard, the use the <code>datapasta</code> Add-in to create a tibble stored as <code>whale_sightings</code></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">date</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">site</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">spp</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">dist_m</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">8/12/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">unknown</td>
-<td style="text-align: right;">400</td>
-<td style="text-align: left;">breach</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8/13/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">200</td>
-<td style="text-align: left;">spout</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">8/15/2014</td>
-<td style="text-align: left;">harbor</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: left;">spout</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8/16/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">humpback</td>
-<td style="text-align: right;">300</td>
-<td style="text-align: left;">feeding</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">8/16/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: left;">feeding</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-<section id="lets-make-some-nice-looking-tables" class="level4">
-<h4 class="anchored" data-anchor-id="lets-make-some-nice-looking-tables">Let’s make some nice looking tables</h4>
-<p>With <code>kableExtra</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bootstrap theme</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dt <span class="sc">%&gt;%</span> </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Date"</span>, <span class="st">"Site"</span>, <span class="st">"Species"</span>, <span class="st">"Distance (m)"</span>, <span class="st">"Behavior"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">FALSE</span>, <span class="at">bootstrap_options =</span> <span class="st">"striped"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="table table-striped caption-top table-sm small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Date</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Site</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Species</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Distance (m)</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">8/12/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">unknown</td>
-<td style="text-align: right;">400</td>
-<td style="text-align: left;">breach</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8/13/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">200</td>
-<td style="text-align: left;">spout</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">8/15/2014</td>
-<td style="text-align: left;">harbor</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: left;">spout</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8/16/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">humpback</td>
-<td style="text-align: right;">300</td>
-<td style="text-align: left;">feeding</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">8/16/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: left;">feeding</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paper theme</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dt <span class="sc">%&gt;%</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">date</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">site</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">spp</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">dist_m</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">8/12/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">unknown</td>
-<td style="text-align: right;">400</td>
-<td style="text-align: left;">breach</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8/13/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">200</td>
-<td style="text-align: left;">spout</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">8/15/2014</td>
-<td style="text-align: left;">harbor</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: left;">spout</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">8/16/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">humpback</td>
-<td style="text-align: right;">300</td>
-<td style="text-align: left;">feeding</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">8/16/2014</td>
-<td style="text-align: left;">channel</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: left;">feeding</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-<p>Check out some other themes and try them out! https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html</p>
-<p>A bit more customization:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>dt <span class="sc">%&gt;%</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Date"</span>, <span class="st">"Site"</span>, <span class="st">"Species"</span>, <span class="st">"Distance (m)"</span>, <span class="st">"Behavior"</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">background =</span> <span class="st">"yellow"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">italic =</span> <span class="cn">TRUE</span>, <span class="at">background =</span> <span class="st">"orange"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"One header"</span> <span class="ot">=</span> <span class="dv">2</span>, <span class="st">"Another header"</span> <span class="ot">=</span> <span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">height =</span> <span class="st">"100px"</span>, <span class="at">width =</span> <span class="st">"500px"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:100px; overflow-x: scroll; width:500px; ">
-<table class="lightable-classic caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<colgroup>
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-</colgroup>
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; position: sticky; top: 0; background-color: #FFFFFF;"></th>
-<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px; position: sticky; top: 0; background-color: #FFFFFF;"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
-One header
-</div></th>
-<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px; position: sticky; top: 0; background-color: #FFFFFF;"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
-Another header
-</div></th>
-</tr>
-<tr class="odd">
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Date</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Site</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Species</th>
-<th data-quarto-table-cell-role="th" style="text-align: right; position: sticky; top: 0; background-color: #FFFFFF;">Distance (m)</th>
-<th data-quarto-table-cell-role="th" style="text-align: left; position: sticky; top: 0; background-color: #FFFFFF;">Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left; font-weight: bold; background-color: yellow !important;">8/12/2014</td>
-<td style="text-align: left; font-style: italic; background-color: orange !important;">channel</td>
-<td style="text-align: left;">unknown</td>
-<td style="text-align: right;">400</td>
-<td style="text-align: left;">breach</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; font-weight: bold; background-color: yellow !important;">8/13/2014</td>
-<td style="text-align: left; font-style: italic; background-color: orange !important;">channel</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">200</td>
-<td style="text-align: left;">spout</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; font-weight: bold; background-color: yellow !important;">8/15/2014</td>
-<td style="text-align: left; font-style: italic; background-color: orange !important;">harbor</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: left;">spout</td>
-</tr>
-<tr class="even">
-<td style="text-align: left; font-weight: bold; background-color: yellow !important;">8/16/2014</td>
-<td style="text-align: left; font-style: italic; background-color: orange !important;">channel</td>
-<td style="text-align: left;">humpback</td>
-<td style="text-align: right;">300</td>
-<td style="text-align: left;">feeding</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left; font-weight: bold; background-color: yellow !important;">8/16/2014</td>
-<td style="text-align: left; font-style: italic; background-color: orange !important;">channel</td>
-<td style="text-align: left;">gray</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: left;">feeding</td>
-</tr>
-</tbody>
-</table>
-</div>
-
-</div>
-</div>
-<p>See also: <code>DT</code>, <code>reactable</code>, <code>gt</code>, and more!</p>
-</section>
-</section>
-<section id="git-collaboration-both-pushing-to-main" class="level2">
-<h2 class="anchored" data-anchor-id="git-collaboration-both-pushing-to-main">4. Git collaboration: both pushing to main</h2>
-<ul>
-<li>Find a partner. Designate who is “Starter” and who is “Collaborator”.</li>
-</ul>
-<section id="starter-create-a-new-version-controlled-r-project-make-push-an-update" class="level4">
-<h4 class="anchored" data-anchor-id="starter-create-a-new-version-controlled-r-project-make-push-an-update">Starter: Create a new version controlled R Project, make &amp; push an update</h4>
-<ul>
-<li>Create a new repo called eds221-day10-collab (with a ReadMe)</li>
+<li>Create a new repo called <code>eds221-day10-collab</code> (with a ReadMe)</li>
 <li>Clone, create a new version-controlled R Project</li>
 <li>Create a new .Rmd in the root (<code>git_test.Rmd</code>), delete everything below the first code chunk</li>
-<li>Add a line of text in your .Rmd like “Hi partner!”</li>
+<li>Add a line of text in your <code>.Rmd</code> like “Hi partner!”</li>
 <li>Stage, commit &amp; push all changes back to your GitHub repo</li>
 </ul>
 </section>
-<section id="starter-add-a-contributor" class="level4">
-<h4 class="anchored" data-anchor-id="starter-add-a-contributor">Starter: Add a contributor</h4>
+<section id="starter-add-a-contributor" class="level3">
+<h3 class="anchored" data-anchor-id="starter-add-a-contributor">Starter: Add a contributor</h3>
 <ul>
-<li>Go back to your eds221-day10-collab repo on GitHub</li>
+<li>Go back to your <code>eds221-day10-collab</code> repo on GitHub</li>
 <li>Go to Settings &gt; Manage access &gt; (Enter password if requested) &gt; Invite collaborator &gt; Enter Collaborator’s username or email</li>
 </ul>
 </section>
-<section id="collaborator-accept-invitation-clone-repo-make-an-update" class="level4">
-<h4 class="anchored" data-anchor-id="collaborator-accept-invitation-clone-repo-make-an-update">Collaborator: Accept invitation &amp; clone repo, make an update</h4>
+<section id="collaborator-accept-invitation-clone-repo-make-an-update" class="level3">
+<h3 class="anchored" data-anchor-id="collaborator-accept-invitation-clone-repo-make-an-update">Collaborator: Accept invitation &amp; clone repo, make an update</h3>
 <ul>
 <li>Check your email. You should receive the invitation to join the repo. Accept.</li>
 <li>Clone (do NOT fork first) and create your own local R project</li>
 <li>Pull just in case (this should say already up to date)</li>
-<li>Open the git_test.Rmd</li>
-<li>Add a new line to the .Rmd with a nice note below the line your partner added</li>
-<li>Save the .Rmd, then stage, commit, pull &amp; push</li>
+<li>Open the <code>git_test.Rmd</code></li>
+<li>Add a new line to the <code>.Rmd with</code> a nice note below the line your partner added</li>
+<li>Save the <code>.Rmd</code>, then stage, commit, pull &amp; push</li>
 <li>Check that the updates show up on GitHub</li>
 </ul>
 </section>
-<section id="starter-pull-add-something-new-to-the-.rmd" class="level4">
-<h4 class="anchored" data-anchor-id="starter-pull-add-something-new-to-the-.rmd">Starter: Pull &amp; add something new to the .Rmd</h4>
+<section id="starter-pull-add-something-new-to-the-.rmd" class="level3">
+<h3 class="anchored" data-anchor-id="starter-pull-add-something-new-to-the-.rmd">Starter: Pull &amp; add something new to the <code>.Rmd</code></h3>
 <ul>
 <li>PULL to get remote updates locally in RStudio</li>
-<li>Open git_test.Rmd and see updated text from your partner</li>
-<li>Add a new line of text to the .Rmd</li>
+<li>Open <code>git_test.Rmd</code> and see updated text from your partner</li>
+<li>Add a new line of text to the <code>.Rmd</code></li>
 <li>Stage, commit, pull, then push</li>
 </ul>
 </section>
-<section id="collaborator-pull-add-something-new-to-the-.rmd" class="level4">
-<h4 class="anchored" data-anchor-id="collaborator-pull-add-something-new-to-the-.rmd">Collaborator: Pull &amp; add something new to the .Rmd</h4>
+<section id="collaborator-pull-add-something-new-to-the-.rmd" class="level3">
+<h3 class="anchored" data-anchor-id="collaborator-pull-add-something-new-to-the-.rmd">Collaborator: Pull &amp; add something new to the <code>.Rmd</code></h3>
 <ul>
 <li>PULL to get remote updates</li>
-<li>Open git_test.Rmd and see updated text</li>
-<li>Add a new line of text to the .Rmd</li>
+<li>Open <code>git_test.Rmd</code> and see updated text</li>
+<li>Add a new line of text to the <code>.Rmd</code></li>
 <li>Stage, commit, pull, then push</li>
 </ul>
 </section>
-<section id="where-goes-what-now-on-github" class="level3">
-<h3 class="anchored" data-anchor-id="where-goes-what-now-on-github">Where goes what now on GitHub?</h3>
+<section id="starter-and-collaborator-where-goes-what-now-on-github" class="level3">
+<h3 class="anchored" data-anchor-id="starter-and-collaborator-where-goes-what-now-on-github">Starter and Collaborator: Where goes what now on GitHub?</h3>
 <ul>
 <li>Both partners, go back to the repo on github for your collaboration</li>
 <li>Go exploring (especially History &amp; Blame)</li>
 </ul>
 </section>
-<section id="submit-a-new-issue-that-references-specific-lines-in-your-files" class="level3">
-<h3 class="anchored" data-anchor-id="submit-a-new-issue-that-references-specific-lines-in-your-files">Submit a new issue that references specific line(s) in your files</h3>
+<section id="starter-and-collaborator-submit-a-new-issue-that-references-specific-lines-in-your-files" class="level3">
+<h3 class="anchored" data-anchor-id="starter-and-collaborator-submit-a-new-issue-that-references-specific-lines-in-your-files">Starter and Collaborator: Submit a new issue that references specific line(s) in your files</h3>
 <ul>
-<li>Still in GitHub, click on the git_test.Rmd file</li>
+<li>Still in GitHub, click on the <code>git_test.Rmd</code> file</li>
 <li>Find a line that your partner wrote</li>
 <li>Click the row number to the left of the line (or hold shift to select a range a lines) - the selected lines will turn yellow, and you should see a three dot menu button appear to the left of the code. Click on it, and choose “Reference in new issue”</li>
 <li>Add a title and some text for your issue, and submit</li>
 <li>Once you both have submitted an issue to your shared repo, check your partner’s issue, respond and close (resolve) the issue</li>
 </ul>
+</section>
+</section>
+<section id="working-in-branches" class="level2">
+<h2 class="anchored" data-anchor-id="working-in-branches">Working in branches</h2>
+<section id="starter-and-collaborator-create-new-branch" class="level3">
+<h3 class="anchored" data-anchor-id="starter-and-collaborator-create-new-branch">Starter and Collaborator: Create new branch</h3>
+<ul>
+<li>Go to the GitHub repository and click on the branch icon next to the drop-down that currently says <code>main</code>.</li>
+<li>This will take you to a new page that lists all of the branches currently associated with this repo</li>
+<li>Click “New branch”</li>
+<li>Give your new branch a short, but informative name. The best names include your name and a brief description of the updates you are planning (e.g.&nbsp;<code>oliver-interactive-visuals</code>)</li>
+<li>Click “Create branch”</li>
+</ul>
+</section>
+<section id="starter-and-collaborator-work-on-new-branch-in-local-repo" class="level3">
+<h3 class="anchored" data-anchor-id="starter-and-collaborator-work-on-new-branch-in-local-repo">Starter and Collaborator: Work on new branch in local repo</h3>
+<ul>
+<li>Now go to Terminal in RStudio and run <code>git pull</code>. You should see that a new branch was created</li>
+<li>Check out the Git pane and click on the drop-down that currently says <code>main</code>. Select the new branch that you created.</li>
+<li>Create a new file with some code or change code in an existing file</li>
+<li>Commit your changes to GitHub (still in your new branch)</li>
+</ul>
+</section>
+<section id="starter-and-collaborator-check-out-changes-in-remote-repo" class="level3">
+<h3 class="anchored" data-anchor-id="starter-and-collaborator-check-out-changes-in-remote-repo">Starter and Collaborator: Check out changes in remote repo</h3>
+<ul>
+<li>Go back to GitHub</li>
+<li>You should now see a message that says your new branch has recent pushes</li>
+<li>You can toggle between branches to compare code between branches using the drop-down</li>
+</ul>
+</section>
+<section id="starter-and-collaborator-bring-new-changes-into-main" class="level3">
+<h3 class="anchored" data-anchor-id="starter-and-collaborator-bring-new-changes-into-main">Starter and Collaborator: Bring new changes into <code>main</code></h3>
+<p>To have your new changes reflecting in the main branch, you need to submit a “pull request” (or a request to move your changes from your branch into the main branch)</p>
+<ul>
+<li>Click on <code>Compare and pull request</code></li>
+<li>Add a title and message describing the changes you made in your branch</li>
+<li>Scroll to the bottom to see the changes you are proposing to make to <code>main</code></li>
+<li>Click “Create pull request”</li>
+<li>GitHub will check if there are any conflicts between your changes and <code>main</code></li>
+<li>If not, click <code>Merge pull request</code></li>
+<li>You now can (and should) delete your branch by clicking <code>delete branch</code></li>
+</ul>
+<p><br></p>
+<p>You have now both successfully committed changes to the main branch without getting in each other’s way!</p>
 <div class="center-text body-text-xl teal-text">
 <p>End Interactive Session 10</p>
 </div>

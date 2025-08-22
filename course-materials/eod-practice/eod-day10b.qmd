@@ -70,7 +70,6 @@ mean_duration <- icecover %>%
 
 ggplot(data = mean_duration, aes(x = year4, y = mean_duration)) +
   geom_line()
-
 ```
 
 
@@ -95,6 +94,7 @@ ice_weather_join <- mean_duration %>%
 ggplot(data = ice_weather_join, aes(x = mean_temp, y = mean_duration)) +
   geom_point()
 ```
+
 ```{r}
 thaw_dates <- icecover %>% 
   filter(year4 >= 1970) %>% 
